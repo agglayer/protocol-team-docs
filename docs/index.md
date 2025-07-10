@@ -1,5 +1,6 @@
-# Protocol team Kanban
-- [Documentation link]()
+# Team protocol documentation page
+
+- [Documentation link](https://didactic-giggle-9pqo9jg.pages.github.io/)
 - kanban board to track `Protocol` team tasks
 
 ## Team members
@@ -9,13 +10,13 @@
 - Ignasi
 
 ## Repositories and owners
-- [zkevm-rom](https://github.com/0xPolygon/zkevm-rom)
-- [zkevm-contracts](https://github.com/0xPolygon/zkevm-contracts)
-- [zkevm-commonjs](https://github.com/0xPolygon/zkevm-commonjs)
-- [zkevm-testvectors](https://github.com/0xPolygon/zkevm-testvectors)
-- [zkevm-proverjs](https://github.com/0xPolygon/zkevm-proverjs)
-- [ethereumjs-monorepo](https://github.com/0xPolygon/ethereumjs-monorepo)
-- [fork ethereum-tests](https://github.com/0xPolygon/ethereum-tests)
+- [zkevm-rom](https://github.com/0xPolygonHermez/zkevm-rom)
+- [zkevm-contracts](https://github.com/0xPolygonHermez/zkevm-contracts)
+- [zkevm-commonjs](https://github.com/0xPolygonHermez/zkevm-commonjs)
+- [zkevm-testvectors](https://github.com/0xPolygonHermez/zkevm-testvectors)
+- [zkevm-proverjs](https://github.com/0xPolygonHermez/zkevm-proverjs)
+- [ethereumjs-monorepo](https://github.com/hermeznetwork/ethereumjs-monorepo)
+- [fork ethereum-tests](https://github.com/0xPolygonHermez/ethereum-tests)
 
 ## Notion
 - [Protocol team landing page](https://www.notion.so/polygontechnology/Protocol-team-b3ee0712a65b4558910bea2ed1aecf03)

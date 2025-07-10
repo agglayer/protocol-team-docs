@@ -1,0 +1,52 @@
+site_name: Protocol Documentation
+repo_url: https://github.com/Agglayer/protocol-team-docs
+
+theme:
+  # logo: img/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    code: Roboto Mono
+
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+  - navigation.sections
+  - navigation.expand
+  - navigation.path
+  - navigation.indexes
+  - navigation.top
+
+plugins:
+  - include_dir_to_nav
+  - mermaid2
+  - minify
+  - awesome-pages
+  - img2fig
+  - git-revision-date-localized
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.mark
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_alt
+
+extra_css:
+  - css/custom.css

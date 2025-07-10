@@ -1,0 +1,33 @@
+name: Build GitHub Pages
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy_mkdocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+      - run: pip install --no-cache-dir \
+            mkdocs-material \
+            mkdocs-include-dir-to-nav \
+            mkdocs-minify-plugin \
+            mkdocs-git-revision-date-localized-plugin \
+            mkdocs-img2fig-plugin \
+            mkdocs-mermaid2-plugin \
+            mkdocs-git-authors-plugin \
+            mkdocs-awesome-pages-plugin \
+      - run: mkdocs gh-deploy --force
