@@ -1,6 +1,6 @@
 # Team protocol documentation page
 
-- [Documentation link](https://didactic-giggle-9pqo9jg.pages.github.io/)
+- [Documentation link](https://expert-journey-9jzpgrg.pages.github.io/)
 - kanban board to track `Protocol` team tasks
 
 ## Team members
