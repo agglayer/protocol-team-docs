@@ -1,0 +1,2065 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Intro/">
+      
+      
+        <link rel="next" href="../SovereignGERManager%20SC/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>3.1.3.2. SovereignBridge SC - Protocol Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bridgel2sovereignchain-smart-contract-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Protocol Documentation" class="md-header__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protocol Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.1.3.2. SovereignBridge SC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Protocol Documentation" class="md-nav__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Protocol Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. zkEVM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. zkEVM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zkEVM/banana-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Banana (fork.12)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zkEVM/durian-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Durian (fork.13)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2.Tooling
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2.Tooling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tooling/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tooling/Genesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Genesis creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Aggregation layer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Aggregation layer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1. Version 0.2.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            3.1. Version 0.2.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChangeLog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.1. SC ChangeLog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SC-Versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.2. SC-Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1.3. Sovereign Chains
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.1.3. Sovereign Chains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.1. Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.2. SovereignBridge SC
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.2. SovereignBridge SC
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bridgel2sovereignchain-smart-contract-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      BridgeL2SovereignChain Smart Contract Documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BridgeL2SovereignChain Smart Contract Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-initialize" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. initialize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setbridgemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. setBridgeManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-setmultiplesovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. setMultipleSovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-setsovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. setSovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-_setsovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. _setSovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-removelegacysovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. removeLegacySovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-setsovereignwethaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. setSovereignWETHAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-migratelegacytoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. migrateLegacyToken
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-_bridgewrappedasset" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. _bridgeWrappedAsset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-_claimwrappedasset" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. _claimWrappedAsset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-activateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. activateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-deactivateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. deactivateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SovereignGERManager%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.3. SovereignGERManager SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.4. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2. Version 0.3.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            3.2. Version 0.3.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/SC-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.1. SC Specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/Diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.2. Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.3. Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/Tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.4. Tooling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/Roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.5. Roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2.6. SC Interactions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            3.2.6. SC Interactions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.1. AggLayerGateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.2. AggchainFEP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.3. PolygonRollupManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.7. FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.0/Changes-v0.3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.8. Changes v0.3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bridgel2sovereignchain-smart-contract-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      BridgeL2SovereignChain Smart Contract Documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BridgeL2SovereignChain Smart Contract Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constructor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-initialize" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. initialize
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setbridgemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. setBridgeManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-setmultiplesovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. setMultipleSovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-setsovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. setSovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-_setsovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. _setSovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-removelegacysovereigntokenaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. removeLegacySovereignTokenAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-setsovereignwethaddress" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. setSovereignWETHAddress
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-migratelegacytoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. migrateLegacyToken
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-_bridgewrappedasset" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. _bridgeWrappedAsset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-_claimwrappedasset" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. _claimWrappedAsset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-activateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. activateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-deactivateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. deactivateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Notes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker build
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>3.1.3.2. SovereignBridge SC</h1>
+
+<h2 id="bridgel2sovereignchain-smart-contract-documentation">BridgeL2SovereignChain Smart Contract Documentation</h2>
+<p><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/audit-remediations/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol">Link SC</a></p>
+<blockquote>
+<p>Warning: This contract has not been audited. Use at your own risk.</p>
+</blockquote>
+<h3 id="introduction">Introduction</h3>
+<p>The BridgeL2SovereignChain smart contract is designed to be deployed on Ethereum and Sovereign chains. It extends the PolygonZkEVMBridgeV2 and implements the IBridgeL2SovereignChains interface. The contract manages token interactions across different networks, including token wrapping, remapping, and migration of legacy tokens.</p>
+<h3 id="table-of-contents">Table of Contents</h3>
+<ul>
+<li>Overview</li>
+<li>State Variables</li>
+<li>Events</li>
+<li>Constructor</li>
+<li>Modifiers</li>
+<li>Functions<ul>
+<li>initialize</li>
+<li>setBridgeManager</li>
+<li>setMultipleSovereignTokenAddress</li>
+<li>setSovereignTokenAddress</li>
+<li>removeLegacySovereignTokenAddress</li>
+<li>setSovereignWETHAddress</li>
+<li>migrateLegacyToken</li>
+<li>_bridgeWrappedAsset</li>
+<li>_claimWrappedAsset</li>
+<li>activateEmergencyState</li>
+<li>deactivateEmergencyState</li>
+</ul>
+</li>
+<li>Errors</li>
+<li>Usage Notes</li>
+<li>Overview</li>
+<li>Deployment</li>
+</ul>
+<p>The BridgeL2SovereignChain contract acts as a bridge for token interactions between Ethereum and Sovereign chains. It handles:</p>
+<p>Managing token wrapping and unwrapping.
+Remapping tokens to new sovereign addresses.
+Migrating legacy tokens to updated tokens.
+Setting custom mappings for tokens and WETH addresses.
+State Variables</p>
+<ol>
+<li><strong>wrappedAddressIsNotMintable</strong>
+<div class="highlight"><pre><span></span><code>mapping(address wrappedAddress =&gt; bool isNotMintable) public wrappedAddressIsNotMintable;
+</code></pre></div></li>
+<li><strong>Description</strong>: Maps wrapped token addresses to a boolean indicating whether they are not mintable.</li>
+<li>
+<p><strong>Usage</strong>: Determines if a wrapped token should be transferred instead of minted/burned.</p>
+</li>
+<li>
+<p>bridgeManager
+<div class="highlight"><pre><span></span><code>address public bridgeManager;
+</code></pre></div>
+<strong>Description</strong>: The address of the bridge manager who can set custom mappings for any token.
+<strong>Usage</strong>: Functions restricted to the bridge manager use this address for access control.</p>
+</li>
+</ol>
+<hr />
+<h3 id="events">Events</h3>
+<ol>
+<li>
+<p><strong>SetBridgeManager</strong>
+<div class="highlight"><pre><span></span><code>event SetBridgeManager(address bridgeManager);
+</code></pre></div>
+<strong>Description</strong>: Emitted when the bridge manager is updated.</p>
+</li>
+<li>
+<p><strong>SetSovereignTokenAddress</strong>
+<div class="highlight"><pre><span></span><code>event SetSovereignTokenAddress( uint32 originNetwork, address originTokenAddress, address sovereignTokenAddress, bool isNotMintable );
+</code></pre></div>
+<strong>Description</strong>: Emitted when a token address is remapped to a sovereign token address.</p>
+</li>
+<li>
+<p><strong>MigrateLegacyToken</strong>
+<div class="highlight"><pre><span></span><code>event MigrateLegacyToken( address sender, address legacyTokenAddress, address updatedTokenAddress, uint256 amount );
+</code></pre></div>
+<strong>Description</strong>: Emitted when a legacy token is migrated to a new token.</p>
+</li>
+<li>
+<p><strong>RemoveLegacySovereignTokenAddress</strong>
+<div class="highlight"><pre><span></span><code>event RemoveLegacySovereignTokenAddress(address sovereignTokenAddress);
+</code></pre></div>
+<strong>Description</strong>: Emitted when a remapped token is removed from the mapping.</p>
+</li>
+<li>
+<p><strong>SetSovereignWETHAddress</strong>
+<div class="highlight"><pre><span></span><code>event SetSovereignWETHAddress( address sovereignWETHTokenAddress, bool isNotMintable );
+</code></pre></div>
+<strong>Description</strong>: Emitted when a WETH address is remapped to a sovereign WETH address.</p>
+</li>
+</ol>
+<hr />
+<h3 id="constructor">Constructor</h3>
+<p><div class="highlight"><pre><span></span><code>constructor() { _disableInitializers(); }
+</code></pre></div>
+<strong>Description</strong>: Disables initializers on the implementation contract following best practices.
+Note: Ensures that the contract cannot be initialized improperly.</p>
+<h3 id="modifiers">Modifiers</h3>
+<ol>
+<li><strong>onlyBridgeManager</strong>
+<div class="highlight"><pre><span></span><code>modifier onlyBridgeManager() { if (bridgeManager != msg.sender) { revert OnlyBridgeManager(); } _; }
+</code></pre></div>
+<strong>Description</strong>: Restricts function access to the bridge manager.
+<strong>Usage</strong>: Applied to functions that should only be callable by the bridge manager.</li>
+</ol>
+<h3 id="functions">Functions</h3>
+<h4 id="1-initialize">1. <strong>initialize</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function initialize( uint32 _networkID, address _gasTokenAddress, uint32 _gasTokenNetwork, IBasePolygonZkEVMGlobalExitRoot _globalExitRootManager, address _polygonRollupManager, bytes memory _gasTokenMetadata, address _bridgeManager, address _sovereignWETHAddress, bool _sovereignWETHAddressIsNotMintable ) public virtual initializer
+</code></pre></div>
+<strong>Parameters</strong>:  </p>
+<ul>
+<li>_networkID: The network ID.  </li>
+<li>_gasTokenAddress: The address of the gas token.  </li>
+<li>_gasTokenNetwork: The network ID of the gas token.  </li>
+<li>_globalExitRootManager: The global exit root manager address.  </li>
+<li>_polygonRollupManager: The rollup manager address (set to address(0) on L2).  </li>
+<li>_gasTokenMetadata: ABI-encoded metadata for the gas token.  </li>
+<li>_bridgeManager: The bridge manager address.  </li>
+<li>_sovereignWETHAddress: The sovereign WETH token address.  </li>
+<li>_sovereignWETHAddressIsNotMintable: Indicates if the WETH token is not mintable.  </li>
+</ul>
+<p><strong>Description</strong>: Initializes the contract with the provided parameters. It sets up the gas token, WETH token, and bridge manager. If the gas token is Ether (i.e., _gasTokenAddress is address(0)), it performs specific checks and setups.</p>
+<p><strong>Behavior</strong>:</p>
+<ul>
+<li>Sets the network ID, global exit root manager, and bridge manager.  </li>
+<li>Initializes the gas token:  </li>
+<li>If Ether, ensures _gasTokenNetwork is zero and no WETH address is provided.  </li>
+<li>If ERC20, sets up the gas token address, network, and metadata.  </li>
+<li>Sets up the WETH token:  </li>
+<li>If no _sovereignWETHAddress is provided, deploys a new wrapped token.  </li>
+<li>If provided, uses the given WETH address and sets its mintability.  </li>
+<li>Initializes OpenZeppelin contracts, such as ReentrancyGuard.  </li>
+</ul>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>This function overrides the initializer from PolygonZkEVMBridgeV2.</li>
+<li>If the gas token is Ether, WETH remapping is not supported.  </li>
+</ul>
+<h4 id="2-setbridgemanager">2. <strong>setBridgeManager</strong></h4>
+<div class="highlight"><pre><span></span><code>function setBridgeManager(address _bridgeManager) external onlyBridgeManager
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li>_bridgeManager: The new bridge manager address.  </li>
+</ul>
+<p><strong>Description</strong>: Updates the bridge manager to a new address.</p>
+<p><strong>Behavior</strong>:</p>
+<ul>
+<li>Validates that the new address is not zero.</li>
+<li>Updates the bridgeManager state variable.</li>
+<li>Emits the SetBridgeManager event.</li>
+</ul>
+<h4 id="3-setmultiplesovereigntokenaddress">3. <strong>setMultipleSovereignTokenAddress</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function setMultipleSovereignTokenAddress( uint32[] memory originNetworks, address[] memory originTokenAddresses, address[] memory sovereignTokenAddresses, bool[] memory isNotMintable ) external onlyBridgeManager
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>originNetworks: Array of origin network IDs.</li>
+<li>originTokenAddresses: Array of origin token addresses.</li>
+<li>sovereignTokenAddresses: Array of new sovereign token addresses.</li>
+<li>isNotMintable: Array of booleans indicating if each token is not mintable.</li>
+</ul>
+<p><strong>Description</strong>: Remaps multiple wrapped tokens to new sovereign token addresses in a batch operation.</p>
+<p><strong>Behavior</strong>:</p>
+<ul>
+<li>Ensures all input arrays have the same length.</li>
+<li>Iterates over the arrays and calls _setSovereignTokenAddress for each token.</li>
+</ul>
+<h4 id="4-setsovereigntokenaddress">4. <strong>setSovereignTokenAddress</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function setSovereignTokenAddress( uint32 originNetwork, address originTokenAddress, address sovereignTokenAddress, bool isNotMintable ) external onlyBridgeManager
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>originNetwork: The origin network ID.</li>
+<li>originTokenAddress: The origin token address (cannot be zero).</li>
+<li>sovereignTokenAddress: The new sovereign token address (cannot be zero).</li>
+<li>isNotMintable: Indicates if the token is not mintable.</li>
+</ul>
+<p><strong>Description</strong>: Remaps a wrapped token to a new sovereign token address.<br />
+<strong>Behavior</strong>: Calls _setSovereignTokenAddress internally with the provided parameters.</p>
+<h4 id="5-_setsovereigntokenaddress">5. <strong>_setSovereignTokenAddress</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function _setSovereignTokenAddress( uint32 originNetwork, address originTokenAddress, address sovereignTokenAddress, bool isNotMintable ) internal
+</code></pre></div>
+<strong>Parameters</strong>: Same as setSovereignTokenAddress.<br />
+<strong>Description</strong>: Internal function that performs the actual remapping of a wrapped token to a new sovereign token address.<br />
+<strong>Behavior</strong>:  </p>
+<ul>
+<li>Validates that neither originTokenAddress nor sovereignTokenAddress is zero.</li>
+<li>Ensures that originNetwork is not the current network ID.</li>
+<li>Checks that the token is not already mapped.</li>
+<li>Updates the mappings:<ul>
+<li>tokenInfoToWrappedToken with the new sovereign token address.</li>
+<li>wrappedTokenToTokenInfo with the token information.</li>
+<li>wrappedAddressIsNotMintable with the mintability status.</li>
+</ul>
+</li>
+<li>Emits the SetSovereignTokenAddress event.</li>
+</ul>
+<h4 id="6-removelegacysovereigntokenaddress">6. <strong>removeLegacySovereignTokenAddress</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function removeLegacySovereignTokenAddress( address sovereignTokenAddress ) external onlyBridgeManager
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>sovereignTokenAddress: The sovereign token address to remove from mapping.</li>
+</ul>
+<p><strong>Description</strong>: Removes a remapped token from the mappings, effectively stopping support for the legacy sovereign token.
+<strong>Behavior</strong>:</p>
+<ul>
+<li>Checks that the token was previously remapped.</li>
+<li>Deletes the token from wrappedTokenToTokenInfo and wrappedAddressIsNotMintable.</li>
+<li>Emits the RemoveLegacySovereignTokenAddress event.</li>
+</ul>
+<h4 id="7-setsovereignwethaddress">7. <strong>setSovereignWETHAddress</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function setSovereignWETHAddress( address sovereignWETHTokenAddress, bool isNotMintable ) external onlyBridgeManager
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>sovereignWETHTokenAddress: The new sovereign WETH token address.</li>
+<li>isNotMintable: Indicates if the WETH token is not mintable.</li>
+</ul>
+<p><strong>Description</strong>: Remaps the WETH token to a new sovereign WETH address.
+<strong>Behavior</strong>:</p>
+<ul>
+<li>Validates that the gas token is not Ether (WETH remapping is not supported on Ether networks).</li>
+<li>Updates the WETHToken variable with the new address.</li>
+<li>Updates wrappedAddressIsNotMintable with the mintability status.</li>
+<li>Emits the SetSovereignWETHAddress event.</li>
+</ul>
+<h4 id="8-migratelegacytoken">8. <strong>migrateLegacyToken</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function migrateLegacyToken( address legacyTokenAddress, uint256 amount ) external
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>legacyTokenAddress: The address of the legacy token to migrate.</li>
+<li>amount: The amount of tokens to migrate.</li>
+</ul>
+<p><strong>Description</strong>: Migrates old native or remapped tokens to the new mapped tokens. If the token is mintable, it will be burned and minted; otherwise, it will be transferred.
+<strong>Behavior</strong>:</p>
+<ul>
+<li>Retrieves the token information for the legacy token.</li>
+<li>Ensures that the token is mapped.</li>
+<li>Retrieves the current token address from tokenInfoToWrappedToken.</li>
+<li>Checks that the legacy token is different from the current token.</li>
+<li>Calls _bridgeWrappedAsset to burn or transfer the legacy tokens from the sender.</li>
+<li>Calls _claimWrappedAsset to mint or transfer the new tokens to the sender.</li>
+<li>Emits the MigrateLegacyToken event.</li>
+</ul>
+<h4 id="9-_bridgewrappedasset">9. <strong>_bridgeWrappedAsset</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function _bridgeWrappedAsset( TokenWrapped tokenWrapped, uint256 amount ) internal override
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>tokenWrapped: The wrapped token to burn or transfer.</li>
+<li>amount: The amount of tokens.</li>
+</ul>
+<p><strong>Description</strong>: Burns tokens from the wrapped token to execute the bridge. If the token is not mintable, it transfers the tokens instead.
+<strong>Behavior</strong>:</p>
+<ul>
+<li>Checks wrappedAddressIsNotMintable for the token address.</li>
+<li>If not mintable, transfers the tokens from the sender to the contract.</li>
+<li>If mintable, burns the tokens from the sender.</li>
+</ul>
+<h4 id="10-_claimwrappedasset">10. <strong>_claimWrappedAsset</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function _claimWrappedAsset( TokenWrapped tokenWrapped, address destinationAddress, uint256 amount ) internal override
+</code></pre></div>
+<strong>Parameters</strong>:</p>
+<ul>
+<li>tokenWrapped: The wrapped token to mint or transfer.</li>
+<li>destinationAddress: The address to receive the tokens.</li>
+<li>amount: The amount of tokens.</li>
+</ul>
+<p><strong>Description</strong>: Mints tokens from the wrapped token to proceed with the claim. If the token is not mintable, it transfers the tokens instead.  </p>
+<p><strong>Behavior</strong>:</p>
+<ul>
+<li>Checks wrappedAddressIsNotMintable for the token address.</li>
+<li>If not mintable, transfers the tokens to the destinationAddress.</li>
+<li>If mintable, mints the tokens to the destinationAddress.</li>
+</ul>
+<h4 id="11-activateemergencystate">11. <strong>activateEmergencyState</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function activateEmergencyState() external override(IPolygonZkEVMBridgeV2, PolygonZkEVMBridgeV2)
+</code></pre></div>
+<strong>Description</strong>: Overrides the function to prevent activation of the emergency state. Reverts when called.<br />
+<strong>Behavior</strong>: Always reverts with NotValidBridgeManager().</p>
+<h4 id="12-deactivateemergencystate">12. <strong>deactivateEmergencyState</strong></h4>
+<p><div class="highlight"><pre><span></span><code>function deactivateEmergencyState() external override(IPolygonZkEVMBridgeV2, PolygonZkEVMBridgeV2)
+</code></pre></div>
+<strong>Description</strong>: Overrides the function to prevent deactivation of the emergency state. Reverts when called.<br />
+<strong>Behavior</strong>: Always reverts with NotValidBridgeManager().</p>
+<h3 id="errors">Errors</h3>
+<ul>
+<li><strong>OnlyBridgeManager</strong>(): Thrown when a function is called by an address that is not the bridge manager.</li>
+<li><strong>NotValidBridgeManager</strong>(): Thrown when the bridge manager address is invalid (e.g., zero address).</li>
+<li><strong>InvalidZeroAddress</strong>(): Thrown when a zero address is provided where it is not allowed.</li>
+<li><strong>OriginNetworkInvalid</strong>(): Thrown when the origin network ID is the same as the current network ID.</li>
+<li><strong>TokenAlreadyMapped</strong>(): Thrown when attempting to map a token that is already mapped.</li>
+<li><strong>TokenNotRemapped</strong>(): Thrown when attempting to remove a token that was not remapped.</li>
+<li><strong>InputArraysLengthMismatch</strong>(): Thrown when input arrays in a function have mismatched lengths.</li>
+<li><strong>TokenNotMapped</strong>(): Thrown when attempting to migrate a token that is not mapped.</li>
+<li><strong>TokenAlreadyUpdated</strong>(): Thrown when the token to migrate is already updated.</li>
+<li><strong>InvalidInitializeFunction</strong>(): Thrown when an invalid initialize function is called.</li>
+<li><strong>GasTokenNetworkMustBeZeroOnEther</strong>(): Thrown when the gas token network is not zero while the gas token is Ether.</li>
+<li><strong>InvalidSovereignWETHAddressParams</strong>(): Thrown when invalid parameters are provided for the sovereign WETH address.</li>
+<li><strong>WETHRemappingNotSupportedOnGasTokenNetworks</strong>(): Thrown when attempting to remap WETH on networks where the gas token is Ether.</li>
+</ul>
+<h3 id="usage-notes">Usage Notes</h3>
+<ul>
+<li><strong>Bridge Manager</strong>: Only the bridge manager can call functions that change the state mappings or manager address.</li>
+<li><strong>Token Remapping</strong>: When remapping tokens, ensure that the origin network ID is different from the current network ID and that the token addresses are valid.</li>
+<li><strong>Mintability</strong>: The isNotMintable flag indicates whether tokens should be transferred instead of minted/burned. This is important for tokens that do not support minting or burning.</li>
+<li><strong>Legacy Token Migration</strong>: Users can migrate legacy tokens to new tokens if they have been remapped by the bridge manager.</li>
+<li><strong>Emergency State</strong>: Activation and deactivation of the emergency state are intentionally disabled in this contract.</li>
+</ul>
+<blockquote>
+<p>Disclaimer: This documentation is provided for informational purposes only and may not cover all aspects of the contract. Always review the contract code thoroughly before interacting with it.</p>
+</blockquote>
+<h3 id="docker-build">Docker build</h3>
+<ul>
+<li>Set params at <code>create_rollup_parameters_docker.json</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>&quot;isVanillaClient&quot;: false, // If true, sovereignParams are mandatory
+    &quot;sovereignParams&quot;: {
+        &quot;bridgeManager&quot;: &quot;0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266&quot;, // Address pf the bridge manager
+        &quot;sovereignWETHAddress&quot;: &quot;0x0000000000000000000000000000000000000000&quot;, // Address of the sovereign WETH address, zero if not applies
+        &quot;sovereignWETHAddressIsNotMintable&quot;: false, // is sovereign WETH address mintable? False if not applies
+        &quot;globalExitRootUpdater&quot;: &quot;0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266&quot; // Address of the global Exit root admin
+    }
+</code></pre></div>
+<ul>
+<li><code>npm run dockerv2:contracts</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2188 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../AggLayerGateway/">
+      
+      
+        <link rel="next" href="../PolygonRollupManager/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>3.2.6.2. AggchainFEP - Protocol Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aggchain-fep" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Protocol Documentation" class="md-header__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protocol Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.2.6.2. AggchainFEP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Protocol Documentation" class="md-nav__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Protocol Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. zkEVM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. zkEVM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zkEVM/banana-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Banana (fork.12)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zkEVM/durian-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Durian (fork.13)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2.Tooling
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2.Tooling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tooling/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tooling/Genesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Genesis creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Aggregation layer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Aggregation layer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1. Version 0.2.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            3.1. Version 0.2.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/ChangeLog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.1. SC ChangeLog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SC-Versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.2. SC-Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1.3. Sovereign Chains
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.1.3. Sovereign Chains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.1. Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.2. SovereignBridge SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.3. SovereignGERManager SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.4. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2. Version 0.3.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            3.2. Version 0.3.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SC-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.1. SC Specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.2. Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.3. Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.4. Tooling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.5. Roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2.6. SC Interactions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            3.2.6. SC Interactions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AggLayerGateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.1. AggLayerGateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.2. AggchainFEP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.2. AggchainFEP
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-interactions-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Interactions &amp; Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-initialize-aggchainfep" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Initialize AggchainFEP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-view-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. View functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. View functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-getaggchainhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1. getAggchainHash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-submission_interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2. SUBMISSION_INTERVAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-l2_block_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3. L2_BLOCK_TIME
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-getl2output" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.4. getL2Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-latestoutputindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.5. latestOutputIndex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#126-nextoutputindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.6. nextOutputIndex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#127-latestblocknumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.7. latestBlockNumber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#128-nextblocknumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.8. nextBlockNumber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#129-computel2timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.9. computeL2Timestamp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-onverifypessimistic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. onVerifyPessimistic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-updatesubmissioninterval" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. updateSubmissionInterval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-updateaggregationvkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. updateAggregationVkey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-updaterangevkeycommitment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. updateRangeVkeyCommitment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-updaterollupconfighash" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7. updateRollupConfigHash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-enableoptimisticmodedisableoptimisticmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8. enableOptimisticMode/disableOptimisticMode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9. transferAggchainManagerRole/acceptAggchainManagerRole
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tooling-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tooling available
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tooling available">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-change-optimistic-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Change optimistic mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-transfer-aggchain-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Transfer aggchain manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-transfer-optimistic-mode-manager-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Transfer optimistic mode manager role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-update-rollup-config-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Update rollup config hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-update-submission-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Update submission interval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-tools-to-get-aggchain-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6. Tools to get aggchain data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PolygonRollupManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.3. PolygonRollupManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.7. FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Changes-v0.3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.8. Changes v0.3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-interactions-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Interactions &amp; Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-initialize-aggchainfep" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Initialize AggchainFEP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-view-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. View functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. View functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-getaggchainhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1. getAggchainHash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-submission_interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2. SUBMISSION_INTERVAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-l2_block_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3. L2_BLOCK_TIME
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-getl2output" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.4. getL2Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-latestoutputindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.5. latestOutputIndex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#126-nextoutputindex" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.6. nextOutputIndex
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#127-latestblocknumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.7. latestBlockNumber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#128-nextblocknumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.8. nextBlockNumber
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#129-computel2timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.9. computeL2Timestamp
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-onverifypessimistic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. onVerifyPessimistic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-updatesubmissioninterval" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. updateSubmissionInterval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-updateaggregationvkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. updateAggregationVkey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-updaterangevkeycommitment" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. updateRangeVkeyCommitment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-updaterollupconfighash" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7. updateRollupConfigHash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-enableoptimisticmodedisableoptimisticmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8. enableOptimisticMode/disableOptimisticMode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9. transferAggchainManagerRole/acceptAggchainManagerRole
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tooling-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tooling available
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tooling available">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-change-optimistic-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Change optimistic mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-transfer-aggchain-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Transfer aggchain manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-transfer-optimistic-mode-manager-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Transfer optimistic mode manager role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-update-rollup-config-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Update rollup config hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-update-submission-interval" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5. Update submission interval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-tools-to-get-aggchain-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6. Tools to get aggchain data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aggchain-fep">Aggchain FEP</h1>
+<div class="toc">
+<ul>
+<li><a href="#aggchain-fep">Aggchain FEP</a><ul>
+<li><a href="#1-interactions-usage">1. Interactions &amp; Usage</a><ul>
+<li><a href="#11-initialize-aggchainfep">1.1. Initialize AggchainFEP</a></li>
+<li><a href="#12-view-functions">1.2. View functions</a><ul>
+<li><a href="#121-getaggchainhash">1.2.1. getAggchainHash</a></li>
+<li><a href="#122-submission_interval">1.2.2. SUBMISSION_INTERVAL</a></li>
+<li><a href="#123-l2_block_time">1.2.3. L2_BLOCK_TIME</a></li>
+<li><a href="#124-getl2output">1.2.4. getL2Output</a></li>
+<li><a href="#125-latestoutputindex">1.2.5. latestOutputIndex</a></li>
+<li><a href="#126-nextoutputindex">1.2.6. nextOutputIndex</a></li>
+<li><a href="#127-latestblocknumber">1.2.7. latestBlockNumber</a></li>
+<li><a href="#128-nextblocknumber">1.2.8. nextBlockNumber</a></li>
+<li><a href="#129-computel2timestamp">1.2.9. computeL2Timestamp</a></li>
+</ul>
+</li>
+<li><a href="#13-onverifypessimistic">1.3. onVerifyPessimistic</a></li>
+<li><a href="#14-updatesubmissioninterval">1.4. updateSubmissionInterval</a></li>
+<li><a href="#15-updateaggregationvkey">1.5. updateAggregationVkey</a></li>
+<li><a href="#16-updaterangevkeycommitment">1.6. updateRangeVkeyCommitment</a></li>
+<li><a href="#17-updaterollupconfighash">1.7. updateRollupConfigHash</a></li>
+<li><a href="#18-enableoptimisticmodedisableoptimisticmode">1.8. enableOptimisticMode/disableOptimisticMode</a></li>
+<li><a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole">1.9. transferAggchainManagerRole/acceptAggchainManagerRole</a></li>
+<li><a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole">1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole</a></li>
+</ul>
+</li>
+<li><a href="#2-tooling-available">2. Tooling available</a><ul>
+<li><a href="#21-change-optimistic-mode">2.1. Change optimistic mode</a></li>
+<li><a href="#22-transfer-aggchain-manager">2.2. Transfer aggchain manager</a></li>
+<li><a href="#23-transfer-optimistic-mode-manager-role">2.3. Transfer optimistic mode manager role</a></li>
+<li><a href="#24-update-rollup-config-hash">2.4. Update rollup config hash</a></li>
+<li><a href="#25-update-submission-interval">2.5. Update submission interval</a></li>
+<li><a href="#26-tools-to-get-aggchain-data">2.6. Tools to get aggchain data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="1-interactions-usage">1. Interactions &amp; Usage</h2>
+<p>The definition can be found <a href="../../SC-specs/#52-fep">here</a>.</p>
+<h3 id="11-initialize-aggchainfep">1.1. Initialize AggchainFEP</h3>
+<p>To initialize the aggchain, it is necessary to differentiate according to the <code>initializerVersion</code>:</p>
+<ul>
+<li>
+<p><code>initializeBytesAggchain</code> if <code>_initializerVersion == 0</code>:
+<div class="highlight"><pre><span></span><code> // chain custom params
+InitParams memory _initParams
+// aggchainBase params
+bool _useDefaultGateway
+bytes32 _initOwnedAggchainVKey
+bytes2 _initAggchainVKeyVersion
+address _vKeyManager
+// PolygonConsensusBase params
+address _admin
+address _trustedSequencer
+address _gasTokenAddress
+string memory _trustedSequencerURL
+string memory _networkName
+</code></pre></div></p>
+</li>
+<li>
+<p><code>initializeBytesAggchain</code> if <code>_initializerVersion == 1</code>:
+<div class="highlight"><pre><span></span><code>// chain custom params
+InitParams memory _initParams,
+// aggchainBase params
+bool _useDefaultGateway,
+bytes32 _initOwnedAggchainVKey,
+bytes2 _initAggchainVKeyVersion,
+address _vKeyManager
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="12-view-functions">1.2. View functions</h3>
+<h4 id="121-getaggchainhash">1.2.1. getAggchainHash</h4>
+<p>Function to get resulting aggchain hash.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param aggchainData custom bytes provided by the chain
+
+    aggchainData:
+        Field:           | _aggchainVKeyVersion | _outputRoot  | _l2BlockNumber |
+        length (bits):   | 16                   | 256          | 256            |
+
+    aggchainData._aggchainVKeyVersion First 2 bytes of the aggchain vkey selector
+    aggchainData._outputRoot Proposed new output root
+    aggchainData._l2BlockNumber Proposed new l2 bock number
+</code></pre></div></p>
+<h4 id="122-submission_interval">1.2.2. SUBMISSION_INTERVAL</h4>
+<p>Getter for the submissionInterval.</p>
+<h4 id="123-l2_block_time">1.2.3. L2_BLOCK_TIME</h4>
+<p>Getter for the l2BlockTime.</p>
+<h4 id="124-getl2output">1.2.4. getL2Output</h4>
+<p>Returns an output by index. Needed to return a struct instead of a tuple.</p>
+<h4 id="125-latestoutputindex">1.2.5. latestOutputIndex</h4>
+<p>Returns the number of outputs that have been proposed.
+Will revert if no outputs have been proposed yet.</p>
+<h4 id="126-nextoutputindex">1.2.6. nextOutputIndex</h4>
+<p>Returns the index of the next output to be proposed.</p>
+<h4 id="127-latestblocknumber">1.2.7. latestBlockNumber</h4>
+<p>Returns the block number of the latest submitted L2 output proposal.
+If no proposals been submitted yet then this function will return the starting block number.</p>
+<h4 id="128-nextblocknumber">1.2.8. nextBlockNumber</h4>
+<p>Computes the block number of the next L2 block that needs to be checkpointed.</p>
+<h4 id="129-computel2timestamp">1.2.9. computeL2Timestamp</h4>
+<p>Returns the L2 timestamp corresponding to a given L2 block number.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param _l2BlockNumber The L2 block number of the target block.
+</code></pre></div></p>
+<h3 id="13-onverifypessimistic">1.3. onVerifyPessimistic</h3>
+<p>Callback when pessimistic proof is verified, can only be called by the rollup manager stores the necessary chain data when the pessimistic proof is verified.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param aggchainData Custom data provided by the chain
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>emit OutputProposed(outputRoot, l2OutputIndex, l2BlockNumber, l1Timestamp);
+</code></pre></div></p>
+<h3 id="14-updatesubmissioninterval">1.4. updateSubmissionInterval</h3>
+<p>Function to update the submission interval.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param _submissionInterval The new submission interval
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>@param oldSubmissionInterval The old submission interval.
+@param newSubmissionInterval The new submission interval.
+
+event SubmissionIntervalUpdated(uint256 oldSubmissionInterval, uint256 newSubmissionInterval)
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>Thrown when new submission interval is 0:
+<div class="highlight"><pre><span></span><code>error SubmissionIntervalMustBeGreaterThanZero()
+</code></pre></div></li>
+</ul>
+<h3 id="15-updateaggregationvkey">1.5. updateAggregationVkey</h3>
+<p>Function to update the aggregation verification key.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param _aggregationVkey The new aggregation verification key.
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>@param oldAggregationVkey The old aggregation verification key.
+@param newAggregationVkey The new aggregation verification key.
+
+event AggregationVkeyUpdated(
+    bytes32 indexed oldAggregationVkey,
+    bytes32 indexed newAggregationVkey
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>Thrown when new aggregationVKey is 0:
+<div class="highlight"><pre><span></span><code>error AggregationVkeyMustBeDifferentThanZero();
+</code></pre></div></li>
+</ul>
+<h3 id="16-updaterangevkeycommitment">1.6. updateRangeVkeyCommitment</h3>
+<p>Function to update the range verification key commitment.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param _rangeVkeyCommitment The new range verification key commitment
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>@param oldRangeVkeyCommitment The old range verification key commitment.
+@param newRangeVkeyCommitment The new range verification key commitment.
+event RangeVkeyCommitmentUpdated(
+    bytes32 indexed oldRangeVkeyCommitment,
+    bytes32 indexed newRangeVkeyCommitment
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>Thrown when new rangeVkey commitment is 0:
+<div class="highlight"><pre><span></span><code>error RangeVkeyCommitmentMustBeDifferentThanZero();
+</code></pre></div></li>
+</ul>
+<h3 id="17-updaterollupconfighash">1.7. updateRollupConfigHash</h3>
+<p>Function to update the rollup config hash.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param _rollupConfigHash The new rollup config hash
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>@param oldRollupConfigHash The old rollup config hash.
+@param newRollupConfigHash The new rollup config hash.
+
+event RollupConfigHashUpdated(
+    bytes32 indexed oldRollupConfigHash,
+    bytes32 indexed newRollupConfigHash
+) 
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>Thrown when rollup config hash is 0
+<div class="highlight"><pre><span></span><code>error RollupConfigHashMustBeDifferentThanZero();
+</code></pre></div></li>
+</ul>
+<h3 id="18-enableoptimisticmodedisableoptimisticmode">1.8. enableOptimisticMode/disableOptimisticMode</h3>
+<p>Functions to enable or disable optimistic mode.</p>
+<ul>
+<li>
+<p><code>enableOptimisticMode</code>:</p>
+<ul>
+<li>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event EnableOptimisticMode(); 
+</code></pre></div></p>
+</li>
+<li>
+<p>Error:</p>
+<p>If optimistic mode is enabled
+<div class="highlight"><pre><span></span><code>error OptimisticModeEnabled();
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>disableOptimisticMode</code>:</p>
+<ul>
+<li>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event DisableOptimisticMode();
+</code></pre></div></p>
+</li>
+<li>
+<p>Error:</p>
+<p>If optimistic mode is not enabled
+<div class="highlight"><pre><span></span><code>error OptimisticModeNotEnabled();
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="19-transferaggchainmanagerroleacceptaggchainmanagerrole">1.9. transferAggchainManagerRole/acceptAggchainManagerRole</h3>
+<p>Functions to transfer and accept aggchain manager role. </p>
+<ul>
+<li>
+<p><code>transferAggchainManagerRole</code>:</p>
+<p>Starts the aggchainManager role transfer. This is a two step process, the pending aggchainManager must accept to finalize the process.</p>
+<ul>
+<li>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param newAggchainManager Address of the new aggchainManager
+</code></pre></div></p>
+</li>
+<li>
+<p>Events:
+<div class="highlight"><pre><span></span><code>@param currentAggchainManager The current pending aggchainManager
+@param newPendingAggchainManager The new pending aggchainManager
+
+event TransferAggchainManagerRole(
+    address currentAggchainManager,
+    address newPendingAggchainManager
+)
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>acceptAggchainManagerRole</code>:</p>
+<p>Allow the current pending aggchainManager to accept the aggchainManager role.</p>
+<ul>
+<li>
+<p>Event:
+<div class="highlight"><pre><span></span><code>@param oldAggchainManager The old aggchainManager
+@param newAggchainManager The new aggchainManager
+event AcceptAggchainManagerRole(
+    address oldAggchainManager,
+    address newAggchainManager
+)
+</code></pre></div></p>
+</li>
+<li>
+<p>Error:</p>
+<p>Thrown when the caller is not the pending aggchain manager
+<div class="highlight"><pre><span></span><code>error OnlyPendingAggchainManager();
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole">1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole</h3>
+<p>Functions to transfer and accept optimistic mode manager role. </p>
+<ul>
+<li>
+<p><code>transferOptimisticModeManagerRole</code>:</p>
+<p>Starts the optimisticModeManager role transfer. This is a two step process, the pending optimisticModeManager must accepted to finalize the process.</p>
+<ul>
+<li>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param newOptimisticModeManager Address of the new optimisticModeManager
+</code></pre></div></p>
+</li>
+<li>
+<p>Events:
+<div class="highlight"><pre><span></span><code>@param currentAggchainManager The current pending aggchainManager
+@param newPendingAggchainManager The new pending aggchainManager
+
+event TransferAggchainManagerRole(
+    address currentAggchainManager,
+    address newPendingAggchainManager
+)
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>acceptOptimisticModeManagerRole</code>:</p>
+<p>Allow the current pending optimisticModeManager to accept the optimisticModeManager role.</p>
+<ul>
+<li>
+<p>Event:
+<div class="highlight"><pre><span></span><code>@param oldOptimisticModeManager The old optimisticModeManager
+@param newOptimisticModeManager The new optimisticModeManager
+
+event AcceptOptimisticModeManagerRole(
+    address oldOptimisticModeManager,
+    address newOptimisticModeManager
+)
+</code></pre></div></p>
+</li>
+<li>
+<p>Error:</p>
+<p>Thrown when the caller is not the pending optimistic mode manager.
+<div class="highlight"><pre><span></span><code>error OnlyPendingOptimisticModeManager();
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-tooling-available">2. Tooling available</h2>
+<h3 id="21-change-optimistic-mode">2.1. Change optimistic mode</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/changeOptimisticMode">Tool</a> to change optimistic mode (<code>true/false</code>).</p>
+<h3 id="22-transfer-aggchain-manager">2.2. Transfer aggchain manager</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferAggchainManager">Tool</a> to transfer and accept aggchain manager role.</p>
+<h3 id="23-transfer-optimistic-mode-manager-role">2.3. Transfer optimistic mode manager role</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferOptimisticManager">Tool</a> to transfer and accept optimistic mode manager role.</p>
+<h3 id="24-update-rollup-config-hash">2.4. Update rollup config hash</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateRollupConfigHash">Tool</a> to update rollup config hash.</p>
+<h3 id="25-update-submission-interval">2.5. Update submission interval</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateSubmissionInterval">Tool</a> to update submission interval.</p>
+<h3 id="26-tools-to-get-aggchain-data">2.6. Tools to get aggchain data</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/toolsData">Tools</a> to:</p>
+<ul>
+<li>Get aggchainData</li>
+<li>Get initiliaze bytes aggchain v0</li>
+<li>Get initiliaze bytes aggchain v1</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

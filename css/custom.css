@@ -1,0 +1,146 @@
+.admonition.warning {
+  background-color: #fff3e5;
+  border-left: 4px solid #ff9f00;
+  padding: 10px;
+  margin: 1em 0;
+  border-radius: 3px;
+}
+
+.admonition.warning p {
+  margin: 0;
+  color: #b85c00;
+}
+
+.admonition.warning::before {
+  content: '⚠️'; /* Adds an icon */
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+
+/* General body styling */
+body {
+  line-height: 1.6; /* Adjust line height for better readability */
+  font-family: Arial, sans-serif; /* Optional: Change font */
+}
+
+/* material configuration*/
+
+.md-sidebar--primary *,
+.md-sidebar--secondary * {
+  background-color: #001410 !important;
+  box-shadow: none !important;
+}
+
+.md-nav__title {
+  color:  teal;
+}
+.md-sidebar--primary {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #001410;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.md-sidebar--secondary {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: #001410;
+  color: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.md-content {
+  margin-left: 200px;
+  margin-right: 300px;
+}
+
+@media screen and (max-width: 1219px) {
+  .md-content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .md-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+[data-md-color-scheme="default"] .md-sidebar--primary {
+  background-color: rgb(173, 235, 235);
+  color: black;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--secondary {
+  background-color: rgb(173, 235, 235);
+  color: black;
+}
+
+[data-md-color-scheme="default"] .md-sidebar--primary *,
+[data-md-color-scheme="default"] .md-sidebar--secondary * {
+  background-color: rgb(173, 235, 235) !important;
+}
+
+[data-md-color-scheme="default"] .md-nav__title {
+  color:  teal;
+}
+
+
+/* Paragraph styling */
+p {
+  margin-bottom: 1.5em; /* Space between paragraphs */
+}
+
+/* Specific styles for headings */
+[data-md-color-scheme="default"] h1, [data-md-color-scheme="default"] h2, [data-md-color-scheme="default"] h3, [data-md-color-scheme="default"] h4 {
+  color:rgb(4, 102, 79) !important;
+}
+
+h1,h2,h3,h4 {
+  margin-top: 2em; /* Add space above headings */
+  margin-bottom: 1em; /* Add space below headings */
+  color:white !important;
+  font-weight: bold !important;
+}
+
+/* Styles for alerts (e.g., warnings) */
+.alert {
+  margin-bottom: 2em; /* Space below alert boxes */
+  padding: 1em; /* Add padding for better appearance */
+  border: 1px solid #ffcc00; /* Example border for warning */
+  background-color: #fff3cd; /* Light yellow background */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* Specific for warning alerts */
+.alert.warning {
+  color: #856404; /* Text color for warning */
+}
+
+/* Extra space after alerts */
+.alert::after {
+  content: '';
+  display: block; /* Makes it a block element */
+  height: 1.5em; /* Adjust this value for vertical spacing */
+}
+
+/* Additional spacing for lists */
+ul, ol {
+  margin-bottom: 1.5em; /* Space below lists */
+}
+
+/* Line breaks in lists */
+li {
+  margin-bottom: 0.5em; /* Space between list items */
+}

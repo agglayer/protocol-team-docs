@@ -1,0 +1,2307 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../AggchainFEP/">
+      
+      
+        <link rel="next" href="../../FAQs/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>3.2.6.3. PolygonRollupManager - Protocol Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#polygonrollupmanager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Protocol Documentation" class="md-header__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protocol Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.2.6.3. PolygonRollupManager
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Protocol Documentation" class="md-nav__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Protocol Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. zkEVM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. zkEVM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zkEVM/banana-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Banana (fork.12)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../zkEVM/durian-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Durian (fork.13)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2.Tooling
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2.Tooling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tooling/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tooling/Genesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Genesis creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Aggregation layer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Aggregation layer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1. Version 0.2.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            3.1. Version 0.2.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/ChangeLog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.1. SC ChangeLog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SC-Versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.2. SC-Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1.3. Sovereign Chains
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.1.3. Sovereign Chains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.1. Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.2. SovereignBridge SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.3. SovereignGERManager SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.2.0/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.4. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2. Version 0.3.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            3.2. Version 0.3.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SC-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.1. SC Specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.2. Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.3. Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.4. Tooling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.5. Roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2.6. SC Interactions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            3.2.6. SC Interactions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AggLayerGateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.1. AggLayerGateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AggchainFEP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.2. AggchainFEP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.3. PolygonRollupManager
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.3. PolygonRollupManager
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-interactions-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Interactions &amp; Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-addnewrolluptype" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. addNewRollupType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-obsoleterolluptype" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. obsoleteRollupType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-attachaggchaintoal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. attachAggchainToAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-addexistingrollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. addExistingRollup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-updaterollupbyrollupadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. updateRollupByRollupAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-updaterollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. updateRollup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-initmigration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7. initMigration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-rollbackbatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8. rollbackBatches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-onsequencebatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9. onSequenceBatches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-verifybatchestrustedaggregator" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10. verifyBatchesTrustedAggregator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-verifypessimistictrustedaggregator" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.11. verifyPessimisticTrustedAggregator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-activateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.12. activateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-deactivateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.13. deactivateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-setbatchfee" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.14. setBatchFee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.15. Getters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tooling-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tooling available
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tooling available">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-addrolluptype" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. addRollupType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-createnewrollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. createNewRollup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-getrollupdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. getRollupData
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-updaterollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. updateRollup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.7. FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Changes-v0.3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.8. Changes v0.3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-interactions-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Interactions &amp; Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-addnewrolluptype" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. addNewRollupType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-obsoleterolluptype" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. obsoleteRollupType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-attachaggchaintoal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. attachAggchainToAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-addexistingrollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. addExistingRollup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-updaterollupbyrollupadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. updateRollupByRollupAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-updaterollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. updateRollup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-initmigration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7. initMigration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-rollbackbatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8. rollbackBatches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-onsequencebatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9. onSequenceBatches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-verifybatchestrustedaggregator" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10. verifyBatchesTrustedAggregator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-verifypessimistictrustedaggregator" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.11. verifyPessimisticTrustedAggregator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-activateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.12. activateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-deactivateemergencystate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.13. deactivateEmergencyState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-setbatchfee" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.14. setBatchFee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.15. Getters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tooling-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tooling available
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tooling available">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-addrolluptype" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. addRollupType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-createnewrollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. createNewRollup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-getrollupdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. getRollupData
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-updaterollup" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. updateRollup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="polygonrollupmanager">PolygonRollupManager</h1>
+<div class="toc">
+<ul>
+<li><a href="#polygonrollupmanager">PolygonRollupManager</a><ul>
+<li><a href="#1-interactions-usage">1. Interactions &amp; Usage</a><ul>
+<li><a href="#11-addnewrolluptype">1.1. addNewRollupType</a></li>
+<li><a href="#12-obsoleterolluptype">1.2. obsoleteRollupType</a></li>
+<li><a href="#13-attachaggchaintoal">1.3. attachAggchainToAL</a></li>
+<li><a href="#14-addexistingrollup">1.4. addExistingRollup</a></li>
+<li><a href="#15-updaterollupbyrollupadmin">1.5. updateRollupByRollupAdmin</a></li>
+<li><a href="#16-updaterollup">1.6. updateRollup</a></li>
+<li><a href="#17-initmigration">1.7. initMigration</a></li>
+<li><a href="#18-rollbackbatches">1.8. rollbackBatches</a></li>
+<li><a href="#19-onsequencebatches">1.9. onSequenceBatches</a></li>
+<li><a href="#110-verifybatchestrustedaggregator">1.10. verifyBatchesTrustedAggregator</a></li>
+<li><a href="#111-verifypessimistictrustedaggregator">1.11. verifyPessimisticTrustedAggregator</a></li>
+<li><a href="#112-activateemergencystate">1.12. activateEmergencyState</a></li>
+<li><a href="#113-deactivateemergencystate">1.13. deactivateEmergencyState</a></li>
+<li><a href="#114-setbatchfee">1.14. setBatchFee</a></li>
+<li><a href="#115-getters">1.15. Getters</a></li>
+</ul>
+</li>
+<li><a href="#2-tooling-available">2. Tooling available</a><ul>
+<li><a href="#21-addrolluptype">2.1. addRollupType</a></li>
+<li><a href="#22-createnewrollup">2.2. createNewRollup</a></li>
+<li><a href="#23-getrollupdata">2.3. getRollupData</a></li>
+<li><a href="#24-updaterollup">2.4. updateRollup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Contract responsible for managing rollups and the verification of their batches.
+This contract will create and update rollups and store all the hashed sequenced data from them.
+The logic for sequence batches is moved to the <code>consensus</code> contracts, while the verification of all of them will be done in this one. In this way, the proof aggregation of the rollups will be easier on a close future.</p>
+<h2 id="1-interactions-usage">1. Interactions &amp; Usage</h2>
+<h3 id="11-addnewrolluptype">1.1. addNewRollupType</h3>
+<p>Function to add a new rollup type.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param consensusImplementation Consensus implementation
+@param verifier Verifier address
+@param forkID ForkID of the verifier
+@param rollupVerifierType rollup verifier type
+@param genesis Genesis block of the rollup
+@param description Description of the rollup type
+@param programVKey Hashed program that will be executed in case of using a &quot;general purpose ZK verifier&quot; e.g SP1
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event AddNewRollupType(
+    uint32 indexed rollupTypeID,
+    address consensusImplementation,
+    address verifier,
+    uint64 forkID,
+    VerifierType rollupVerifierType,
+    bytes32 genesis,
+    string description,
+    bytes32 programVKey
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>Invalid Rollup type parameters:
+<div class="highlight"><pre><span></span><code>error InvalidRollupType();
+</code></pre></div></li>
+</ul>
+<h3 id="12-obsoleterolluptype">1.2. obsoleteRollupType</h3>
+<p>Function to obsolete Rollup type.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupTypeID Rollup type to obsolete
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event ObsoleteRollupType(uint32 indexed rollupTypeID);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>When a rollup type does not exist:
+<div class="highlight"><pre><span></span><code>error RollupTypeDoesNotExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When a rollup type is obsoleted:
+<div class="highlight"><pre><span></span><code>error RollupTypeObsolete();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="13-attachaggchaintoal">1.3. attachAggchainToAL</h3>
+<p>Function to create a new rollup.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupTypeID Rollup type to deploy
+@param chainID ChainID of the rollup, must be a new one, can not have more than 32 bits
+@param initializeBytesAggchain Encoded params to initialize the chain. Each aggchain has its encoded params.
+@dev in case of rollupType state transition or pessimistic, the encoded params are the following: (address admin, address sequencer, address gasTokenAddress, string sequencerURL, string networkName)
+</code></pre></div></p>
+<p>Events:</p>
+<ul>
+<li>
+<p>Emitted when a new rollup is created based on a rollupType
+<div class="highlight"><pre><span></span><code>event CreateNewAggchain(
+    uint32 indexed rollupID,
+    uint32 rollupTypeID,
+    address rollupAddress,
+    uint64 chainID,
+    uint8 rollupVerifierType,
+    bytes initializeBytesAggchain
+)
+</code></pre></div></p>
+</li>
+<li>
+<p>Emitted when a new rollup is created based on a rollupType
+<div class="highlight"><pre><span></span><code>event CreateNewRollup(
+    uint32 indexed rollupID,
+    uint32 rollupTypeID,
+    address rollupAddress,
+    uint64 chainID,
+    address gasTokenAddress
+)
+</code></pre></div></p>
+</li>
+</ul>
+<p>Errors:</p>
+<ul>
+<li>
+<p>When a rollup type does not exist:
+<div class="highlight"><pre><span></span><code>error RollupTypeDoesNotExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When a rollup type is obsoleted:
+<div class="highlight"><pre><span></span><code>error RollupTypeObsolete();
+</code></pre></div></p>
+</li>
+<li>
+<p>When try to create a new rollup and set a chainID bigger than 32 bits:
+<div class="highlight"><pre><span></span><code>error ChainIDOutOfRange();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the caller is not the pending admin:
+<div class="highlight"><pre><span></span><code>error ChainIDAlreadyExist();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="14-addexistingrollup">1.4. addExistingRollup</h3>
+<p>Function to add an already deployed rollup-</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupAddress Rollup address
+@param verifier Verifier address, must be added before
+@param forkID Fork id of the added rollup
+@param chainID Chain id of the added rollup
+@param initRoot Genesis block for StateTransitionChains &amp; localExitRoot for pessimistic chain
+@param rollupVerifierType Compatibility ID for the added rollup
+@param programVKey Hashed program that will be executed in case of using a &quot;general purpose ZK verifier&quot; e.g SP1
+@param initPessimisticRoot Pessimistic root to init the chain.
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event AddExistingRollup(
+    uint32 indexed rollupID,
+    uint64 forkID,
+    address rollupAddress,
+    uint64 chainID,
+    VerifierType rollupVerifierType,
+    uint64 lastVerifiedBatchBeforeUpgrade,
+    bytes32 programVKey,
+    bytes32 initPessimisticRoot
+)
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>Thrown when chainID already exist:
+<div class="highlight"><pre><span></span><code>error ChainIDAlreadyExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When try to create a new rollup and set a chainID bigger than 32 bits:
+<div class="highlight"><pre><span></span><code>error ChainIDOutOfRange();
+</code></pre></div></p>
+</li>
+<li>
+<p>When adding an existing rollup where the rollup address already was added
+<div class="highlight"><pre><span></span><code>error RollupAddressAlreadyExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when trying to create a rollup but the input parameters are not  according with the chosen rollupType
+<div class="highlight"><pre><span></span><code>error InvalidInputsForRollupType();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="15-updaterollupbyrollupadmin">1.5. updateRollupByRollupAdmin</h3>
+<p>Function to Upgrade an existing rollup from the rollup admin address.
+This address is able to update the rollup with more restrictions that the _UPDATE_ROLLUP_ROLE.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupContract Rollup consensus proxy address
+@param newRollupTypeID New rollupTypeID to upgrade to
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event UpdateRollup(
+    uint32 indexed rollupID,
+    uint32 newRollupTypeID,
+    uint64 lastVerifiedBatchBeforeUpgrade
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>When try to upgrade a rollup a sender that's not the admin of the rollup
+<div class="highlight"><pre><span></span><code>error OnlyRollupAdmin();
+</code></pre></div></p>
+</li>
+<li>
+<p>When try to update a rollup with sequences pending to verify
+<div class="highlight"><pre><span></span><code>error AllSequencedMustBeVerified();
+</code></pre></div></p>
+</li>
+<li>
+<p>Update to old rollup ID:
+<div class="highlight"><pre><span></span><code>error UpdateToOldRollupTypeID();
+</code></pre></div></p>
+</li>
+<li>
+<p>When update to not compatible rollup type:
+<div class="highlight"><pre><span></span><code>error UpdateNotCompatible();
+</code></pre></div></p>
+</li>
+<li>
+<p>When a rollup type does not exist:
+<div class="highlight"><pre><span></span><code>error RollupTypeDoesNotExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When rollup does not exist:
+<div class="highlight"><pre><span></span><code>error RollupMustExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When old rollupTypeID is newRollupTypeID
+<div class="highlight"><pre><span></span><code>error UpdateToSameRollupTypeID();
+</code></pre></div></p>
+</li>
+<li>
+<p>When a rollup type is obsoleted:
+<div class="highlight"><pre><span></span><code>error RollupTypeObsolete();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="16-updaterollup">1.6. updateRollup</h3>
+<p>Function to upgrade an existing rollup.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupContract Rollup consensus proxy address
+@param newRollupTypeID New rollupTypeID to upgrade to
+@param upgradeData Upgrade data
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event UpdateRollup(
+    uint32 indexed rollupID,
+    uint32 newRollupTypeID,
+    uint64 lastVerifiedBatchBeforeUpgrade
+);
+</code></pre></div></p>
+<p>Errors:
+- When a rollup type does not exist:
+<div class="highlight"><pre><span></span><code>error RollupTypeDoesNotExist();
+</code></pre></div></p>
+<ul>
+<li>
+<p>When rollup does not exist:
+<div class="highlight"><pre><span></span><code>error RollupMustExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When old rollupTypeID is newRollupTypeID
+<div class="highlight"><pre><span></span><code>error UpdateToSameRollupTypeID();
+</code></pre></div></p>
+</li>
+<li>
+<p>When a rollup type is obsoleted:
+<div class="highlight"><pre><span></span><code>error RollupTypeObsolete();
+</code></pre></div></p>
+</li>
+<li>
+<p>When update to not compatible rollup type
+<div class="highlight"><pre><span></span><code>error UpdateNotCompatible();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="17-initmigration">1.7. initMigration</h3>
+<p>Function to init migration to PP or ALGateway.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupID Rollup ID that is being migrated
+@param newRollupTypeID New rollup type ID that the rollup will be migrated to
+@param upgradeData Upgrade data
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event InitMigration(
+    uint32 indexed rollupID,
+    uint32 newRollupTypeID
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>Only for StateTransition chains:
+<div class="highlight"><pre><span></span><code>error OnlyStateTransitionChains();
+</code></pre></div></p>
+</li>
+<li>
+<p>No pending batches to verify allowed before migration:
+<div class="highlight"><pre><span></span><code>error AllSequencedMustBeVerified();
+</code></pre></div></p>
+</li>
+<li>
+<p>NewRollupType must be pessimistic or ALGateway:
+<div class="highlight"><pre><span></span><code>error NewRollupTypeMustBePessimisticOrALGateway();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="18-rollbackbatches">1.8. rollbackBatches</h3>
+<p>Function to batches of the target rollup (Only applies to state transition rollups).</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupContract Rollup consensus proxy address
+@param targetBatch Batch to rollback up to but not including this batch
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event RollbackBatches(
+    uint32 indexed rollupID,
+    uint64 indexed targetBatch,
+    bytes32 accInputHashToRollback
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p><code>rollbackBatches</code> is called from a non authorized address:
+<div class="highlight"><pre><span></span><code>error NotAllowedAddress();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when rollup does not exist:
+<div class="highlight"><pre><span></span><code>error RollupMustExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When rollup isn't state transition type:
+<div class="highlight"><pre><span></span><code>error OnlyStateTransitionChains();
+</code></pre></div></p>
+</li>
+<li>
+<p>Rollback batch is not sequenced:
+<div class="highlight"><pre><span></span><code>error RollbackBatchIsNotValid();
+</code></pre></div></p>
+</li>
+<li>
+<p>Rollback batch is not the end of any sequence
+<div class="highlight"><pre><span></span><code>error RollbackBatchIsNotEndOfSequence();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="19-onsequencebatches">1.9. onSequenceBatches</h3>
+<p>Function to sequence batches, callback called by one of the consensus managed by this contract.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param newSequencedBatches Number of batches sequenced
+@param newAccInputHash New accumulate input hash
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event OnSequenceBatches(
+    uint32 indexed rollupID,
+    uint64 lastBatchSequenced
+);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>Thrown when sender isn't a rollup
+<div class="highlight"><pre><span></span><code>error SenderMustBeRollup();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when <code>newSequencedBatches</code> = 0
+<div class="highlight"><pre><span></span><code>error MustSequenceSomeBatch();
+</code></pre></div></p>
+</li>
+<li>
+<p>When rollup isn't state transition type:
+<div class="highlight"><pre><span></span><code>error OnlyStateTransitionChains();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="110-verifybatchestrustedaggregator">1.10. verifyBatchesTrustedAggregator</h3>
+<p>Allows a trusted aggregator to verify multiple batches-</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupID Rollup identifier
+@param pendingStateNum Init pending state, 0 if consolidated state is used (deprecated)
+@param initNumBatch Batch which the aggregator starts the verification
+@param finalNewBatch Last batch aggregator intends to verify
+@param newLocalExitRoot New local exit root once the batch is processed
+@param newStateRoot New State root once the batch is processed
+@param beneficiary Address that will receive the verification reward
+@param proof Fflonk proof
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>event VerifyBatchesTrustedAggregator(
+    uint32 indexed rollupID,
+    uint64 numBatch,
+    bytes32 stateRoot,
+    bytes32 exitRoot,
+    address indexed aggregator
+)
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>Pending state num exist:
+<div class="highlight"><pre><span></span><code>error PendingStateNumExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>When rollup isn't state transition type:
+<div class="highlight"><pre><span></span><code>error OnlyStateTransitionChains();
+</code></pre></div></p>
+</li>
+<li>
+<p>When initNumBatch is lower than last verified batch before upgrade:
+<div class="highlight"><pre><span></span><code>error InitBatchMustMatchCurrentForkID();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the old state root of a certain batch does not exist:
+<div class="highlight"><pre><span></span><code>error OldStateRootDoesNotExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the init verification batch is above the last verification batch:
+<div class="highlight"><pre><span></span><code>error InitNumBatchAboveLastVerifiedBatch();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the final verification batch is below or equal the last verification batch:
+<div class="highlight"><pre><span></span><code>error FinalNumBatchBelowLastVerifiedBatch();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the old accumulate input hash does not exist:
+<div class="highlight"><pre><span></span><code>error OldAccInputHashDoesNotExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the new accumulate input hash does not exist:
+<div class="highlight"><pre><span></span><code>error NewAccInputHashDoesNotExist();
+</code></pre></div></p>
+</li>
+<li>
+<p>Thrown when the new state root is not inside prime:
+<div class="highlight"><pre><span></span><code>error NewStateRootNotInsidePrime();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="111-verifypessimistictrustedaggregator">1.11. verifyPessimisticTrustedAggregator</h3>
+<p>Allows a trusted aggregator to verify pessimistic proof.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param rollupID Rollup identifier
+@param l1InfoTreeLeafCount Count of the L1InfoTree leaf that will be used to verify imported bridge exits
+@param newLocalExitRoot New local exit root
+@param newPessimisticRoot New pessimistic information, Hash(localBalanceTreeRoot, nullifierTreeRoot)
+@param proof SP1 proof (Plonk)
+@param aggchainData Specific custom data to verify Aggregation layer chains
+</code></pre></div></p>
+<p>Events:</p>
+<div class="highlight"><pre><span></span><code>event VerifyBatchesTrustedAggregator(
+    uint32 indexed rollupID,
+    uint64 numBatch,
+    bytes32 stateRoot,
+    bytes32 exitRoot,
+    address indexed aggregator
+);
+
+event VerifyPessimisticStateTransition(
+    uint32 indexed rollupID,
+    bytes32 prevPessimisticRoot,
+    bytes32 newPessimisticRoot,
+    bytes32 prevLocalExitRoot,
+    bytes32 newLocalExitRoot,
+    bytes32 l1InfoRoot,
+    address indexed trustedAggregator
+);
+</code></pre></div>
+<ul>
+<li>If it's a migration:
+<div class="highlight"><pre><span></span><code>event CompletedMigration(uint32 indexed rollupID);
+</code></pre></div></li>
+</ul>
+<p>Errors:</p>
+<ul>
+<li>
+<p>Thrown when a function is executed for a State transition chains when it is not allowed:
+<div class="highlight"><pre><span></span><code>error StateTransitionChainsNotAllowed();
+</code></pre></div></p>
+</li>
+<li>
+<p>Custom chain data must be zero for pessimistic verifier type:
+<div class="highlight"><pre><span></span><code>error AggchainDataMustBeZeroForPessimisticVerifierType();
+</code></pre></div></p>
+</li>
+<li>
+<p>Not valid L1 info tree leaf count:
+<div class="highlight"><pre><span></span><code>error L1InfoTreeLeafCountInvalid();
+</code></pre></div></p>
+</li>
+<li>
+<p>If it's a migration, it's a hard requirement that the newLocalExitRoot matches the current lastLocalExitRoot meaning that the certificates covers all the bridges:
+<div class="highlight"><pre><span></span><code>error InvalidNewLocalExitRoot();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="112-activateemergencystate">1.12. activateEmergencyState</h3>
+<p>Function to activate emergency state, which also enables the emergency mode on both PolygonRollupManager and PolygonZkEVMBridge contracts.</p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>emit EmergencyStateActivated();
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>
+<p>Thrown when the halt timeout is not expired when attempting to activate the emergency state:
+<div class="highlight"><pre><span></span><code>error HaltTimeoutNotExpired();
+</code></pre></div></p>
+</li>
+<li>
+<p>Only allows a function to be callable if emergency state is unactive:
+<div class="highlight"><pre><span></span><code>error OnlyNotEmergencyState();
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="113-deactivateemergencystate">1.13. deactivateEmergencyState</h3>
+<p>Function to deactivate emergency state on both PolygonRollupManager and PolygonZkEVMBridge contracts.</p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>emit EmergencyStateDeactivated();
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>Only allows a function to be callable if emergency state is active:
+<div class="highlight"><pre><span></span><code>error OnlyEmergencyState();
+</code></pre></div></li>
+</ul>
+<h3 id="114-setbatchfee">1.14. setBatchFee</h3>
+<p>Function to set the current batch fee.</p>
+<p>Parameters:
+<div class="highlight"><pre><span></span><code>@param newBatchFee new batch fee
+</code></pre></div></p>
+<p>Events:
+<div class="highlight"><pre><span></span><code>emit SetBatchFee(newBatchFee);
+</code></pre></div></p>
+<p>Errors:</p>
+<ul>
+<li>When batch fee isn't within the limits:
+<div class="highlight"><pre><span></span><code>error BatchFeeOutOfRange();
+</code></pre></div></li>
+</ul>
+<h3 id="115-getters">1.15. Getters</h3>
+<ul>
+<li>getRollupExitRoot</li>
+<li>getLastVerifiedBatch</li>
+<li>calculateRewardPerBatch</li>
+<li>getBatchFee</li>
+<li>getForcedBatchFee</li>
+<li>getInputPessimisticBytes</li>
+<li>getInputSnarkBytes</li>
+<li>getRollupBatchNumToStateRoot</li>
+<li>getRollupSequencedBatches</li>
+<li>rollupIDToRollupData</li>
+<li>rollupIDToRollupDataDeserialized</li>
+<li>rollupIDToRollupDataV2</li>
+<li>rollupIDToRollupDataV2Deserialized</li>
+</ul>
+<h2 id="2-tooling-available">2. Tooling available</h2>
+<h3 id="21-addrolluptype">2.1. addRollupType</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType">Tool</a> to add new rollup type.</p>
+<h3 id="22-createnewrollup">2.2. createNewRollup</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/createNewRollup">Tool</a> to create new rollup.</p>
+<h3 id="23-getrollupdata">2.3. getRollupData</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/getRollupData">Tool</a> to get rollup data.</p>
+<h3 id="24-updaterollup">2.4. updateRollup</h3>
+<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/updateRollup">Tool</a> to update rollup.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3391 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../v0.2.0/Resources/">
+      
+      
+        <link rel="next" href="../Diagrams/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>3.2.1. SC Specifications - Protocol Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sc-specifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Protocol Documentation" class="md-header__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Protocol Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.2.1. SC Specifications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Protocol Documentation" class="md-nav__button md-logo" aria-label="Protocol Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Protocol Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Agglayer/protocol-team-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. zkEVM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. zkEVM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../zkEVM/banana-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1. Banana (fork.12)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../zkEVM/durian-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2. Durian (fork.13)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2.Tooling
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2.Tooling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tooling/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tooling/Genesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Genesis creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Aggregation layer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Aggregation layer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1. Version 0.2.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            3.1. Version 0.2.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/ChangeLog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.1. SC ChangeLog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/SC-Versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.2. SC-Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.1.3. Sovereign Chains
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.1.3. Sovereign Chains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.1. Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.2. SovereignBridge SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.3.3. SovereignGERManager SC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1.4. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2. Version 0.3.0
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            3.2. Version 0.3.0
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3.2.1. SC Specifications
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.1. SC Specifications
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Glossary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. ChangeLog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. Breaking changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-table-agglayer-chains-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. Table agglayer chains supported
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. Table agglayer chains supported">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-paths-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migration paths supported
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agglayer-gateway-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. AggLayer Gateway Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AggLayer Gateway Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-pessimistic-proof-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Pessimistic proof routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-defaut-aggchain-verification-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Defaut aggchain verification key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-agglayergateway-access-control-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. AggLayerGateway Access control (roles)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. AggLayerGateway Access control (roles)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_admin_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEFAULT_ADMIN_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_add_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      AL_ADD_PP_ROUTE_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_freeze_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      AL_FREEZE_PP_ROUTE_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggchain_default_vkey_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      AGGCHAIN_DEFAULT_VKEY_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-generic-aggchains-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Generic aggchains specification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Generic aggchains specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aggchain-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Aggchain interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-aggchain-base-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Aggchain Base implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Aggchain Base implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-flag-default-vkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Flag default vKey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-managing-aggchain-verification-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Managing aggchain verification keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Roles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vkeymanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      vKeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      admin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-aggchain-types-provided" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. AggChain Types provided
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. AggChain Types provided">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ecdsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. ECDSA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. ECDSA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 Roles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1.1 Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vkeymanager_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      vKeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      admin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trustedsequencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      trustedSequencer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-test-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 Test-vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-fep" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. FEP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. FEP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 Roles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2.1 Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vkeymanager_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      vKeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      admin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trustedsequencer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      trustedSequencer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggchainmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggchainManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimisticmodemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      optimisticModeManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522-test-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.2 Test-vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rollup-manager-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Rollup Manager Specification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Rollup Manager Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Versioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-agglayergateway-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. AggLayerGateway contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-new-verifiertype" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. New VerifierType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-create-new-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4. Create new chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-verify-pessimitic-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5. Verify pessimitic proof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-pretty-rollupdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.6. Pretty rollupData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-roles-sovereignchains-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Roles sovereignChains contracts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Roles sovereignChains contracts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-bridgel2sovereignchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. BridgeL2SovereignChain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. BridgeL2SovereignChain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridgemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      bridgeManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-bridgel2sovereignchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. BridgeL2SovereignChain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. BridgeL2SovereignChain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootupdater" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalExitRootUpdater
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootupdater_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalExitRootUpdater
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.2. Diagrams
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.3. Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.4. Tooling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.5. Roles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_6" id="__nav_4_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.2.6. SC Interactions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            3.2.6. SC Interactions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SC-interactions/AggLayerGateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.1. AggLayerGateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SC-interactions/AggchainFEP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.2. AggchainFEP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SC-interactions/PolygonRollupManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.6.3. PolygonRollupManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.7. FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes-v0.3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2.8. Changes v0.3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Glossary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. ChangeLog
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. Breaking changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-table-agglayer-chains-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6. Table agglayer chains supported
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. Table agglayer chains supported">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-paths-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migration paths supported
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agglayer-gateway-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. AggLayer Gateway Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AggLayer Gateway Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-pessimistic-proof-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Pessimistic proof routes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-defaut-aggchain-verification-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Defaut aggchain verification key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-agglayergateway-access-control-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. AggLayerGateway Access control (roles)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. AggLayerGateway Access control (roles)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_admin_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEFAULT_ADMIN_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_add_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      AL_ADD_PP_ROUTE_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_freeze_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      AL_FREEZE_PP_ROUTE_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggchain_default_vkey_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      AGGCHAIN_DEFAULT_VKEY_ROLE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-generic-aggchains-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Generic aggchains specification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Generic aggchains specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aggchain-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Aggchain interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-aggchain-base-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Aggchain Base implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Aggchain Base implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-flag-default-vkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Flag default vKey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-managing-aggchain-verification-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Managing aggchain verification keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Roles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vkeymanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      vKeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      admin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-aggchain-types-provided" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. AggChain Types provided
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. AggChain Types provided">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ecdsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. ECDSA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. ECDSA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 Roles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1.1 Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vkeymanager_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      vKeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      admin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trustedsequencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      trustedSequencer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512-test-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 Test-vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-fep" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. FEP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. FEP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.1 Roles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2.1 Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vkeymanager_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      vKeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      admin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trustedsequencer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      trustedSequencer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggchainmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggchainManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimisticmodemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      optimisticModeManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522-test-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.2 Test-vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rollup-manager-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Rollup Manager Specification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Rollup Manager Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1. Versioning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-agglayergateway-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2. AggLayerGateway contract
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-new-verifiertype" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3. New VerifierType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-create-new-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4. Create new chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-verify-pessimitic-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5. Verify pessimitic proof
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-pretty-rollupdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.6. Pretty rollupData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-roles-sovereignchains-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Roles sovereignChains contracts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Roles sovereignChains contracts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-bridgel2sovereignchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1. BridgeL2SovereignChain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. BridgeL2SovereignChain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridgemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      bridgeManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-bridgel2sovereignchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2. BridgeL2SovereignChain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. BridgeL2SovereignChain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootupdater" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalExitRootUpdater
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootupdater_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      globalExitRootUpdater
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sc-specifications">SC Specifications</h1>
+<div class="toc">
+<ul>
+<li><a href="#sc-specifications">SC Specifications</a><ul>
+<li><a href="#1-overview">1. Overview</a><ul>
+<li><a href="#11-glossary">1.1. Glossary</a></li>
+<li><a href="#12-resources">1.2. Resources</a></li>
+<li><a href="#13-requirements">1.3. Requirements</a></li>
+<li><a href="#14-changelog">1.4. ChangeLog</a></li>
+<li><a href="#15-breaking-changes">1.5. Breaking changes</a></li>
+<li><a href="#16-table-agglayer-chains-supported">1.6. Table agglayer chains supported</a><ul>
+<li><a href="#migration-paths-supported">Migration paths supported</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2-agglayer-gateway-specifications">2. AggLayer Gateway Specifications</a><ul>
+<li><a href="#21-description">2.1. Description</a></li>
+<li><a href="#22-pessimistic-proof-routes">2.2. Pessimistic proof routes</a></li>
+<li><a href="#23-defaut-aggchain-verification-key">2.3. Defaut aggchain verification key</a></li>
+<li><a href="#24-agglayergateway-access-control-roles">2.4. AggLayerGateway Access control (roles)</a><ul>
+<li><a href="#default_admin_role">DEFAULT_ADMIN_ROLE</a></li>
+<li><a href="#al_add_pp_route_role">AL_ADD_PP_ROUTE_ROLE</a></li>
+<li><a href="#al_freeze_pp_route_role">AL_FREEZE_PP_ROUTE_ROLE</a></li>
+<li><a href="#aggchain_default_vkey_role">AGGCHAIN_DEFAULT_VKEY_ROLE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-generic-aggchains-specification">3. Generic aggchains specification</a><ul>
+<li><a href="#31-description">3.1. Description</a></li>
+<li><a href="#32-aggchain-interface">3.2. Aggchain interface</a></li>
+</ul>
+</li>
+<li><a href="#4-aggchain-base-implementation">4. Aggchain Base implementation</a><ul>
+<li><a href="#41-flag-default-vkey">4.1. Flag default vKey</a></li>
+<li><a href="#42-managing-aggchain-verification-keys">4.2. Managing aggchain verification keys</a></li>
+<li><a href="#43-roles">4.3. Roles</a><ul>
+<li><a href="#vkeymanager">vKeyManager</a></li>
+<li><a href="#admin">admin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5-aggchain-types-provided">5. AggChain Types provided</a><ul>
+<li><a href="#51-ecdsa">5.1. ECDSA</a><ul>
+<li><a href="#511-roles">5.1.1 Roles</a><ul>
+<li><a href="#vkeymanager_1">vKeyManager</a></li>
+<li><a href="#admin_1">admin</a></li>
+<li><a href="#trustedsequencer">trustedSequencer</a></li>
+</ul>
+</li>
+<li><a href="#512-test-vectors">5.1.2 Test-vectors</a></li>
+</ul>
+</li>
+<li><a href="#52-fep">5.2. FEP</a><ul>
+<li><a href="#521-roles">5.2.1 Roles</a><ul>
+<li><a href="#vkeymanager_2">vKeyManager</a></li>
+<li><a href="#admin_2">admin</a></li>
+<li><a href="#trustedsequencer_1">trustedSequencer</a></li>
+<li><a href="#aggchainmanager">aggchainManager</a></li>
+<li><a href="#optimisticmodemanager">optimisticModeManager</a></li>
+</ul>
+</li>
+<li><a href="#522-test-vectors">5.2.2 Test-vectors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#6-rollup-manager-specification">6. Rollup Manager Specification</a><ul>
+<li><a href="#61-versioning">6.1. Versioning</a></li>
+<li><a href="#62-agglayergateway-contract">6.2. AggLayerGateway contract</a></li>
+<li><a href="#63-new-verifiertype">6.3. New VerifierType</a></li>
+<li><a href="#64-create-new-chain">6.4. Create new chain</a></li>
+<li><a href="#65-verify-pessimitic-proof">6.5. Verify pessimitic proof</a></li>
+<li><a href="#66-pretty-rollupdata">6.6. Pretty rollupData</a></li>
+</ul>
+</li>
+<li><a href="#7-roles-sovereignchains-contracts">7. Roles sovereignChains contracts</a><ul>
+<li><a href="#71-bridgel2sovereignchain">7.1. BridgeL2SovereignChain</a><ul>
+<li><a href="#bridgemanager">bridgeManager</a></li>
+</ul>
+</li>
+<li><a href="#72-bridgel2sovereignchain">7.2. BridgeL2SovereignChain</a><ul>
+<li><a href="#globalexitrootupdater">globalExitRootUpdater</a></li>
+<li><a href="#globalexitrootupdater_1">globalExitRootUpdater</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#smart-contracts-version-updates">Smart contracts version updates</a><ul>
+<li><a href="#open-zeppelin">Open zeppelin</a><ul>
+<li><a href="#updated-openzeppelincontracts500-to-openzeppelincontracts520">Updated openzeppelin/contracts@5.0.0 to openzeppelin/contracts@5.2.0</a></li>
+<li><a href="#update-pragma-version-0820-to-0828">Update pragma version 0.8.20 to 0.8.28</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="1-overview">1. Overview</h2>
+<p><a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md">AggLayer v0.3.0</a> adds the support for any chain to specify its own requirements. It is up to chain to specify what it does as long as it follows a generic interface provided by the agglayer.
+Therefore, the agglayer becomes agnostic to the chain requirements (EVM, non-EVM, DA source, consensus, ...). That means that any chain can be connected to the aggLayer regardless its execution and consensus layer.
+Smart contracts will be adapted to support generic chains that will be attached to the aggLayer.
+A generic interface will be provided so any chain can do its own logic that could be attached to the aggLayer.</p>
+<p>In this first phase, aggLayer will provide two default chain types to be selected: ECDSA signature &amp; FEP (full execution proof).
+Smart contract will let choose between one of those.
+Long term goal is to fully open chain registration as lomng as the chain fulfills folows a generic interface.</p>
+<h3 id="11-glossary">1.1. Glossary</h3>
+<ul>
+<li><code>aggchain</code>: chain connected to the agglayer<ul>
+<li>all definition related to aggchains can be found on <a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#generic-aggchains">this specification</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="12-resources">1.2. Resources</h3>
+<ul>
+<li><a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#handling-generic-aggchains0e4e2ec8eab179621f62ff54c7baa36081cbdbb9b768b0336db1e3dda21e6a5aR3">Specification Pessimistic circuit v0.3.0</a></li>
+<li><a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#ecdsa">Specification aggchain ECDSA</a></li>
+<li><a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#fep">Specification aggchain FEP</a></li>
+<li><a href="https://hackmd.io/L7iY0M5bR_C4YWRqlCjsVg">Implementation decisions and iterations on the SC specifications</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/ongoing-v0.3.0">SC implementations</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/ongoing-v0.3.0/test/test-vectors">Test-vectors</a></li>
+</ul>
+<h3 id="13-requirements">1.3. Requirements</h3>
+<ul>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.5-pp/contracts/v2/PolygonRollupManager.sol">PolygonRollupManager</a> to support generic chains</li>
+<li>Pessimistic program will only have one version running</li>
+<li>Pessimistic program updates to be released on all chains at the same time</li>
+<li>Pessimistic program updates managed by aggLayer</li>
+<li>Each chain to freely choose its program management. Two options are given:<ul>
+<li><code>default</code>: management provided by the aggLayer</li>
+<li><code>custom</code>: own management</li>
+</ul>
+</li>
+<li>Generic interface to allow any chain to specify its own logic</li>
+</ul>
+<h3 id="14-changelog">1.4. ChangeLog</h3>
+<p>https://github.com/agglayer/agglayer-contracts/compare/v9.0.0...v10.0.0-rc.8</p>
+<h3 id="15-breaking-changes">1.5. Breaking changes</h3>
+<ul>
+<li>Function to create new rollups has been renamed to <a href="#64-create-new-chain">attachChainToAL</a><ul>
+<li>old chains (zkEVM/Validiums/pp-v0.2.0) will need to <a href="https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L577-L578">encode its initialize data</a>. Util function available <a href="https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/src/utils-common-aggchain.js#L80">here</a></li>
+</ul>
+</li>
+<li>Event <a href="https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L350">addExistingRollup</a> signature has been changed since a new parameter <code>initPessimisticRoot</code> ha sbeen added</li>
+<li><a href="#66-pretty-rollupdata">New functions</a> to properly see therscan rollup data has been added</li>
+<li>Function <a href="#65-verify-pessimitic-proof">verifyPessimisticProof</a> signature has been changed. Added <code>customChainData</code> for aggchains v0.3.0</li>
+</ul>
+<h3 id="16-table-agglayer-chains-supported">1.6. Table agglayer chains supported</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Chain</th>
+<th style="text-align: center;">verifierType</th>
+<th style="text-align: center;">SC consensus</th>
+<th style="text-align: center;">Proofs/Prover</th>
+<th style="text-align: center;">Client</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">zkEVM</td>
+<td style="text-align: center;">StateTransition</td>
+<td style="text-align: center;">PolygonZkEVMEtrog</td>
+<td style="text-align: center;">FEP # Hermez</td>
+<td style="text-align: center;">cdk-erigon</td>
+</tr>
+<tr>
+<td style="text-align: center;">Valididum</td>
+<td style="text-align: center;">StateTransition</td>
+<td style="text-align: center;">PolygonValidiumEtrog</td>
+<td style="text-align: center;">FEP # Hermez</td>
+<td style="text-align: center;">cdk-erigon</td>
+</tr>
+<tr>
+<td style="text-align: center;">v0.2.0-ECDSA</td>
+<td style="text-align: center;">Pessimistic</td>
+<td style="text-align: center;">PolygonPessimisticConsensus</td>
+<td style="text-align: center;">PP # SP1</td>
+<td style="text-align: center;">cdk-erigon OR op-stack</td>
+</tr>
+<tr>
+<td style="text-align: center;">v0.3.0-ECDSA</td>
+<td style="text-align: center;">ALGateway</td>
+<td style="text-align: center;">AggchainECDSA</td>
+<td style="text-align: center;">PP # SP1</td>
+<td style="text-align: center;">not supported (aggkit not built)</td>
+</tr>
+<tr>
+<td style="text-align: center;">v0.3.0-FEP</td>
+<td style="text-align: center;">ALGateway</td>
+<td style="text-align: center;">AggchainFEP</td>
+<td style="text-align: center;">(PP + FEP) # SP1</td>
+<td style="text-align: center;">op-stack</td>
+</tr>
+</tbody>
+</table>
+<h4 id="migration-paths-supported">Migration paths supported</h4>
+<ul>
+<li>From <code>v0.2.0-ECDSA</code> to <code>v0.3.0-FEP</code></li>
+</ul>
+<h2 id="2-agglayer-gateway-specifications">2. AggLayer Gateway Specifications</h2>
+<h3 id="21-description">2.1. Description</h3>
+<p>This smart contract aims to route all proofs posted by the aggLayer (from chains that uses the pessimistic program).
+Since the <code>AggLayer Gateway</code> contains the pessimistic program verificaton key, all chains that uses the <code>AggLayer Gateway</code> will be upgraded to use its latest version at the same time. This effectively means that a new version on the pessimistic program will <strong>NOT</strong> require a new rollupType.</p>
+<p>It will also provide the management of:</p>
+<ul>
+<li>pessimistic proof routing (pessimistic program vKeys)</li>
+<li>default aggchain vkeys</li>
+</ul>
+<h3 id="22-pessimistic-proof-routes">2.2. Pessimistic proof routes</h3>
+<p>The pessimistic proof route is defined as follows:
+<div class="highlight"><pre><span></span><code><span class="kt">struct</span><span class="w"> </span><span class="nv">AggLayerVerifierRoute</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">verifier</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">pessimisticVKey</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">frozen</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>where:</p>
+<ul>
+<li><code>verifier</code>: SP1 verifier address</li>
+<li><code>pessimisticVKey</code>: pessimistic program verification key</li>
+<li><code>frozen</code>: a route cannot be longer used</li>
+</ul>
+<p>The aggLayer will have 4 bytes embedded in the proof to select the route.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">mapping</span><span class="p">(</span>bytes4<span class="w"> </span>pessimisticVKeySelector<span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span>AggLayerVerifierRoute<span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>pessimisticVKeyRoutes<span class="p">;</span>
+</code></pre></div>
+<p>The proof will look like:
+<div class="highlight"><pre><span></span><code>[  ppSelector  |  SP1 proof ]
+[ 4 bytes      |  X bytes   ]
+</code></pre></div></p>
+<p>where <code>SP1 proof</code> is:
+<div class="highlight"><pre><span></span><code>[           SP1 proof          ]
+[  SP1Selector  |  PLONK proof ]
+[   4 bytes     |    Y bytes   ]
+</code></pre></div></p>
+<p>This approach allows to:</p>
+<ul>
+<li>aggLayer to select which route to use via the <code>ppSelector</code></li>
+<li>have multiple version of the pessimistic program or just have one single valid route</li>
+<li>smooth routing upgrade by not forcing the SC upgrade to be synched with the component upgrade (aggLayer-node)<ul>
+<li>the new route version could be settled in advance</li>
+</ul>
+</li>
+<li>quickly freeze a route if any critical issue is found on the pessimistic program or the SP1 Verifier</li>
+</ul>
+<h3 id="23-defaut-aggchain-verification-key">2.3. Defaut aggchain verification key</h3>
+<p>The default <code>aggchain_vkey</code> is defined as follows:
+<div class="highlight"><pre><span></span><code><span class="kt">mapping</span><span class="p">(</span>bytes4<span class="w"> </span>defaultAggchainSelector<span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">defaultAggchainVKey</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>defaultAggchainVKeys<span class="p">;</span>
+</code></pre></div></p>
+<p>The aggLayer will just add new default <code>aggchain_vkey</code> routed by a 4 bytes selector, the <code>defaultAggchainSelector</code>.
+The aggLayer can add new versions of a default <code>aggchain_vkey</code> or update them.</p>
+<p>This approach allows to:</p>
+<ul>
+<li>have multiple versions of the default <code>aggchain_vkey</code> or just have one (only updates)</li>
+<li>single SC transaction to upgrade all the chains that uses the default <code>aggchain_vkey</code></li>
+<li>no action needed from chains on L1 to use a new default <code>aggchain_vkey</code><ul>
+<li>probably run the proper component version</li>
+</ul>
+</li>
+<li>if any issue is found on the default <code>aggchain_vkey</code>, it can be overwritten with the right one</li>
+</ul>
+<h3 id="24-agglayergateway-access-control-roles">2.4. AggLayerGateway Access control (roles)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Role</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">DEFAULT_ADMIN_ROLE</td>
+<td style="text-align: center;">Grant/Revoke roles</td>
+</tr>
+<tr>
+<td style="text-align: center;">AGGLAYER_ADD_ROUTE_ROLE</td>
+<td style="text-align: center;">Add PP key</td>
+</tr>
+<tr>
+<td style="text-align: center;">AGGLAYER_FREEZE_ROUTE_ROLE</td>
+<td style="text-align: center;">Freeze PP key</td>
+</tr>
+<tr>
+<td style="text-align: center;">AGGCHAIN_DEFAULT_VKEY_ROLE</td>
+<td style="text-align: center;">Add/Update default key</td>
+</tr>
+</tbody>
+</table>
+<h4 id="default_admin_role">DEFAULT_ADMIN_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Grants and revokes all roles in the contract.</li>
+<li><strong>Security Assumptions</strong>: This role has complete control over the contract’s permissions, making it the most privileged and critical role.</li>
+<li><strong>Recommended Account Type</strong>: Should be a timelock</li>
+</ul>
+<h4 id="al_add_pp_route_role">AL_ADD_PP_ROUTE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Allows adding new pessimistic proof verification key.</li>
+<li><strong>Security Assumptions</strong>: Incorrect key additions can enable invalid proofs, leading to security risks. A malicious pessimistic key can compromise the bridge funds</li>
+<li><strong>Recommended Account Type</strong>: Timelock</li>
+</ul>
+<h4 id="al_freeze_pp_route_role">AL_FREEZE_PP_ROUTE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Freezes existing PP keys, preventing further usage.</li>
+<li><strong>Security Assumptions</strong>: On one hand, if a PP key is behaving wrongly, this role is critical for freezing it quickly to mitigate risks. On the other hand, it can perform a DDOS freezing all keys.</li>
+<li><strong>Recommended Account Type</strong>: Externally Owned Account (EOA) or Multisig. A Multisig is preferred for security, but an EOA with high availability (i.e., always online) might be necessary for quick emergency response.</li>
+</ul>
+<h4 id="aggchain_default_vkey_role">AGGCHAIN_DEFAULT_VKEY_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Manages default aggregation keys, allowing updates to default verification keys.</li>
+<li><strong>Security Assumptions</strong>: Incorrect key additions can enable invalid proofs, leading to security risks. A malicious verification key can compromise the funds of a chain.</li>
+<li><strong>Recommended Account Type</strong>: Timelock or multisig, a chain can choose to handle their own keys at any time. Security assumptions for aggchainDefaultVKeyRoleAddress are the same as for updating a rollup which currently is brought by a multisig.</li>
+</ul>
+<h2 id="3-generic-aggchains-specification">3. Generic aggchains specification</h2>
+<h3 id="31-description">3.1. Description</h3>
+<p>The following specification aims to provide a generic interface that any aggchain must follow in order to be attached to the aggLayer.
+Each aggchain would need to interact with the RollupManager smart contract on different stages. Those interactions are needed to accomplish an specific interface.
+Besides the interface, a base implementation will be provided to aggchains in order to have a base code to build from. Note that this base code is recommended to be followed by aggchains but not mandatory.</p>
+<h3 id="32-aggchain-interface">3.2. Aggchain interface</h3>
+<p>An aggchain smart contract must interact with the rollup manager in the following manner:</p>
+<ul>
+<li>Initialization:<ul>
+<li>interface
+  <div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">initAggchainManager</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">newAggchainManager</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;;</span>
+</code></pre></div></li>
+<li>when the aggchain is created, the aggchain must provide its own initialization bytes.</li>
+</ul>
+</li>
+<li>Proof is being verified and RollupManager contract calls aggchain contract to get its <code>aggchain_hash</code>:
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @notice Gets aggchain hash.</span>
+<span class="cm">   * @dev Each chain should properly manage its own aggchain hash.</span>
+<span class="cm">   * @param aggchainData agg chain data to build the consensus hash.</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kt">function</span><span class="w"> </span><span class="nv">getAggchainHash</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>aggchainData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes32</span><span class="p">);</span>
+</code></pre></div></li>
+<li>Proof is verified and there is callback to the aggchain contract to handle the final chain settlement:
+  <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * @notice Callback from the PolygonRollupManager to update the chain&#39;s state.</span>
+<span class="cm"> * @dev Each chain should properly manage its own state.</span>
+<span class="cm"> * @param data Custom chain data to update chain&#39;s state</span>
+<span class="cm"> */</span>
+<span class="kt">function</span><span class="w"> </span><span class="nv">onVerifyPessimistic</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>aggchainData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div></li>
+</ul>
+<h2 id="4-aggchain-base-implementation">4. Aggchain Base implementation</h2>
+<p>It is provided a base implementation of the aggchain in order to serve as a template for any aggchains that want to build its own implementation.
+In order to maintain storage layout compatibility with previous <code>verifierType version: Pessimistic</code>, the old <code>PolygonConsensusBase</code> is inherited.
+This design will allow previous chains (v0.2.0) to be upgraded to a new version (v0.3.0) mainting the storage layout and avoiding any error overwriting storage slots.
+There are two key features on top of the <code>PolygonConsensusBase</code>:</p>
+<ul>
+<li>Flag to determine if the default vkeys are used (provided by the <code>ALGateway</code> smart contract)</li>
+<li>aggchain vkey management functionalities</li>
+</ul>
+<h3 id="41-flag-default-vkey">4.1. Flag default vKey</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Flag to enable/disable the use of the custom chain gateway to handle the aggchain keys. In case  of true (default), the keys are managed by the aggregation layer gateway</span>
+<span class="kt">bool</span><span class="w"> </span><span class="k">public </span><span class="nv">useDefaultGateway</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="42-managing-aggchain-verification-keys">4.2. Managing aggchain verification keys</h3>
+<p>The chain will be able to select its verification key through a selector, the <code>aggchainVKeySelector</code>.
+It works very similar as the <code>ppSelector</code>, but instead of selecting the pessimistic verification key, it selects the aggchain verification key</p>
+<p>The aggchain base code will store all the routed into a mapping:
+<div class="highlight"><pre><span></span><code><span class="c1">// AggchainVKeyRoutes mapping</span>
+<span class="kt">mapping</span><span class="p">(</span>bytes4<span class="w"> </span>aggchainVKeySelector<span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">ownedAggchainVKey</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>ownedAggchainVKeys<span class="p">;</span>
+</code></pre></div></p>
+<p>This approach allows to:</p>
+<ul>
+<li>have multiple versions of the <code>aggchain_vkey</code> or just have one</li>
+<li>smooth routing upgrade by not forcing the SC action to be synched with the component upgrade<ul>
+<li>the new route version could be settled in advance</li>
+<li>componenet will select which one to use</li>
+</ul>
+</li>
+<li>if any issue is found on the <code>aggchain_vkey</code>, it can be overwritten with the right one</li>
+</ul>
+<h3 id="43-roles">4.3. Roles</h3>
+<h4 id="vkeymanager">vKeyManager</h4>
+<ul>
+<li><strong>Functionality</strong>: Manages aggchain verification keys, insertions and updates. It can also enable/disable the usage of the default aggchain vkeys (managed by the ALGateway contract)</li>
+<li><strong>Security Assumptions</strong>: A malicious verification key can compromise the funds of a chain (not the entire agglayer)</li>
+<li><strong>Recommended Account Type</strong>: Timelock (specified by the chain itself)</li>
+</ul>
+<h4 id="admin">admin</h4>
+<ul>
+<li><strong>Functionality</strong>: Allow to set the <code>trustedSequencer</code> and can manage aggchain upgrades with certain limitations:<ul>
+<li>cannot update to old <code>rollupTypeID</code></li>
+<li>cannot update to a different <code>rollupVerifierType</code></li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: <code>trustedSequencer</code> usage depends on aggchaintype. Please refer to each aggchain for more details. Upgrades does not imply high security assumptions since it is capped to existing <code>rollupTypes</code></li>
+<li><strong>Recommended Account Type</strong>: Multisig</li>
+</ul>
+<h2 id="5-aggchain-types-provided">5. AggChain Types provided</h2>
+<p>Two default aggchain types will be provided to choose from:</p>
+<ul>
+<li>ECDSA</li>
+<li>FEP</li>
+</ul>
+<p>Each aggchain provided is identified by 2 bytes:
+<div class="highlight"><pre><span></span><code><span class="c1">// ECDSA</span>
+bytes2<span class="w"> </span><span class="kt">constant</span><span class="w"> </span>AGGCHAIN_TYPE<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">0</span>
+<span class="c1">// FEP</span>
+bytes2<span class="w"> </span><span class="kt">constant</span><span class="w"> </span>AGGCHAIN_TYPE<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m m-Decimal">1</span>
+</code></pre></div></p>
+<p>These 2 bytes are used to build the <code>aggchainVKeySelector</code> in case the chain opts for using the <code>defaultAggchainVKey</code>.
+This has been done to enforce chains to not being able to select which type of aggchain they are. Smart contrct will force those 2 bytes so the default <code>defaultAggchainSelector</code> could be specified as:</p>
+<div class="highlight"><pre><span></span><code>[         aggchainVKeySelector          ]
+[ aggchainVKeyVersion  |  AGGCHAIN_TYPE ]
+[       2 bytes        |    2 bytes     ]
+</code></pre></div>
+<h3 id="51-ecdsa">5.1. ECDSA</h3>
+<ul>
+<li>
+<p><strong>NEW AGGCHAIN</strong>: custom initialization bytes
+<div class="highlight"><pre><span></span><code><span class="c1">// custom parsing of the initializeBytesAggchain</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="c1">// aggchainBase params</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_useDefaultGateway</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_initOwnedAggchainVKey</span><span class="p">,</span>
+<span class="w">    </span>bytes4<span class="w"> </span>_initAggchainVKeySelector<span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_vKeyManager</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// PolygonConsensusBase params</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_admin</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_trustedSequencer</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_gasTokenAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_trustedSequencerURL<span class="p">,</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_networkName
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>decode<span class="p">(</span>
+<span class="w">        </span>initializeBytesAggchain<span class="p">,</span>
+<span class="w">        </span><span class="p">(</span>
+<span class="w">            </span><span class="kt">bool</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">bytes32</span><span class="p">,</span>
+<span class="w">            </span>bytes4<span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">string</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>EXISTING</strong> v0.2.0 AGGCHAIN: custom initialization bytes
+<div class="highlight"><pre><span></span><code><span class="c1">// Only need to initialize values that are specific for ECDSA because we are performing an upgrade from a Pessimistic chain</span>
+<span class="c1">// aggchainBase params</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_useDefaultGateway</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_initOwnedAggchainVKey</span><span class="p">,</span>
+<span class="w">    </span>bytes2<span class="w"> </span>_initAggchainVKeySelector<span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_vKeyManager</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>decode<span class="p">(</span>
+<span class="w">    </span>initializeBytesAggchain<span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="p">,</span><span class="w"> </span>bytes4<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>bytes when calling <code>getAggchainHash</code> &amp; <code>onVerifyPessimistic</code>:
+<div class="highlight"><pre><span></span><code><span class="p">(</span>
+<span class="w">    </span>bytes2<span class="w"> </span>aggchainVKeySelector<span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">newstateRoot</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>decode<span class="p">(</span>
+<span class="w">        </span>aggchainData<span class="p">,</span>
+<span class="w">        </span><span class="p">(</span>bytes4<span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h4 id="511-roles">5.1.1 Roles</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Role</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">vKeyManager</td>
+<td style="text-align: center;">manages aggchain vkeys</td>
+</tr>
+<tr>
+<td style="text-align: center;">admin</td>
+<td style="text-align: center;">upgrade rollupTypes &amp; set trsutedSequencer</td>
+</tr>
+<tr>
+<td style="text-align: center;">trustedSequencer</td>
+<td style="text-align: center;">signs PP state transition</td>
+</tr>
+</tbody>
+</table>
+<h5 id="vkeymanager_1">vKeyManager</h5>
+<ul>
+<li><strong>Functionality</strong>: Manages aggchain verification keys, insertions and updates. It can also enable/disable the usage of the default aggchain vkeys (managed by the ALGateway contract)</li>
+<li><strong>Security Assumptions</strong>: A malicious verification key can compromise the funds of a chain (not the entire agglayer)</li>
+<li><strong>Recommended Account Type</strong>: Timelock (specified by the chain itself)</li>
+</ul>
+<h5 id="admin_1">admin</h5>
+<ul>
+<li><strong>Functionality</strong>: Allow to set the <code>trustedSequencer</code> and can manage aggchain upgrades with certain limitations:<ul>
+<li>cannot update to old <code>rollupTypeID</code></li>
+<li>cannot update to a different <code>rollupVerifierType</code></li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: <code>trustedSequencer</code> sign the chain pp-state-stransistion. It imply high security risk</li>
+<li><strong>Recommended Account Type</strong>: Timelock</li>
+</ul>
+<h5 id="trustedsequencer">trustedSequencer</h5>
+<ul>
+<li><strong>Functionality</strong>: Signs chain pp-state-transistion</li>
+<li><strong>Security Assumptions</strong>: Incorrect state-stransistion can lead to steal funds in the chain.</li>
+<li><strong>Recommended Account Type</strong>: EOA or internal multisig</li>
+</ul>
+<h4 id="512-test-vectors">5.1.2 Test-vectors</h4>
+<ul>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-data.json">aggchain-data</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv0.json">aggchain-init-bytes-v0</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv1.json">aggchain-init-bytes-v1</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/hash-aggchain-params.json">hash-aggchain-params</a></li>
+</ul>
+<h3 id="52-fep">5.2. FEP</h3>
+<p>There are two scenarios to be considered in the <code>FEP</code>: new one and one that comes from <code>v0.2.0</code>.
+The only difference is that all chains coming from <code>v0.2.0</code> that are going to move to a <code>FEP-v0.3.0</code> doe snot need to initialize all their parameters since some of them were initialized before.</p>
+<ul>
+<li>
+<p><strong>NEW AGGCHAIN</strong>: custom initialization bytes
+<div class="highlight"><pre><span></span><code><span class="c1">/// @notice Parameters to initialize the AggchainFEP contract.</span>
+<span class="kt">struct</span><span class="w"> </span><span class="nv">InitParams</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">l2BlockTime</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">rollupConfigHash</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">startingOutputRoot</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">startingBlockNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">startingTimestamp</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">submissionInterval</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">optimisticModeManager</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">aggregationVkey</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">rangeVkeyCommitment</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Decode the struct</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="c1">// chain custom params</span>
+<span class="w">    </span>InitParams<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_initParams<span class="p">,</span>
+<span class="w">    </span><span class="c1">// aggchainBase params</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_useDefaultGateway</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_initOwnedAggchainVKey</span><span class="p">,</span>
+<span class="w">    </span>bytes4<span class="w"> </span>_initAggchainVKeySelector<span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_vKeyManager</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// PolygonConsensusBase params</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_admin</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_trustedSequencer</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_gasTokenAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_trustedSequencerURL<span class="p">,</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_networkName
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>decode<span class="p">(</span>
+<span class="w">        </span>initializeBytesAggchain<span class="p">,</span>
+<span class="w">        </span><span class="p">(</span>
+<span class="w">            </span>InitParams<span class="p">,</span>
+<span class="w">            </span><span class="kt">bool</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">bytes32</span><span class="p">,</span>
+<span class="w">            </span>bytes4<span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">address</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">            </span><span class="kt">string</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="c1">// init FEP params</span>
+_initializeAggchain<span class="p">(</span>_initParams<span class="p">);</span>
+
+<span class="c1">// Set aggchainBase variables</span>
+_initializeAggchainBaseAndConsensusBase<span class="p">(</span>
+<span class="w">    </span>_admin<span class="p">,</span>
+<span class="w">    </span>_trustedSequencer<span class="p">,</span>
+<span class="w">    </span>_gasTokenAddress<span class="p">,</span>
+<span class="w">    </span>_trustedSequencerURL<span class="p">,</span>
+<span class="w">    </span>_networkName<span class="p">,</span>
+<span class="w">    </span>_useDefaultGateway<span class="p">,</span>
+<span class="w">    </span>_initOwnedAggchainVKey<span class="p">,</span>
+<span class="w">    </span>_initAggchainVKeyVersion<span class="p">,</span>
+<span class="w">    </span>_vKeyManager
+<span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>EXISTING</strong> v0.2.0 AGGCHAIN: custom initialization bytes
+<div class="highlight"><pre><span></span><code><span class="c1">// contract has been previously initialized with all parameters in the PolygonConsensusBase.sol</span>
+<span class="c1">// Only initialize the FEP and AggchainBase params</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="c1">// chain custom params</span>
+<span class="w">    </span>InitParams<span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_initParams<span class="p">,</span>
+<span class="w">    </span><span class="c1">// aggchainBase params</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_useDefaultGateway</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_initOwnedAggchainVKey</span><span class="p">,</span>
+<span class="w">    </span>bytes4<span class="w"> </span>_initAggchainVKeySelector<span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_vKeyManager</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>decode<span class="p">(</span>
+<span class="w">        </span>initializeBytesAggchain<span class="p">,</span>
+<span class="w">        </span><span class="p">(</span>InitParams<span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="p">,</span><span class="w"> </span>bytes4<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>custom bytes when calling <code>getAggchainHash</code> &amp; <code>onVerifyPessimistic</code>:
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="c1">// decode the aggchainData</span>
+<span class="p">(</span>
+<span class="w">    </span>bytes4<span class="w"> </span>_aggchainVKeySelector<span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">_outputRoot</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_l2BlockNumber</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>abi<span class="p">.</span>decode<span class="p">(</span>aggchainData<span class="p">,</span><span class="w"> </span><span class="p">(</span>bytes4<span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="p">,</span><span class="w"> </span><span class="kt">uint256</span><span class="p">));</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h4 id="521-roles">5.2.1 Roles</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Role</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">vKeyManager</td>
+<td style="text-align: center;">manages aggchain vkeys</td>
+</tr>
+<tr>
+<td style="text-align: center;">admin</td>
+<td style="text-align: center;">upgrade rollupTypes &amp; set trustedSequencer</td>
+</tr>
+<tr>
+<td style="text-align: center;">trustedSequencer</td>
+<td style="text-align: center;">if <code>optimisticMode</code>: signs state transition</td>
+</tr>
+<tr>
+<td style="text-align: center;">aggchainManager</td>
+<td style="text-align: center;">manages updates <code>submissionInterval</code> &amp; <code>rollupConfigHash</code>. Initialize the aggchain.</td>
+</tr>
+<tr>
+<td style="text-align: center;">optimisticModeManager</td>
+<td style="text-align: center;">enable/disable <code>optimisticMode</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="vkeymanager_2">vKeyManager</h5>
+<ul>
+<li><strong>Functionality</strong>: Manages aggchain verification keys, insertions and updates. It can also enable/disable the usage of the default aggchain vkeys (managed by the ALGateway contract)</li>
+<li><strong>Security Assumptions</strong>: A malicious verification key can compromise the funds of a chain (not the entire agglayer)</li>
+<li><strong>Recommended Account Type</strong>: Timelock (specified by the chain itself)</li>
+</ul>
+<h5 id="admin_2">admin</h5>
+<ul>
+<li><strong>Functionality</strong>: Allow to set the <code>trustedSequencer</code> and can manage aggchain upgrades with certain limitations:<ul>
+<li>cannot update to old <code>rollupTypeID</code></li>
+<li>cannot update to a different <code>rollupVerifierType</code></li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: <code>trustedSequencer</code> signs the state-stransistion when the FEP is on <code>optimisticMode</code> (note that <code>optimisticMoode</code> has a higher level of security)</li>
+<li><strong>Recommended Account Type</strong>: Multisig</li>
+</ul>
+<h5 id="trustedsequencer_1">trustedSequencer</h5>
+<ul>
+<li><strong>Functionality</strong>: Signs chain state-transistion in case the chain is on <code>optimisticMode</code></li>
+<li><strong>Security Assumptions</strong>: Incorrect state-stransistion can lead to steal funds in the chain. Orotected by the security-council since it has no effect if the <code>optimisticMode</code> is not enabled</li>
+<li><strong>Recommended Account Type</strong>: EOA or internal multisig</li>
+</ul>
+<h5 id="aggchainmanager">aggchainManager</h5>
+<ul>
+<li><strong>Functionality</strong>: Manages the update of the <code>submissionInterval</code> and the <code>rollupConfigHash</code> parameters</li>
+<li><strong>Security Assumptions</strong>:<ul>
+<li><code>submissionInterval</code> is the minimum interval at which checkpoints must be submitted. No high security assumptions.</li>
+<li><code>rollupConfigHash</code> contains sensistive data that could potentially affect the aggchain state transistion. High security assumptions.</li>
+</ul>
+</li>
+<li><strong>Recommended Account Type</strong>: Timelock (specified by the chain itself)</li>
+</ul>
+<h5 id="optimisticmodemanager">optimisticModeManager</h5>
+<ul>
+<li><strong>Functionality</strong>: Manages the enbale/disable of the <code>optimisticMode</code></li>
+<li><strong>Security Assumptions</strong>: When true, the chain can bypass the state transition verification</li>
+<li><strong>Recommended Account Type</strong>: Multisig security council. Act fast while and not fully controlled by internal people</li>
+</ul>
+<h4 id="522-test-vectors">5.2.2 Test-vectors</h4>
+<ul>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-data.json">aggchain-data</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-initBytesv0.json">aggchain-init-bytes-v0</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-initBytesv1.json">aggchain-init-bytes-v1</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/hash-aggchain-params.json">hash-aggchain-params</a></li>
+</ul>
+<h2 id="6-rollup-manager-specification">6. Rollup Manager Specification</h2>
+<h3 id="61-versioning">6.1. Versioning</h3>
+<p>New string to indicate Rollup Manager version: <code>al-v0.3.1</code>:
+<div class="highlight"><pre><span></span><code><span class="kt">string</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>ROLLUP_MANAGER_VERSION<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;al-v0.3.1&quot;</span><span class="p">;</span>
+</code></pre></div></p>
+<h3 id="62-agglayergateway-contract">6.2. AggLayerGateway contract</h3>
+<p>An address that identifies the <code>aggLayerGateway</code> contract. This will be set as an immutable:
+<div class="highlight"><pre><span></span><code>IAggLayerGateway<span class="w"> </span><span class="kt">public</span><span class="w"> </span>immutable<span class="w"> </span>aggLayerGateway<span class="p">;</span>
+</code></pre></div></p>
+<h3 id="63-new-verifiertype">6.3. New VerifierType</h3>
+<p>A new <code>VerifierType</code> has been added: <code>ALGateway</code>
+<div class="highlight"><pre><span></span><code><span class="kt">enum</span><span class="w"> </span><span class="nv">VerifierType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span>StateTransition<span class="p">,</span><span class="w"> </span><span class="c1">// zkEVM &amp; Validium</span>
+<span class="w">    </span>Pessimistic<span class="p">,</span><span class="w"> </span><span class="c1">// PP v0.2.0</span>
+<span class="w">    </span>ALGateway<span class="w"> </span><span class="c1">// PP v0.3.0</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><code>RollupTypes</code> created based on <code>VerifierType: ALGateway</code> will have the following properties:</p>
+<ul>
+<li>its verifier will be the <code>ALGateway</code> smart contract<ul>
+<li>the following rollup parameters will be 0:<ul>
+<li><code>rollup.forkID = 0;</code></li>
+<li><code>rollup.verifier = address(0);</code></li>
+<li><code>rollup.batchNumToStateRoot[0] = bytes32(0);</code></li>
+<li><code>rollup.programVKey = bytes32(0);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>a consensus will be predetermined (ECDSA or FEP)</li>
+</ul>
+<p>The chain can specify its own bytes to be initialized when the chain is created (not forced anymore by the interface):
+<div class="highlight"><pre><span></span><code><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>initializeBytesAggchain
+</code></pre></div></p>
+<p>The chain can choose its own bytes when a proof is sent by tye aggLayer:
+<div class="highlight"><pre><span></span><code><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>aggchainData
+</code></pre></div></p>
+<h3 id="64-create-new-chain">6.4. Create new chain</h3>
+<p>Chains will be created differently as it was in previous versions. Since the <code>initializeBytesAggchain</code> has been introduced to generalize the chains initialization, the entry point has been also generalized.
+Old chains will be still possible to create but it will be nececcesary to encode the ininitialization bytes in the <code>initializeBytesAggchain</code>.
+This approach provides a generic interface for all existing chains and allows future chains with different initialization bytes to be added without modifying the interface:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">attachAggchainToAL</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">rollupTypeID</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">chainID</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>initializeBytesAggchain
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="65-verify-pessimitic-proof">6.5. Verify pessimitic proof</h3>
+<p>The entry point will be the same for every chain that uses pessimistic proof. That is the function <code>verifyPessimisticTrustedAggregator</code>.
+Its interface has been modified to initialize a v0.3.0 aggchain by inserting a new field <code>aggchainData</code>.
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">verifyPessimisticTrustedAggregator</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">rollupID</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">l1InfoTreeLeafCount</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">newLocalExitRoot</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">newPessimisticRoot</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>proof<span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>aggchainData
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="p">;</span>
+</code></pre></div></p>
+<blockquote>
+<p>For more information about the verification flow, you can refer to this <a href="../Diagrams/#verify-fep">link</a>.</p>
+</blockquote>
+<h3 id="66-pretty-rollupdata">6.6. Pretty rollupData</h3>
+<p>Etherscan did not parse structs correctly. A prettier view function has been added so the returning information is human-readable on etherscan.
+The following functions are the same, it is just a change on how the data is return:</p>
+<ul>
+<li>
+<p>v0.2.0:
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">rollupIDToRollupDataDeserialized</span><span class="p">(</span>
+<span class="w">        </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">rollupID</span>
+<span class="p">)</span>
+<span class="w">    </span><span class="kt">public</span>
+<span class="w">    </span>view
+<span class="w">    </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">rollupContract</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">chainID</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">verifier</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">forkID</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">lastLocalExitRoot</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">lastBatchSequenced</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">lastVerifiedBatch</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">_legacyLastPendingState</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">_legacyLastPendingStateConsolidated</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">lastVerifiedBatchBeforeUpgrade</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">rollupTypeID</span><span class="p">,</span>
+<span class="w">        </span>VerifierType<span class="w"> </span>rollupVerifierType
+<span class="w">    </span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>v0.3.0:
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">rollupIDToRollupDataV2Deserialized</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">rollupID</span>
+<span class="p">)</span>
+<span class="w">    </span><span class="kt">public</span>
+<span class="w">    </span>view
+<span class="w">    </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">rollupContract</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">chainID</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">address</span><span class="w"> </span><span class="nv">verifier</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">forkID</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">lastLocalExitRoot</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">lastBatchSequenced</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">lastVerifiedBatch</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">lastVerifiedBatchBeforeUpgrade</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">rollupTypeID</span><span class="p">,</span>
+<span class="w">        </span>VerifierType<span class="w"> </span>rollupVerifierType<span class="p">,</span>
+<span class="w">        </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">lastPessimisticRoot</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">programVKey</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span>RollupData<span class="w"> </span>storage<span class="w"> </span>rollup<span class="w"> </span><span class="o">=</span><span class="w"> </span>_rollupIDToRollupData<span class="p">[</span>rollupID<span class="p">];</span>
+
+<span class="w">    </span>rollupContract<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>rollupContract<span class="p">;</span>
+<span class="w">    </span>chainID<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>chainID<span class="p">;</span>
+<span class="w">    </span>verifier<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>verifier<span class="p">;</span>
+<span class="w">    </span>forkID<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>forkID<span class="p">;</span>
+<span class="w">    </span>lastLocalExitRoot<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>lastLocalExitRoot<span class="p">;</span>
+<span class="w">    </span>lastBatchSequenced<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>lastBatchSequenced<span class="p">;</span>
+<span class="w">    </span>lastVerifiedBatch<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>lastVerifiedBatch<span class="p">;</span>
+<span class="w">    </span>lastVerifiedBatchBeforeUpgrade<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>lastVerifiedBatchBeforeUpgrade<span class="p">;</span>
+<span class="w">    </span>rollupTypeID<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>rollupTypeID<span class="p">;</span>
+<span class="w">    </span>rollupVerifierType<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>rollupVerifierType<span class="p">;</span>
+<span class="w">    </span>lastPessimisticRoot<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>lastPessimisticRoot<span class="p">;</span>
+<span class="w">    </span>programVKey<span class="w"> </span><span class="o">=</span><span class="w"> </span>rollup<span class="p">.</span>programVKey<span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="7-roles-sovereignchains-contracts">7. Roles sovereignChains contracts</h2>
+<p>Contracts used in sovereign chains: <code>BridgeL2SovereignChain</code> &amp; <code>GlobalExitRootManagerL2SovereignChain</code></p>
+<h3 id="71-bridgel2sovereignchain">7.1. BridgeL2SovereignChain</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Role</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">bridgeManager</td>
+<td style="text-align: center;">Handles set custom tokens mapping and has the ability to clear claims</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bridgemanager">bridgeManager</h4>
+<ul>
+<li><strong>Functionality</strong>: Manages the custom tokens mapping. It also has the ability to clear claims</li>
+<li><strong>Security Assumptions</strong>: High. Setting custom tokens or clear claims</li>
+<li><strong>Recommended Account Type</strong>: Timelock (specified by the chain itself)</li>
+</ul>
+<h3 id="72-bridgel2sovereignchain">7.2. BridgeL2SovereignChain</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Role</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">globalExitRootUpdater</td>
+<td style="text-align: center;">Inject GER into the bridge SC</td>
+</tr>
+<tr>
+<td style="text-align: center;">globalExitRootRemover</td>
+<td style="text-align: center;">Removes GER from the Bridge SC</td>
+</tr>
+</tbody>
+</table>
+<h4 id="globalexitrootupdater">globalExitRootUpdater</h4>
+<ul>
+<li><strong>Functionality</strong>: Injects GER to the bridge SC</li>
+<li><strong>Security Assumptions</strong>: Low security risk. All GERS are validated via the FEP program.</li>
+<li><strong>Recommended Account Type</strong>: EOA (hot wallet in aggOracle)</li>
+</ul>
+<h4 id="globalexitrootupdater_1">globalExitRootUpdater</h4>
+<ul>
+<li><strong>Functionality</strong>: Remove GER to the bridge SC</li>
+<li><strong>Security Assumptions</strong>: High security risk. Controller could steal funds if collide with the <code>globalExitRootUpdater</code></li>
+<li><strong>Recommended Account Type</strong>: Multisg (act fast to unblock the chain)</li>
+</ul>
+<h1 id="smart-contracts-version-updates">Smart contracts version updates</h1>
+<h2 id="open-zeppelin">Open zeppelin</h2>
+<h3 id="updated-openzeppelincontracts500-to-openzeppelincontracts520">Updated <code>openzeppelin/contracts@5.0.0</code> to <code>openzeppelin/contracts@5.2.0</code></h3>
+<ul>
+<li><strong>Rationale</strong>: When implementing <code>ReentrancyGuard</code> at <code>PolygonRollupManager</code>, it's very suitable to use the <code>ReentrancyGuardTransient.sol</code> that is only available at <code>openzeppelin/contracts@5.2.0</code> because it doesn't modify the storage layer as is using the reentrancy variable as transient.</li>
+<li><strong>Changes</strong>:<ul>
+<li><code>openzeppelin/contracts@5.0.0</code> is used in the following contracts <code>TransparentUpgradeableProxy</code>, <code>ERC1967Proxy</code>, <code>IERC1967</code> and <code>ProxyAdmin</code> which <strong>remain unchanged</strong> bumping the version.</li>
+<li><code>ERC1967Utils</code> is also used but it has "breaking changes": https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.1.0-rc.0 : Removed duplicate declaration of the Upgraded, AdminChanged and BeaconUpgraded events. These events are still available through the IERC1967 interface located under the contracts/interfaces/ directory. Minimum pragma version is now 0.8.21. This change doesn't break anything because the events are still visible exactly the same way from the aforementioned interface.</li>
+</ul>
+</li>
+</ul>
+<h3 id="update-pragma-version-0820-to-0828">Update pragma version <code>0.8.20</code> to <code>0.8.28</code></h3>
+<ul>
+<li><strong>Rationale</strong>: Bumping to <code>0.8.28</code> has many features<ul>
+<li>Stack-to-memory mover always enabled via-IR: <a href="https://soliditylang.org/blog/2023/07/19/solidity-0.8.21-release-announcement/">link</a></li>
+<li>Support transient storage <a href="https://soliditylang.org/blog/2024/01/26/solidity-0.8.24-release-announcement/">link</a></li>
+<li>MCOPY opcode (gas optimizations) <a href="https://soliditylang.org/blog/2024/03/14/solidity-0.8.25-release-announcement/">link</a></li>
+<li>Custom errors support require <a href="http://soliditylang.org/blog/2024/05/21/solidity-0.8.26-release-announcement/">link</a></li>
+<li>Full support for transient state variables <a href="https://soliditylang.org/blog/2024/10/09/solidity-0.8.28-release-announcement/">link</a></li>
+</ul>
+</li>
+<li><strong>Changes</strong>:<ul>
+<li>The bytecode of the compiled contracts has changed -&gt; A new folder with all the contracts with the previous version has been created for upgrading testing purposes</li>
+<li>The TransparentProxys created by rollup manager when a rollup is created now they will have a different bytecode</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
