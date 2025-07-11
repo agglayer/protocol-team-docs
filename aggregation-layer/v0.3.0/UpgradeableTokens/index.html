@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../../tooling/Genesis/">
+        <link rel="prev" href="../SC-interactions/PolygonRollupManager/">
       
       
-        <link rel="next" href="../SC-Versions/">
+        <link rel="next" href="../FAQs/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>3.1.1. SC ChangeLog - Protocol Documentation</title>
+        <title>3.2.7. Upgradeable Tokens - Protocol Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sc-changelog" class="md-skip">
+        <a href="#upgradeabletokens" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.1.1. SC ChangeLog
+              3.2.7. Upgradeable Tokens
             
           </span>
         </div>
@@ -534,10 +534,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -555,11 +553,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -575,7 +575,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             3.1. Version 0.2.0
@@ -586,32 +586,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    3.1.1. SC ChangeLog
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../v0.2.0/ChangeLog/" class="md-nav__link">
         
   
   
@@ -622,185 +600,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      TLDR
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="TLDR">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#structs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verifiertypes" class="md-nav__link">
-    <span class="md-ellipsis">
-      VerifierTypes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    <span class="md-ellipsis">
-      Events
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Functions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#polygonpessimisticconsensussol" class="md-nav__link">
-    <span class="md-ellipsis">
-      PolygonPessimisticConsensus.sol
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PolygonPessimisticConsensus.sol">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Changes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#polygonrollupmanagersol" class="md-nav__link">
-    <span class="md-ellipsis">
-      PolygonRollupManager.sol
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PolygonRollupManager.sol">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#description_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#changes_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Changes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verifiertype" class="md-nav__link">
-    <span class="md-ellipsis">
-      VerifierType
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#addnewrolluptype" class="md-nav__link">
-    <span class="md-ellipsis">
-      AddNewRollupType
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verifypessimistictrustedaggregator" class="md-nav__link">
-    <span class="md-ellipsis">
-      verifyPessimisticTrustedAggregator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Versioning
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -813,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SC-Versions/" class="md-nav__link">
+      <a href="../../v0.2.0/SC-Versions/" class="md-nav__link">
         
   
   
@@ -886,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SovereignChains/Intro/" class="md-nav__link">
+      <a href="../../v0.2.0/SovereignChains/Intro/" class="md-nav__link">
         
   
   
@@ -909,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+      <a href="../../v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
         
   
   
@@ -932,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+      <a href="../../v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
         
   
   
@@ -963,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Resources/" class="md-nav__link">
+      <a href="../../v0.2.0/Resources/" class="md-nav__link">
         
   
   
@@ -991,8 +790,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1020,13 +821,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -1042,7 +841,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             3.2. Version 0.3.0
@@ -1056,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/SC-specs/" class="md-nav__link">
+      <a href="../SC-specs/" class="md-nav__link">
         
   
   
@@ -1079,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/Diagrams/" class="md-nav__link">
+      <a href="../Diagrams/" class="md-nav__link">
         
   
   
@@ -1102,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/Docker/" class="md-nav__link">
+      <a href="../Docker/" class="md-nav__link">
         
   
   
@@ -1125,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/Tooling/" class="md-nav__link">
+      <a href="../Tooling/" class="md-nav__link">
         
   
   
@@ -1148,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/Roles/" class="md-nav__link">
+      <a href="../Roles/" class="md-nav__link">
         
   
   
@@ -1221,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
+      <a href="../SC-interactions/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1244,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
+      <a href="../SC-interactions/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1267,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
+      <a href="../SC-interactions/PolygonRollupManager/" class="md-nav__link">
         
   
   
@@ -1295,10 +1094,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../v0.3.0/UpgradeableTokens/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3.2.7. Upgradeable Tokens
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1309,6 +1130,212 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Glossary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Rationale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Rationale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-current-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Current scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-current-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Current issue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-solving-the-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Solving the issue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-new-sovereignbridges-deployed" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 New SovereignBridges deployed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-previous-bridges-deployed" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Previous bridges deployed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-chains-with-no-pp-zkevm-validium-mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Chains with no PP (zkEVM / Validium / Mainnet)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Specs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Specs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-deterministic-address-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Deterministic address specification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-previous-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Previous knowledge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-create2-params-transparentproxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Create2 params TransparentProxy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Create2 params TransparentProxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-deployer" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.1 deployer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532-salt" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.2 salt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#534-init_code" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3.4 init_code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1321,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/FAQs/" class="md-nav__link">
+      <a href="../FAQs/" class="md-nav__link">
         
   
   
@@ -1344,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../v0.3.0/Changes-v0.3.1/" class="md-nav__link">
+      <a href="../Changes-v0.3.1/" class="md-nav__link">
         
   
   
@@ -1402,46 +1429,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
+  <a href="#1-glossary" class="md-nav__link">
     <span class="md-ellipsis">
-      TLDR
+      1. Glossary
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TLDR">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Rationale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Rationale">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#structs" class="md-nav__link">
+  <a href="#21-current-scenario" class="md-nav__link">
     <span class="md-ellipsis">
-      Structs
+      2.1 Current scenario
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verifiertypes" class="md-nav__link">
+  <a href="#22-current-issue" class="md-nav__link">
     <span class="md-ellipsis">
-      VerifierTypes
+      2.2 Current issue
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
+  <a href="#23-solving-the-issue" class="md-nav__link">
     <span class="md-ellipsis">
-      Events
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Functions
+      2.3 Solving the issue
     </span>
   </a>
   
@@ -1453,28 +1480,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#polygonpessimisticconsensussol" class="md-nav__link">
+  <a href="#3-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      PolygonPessimisticConsensus.sol
+      3. Requirements
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PolygonPessimisticConsensus.sol">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cases">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
+  <a href="#41-new-sovereignbridges-deployed" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      4.1 New SovereignBridges deployed
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changes" class="md-nav__link">
+  <a href="#42-previous-bridges-deployed" class="md-nav__link">
     <span class="md-ellipsis">
-      Changes
+      4.2 Previous bridges deployed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-chains-with-no-pp-zkevm-validium-mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Chains with no PP (zkEVM / Validium / Mainnet)
     </span>
   </a>
   
@@ -1486,65 +1531,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#polygonrollupmanagersol" class="md-nav__link">
+  <a href="#5-specs" class="md-nav__link">
     <span class="md-ellipsis">
-      PolygonRollupManager.sol
+      5. Specs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="PolygonRollupManager.sol">
+    <nav class="md-nav" aria-label="5. Specs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#description_1" class="md-nav__link">
+  <a href="#51-deterministic-address-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      5.1 Deterministic address specification
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changes_1" class="md-nav__link">
+  <a href="#52-previous-knowledge" class="md-nav__link">
     <span class="md-ellipsis">
-      Changes
+      5.2 Previous knowledge
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Changes">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-create2-params-transparentproxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Create2 params TransparentProxy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Create2 params TransparentProxy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verifiertype" class="md-nav__link">
+  <a href="#531-deployer" class="md-nav__link">
     <span class="md-ellipsis">
-      VerifierType
+      5.3.1 deployer
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#addnewrolluptype" class="md-nav__link">
+  <a href="#532-salt" class="md-nav__link">
     <span class="md-ellipsis">
-      AddNewRollupType
+      5.3.2 salt
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verifypessimistictrustedaggregator" class="md-nav__link">
+  <a href="#534-init_code" class="md-nav__link">
     <span class="md-ellipsis">
-      verifyPessimisticTrustedAggregator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Versioning
+      5.3.4 init_code
     </span>
   </a>
   
@@ -1552,6 +1597,15 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Implementation
+    </span>
+  </a>
   
 </li>
         
@@ -1579,133 +1633,198 @@
   
 
 
-<h1 id="sc-changelog">SC ChangeLog</h1>
-<p>This document summarizes most important changes on the SC side.
-You can also check the <a href="https://github.com/0xPolygonHermez/zkevm-contracts/compare/v8.0.0-fork.12...v9.0.0-rc.3-pp">full git diff</a></p>
+<h1 id="upgradeabletokens">UpgradeableTokens</h1>
 <div class="toc">
 <ul>
-<li><a href="#sc-changelog">SC ChangeLog</a><ul>
-<li><a href="#tldr">TLDR</a><ul>
-<li><a href="#structs">Structs</a></li>
-<li><a href="#verifiertypes">VerifierTypes</a></li>
-<li><a href="#events">Events</a></li>
-<li><a href="#functions">Functions</a></li>
+<li><a href="#upgradeabletokens">UpgradeableTokens</a><ul>
+<li><a href="#1-glossary">1. Glossary</a></li>
+<li><a href="#2-rationale">2. Rationale</a><ul>
+<li><a href="#21-current-scenario">2.1 Current scenario</a></li>
+<li><a href="#22-current-issue">2.2 Current issue</a></li>
+<li><a href="#23-solving-the-issue">2.3 Solving the issue</a></li>
 </ul>
 </li>
-<li><a href="#polygonpessimisticconsensussol">PolygonPessimisticConsensus.sol</a><ul>
-<li><a href="#description">Description</a></li>
-<li><a href="#changes">Changes</a></li>
+<li><a href="#3-requirements">3. Requirements</a></li>
+<li><a href="#4-cases">4. Cases</a><ul>
+<li><a href="#41-new-sovereignbridges-deployed">4.1 New SovereignBridges deployed</a></li>
+<li><a href="#42-previous-bridges-deployed">4.2 Previous bridges deployed</a></li>
+<li><a href="#43-chains-with-no-pp-zkevm-validium-mainnet">4.3 Chains with no PP (zkEVM / Validium / Mainnet)</a></li>
 </ul>
 </li>
-<li><a href="#polygonrollupmanagersol">PolygonRollupManager.sol</a><ul>
-<li><a href="#description_1">Description</a></li>
-<li><a href="#changes_1">Changes</a><ul>
-<li><a href="#verifiertype">VerifierType</a></li>
-<li><a href="#addnewrolluptype">AddNewRollupType</a></li>
-<li><a href="#verifypessimistictrustedaggregator">verifyPessimisticTrustedAggregator</a></li>
-<li><a href="#versioning">Versioning</a></li>
+<li><a href="#5-specs">5. Specs</a><ul>
+<li><a href="#51-deterministic-address-specification">5.1 Deterministic address specification</a></li>
+<li><a href="#52-previous-knowledge">5.2 Previous knowledge</a></li>
+<li><a href="#53-create2-params-transparentproxy">5.3 Create2 params TransparentProxy</a><ul>
+<li><a href="#531-deployer">5.3.1 deployer</a></li>
+<li><a href="#532-salt">5.3.2 salt</a></li>
+<li><a href="#534-init_code">5.3.4 init_code</a></li>
 </ul>
 </li>
+<li><a href="#54-implementation">5.4 Implementation</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="tldr"><strong>TLDR</strong></h2>
-<h3 id="structs"><strong>Structs</strong></h3>
+<h2 id="1-glossary">1. Glossary</h2>
 <ul>
-<li>Add new parameters in <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L78">RollupData struct</a></li>
-<li>Add new parameters in <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L45">RollupType struct</a></li>
-<li>Add helper struct <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L119">RollupDataReturn</a> to return data for StateTransistion chains to maintain backwards compatibility</li>
-<li>Add helper struct <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L150">RollupDataReturnV2</a> to return all rollup data</li>
+<li><code>wrappedToken</code>: ERC20 standard token created by the bridge</li>
+<li><code>upgradeableWrappedToken</code>: TransparentProxy pointing to a ERC20 standard upgradeable implementation</li>
 </ul>
-<p><mark><code>RollupDataReturnV2</code> --&gt; any software should migrate to this struct to support all rollups with all its information</mark></p>
-<h3 id="verifiertypes"><strong>VerifierTypes</strong></h3>
+<h2 id="2-rationale">2. Rationale</h2>
+<h3 id="21-current-scenario">2.1 Current scenario</h3>
+<p>Wrapped tokens are created by the bridge using the create2 opcode and it creates a simple and standard ERC20 token.<br />
+Note that current deployed chains use this approach to create wrappedTokens and wrapped tokens have the same addresses in all chains deployed.<br />
+This approach does not imply any security assumption beyond the address that is able to upgrade the bridge (normally a timelock).  </p>
+<h3 id="22-current-issue">2.2 Current issue</h3>
+<p>On SovereignChains, a new approach to allow more features on the wrapped Tokens has been implemented: <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol#L330">custom mappings</a>. This feature currently works given the featured wanted: extend the wrappedToken features.</p>
+<p>This feature is purely <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol#L335">managed by the <code>bridgeManager</code></a> meaning that this feature is chain-centric (instead of asset-centric). Asset-centric means that the owner of the asset could deploy its own wrappedToken (or similarly, deploy an upgradeable wrappedToken and give the ownership to an address controlled by the asset).
+An asset-centric feature could not be applied on top of the <code>custom mappings</code> implementation. Therefore a new approach needs to be specified in order to allow future version to be asset-centric.</p>
+<p>Besides, this approach implies another risky concern about users being able to stop the PP of the chain if LBT reaches a negative balance (this assumption purely depends on the approach on how to use the customMappings. Example: Katana). The implementation of the LBT at SC level provides guarantees that the PP will not be blocked, but just the user claim. NOTE that this affects <code>customMappings</code> and <code>upgradeableWrappedTokens</code>.</p>
+<h3 id="23-solving-the-issue">2.3 Solving the issue</h3>
+<p>Deploy transparent proxy which has a ERC20 upgradeable implementation</p>
 <ul>
-<li>Add verifiers types: <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/interfaces/IPolygonRollupManager.sol#L311">StateTransition</a> &amp; <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/interfaces/IPolygonRollupManager.sol#L312">Pessimistic</a></li>
+<li><code>proxiedTokensManager</code> is the owner of the proxy admin of the proxy</li>
+<li><code>proxiedTokensManager</code> can delegate ownership to any address later on</li>
+<li><code>proxiedTokensManager</code> is set at initialization of sovereign bridge from initialization inputs. In case of L1, bridgeV2, <code>proxiedTokensManager</code> is set from the proxy owner of the proxy admin of the bridge itself. The role can be transferred with a two steps procedure.</li>
 </ul>
-<h3 id="events"><strong>Events</strong></h3>
+<p>Security assumptions:</p>
 <ul>
-<li>Updated <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L304"><code>AddNewRollupType</code></a></li>
-<li>Updated <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L334"><code>AddExistingRollup</code></a></li>
-<li>Add <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L391"><code>UpdateRollupManagerVersion</code></a></li>
+<li><code>SovereignBridge</code> is a proxy controlled by a certain address. Managing the tokens from the same address has the same security assumptions.</li>
+<li>LBT implementation avoids chain DoS on the PP, more specifically on the LBT with negative value given that an asset could <code>mint</code> tokens as its wish</li>
+<li>mainnet bridge to produce the same addresses once it is upgraded</li>
 </ul>
-<h3 id="functions"><strong>Functions</strong></h3>
+<p>Custom mappings:</p>
 <ul>
-<li>Updated SC function <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L432"><code>addNewRollupType</code></a></li>
-<li>Updated SC function <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L596"><code>addExistingRollup</code></a></li>
-<li>Add SC function to verify pessimistoc proofs <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L1046"><code>verifyPessimisticTrustedAggregator</code></a></li>
-<li>Add SC function <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L1484"><code>rollupIDToRollupData</code></a> to retrieve StateTransistion rollupData to maintain backwards compatibility</li>
-<li>Add SC function <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L1509"><code>rollupIDToRollupDataV2</code></a> to retrieve full rollupData(link)</li>
+<li>keep functionality on SovereignBridges</li>
+<li>theoretically, functionality will not be used and therefore removed in future versions</li>
 </ul>
-<h2 id="polygonpessimisticconsensussol"><strong>PolygonPessimisticConsensus.sol</strong></h2>
-<h3 id="description"><strong>Description</strong></h3>
-<p>Consensus SC to be deployed every time a new sovereign chain <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L507">is created</a> by the rollup manager.
-It inherits from <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/lib/PolygonConsensusBase.sol"><code>PolygonConsensusBase</code></a> as the other consensus implemented: <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/consensus/validium/PolygonValidiumEtrog.sol"><code>PolygonValidumEtrog</code></a> &amp; <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/consensus/zkEVM/PolygonZkEVMEtrog.sol"><code>PolygonZkEVMEtrog</code></a></p>
-<h3 id="changes"><strong>Changes</strong></h3>
-<p>It adds a new function: <code>getConsensusHash</code>
-<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
-<span class="cm">* Note Return the necessary consensus information for the proof hashed</span>
-<span class="cm">*/</span>
-<span class="kt">function</span><span class="w"> </span><span class="nv">getConsensusHash</span><span class="p">()</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">return</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span>abi<span class="p">.</span>encodePacked<span class="p">(</span>CONSENSUS_TYPE<span class="p">,</span><span class="w"> </span>trustedSequencer<span class="p">));</span>
-<span class="p">}</span>
+<blockquote>
+<p>⚠
+💡 Already deployed SovereignBridges can have an extra functionality which is deploying the new <code>upgradeableWrappedTokens</code>. Then, a customMapping could be done to override the <code>wrappedToken</code> address. CustomMappings provides the ability to migrate tokens if used correctly.</p>
+<p>If the <code>upgradeableWrappedTokens</code> mints outside the bridge could potentially unbalance the liquidity and/or steal user's assets</p>
+</blockquote>
+<h2 id="3-requirements">3. Requirements</h2>
+<ul>
+<li>Deterministic addresses on all chains</li>
+<li>Mainnet bridge and SovereignBridges to deploy new <code>upgradeableWrappedTokens</code></li>
+<li><code>upgradeableWrappedTokens</code> pointing to a ERC20 standard upgradeable implementation</li>
+<li><code>upgradeableWrappedTokens</code> to set <code>bridgeManager</code> as its initial owner</li>
+<li>keep <code>customMappings</code> feature</li>
+</ul>
+<h2 id="4-cases">4. Cases</h2>
+<h3 id="41-new-sovereignbridges-deployed">4.1 New SovereignBridges deployed</h3>
+<p>All the tokens created by the <code>SovereignBridge</code> will have the new addresses and will be upgradeable ERC20 tokens.
+Mainnet bridge will also produce the same addresses once the bridge is upgraded.</p>
+<blockquote>
+<p>⚠
+Previous tokens deployed by the bridge will still have the old addresses and will not be upgraded. therefore, old address will have all the token liquidity. There will not be liquidity fragmentation.</p>
+<p>💡 A mechanism to upgrade previous tokens has been introduced <code>deployWrappedTokenAndRemap</code>.Function to deploy an upgradeable wrapped token without having to claim asset. It is used to upgrade legacy tokens to the new upgradeable token. After deploying the token it is remapped to be the new functional wtoken. This function can only be called once for each originNetwork/originTokenAddress pair because it deploys a deterministic contract with create2</p>
+</blockquote>
+<p>All tokens created by the bridge will effectively not have the same address as previous <code>wrappedToken</code> versions.</p>
+<h3 id="42-previous-bridges-deployed">4.2 Previous bridges deployed</h3>
+<p>Bridges will be upgraded to start using <code>upgradeableWrappedTokens</code>.<br />
+All previous tokens deployed on those bridges will have the same address as before and same address will be used.<br />
+New tokens will have the new address produced by the <code>upgradeableWrappedToken</code>.  </p>
+<h3 id="43-chains-with-no-pp-zkevm-validium-mainnet">4.3 Chains with no PP (zkEVM / Validium / Mainnet)</h3>
+<p>Chains with NO PP proofs cannot use this feature since all bridge assets can be stolen, not just the chain's ones.
+Mainnet could be a special case where the owner of the <code>upgradeableWrappedTokens</code> is the <code>securityCouncil</code></p>
+<blockquote>
+<p><code>securityCouncil</code> is the same address that could potentially halt the bridge and <code>zkEVMMultisig</code> to perform an upgrade with delay 0 afterwards</p>
+<p>therefore, seems more rational to setup the timelock as the owner of all <code>upgradeableWrappedTokens</code></p>
+<p>Timelock is not accessible from the Bridge. Therefore, adding a role <code>bridgeManager</code> and initialize it with the timelock fits better. Later on, bridgeManager can be initialized as the securityCouncil address or the timelock.</p>
+</blockquote>
+<h2 id="5-specs">5. Specs</h2>
+<h3 id="51-deterministic-address-specification">5.1 Deterministic address specification</h3>
+<p>In order to get a deterministic address when deploying a ERC20 upgradeable token we need to make the <code>create2</code> parameters to be only dependant on the token information. The rest of the parameters must be equal across all the chains.<br />
+The common data shared among all the bridges deployed is its address.</p>
+<h3 id="52-previous-knowledge">5.2 Previous knowledge</h3>
+<p><code>create2</code> formula to generate addresses:
+<div class="highlight"><pre><span></span><code>address = keccak256(0xFF ++ deployer ++ salt ++ keccak256(init_code))[12:]
 </code></pre></div>
-Note that <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/lib/PolygonConsensusBase.sol#L48"><code>trustedSequencer</code></a> address can be <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/lib/PolygonConsensusBase.sol#L181">modified</a> at any time by the <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/lib/PolygonConsensusBase.sol#L42">rollup admin</a></p>
-<h2 id="polygonrollupmanagersol"><strong>PolygonRollupManager.sol</strong></h2>
-<h3 id="description_1"><strong>Description</strong></h3>
-<p>Allow to create a new kind of rollupTypes based on the Verifier type.
-Pending states has been removed (related to decentralize aggregator) in order to clean the SC and reduce the bytecode.</p>
-<h3 id="changes_1"><strong>Changes</strong></h3>
-<h4 id="verifiertype">VerifierType</h4>
-<p>Introduced <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/interfaces/IPolygonRollupManager.sol#L310">two types of Verifiers</a>:
-<div class="highlight"><pre><span></span><code><span class="kt">enum</span><span class="w"> </span><span class="nv">VerifierType</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span>StateTransition<span class="p">,</span>
-<span class="w">        </span>Pessimistic
-<span class="w">    </span><span class="p">}</span>
+<a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/proxy/transparent/TransparentUpgradeableProxy.sol#L79">ProxyTransparentProxy constructor parameters</a>:
+- <code>_logic</code>: implementation address
+- <code>initialOwner</code>: owner of the proxy
+- <code>_data</code>:  typically to initialize storage proxy</p>
+<h3 id="53-create2-params-transparentproxy">5.3 Create2 params TransparentProxy</h3>
+<h4 id="531-deployer">5.3.1 deployer</h4>
+<p>The deployer will be always the bridge address when the proxy is deployed</p>
+<h4 id="532-salt">5.3.2 salt</h4>
+<p>The <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v10.0.0-rc.6/contracts/v2/PolygonZkEVMBridgeV2.sol#L554">TokenInfoHash</a> will be set as a <code>salt</code> since it is the unique identifier of a given token.</p>
+<blockquote>
+<p>Note that in previous bridge versions, not only the <code>TokenInfoHash</code> changed the address deployed but also the <a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v10.0.0-rc.6/contracts/v2/PolygonZkEVMBridgeV2.sol#L1171">token metadata since it was appended to the initBytecode</a> to be able to setup the constructor.</p>
+</blockquote>
+<h4 id="534-init_code">5.3.4 init_code</h4>
+<p>initBytecode <code>proxyInitBytecode # constructorArgs</code>:
+<div class="highlight"><pre><span></span><code>/// @dev A bytecode stored on chain is used to deploy the proxy in a way that ALWAYS it&#39;s used the same
+/// bytecode, therefore the proxy addresses are the same in all chains as they are deployed deterministically with same init bytecode
+/// @dev there is no constructor args as the implementation address + owner of the proxied are set at constructor level and taken from the bridge itself
+bytes memory proxyInitBytecode = abi.encodePacked(
+    INIT_BYTECODE_TRANSPARENT_PROXY()
+);
 </code></pre></div>
-- <code>StateTransition</code>: verifies state transition constraint function. Consensus to support this verifiers are <code>PolygonValidumEtrog</code> &amp; <code>PolygonZkEVMEWtrog</code>
-- <code>Pessimistic</code>: verifies the <a href="https://github.com/agglayer/agglayer/tree/main/crates/pessimistic-proof-program">pessimisitc circuit</a> contraints. Consensus to support this verifiers are <code>PolygonPessimisticConsensus</code></p>
-<h4 id="addnewrolluptype">AddNewRollupType</h4>
-<p><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L432">Function to add new rollups has been adapted</a> in order to support creation of new rollups with Pessimistic verifier.</p>
-<p>Event has been changed in order to include data related to Pessimistic verifiers:
-<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
-<span class="cm">* @dev Emitted when a new rollup type is added</span>
-<span class="cm">*/</span>
-<span class="kt">event</span><span class="w"> </span><span class="nv">AddNewRollupType</span><span class="p">(</span>
-<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>rollupTypeID<span class="p">,</span>
-<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">consensusImplementation</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">verifier</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">uint64</span><span class="w"> </span><span class="nv">forkID</span><span class="p">,</span>
-<span class="w">    </span>VerifierType<span class="w"> </span>rollupVerifierType<span class="p">,</span>
-<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">genesis</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">description</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">programVKey</span>
-<span class="p">);</span>
-</code></pre></div>
-New parameter <code>programVKey</code>: identifier of the program that will be proven in SP1 Verifier</p>
-<p><mark>Note: If any software rely on this event it should be changed</mark></p>
-<h4 id="verifypessimistictrustedaggregator">verifyPessimisticTrustedAggregator</h4>
-<p><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L1046">Function</a> to verify Pessimsitic verifiers types.
-Important to notice that a chain using this verification will update its LER. Therefore, it will also update the RER and the GER.
-Current bridge services rely on <code>VerifyBatchesTrustedAggregator</code> event to track RER tree.
-Hence, same event signature has been maintained for Pessimistic verifiers
-<div class="highlight"><pre><span></span><code><span class="c1">// Same event as verifyBatches to support current bridge service to synchronize everything</span>
-emit<span class="w"> </span>VerifyBatchesTrustedAggregator<span class="p">(</span>
-<span class="w">    </span>rollupID<span class="p">,</span>
-<span class="w">    </span><span class="m m-Decimal">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// final batch: does not apply in pessimistic</span>
-<span class="w">    </span><span class="kt">bytes32</span><span class="p">(</span><span class="m m-Decimal">0</span><span class="p">),</span><span class="w"> </span><span class="c1">// new state root: does not apply in pessimistic</span>
-<span class="w">    </span>newLocalExitRoot<span class="p">,</span>
-<span class="w">    </span><span class="k">msg.sender</span>
-<span class="p">);</span>
-</code></pre></div></p>
-<h4 id="versioning">Versioning</h4>
-<p><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L235">New constant</a> has been added in order to check the PolygonRollupManager.sol version.
-<div class="highlight"><pre><span></span><code><span class="c1">// Current rollup manager version</span>
-<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="k">public </span><span class="nv">constant</span><span class="w"> </span>ROLLUP_MANAGER_VERSION<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pessimistic&quot;</span><span class="p">;</span>
-</code></pre></div>
-It will be updated on each upgrade.</p>
+Here it is the most tricky part since as mentioned before, the constructor arguments of the proxy are the following:</p>
+<ul>
+<li><code>_logic</code>: implementation address</li>
+<li><code>initialOwner</code>: owner of the proxy</li>
+<li><code>_data</code>:  typically to initialize storage proxy
+Therefore, all above parameters must be the same in all chains in order to get the same address.</li>
+</ul>
+<h3 id="54-implementation">5.4 Implementation</h3>
+<ul>
+<li>When deploying the new bridge implementation<ul>
+<li>deploy proxy init bytecode and store it on an immutable address</li>
+<li>deploy erc20 upgradeable implementation and store it on an immutable address</li>
+</ul>
+</li>
+<li>When deploying a new upgradeableWrappedToken<ul>
+<li>Deploy TokenWrappedTransparentProxy with create2<ul>
+<li>The constructor has been modified to get the params from the msg.sender (the bridge). This way, we are not sending constructor args and the init code it's no dependant on constructor and the address is determined byt the bytecode.
+<div class="highlight"><pre><span></span><code>   constructor()
+        payable
+        ERC1967Proxy(
+            IPolygonZkEVMBridgeV2(msg.sender)
+                .getWrappedTokenBridgeImplementation(),
+            new bytes(0)
+        )
+    {
+        // Get bridge interface to retrieve proxied tokens manager role
+        _changeAdmin(
+            IPolygonZkEVMBridgeV2(msg.sender).getProxiedTokensManager()
+        );
+    }
+</code></pre></div></li>
+</ul>
+</li>
+<li>attach <code>initBytecodeProxy</code> with params
+<div class="highlight"><pre><span></span><code>// &#39;proxyBytecodeStorer&#39; is the address that contains the initBytecode
+bytes memory initBytecode = abi.encodePacked(
+    IProxyInitCode(wrappedTokenBytecodeStorer).PROXY_INIT_BYTECODE();,
+    constructorArgsProxy
+);
+</code></pre></div></li>
+<li>create2 opcode
+<div class="highlight"><pre><span></span><code>/// @solidity memory-safe-assembly
+assembly {
+    newWrappedTokenProxy := create2(
+        0,
+        add(initBytecode, 0x20),
+        mload(initBytecode),
+        tokenInfoHash
+    )
+}
+</code></pre></div></li>
+<li>initialize proxy contract
+<div class="highlight"><pre><span></span><code>newWrappedTokenProxy.initialize(name, symbol, decimals);
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<figure class="figure-image">
+  <img src="../UpgradeableTokens.png" alt="">
+  <figcaption></figcaption>
+</figure>
 
 
 
@@ -1726,7 +1845,7 @@ It will be updated on each upgrade.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 11, 2025 09:14:20 UTC">July 11, 2025</span>
   </span>
 
     
