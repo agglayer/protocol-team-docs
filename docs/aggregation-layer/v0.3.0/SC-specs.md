@@ -2,7 +2,7 @@
 [TOC]
 ## 1. Overview
 [AggLayer v0.3.0](https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md) adds the support for any chain to specify its own requirements. It is up to chain to specify what it does as long as it follows a generic interface provided by the agglayer.
-Therefore, the agglayer becomes agnostic to the chain requirements (EVM, non-EVM, DA source, consensus, ...). That means that any chain can be connected to the aggLayer regardless its execution and consensus layer.
+Therefore, the agglayer will become agnostic to the chain requirements (EVM, non-EVM, DA source, consensus, ...). That means that any chain can be connected to the aggLayer regardless its execution and consensus layer. Current version only supports EVM chains though.
 Smart contracts will be adapted to support generic chains that will be attached to the aggLayer.
 A generic interface will be provided so any chain can do its own logic that could be attached to the aggLayer.
 
