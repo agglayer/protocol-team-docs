@@ -622,10 +622,79 @@ function rollupIDToRollupDataV2Deserialized(
 }
 ```
 
-## 7. Roles sovereignChains contracts
+## 7. Sovereign SCs updates  
+This section introduces new features and functionalities in the [Sovereign SC](../v0.2.0/SovereignChains/Intro.md). Most are designed to support the [FEP program](https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#fep).
+
+### 7.1 GlobalExitRootManagerL2SovereignChain
+#### 7.1.1 `insertedGERHashChain` & `removedGERHashChain`  
+All GERs (Global Exit Roots) inserted on L2 must be verifiable against a valid `L1InfoTreeRoot`. This ensures the validity of every GER injected into the chain.  
+However, an invalid GER may still be injected due to:
+
+- malicious behavior by the `globalExitRootUpdater`, or  
+- a bug in the GER injection process (e.g., in the `aggOracle` component).
+
+An invalid GER cannot be proven against any valid `L1InfoTreeRoot`, which will cause the chain to stall until that GER is removed.
+
+A naïve approach would be to trigger a reorg on L2 to remove the offending GER transaction and reprocess subsequent transactions. But L2 reorgs are undesirable because they:
+
+- severely damage chain and product reputation, and  
+- could enable double-spending in third-party bridges.
+
+To avoid a reorg, the `removedGERHashChain` feature was introduced. Removing a GER in this context must be treated as an *emergency action* to restore progress without triggering a full reorg.
+
+### 7.2 BridgeL2SovereignChain
+
+### 7.2.1 Unused bits on `globalIndex` are set to 0
+Forces all unused bits on the `globalIndex` to be set to 0. This has no implication on `hermez-prover` chains, but it does affect `PP` and `FEP` chains, since `globalIndex` is used in both the pessimistic and FEP programs.
+
+Both programs assume that the unused bits are 0. Therefore, if any user makes a claim where those bits are set to a non-zero value, it could potentially trigger an error in the program, making it impossible to generate a proof.
+
+To resolve this, a change was introduced directly in the smart contract to prevent the propagation of unused bits to other components. 
+
+> Note: An alternative solution could have been modifying the components to allow arbitrary values for the unused bits.
+
+### 7.2.2 LocalBalanceTree
+The contract implements the same `LocalBalanceTree` logic as the pessimistic program. This tree is stored in a mapping and behaves as follows:
+
+- Decreases when a `bridge` occurs.
+- Increases when a `claim` is made.
+- If the token is minted on the chain itself, it does not alter the balance (no increase/decrease).
+
+This tree was added to prevent the following scenario:
+
+1. A chain uses a custom mapping that allows minting more tokens than are actually available.
+2. A user performs a successful `bridge` with more tokens than exist on the chain.
+3. The user transaction succeeds, but the pessimistic program cannot generate a valid proof because the `LocalBalanceTree` becomes negative.
+4. The chain gets blocked until a `claim` is performed to inject tokens into the `LocalBalanceTree`.
+
+This situation is avoided by having the `LocalBalanceTree` in the smart contract. Any `bridge` that would cause a negative balance is automatically reverted.
+
+#### 7.2.3 `activateEmergencyState` & `deactivateEmergencyState`
+Adds the ability to pause and unpause the bridge. Each action is controlled by its own dedicated address:
+
+- `activateEmergencyState` → `emergencyBridgePauser`
+- `deactivateEmergencyState` → `emergencyBridgeUnpauser`
+
+This functionality should be treated as an emergency mechanism. Entering into an emergency state should be executed by a `security council` address to act swiftly while requiring external consensus to trigger the action.
+
+Re-enabling the bridge (i.e., deactivating the emergency state) does not introduce any security concerns, so it can be safely managed by a multisig controlled by the chain itself.
+
+#### 7.2.4 `claimedGlobalIndexHashChain` & `unsetGlobalIndexHashChain`  
+Every claim made on L2 must correspond to a claim processed by the pessimistic program. To enforce this, the contract tracks a hash chain of all claims, which the program must reconstruct.
+
+If an invalid GER was used (as noted in section 7.2), it can lead to invalid claims on L2. In this situation:
+
+1. A reorg has **not** occurred, but  
+2. Invalid claims exist due to the bad GER.
+
+These invalid claims can leave the pessimistic program in a state where some claims cannot be proven. To rectify this, the `unsetMultipleClaims` function was added, allowing invalid claims to be rolled back. Like GER removal, this must be treated as an *emergency action* and triggered before any investigation.
+
+**Important note:** When a claim is unset, the user still receives their funds from the Bridge, meaning the Bridge’s balance becomes incorrect. It’s up to the chain itself to rebalance the Bridge (e.g., by bridging tokens and sending them to `0x00...00`).
+
+## 8. Roles sovereignChains contracts
 Contracts used in sovereign chains: `BridgeL2SovereignChain` & `GlobalExitRootManagerL2SovereignChain`
 
-### 7.1. BridgeL2SovereignChain
+### 8.1. BridgeL2SovereignChain
 |     Role      |                              Description                              |
 |:-------------:|:---------------------------------------------------------------------:|
 | bridgeManager | Handles set custom tokens mapping and has the ability to clear claims |
@@ -635,7 +704,7 @@ Contracts used in sovereign chains: `BridgeL2SovereignChain` & `GlobalExitRootMa
 - **Security Assumptions**: High. Setting custom tokens or clear claims
 - **Recommended Account Type**: Timelock (specified by the chain itself)
 
-### 7.2. BridgeL2SovereignChain
+### 8.2. GlobalExitRootManagerL2SovereignChain
 |         Role          |          Description           |
 |:---------------------:|:------------------------------:|
 | globalExitRootUpdater | Inject GER into the bridge SC  |
