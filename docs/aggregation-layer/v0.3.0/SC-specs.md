@@ -704,7 +704,7 @@ Contracts used in sovereign chains: `BridgeL2SovereignChain` & `GlobalExitRootMa
 - **Security Assumptions**: High. Setting custom tokens or clear claims
 - **Recommended Account Type**: Timelock (specified by the chain itself)
 
-### 8.2. BridgeL2SovereignChain
+### 8.2. GlobalExitRootManagerL2SovereignChain
 |         Role          |          Description           |
 |:---------------------:|:------------------------------:|
 | globalExitRootUpdater | Inject GER into the bridge SC  |
