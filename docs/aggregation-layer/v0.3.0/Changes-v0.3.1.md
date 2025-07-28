@@ -19,7 +19,13 @@ This update introduces a new version (`al-v0.3.1`) of the `PolygonRollupManager`
 
 This update (version `al-v0.3.1`) of the PolygonRollupManager contract includes extended functionality to support the migration of rollups from a standard state transition mechanism (ZK) to a pessimistic proof (PP) system. The following components and logic were added or updated to enable this capability:
 
-### New Mapping and Events:
+### Flow migration
+
+The migration flow can be found explained in this section: [flow migration](./Diagrams.md#migration-to-pp-or-algateway).
+
+### PolygonRollupManager
+
+#### New Mapping and Events:
 
 - `isRollupMigrating`: A new [mapping](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L322) has been added to keep track of rollups that are in the process of migrating.
 
@@ -40,27 +46,18 @@ This update (version `al-v0.3.1`) of the PolygonRollupManager contract includes 
     event CompletedMigration(uint32 indexed rollupID);  
 ```
 
-### Flow migration
-
-The migration flow can be found explained in this section: [flow migration](./Diagrams.md#migration-to-pp-or-algateway).
-
-### New Error Conditions
+#### New Error Conditions
 
 - `NewRollupTypeMustBePessimisticOrALGateway`: [Thrown](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L974) when trying to migrate a rollup to a non pessimistic or ALGateway rollup type with `initMigration` function.
 - `InvalidNewLocalExitRoot`: [Thrown](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L1324) when trying to finish a migration of a rollup to a pessimistic rollup type with `verifyPessimisticTrustedAggregator` function and the proposed new local exit root does not match the expected new local exit root.
 
-### Remedations audit
+#### Remedations audit
 - [Comment localExitRoot](https://github.com/agglayer/agglayer-contracts/commit/b0e950539c14d565868d9de2c3f40df0b65a443a): add new comment
 - [Renamed legacy vars function rollupIDToRollupDataDeserialized](https://github.com/agglayer/agglayer-contracts/commit/1e0428374e4c7f62e11e008ffc63ea8ae8315a3b)
 - [Unifying logic sequenced batches check](https://github.com/agglayer/agglayer-contracts/commit/9d8f9adc1a6d0228b44a78f1ca79a2f83ac7a5ec)
 
-### Internal audit fixes
-[Commit](https://github.com/agglayer/agglayer-contracts/commit/6db876c9a761d4b68a5fd142d73ceef5ee5b09e4) with follow changes:
-
-- Typo in comment
-- Update `reinitializer(4)` -> `reinitializer(5)`
-
-### Check global index
+### PolygonZkEVMBridgeV2
+#### Check global index
 It has been detected that a new check is necessary for the `globalIndex` to ensure that unused bits are set to 0.
 [Commit](https://github.com/agglayer/agglayer-contracts/commit/0f134b48d11fafbeddd386e698d1e878478c0f2f) with new check for global index in internal function `_verifyLeaf`:
 
@@ -86,7 +83,7 @@ require(
 error InvalidGlobalIndex();
 ```
 
-### Push Claim Event
+#### Push Claim Event
 [Commit](https://github.com/agglayer/agglayer-contracts/commit/81c511ef3914667eebc0f0f801829ce564645e07) with fix for reentrancy call:
 Now, the event will occur before the call. This way, there won’t be an ordering error if there is reentrancy.
 
@@ -102,6 +99,12 @@ Now, the event will occur before the call. This way, there won’t be an orderin
 - ClaimEvent
 - SC call reentrancy
 ```
+
+### Internal audit fixes
+[Commit](https://github.com/agglayer/agglayer-contracts/commit/6db876c9a761d4b68a5fd142d73ceef5ee5b09e4) with follow changes:
+
+- `IPolygonRollupManager`: Typo in comment
+- `PolygonRollupManagerNotUpgraded`: Update `reinitializer(4)` -> `reinitializer(5)`
 
 ### Tools
 - e2e [instructions](https://github.com/0xPolygonHermez/protocol-team-kanban/issues/604)
