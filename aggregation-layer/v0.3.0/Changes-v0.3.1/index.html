@@ -1219,18 +1219,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-mapping-and-events" class="md-nav__link">
+  <a href="#flow-migration" class="md-nav__link">
     <span class="md-ellipsis">
-      New Mapping and Events:
+      Flow migration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#flow-migration" class="md-nav__link">
+  <a href="#polygonrollupmanager" class="md-nav__link">
     <span class="md-ellipsis">
-      Flow migration
+      PolygonRollupManager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PolygonRollupManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-mapping-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Mapping and Events:
     </span>
   </a>
   
@@ -1254,14 +1264,20 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#internal-audit-fixes" class="md-nav__link">
+  <a href="#polygonzkevmbridgev2" class="md-nav__link">
     <span class="md-ellipsis">
-      Internal audit fixes
+      PolygonZkEVMBridgeV2
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="PolygonZkEVMBridgeV2">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#check-global-index" class="md-nav__link">
@@ -1276,6 +1292,20 @@
   <a href="#push-claim-event" class="md-nav__link">
     <span class="md-ellipsis">
       Push Claim Event
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-audit-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal audit fixes
     </span>
   </a>
   
@@ -1374,18 +1404,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-mapping-and-events" class="md-nav__link">
+  <a href="#flow-migration" class="md-nav__link">
     <span class="md-ellipsis">
-      New Mapping and Events:
+      Flow migration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#flow-migration" class="md-nav__link">
+  <a href="#polygonrollupmanager" class="md-nav__link">
     <span class="md-ellipsis">
-      Flow migration
+      PolygonRollupManager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PolygonRollupManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-mapping-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Mapping and Events:
     </span>
   </a>
   
@@ -1409,14 +1449,20 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#internal-audit-fixes" class="md-nav__link">
+  <a href="#polygonzkevmbridgev2" class="md-nav__link">
     <span class="md-ellipsis">
-      Internal audit fixes
+      PolygonZkEVMBridgeV2
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="PolygonZkEVMBridgeV2">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#check-global-index" class="md-nav__link">
@@ -1431,6 +1477,20 @@
   <a href="#push-claim-event" class="md-nav__link">
     <span class="md-ellipsis">
       Push Claim Event
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-audit-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal audit fixes
     </span>
   </a>
   
@@ -1483,7 +1543,10 @@
 <h2 id="contract-updates-for-migration-to-pessimistic-proof-pp">Contract Updates for Migration to Pessimistic Proof (PP)</h2>
 <p>This update introduces a new version (<code>al-v0.3.1</code>) of the <code>PolygonRollupManager</code> contract, focusing on enabling rollup migrations from a state transition system to a pessimistic proof (PP) system. The following core updates were implemented:</p>
 <p>This update (version <code>al-v0.3.1</code>) of the PolygonRollupManager contract includes extended functionality to support the migration of rollups from a standard state transition mechanism (ZK) to a pessimistic proof (PP) system. The following components and logic were added or updated to enable this capability:</p>
-<h3 id="new-mapping-and-events">New Mapping and Events:</h3>
+<h3 id="flow-migration">Flow migration</h3>
+<p>The migration flow can be found explained in this section: <a href="../Diagrams/#migration-to-pp-or-algateway">flow migration</a>.</p>
+<h3 id="polygonrollupmanager">PolygonRollupManager</h3>
+<h4 id="new-mapping-and-events">New Mapping and Events:</h4>
 <ul>
 <li>
 <p><code>isRollupMigrating</code>: A new <a href="https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L322">mapping</a> has been added to keep track of rollups that are in the process of migrating.</p>
@@ -1505,26 +1568,19 @@
      */
     event CompletedMigration(uint32 indexed rollupID);  
 </code></pre></div>
-<h3 id="flow-migration">Flow migration</h3>
-<p>The migration flow can be found explained in this section: <a href="../Diagrams/#migration-to-pp-or-algateway">flow migration</a>.</p>
-<h3 id="new-error-conditions">New Error Conditions</h3>
+<h4 id="new-error-conditions">New Error Conditions</h4>
 <ul>
 <li><code>NewRollupTypeMustBePessimisticOrALGateway</code>: <a href="https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L974">Thrown</a> when trying to migrate a rollup to a non pessimistic or ALGateway rollup type with <code>initMigration</code> function.</li>
 <li><code>InvalidNewLocalExitRoot</code>: <a href="https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L1324">Thrown</a> when trying to finish a migration of a rollup to a pessimistic rollup type with <code>verifyPessimisticTrustedAggregator</code> function and the proposed new local exit root does not match the expected new local exit root.</li>
 </ul>
-<h3 id="remedations-audit">Remedations audit</h3>
+<h4 id="remedations-audit">Remedations audit</h4>
 <ul>
 <li><a href="https://github.com/agglayer/agglayer-contracts/commit/b0e950539c14d565868d9de2c3f40df0b65a443a">Comment localExitRoot</a>: add new comment</li>
 <li><a href="https://github.com/agglayer/agglayer-contracts/commit/1e0428374e4c7f62e11e008ffc63ea8ae8315a3b">Renamed legacy vars function rollupIDToRollupDataDeserialized</a></li>
 <li><a href="https://github.com/agglayer/agglayer-contracts/commit/9d8f9adc1a6d0228b44a78f1ca79a2f83ac7a5ec">Unifying logic sequenced batches check</a></li>
 </ul>
-<h3 id="internal-audit-fixes">Internal audit fixes</h3>
-<p><a href="https://github.com/agglayer/agglayer-contracts/commit/6db876c9a761d4b68a5fd142d73ceef5ee5b09e4">Commit</a> with follow changes:</p>
-<ul>
-<li>Typo in comment</li>
-<li>Update <code>reinitializer(4)</code> -&gt; <code>reinitializer(5)</code></li>
-</ul>
-<h3 id="check-global-index">Check global index</h3>
+<h3 id="polygonzkevmbridgev2">PolygonZkEVMBridgeV2</h3>
+<h4 id="check-global-index">Check global index</h4>
 <p>It has been detected that a new check is necessary for the <code>globalIndex</code> to ensure that unused bits are set to 0.
 <a href="https://github.com/agglayer/agglayer-contracts/commit/0f134b48d11fafbeddd386e698d1e878478c0f2f">Commit</a> with new check for global index in internal function <code>_verifyLeaf</code>:</p>
 <ul>
@@ -1547,7 +1603,7 @@
 error InvalidGlobalIndex();
 </code></pre></div></li>
 </ul>
-<h3 id="push-claim-event">Push Claim Event</h3>
+<h4 id="push-claim-event">Push Claim Event</h4>
 <p><a href="https://github.com/agglayer/agglayer-contracts/commit/81c511ef3914667eebc0f0f801829ce564645e07">Commit</a> with fix for reentrancy call:
 Now, the event will occur before the call. This way, there won’t be an ordering error if there is reentrancy.</p>
 <ul>
@@ -1561,6 +1617,12 @@ Now, the event will occur before the call. This way, there won’t be an orderin
 - ClaimEvent
 - SC call reentrancy
 </code></pre></div></li>
+</ul>
+<h3 id="internal-audit-fixes">Internal audit fixes</h3>
+<p><a href="https://github.com/agglayer/agglayer-contracts/commit/6db876c9a761d4b68a5fd142d73ceef5ee5b09e4">Commit</a> with follow changes:</p>
+<ul>
+<li><code>IPolygonRollupManager</code>: Typo in comment</li>
+<li><code>PolygonRollupManagerNotUpgraded</code>: Update <code>reinitializer(4)</code> -&gt; <code>reinitializer(5)</code></li>
 </ul>
 <h3 id="tools">Tools</h3>
 <ul>
@@ -1588,7 +1650,7 @@ Now, the event will occur before the call. This way, there won’t be an orderin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 28, 2025 18:02:29 UTC">July 28, 2025</span>
   </span>
 
     
