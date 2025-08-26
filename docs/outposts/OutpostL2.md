@@ -1,7 +1,7 @@
 # Outpost L2 contracts
 [TOC]
 
-### 🔍 What is an outpost chain?
+### What is an outpost chain?
 
 - Chain that **owns a different native bridge** not controlled by the **PP (Pessimistic Proof)**
 - Is **EVM compatible** (in a first stage)
@@ -17,7 +17,7 @@
 
 ---
 
-### 🎯 Objective
+### Objective
 
 - **Attach an outpost chain to the aggLayer**
 
@@ -28,7 +28,7 @@
 
 ---
 
-### ⚠️ Limitations
+### Limitations
 
 - **Bridge, GER and wTokens** have **different addresses**
 - Possible reorgs in the outpost chain,so also in the LER
@@ -36,7 +36,7 @@
     - It can create double spending, will be paid by Polygon.
 
 #### Flow examples
-### Outpost with native ETH ❌
+### Outpost with native ETH
 Example flow of an outpost having gasTokenNetwork different than native networkID/rollupID:
 Initialize params:
 - GasTokenNetwork: 0 (ethereum)
@@ -61,7 +61,7 @@ sequenceDiagram
     L1_Agglayer_Bridge ->> User: ❌❌ There is no ETH on bridge to send ❌❌
 ```
 
-### Outpost with native token ✅
+### Outpost with native token
 Example flow of an outpost having gasTokenNetwork same than native networkID/rollupID:
 Initialize params:
 - GasTokenNetwork: 2 (base rollupId)
@@ -90,7 +90,7 @@ sequenceDiagram
 <br>
 <br>
 
-## Deploy Outpost Chain Script 
+## Deploy Outpost Chain Script
 
 The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md)
 
