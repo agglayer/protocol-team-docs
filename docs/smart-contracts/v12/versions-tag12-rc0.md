@@ -7,3 +7,4 @@
 * `GlobalExitRootManagerL2SovereignChain`: v1.0.0
 * `AggchainFEP`: v1.0.0
 * `AggchainECDSA`: v1.0.0
+* `AggOracleCommittee`: v1.0.0

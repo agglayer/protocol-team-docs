@@ -1,291 +1,169 @@
 # Outpost L2 contracts
 [TOC]
 
-!!! danger "Warning"
-    The code is not audited yet and it is not meant to use in production. Current status: release-candidate
+### 🔍 What is an outpost chain?
 
-## Motivation
-This document outlines the smart contract changes introduced in the `feature/outposts` branch. These changes introduce new administrative functions for managing the Local Exit Tree (LET), claims, and local balance trees. The aggkit must **listen to the events** emitted by these functions to keep its database synchronized with the contract state.
-The second big change is the abstraction of some bridge logic to a separate contract called `BridgeLib` with the main purpose of improving bridge's bytecode size.
+- Chain that **owns a different native bridge** not controlled by the **PP (Pessimistic Proof)**
+- Is **EVM compatible** (in a first stage)
+- The chain **already exists**, we are not involved on the genesis
+- The **state transition is not controlled** by us (**not controlled sequencer**)
+- Has **its own finality**
+- All outposts will have a **customGasToken** that will be the native token of the chain
+    - Outpost chains can not have native ether token
+- **Examples**:
+  - Base
+  - Optimism
+  - BSC
+
+---
+
+### 🎯 Objective
+
+- **Attach an outpost chain to the aggLayer**
+
+
+### Implications
+- Deploy SC
+- Secure State transition
+
+---
+
+### ⚠️ Limitations
+
+- **Bridge, GER and wTokens** have **different addresses**
+- Possible reorgs in the outpost chain,so also in the LER
+    - A new functions in the bridge to rollback the LER
+    - It can create double spending, will be paid by Polygon.
+
+#### Flow examples
+### Outpost with native ETH ❌
+Example flow of an outpost having gasTokenNetwork different than native networkID/rollupID:
+Initialize params:
+- GasTokenNetwork: 0 (ethereum)
+- GasTokenAddress: 0x000....000 (ethereum)
+```mermaid
+sequenceDiagram
+    participant User
+    participant L1_Base_Bridge
+    participant Native_Bridge_Base
+    participant Agglayer_Bridge_Base
+    participant L1_Agglayer_Bridge
+
+    Note left of User: User has ETH
+    User ->> L1_Base_Bridge: bridge to base
+    L1_Base_Bridge ->> L1_Base_Bridge: lock ETH
+    L1_Base_Bridge ->> Native_Bridge_Base: bridge
+    Native_Bridge_Base ->> User: mint baseETH
+    Note left of User: User has baseETH
+    User ->> Agglayer_Bridge_Base: bridge to L1 (from aggLayer)
+    Agglayer_Bridge_Base ->> Agglayer_Bridge_Base: lock baseETH
+    Agglayer_Bridge_Base ->> L1_Agglayer_Bridge: bridge
+    L1_Agglayer_Bridge ->> User: ❌❌ There is no ETH on bridge to send ❌❌
+```
+
+### Outpost with native token ✅
+Example flow of an outpost having gasTokenNetwork same than native networkID/rollupID:
+Initialize params:
+- GasTokenNetwork: 2 (base rollupId)
+- GasTokenAddress: 0x002....002 (custom address)
+```mermaid
+sequenceDiagram
+    participant User
+    participant L1_Base_Bridge
+    participant Native_Bridge_Base
+    participant Agglayer_Bridge_Base
+    participant L1_Agglayer_Bridge
+
+    Note left of User: User has ETH
+    User ->> L1_Base_Bridge: bridge to base
+    L1_Base_Bridge ->> L1_Base_Bridge: lock ETH
+    L1_Base_Bridge ->> Native_Bridge_Base: bridge
+    Native_Bridge_Base ->> User: mint baseETH
+    Note left of User: User has baseETH
+    User ->> Agglayer_Bridge_Base: bridge to L1 (from aggLayer)
+    Agglayer_Bridge_Base ->> Agglayer_Bridge_Base: lock baseETH
+    Agglayer_Bridge_Base ->> L1_Agglayer_Bridge: bridge
+    L1_Agglayer_Bridge ->> User: mint wrappedBaseETH
+    Note left of User: User has wrappedBaseETH ✅
+```
+
+<br>
+<br>
+
+## Deploy Outpost Chain Script 
+
+The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md)
 
 ## Overview
 
-The main changes include:
+The **deployOutpostChain** script is an automated deployment solution designed to facilitate the establishment of sovereign blockchain networks within the Agglayer ecosystem. This tool provides a streamlined approach to deploying all necessary smart contracts required for an outpost chain implementation.
 
-- **New administrative functions** for LET manipulation and claims management
-- **New events** that aggkit must monitor to maintain database synchronization
-- **BridgeLib contract** for bytecode optimization and utility functions
-- **Enhanced error handling** with specific error types
-- **Version updates** across bridge contracts
+## Primary Objective
 
----
+The script serves as a comprehensive deployment framework for creating sovereign blockchain networks with integrated cross-chain bridging capabilities. It enables the deployment of blockchain infrastructure that supports:
 
-## 1. New Administrative Functions
+- **Cross-chain asset transfers** and token bridging functionality
+- **Global exit root management** for secure cross-chain transaction finalization
+- **Decentralized governance mechanisms** through timelock controllers
+- **Optional oracle committee integration** for enhanced security and decentralization
 
-### 1.1 `setMultipleClaims`
+## Core Contract Deployments
 
-**Purpose**: Administrative function to batch set multiple claims as processed in the claimedBitmap.  
-**Access Control**: Only callable by accounts with `GlobalExitRootRemover` role.
+The deployment process encompasses five primary smart contracts:
 
-```solidity
-function setMultipleClaims(uint256[] memory globalIndexes) external onlyGlobalExitRootRemover
-```
+### 1. TimelockController
+- **Purpose**: Implements governance timelock mechanisms for secure contract upgrades
+- **Function**: Provides time-delayed execution of administrative operations
 
-**Parameters**:
+### 2. ProxyAdmin
+- **Purpose**: Manages proxy contract upgrade processes
+- **Function**: Controls the upgrade lifecycle of proxied contracts
 
-- `globalIndexes`: Array of global indexes to mark as claimed
-    - **Format**: `| 191 bits (0) | 1 bit (mainnetFlag) | 32 bits (rollupIndex) | 32 bits (leafIndex) |`
-    - **Mainnet**: `mainnetFlag = 1`, `rollupIndex` ignored
-    - **Rollup**: `mainnetFlag = 0`, `rollupIndex = networkID - 1`
+### 3. BridgeL2SovereignChain
+- **Purpose**: Facilitates cross-chain asset transfers
+- **Function**: Handles token deposits, withdrawals, and cross-chain communication
 
-**Event Emitted**:
+### 4. GlobalExitRootManagerL2SovereignChain
+- **Purpose**: Manages the global exit root merkle tree
+- **Function**: Maintains cryptographic proofs for cross-chain transaction validation
 
-```solidity
-event SetClaim(uint32 leafIndex, uint32 sourceNetwork);
-```
+### 5. AggOracleCommittee *(Optional)*
+- **Purpose**: Provides decentralized oracle functionality
+- **Function**: Enables committee-based validation of cross-chain data through consensus mechanisms
 
-- leafIndex: Index of the unclaimed leaf that is set to be claimed
-- sourceNetwork: Rollup id of the claimed index
+## Additional Infrastructure Components
 
----
+The deployment includes several auxiliary contracts:
 
-### 1.2 `backwardLET`
+- **WrappedTokenBytecodeStorer**: Optimizes contract size by storing token bytecode externally
+- **WrappedTokenBridgeImplementation**: Serves as template for wrapped token deployments
+- **BridgeLib**: Contains shared bridge functionality to reduce contract complexity
+- **WETH Token**: Chain-specific wrapped Ether implementation
 
-**Purpose**: Administrative function to move the Local Exit Tree backward to a previous state with fewer deposits.  
-**Access Control**: Only callable by accounts with `GlobalExitRootRemover` role.  
-**Use Cases**: Rollback LET due to reorgs, invalid states, or administrative corrections.
+## Key Architectural Features
 
-```solidity
-function backwardLET(
-    uint256 newDepositCount,
-    bytes32[32] calldata newFrontier,
-    bytes32 nextLeaf,
-    bytes32[32] calldata proof
-) external onlyGlobalExitRootRemover
-```
+### Automated Configuration Management
+- **Address Pre-calculation**: Utilizes deterministic address generation for circular dependency resolution
+- **Parameter Derivation**: Automatically calculates gas token addresses and network identifiers
+- **Governance Integration**: Establishes proper ownership hierarchies and access controls
 
-**Parameters**:
+### Security Mechanisms
+- **Proxy Pattern Implementation**: Enables secure contract upgrades through established patterns
+- **Timelock Governance**: Enforces delayed execution for critical administrative functions
+- **Multi-signature Oracle Support**: Provides optional decentralized validation through committee consensus
 
-- `newDepositCount`: Target deposit count (must be < current depositCount)
-- `newFrontier`: Merkle tree frontier array for the target state (32 elements)
-- `nextLeaf`: The leaf at position `newDepositCount` in current tree
-- `proof`: Merkle proof showing `nextLeaf` exists at `newDepositCount` position
+### Deployment Flexibility
+- **Configurable Oracle Systems**: Supports both single-oracle and committee-based configurations
+- **Standardized Deployment Process**: Utilizes OpenZeppelin's established upgrade patterns
+- **Comprehensive Validation**: Includes automated verification of deployment integrity
 
-**Event Emitted**:
+## Target Use Cases
 
-```solidity
-event BackwardLET(uint256 newDepositCount, bytes32 newRoot);
-```
+This deployment script is specifically designed for:
 
-- newDepositCount: new last leaf index of the tree after backward LET
-- newRoot: new root of the tree after backward LET
+- **Sovereign Chain Operators**: Organizations establishing independent blockchain networks
+- **Layer 2 Solution Providers**: Teams implementing scalable blockchain solutions
+- **Cross-chain Protocol Developers**: Projects requiring interoperability with the Polygon ecosystem
+- **Enterprise Blockchain Initiatives**: Organizations deploying private or consortium chains with bridging capabilities
 
----
-
-### 1.3 `forwardLET`
-
-**Purpose**: Administrative function to add multiple leaves to the Local Exit Tree in a single transaction.  
-**Access Control**: Only callable by accounts with `GlobalExitRootRemover` role.  
-**Use Cases**: Batch processing of deposits, state recovery, or administrative corrections.
-
-```solidity
-struct LeafData {
-    uint8 leafType;
-    uint32 originNetwork;
-    address originAddress;
-    uint32 destinationNetwork;
-    address destinationAddress;
-    uint256 amount;
-    bytes32 metadataHash;
-}
-
-function forwardLET(
-    LeafData[] calldata newLeaves,
-    bytes32 expectedStateRoot
-) external onlyGlobalExitRootRemover
-```
-
-**Parameters**:
-
-- `newLeaves`: Array of leaf data added to the tree
-    - `leafType`: Type of bridge operation (0 = transfer, 1 = message)
-    - `originNetwork`: Source network ID
-    - `originAddress`: Source token/contract address
-    - `destinationNetwork`: Target network ID
-    - `destinationAddress`: Target token/contract address
-    - `amount`: Amount being bridged
-    - `metadataHash`: Hash of additional metadata
-- `expectedStateRoot`: Expected tree root after adding all leaves
-
-**Event Emitted**:
-
-```solidity
-event ForwardLET(uint256 newDepositCount, bytes32 newRoot);
-```
-
-- newDepositCount: new last leaf index of the tree after forward LET
-- newRoot: new root of the tree after forward LET
-- To synch, data of all the inserted leafs must be extracted from the calldata of calling `forwardLET` function
-
----
-
-### 1.4 `setLocalBalanceTree`
-
-**Purpose**: Administrative function to set local balance tree leaves to specific amounts for cross-network token tracking.  
-**Access Control**: Only callable by accounts with `GlobalExitRootRemover` role.  
-**Use Cases**: Update cross-network token balances, balance corrections, or state recovery.
-
-```solidity
-function setLocalBalanceTree(
-    uint32[] memory originNetwork,
-    address[] memory originTokenAddress,
-    uint256[] memory amount
-) external onlyGlobalExitRootRemover
-```
-
-**Parameters**:
-
-- `originNetwork`: Array of origin network IDs
-- `originTokenAddress`: Array of origin token addresses
-- `amount`: Array of amounts to set for each token
-
-**Event Emitted**:
-
-```solidity
-event SetLocalBalanceTree(
-    uint32 indexed originNetwork,
-    address indexed originTokenAddress,
-    uint256 newAmount
-);
-```
-
-- Event to update all the new values for the local Balance Tree, the entries not included will remain the same
-
----
-
-## 2. BridgeLib Contract - Bytecode Optimization
-
-### 2.1 Rationale for Bytecode Abstraction
-
-The main motivation for creating the BridgeLib contract is **Ethereum's bytecode size limit**. Ethereum has a maximum contract bytecode size limit of **24,576 bytes (24KB)** established by EIP-170. As the bridge contract grows with new functionality, it approaches this limit, making deployment on Ethereum impossible.
-
-**Key Benefits**:
-
-- **Ethereum Compatibility**: Ensures the bridge contract can be deployed on Ethereum mainnet
-- **Code Reusability**: Utility functions can be shared across multiple contracts
-- **Maintainability**: Separates utility logic from core bridge functionality
-- **Gas Optimization**: External library calls can be more gas-efficient for complex operations
-
-### 2.2 Functions Moved to BridgeLib
-
-The following functions were extracted from the main bridge contract to reduce bytecode size:
-
-#### Token Metadata Functions
-
-```solidity
-// Previously inline in PolygonZkEVMBridgeV2, now in BridgeLib
-function safeName(address token) public view returns (string memory)
-function safeSymbol(address token) public view returns (string memory)
-function safeDecimals(address token) public view returns (uint8)
-function getTokenMetadata(address token) external view returns (bytes memory)
-function returnDataToString(bytes memory data) internal pure returns (string memory)
-```
-
-#### Permit Validation Functions
-
-```solidity
-// Previously inline in PolygonZkEVMBridgeV2, now in BridgeLib
-function validateAndProcessPermit(
-    address token,
-    bytes calldata permitData,
-    address expectedOwner,
-    address expectedSpender
-) external returns (bool success)
-```
-
-#### Constants and Signatures Moved
-
-```solidity
-// Permit signatures moved from main contract to BridgeLib
-bytes4 internal constant _PERMIT_SIGNATURE = 0xd505accf;
-bytes4 internal constant _PERMIT_SIGNATURE_DAI = 0x8fcbaf0c;
-
-// Error definitions moved to BridgeLib
-error NotValidOwner();
-error NotValidSpender();
-error NotValidSignature();
-```
-
-### 2.3 Integration Changes in Main Bridge Contract
-
-The main bridge contract now uses the BridgeLib instance:
-
-```solidity
-// New immutable reference to BridgeLib
-BridgeLib public immutable bridgeLib;
-
-// Constructor deploys BridgeLib
-constructor() {
-    // ... existing code ...
-    bridgeLib = new BridgeLib();
-}
-
-// Token metadata now delegated to BridgeLib
-function getTokenMetadata(address token) external view returns (bytes memory) {
-    return bridgeLib.getTokenMetadata(token);
-}
-
-// Permit processing now delegated to BridgeLib
-function _permit(address token, bytes calldata permitData) internal {
-    bridgeLib.validateAndProcessPermit(
-        token,
-        permitData,
-        msg.sender,
-        address(this)
-    );
-}
-```
-
-### 2.4 Bytecode Size Impact
-
-**Before BridgeLib abstraction**:
-
-- All utility functions were inline in the main bridge contract
-- Contract approaching the 24KB bytecode limit
-- Risk of deployment failure on Ethereum
-
-**After BridgeLib abstraction**:
-
-- Core bridge functionality remains in main contract
-- Utility functions moved to separate BridgeLib contract
-- Significant bytecode reduction in main contract
-- Ethereum deployment compatibility ensured
-
-### 2.5 Version Updates Related to BridgeLib
-
-The bytecode abstraction is reflected in the version updates:
-
-- **PolygonZkEVMBridgeV2**: `v1.0.0` → `v1.1.0`
-    - Indicates the integration of BridgeLib for bytecode optimization
-    - Maintains backward compatibility in the public interface
-    - Internal implementation changes for permit and metadata handling
-
-
-## 3. Error Handling
-
-### 3.1 New Error Types to Monitor
-
-- `InvalidDepositCount()`: Invalid deposit count for LET operations
-- `InvalidLeavesLength()`: Empty leaves array in forwardLET
-- `InvalidExpectedRoot()`: Computed root doesn't match expected
-- `InvalidSubtreeFrontier()`: Invalid subtree frontier in backwardLET
-- `InvalidLBTLeaf()`: Trying to set LBT leaf for same network
-- `InputArraysLengthMismatch()`: Array parameters have different lengths
-- `OnlyDeployer()`: Function restricted to contract deployer
-
----
-
-## 4. Version Updates
-
-- **PolygonZkEVMBridgeV2**: `v1.0.0` → `v1.1.0`
-- **BridgeL2SovereignChain**: `v1.0.0` → `v2.0.0`
+The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md)
