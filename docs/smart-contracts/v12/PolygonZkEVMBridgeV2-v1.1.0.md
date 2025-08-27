@@ -1,5 +1,4 @@
 ## PolygonZkEVMBridgeV2 `v1.0.0` → `v1.1.0`
-[TOC]
 
 ## 1. BridgeLib Contract - Bytecode Optimization
 

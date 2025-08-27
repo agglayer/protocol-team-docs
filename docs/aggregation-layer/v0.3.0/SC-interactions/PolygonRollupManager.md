@@ -1,5 +1,4 @@
 # PolygonRollupManager
-[TOC]
 
 Contract responsible for managing rollups and the verification of their batches.
 This contract will create and update rollups and store all the hashed sequenced data from them.

@@ -1,5 +1,4 @@
 # AggLayer Gateway SC
-[TOC]
 
 ## 1. Interactions & Usage
 
