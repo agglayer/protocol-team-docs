@@ -26,4 +26,4 @@ This approach is also relevant for outpost chains, as discussed [here](https://g
 Specification can be found in the [agglayer specification repository](https://github.com/agglayer/specs/tree/main/specs).
 
 !!! info
-    The specifications is in WIP [here](https://github.com/agglayer/specs/pull/45)
+    The specification is in WIP [here](https://github.com/agglayer/specs/pull/45)
