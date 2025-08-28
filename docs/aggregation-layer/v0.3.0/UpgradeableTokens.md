@@ -1,5 +1,4 @@
 # UpgradeableTokens
-[TOC]
 
 ## 1. Glossary
 - `wrappedToken`: ERC20 standard token created by the bridge

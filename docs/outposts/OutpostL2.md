@@ -1,5 +1,4 @@
 # Outpost L2 contracts
-[TOC]
 
 ### 1. What is an outpost chain?
 

@@ -2,8 +2,6 @@
 This document summarizes most important changes on the SC side.
 You can also check the [full git diff](https://github.com/0xPolygonHermez/zkevm-contracts/compare/v8.0.0-fork.12...v9.0.0-rc.3-pp)
 
-[TOC]
-
 ## **TLDR**
 ### **Structs**
 - Add new parameters in [RollupData struct](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.3-pp/contracts/v2/PolygonRollupManager.sol#L78)

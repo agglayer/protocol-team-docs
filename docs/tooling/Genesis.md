@@ -1,4 +1,3 @@
-[TOC]
 ## **Glossary**
 - `sovereign chain`: chain that ONLY uses the pessimistic proof and has NOT any state-transition proof
 - `sovereign contracts`: smart contracts to be used by vanilla clients (i.e. clients that does not have the necessary code to insert GER natively)

@@ -1,5 +1,4 @@
 # Aggchain FEP
-[TOC]
 
 ## 1. Interactions & Usage
 

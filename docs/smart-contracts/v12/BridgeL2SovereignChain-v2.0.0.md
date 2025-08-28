@@ -1,6 +1,5 @@
 
 ## BridgeL2SovereignChain `v1.0.0` → `v2.0.0`
-[TOC]
 
 ## 1. New Administrative Functions
 
