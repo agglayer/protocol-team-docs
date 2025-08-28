@@ -494,6 +494,8 @@
       
         
       
+        
+      
     
     
     
@@ -1410,6 +1412,83 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.3. Version 0.3.5
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.3. Version 0.3.5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v0.3.5/Changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3.1 Changes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2005,38 +2084,6 @@
 
 
 <h1 id="polygonrollupmanager">PolygonRollupManager</h1>
-<div class="toc">
-<ul>
-<li><a href="#polygonrollupmanager">PolygonRollupManager</a><ul>
-<li><a href="#1-interactions-usage">1. Interactions &amp; Usage</a><ul>
-<li><a href="#11-addnewrolluptype">1.1. addNewRollupType</a></li>
-<li><a href="#12-obsoleterolluptype">1.2. obsoleteRollupType</a></li>
-<li><a href="#13-attachaggchaintoal">1.3. attachAggchainToAL</a></li>
-<li><a href="#14-addexistingrollup">1.4. addExistingRollup</a></li>
-<li><a href="#15-updaterollupbyrollupadmin">1.5. updateRollupByRollupAdmin</a></li>
-<li><a href="#16-updaterollup">1.6. updateRollup</a></li>
-<li><a href="#17-initmigration">1.7. initMigration</a></li>
-<li><a href="#18-rollbackbatches">1.8. rollbackBatches</a></li>
-<li><a href="#19-onsequencebatches">1.9. onSequenceBatches</a></li>
-<li><a href="#110-verifybatchestrustedaggregator">1.10. verifyBatchesTrustedAggregator</a></li>
-<li><a href="#111-verifypessimistictrustedaggregator">1.11. verifyPessimisticTrustedAggregator</a></li>
-<li><a href="#112-activateemergencystate">1.12. activateEmergencyState</a></li>
-<li><a href="#113-deactivateemergencystate">1.13. deactivateEmergencyState</a></li>
-<li><a href="#114-setbatchfee">1.14. setBatchFee</a></li>
-<li><a href="#115-getters">1.15. Getters</a></li>
-</ul>
-</li>
-<li><a href="#2-tooling-available">2. Tooling available</a><ul>
-<li><a href="#21-addrolluptype">2.1. addRollupType</a></li>
-<li><a href="#22-createnewrollup">2.2. createNewRollup</a></li>
-<li><a href="#23-getrollupdata">2.3. getRollupData</a></li>
-<li><a href="#24-updaterollup">2.4. updateRollup</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
 <p>Contract responsible for managing rollups and the verification of their batches.
 This contract will create and update rollups and store all the hashed sequenced data from them.
 The logic for sequence batches is moved to the <code>consensus</code> contracts, while the verification of all of them will be done in this one. In this way, the proof aggregation of the rollups will be easier on a close future.</p>
@@ -2608,7 +2655,7 @@ event VerifyPessimisticStateTransition(
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2025 06:21:05 UTC">August 27, 2025</span>
   </span>
 
     
