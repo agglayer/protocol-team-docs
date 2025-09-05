@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../v11/versions-tag11/">
+        <link rel="prev" href="../AggchainBase/">
       
       
-        <link rel="next" href="../BridgeL2SovereignChain-v2.0.0/">
+        <link rel="next" href="../AggchainFEP/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>4.1.1 Summary - SC-Protocol Documentation</title>
+        <title>AggchainECDSAMultisig - SC-Protocol Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tag-1200-rc0" class="md-skip">
+        <a href="#aggchainecdsamultisig-v100" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.1.1 Summary
+              AggchainECDSAMultisig
             
           </span>
         </div>
@@ -1435,30 +1435,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    4.1.1 Summary
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../versions-tag12-rc0/" class="md-nav__link">
         
   
   
@@ -1469,75 +1449,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tag-1200-rc0" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tag 12.0.0-rc0
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tag 12.0.0-rc0">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Infrastructure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bridge-contracts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bridge Contracts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aggchain-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aggchain Implementations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Features
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1708,46 +1619,202 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tag-1200-rc0" class="md-nav__link">
+  <a href="#aggchainecdsamultisig-v100" class="md-nav__link">
     <span class="md-ellipsis">
-      Tag 12.0.0-rc0
+      AggchainECDSAMultisig v1.0.0
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tag 12.0.0-rc0">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-initialization-and-migration-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Initialization and Migration Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Initialization and Migration Paths">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#core-infrastructure" class="md-nav__link">
+  <a href="#11-fresh-deployment-initialization" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Infrastructure
+      1.1 Fresh Deployment Initialization
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bridge-contracts" class="md-nav__link">
+  <a href="#12-migration-from-polygonpessimisticconsensus" class="md-nav__link">
     <span class="md-ellipsis">
-      Bridge Contracts
+      1.2 Migration from PolygonPessimisticConsensus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-getvkeyandaggchainparams-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. getVKeyAndAggchainParams Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. getVKeyAndAggchainParams Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-function-signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Function Signature
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aggchain-implementations" class="md-nav__link">
+  <a href="#22-ecdsa-multisig-implementation-details" class="md-nav__link">
     <span class="md-ellipsis">
-      Aggchain Implementations
+      2.2 ECDSA Multisig Implementation Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-aggchain-hash-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Aggchain Hash Computation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Aggchain Hash Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-hash-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Hash Structure
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#32-key-differences-from-other-implementations" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Features
+      3.2 Key Differences from Other Implementations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-verification-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Verification Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Verification Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-onverifypessimistic" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 onVerifyPessimistic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Key Design Decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Key Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-why-reinitializer2" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Why Reinitializer(2)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-verification-key-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Verification Key Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-signer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Signer Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-constants-and-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Constants and Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Constants and Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Cross-References
     </span>
   </a>
   
@@ -1777,34 +1844,137 @@
   
 
 
-  <h1>4.1.1 Summary</h1>
+  <h1>AggchainECDSAMultisig</h1>
 
-<h2 id="tag-1200-rc0">Tag <code>12.0.0-rc0</code></h2>
-<h3 id="core-infrastructure">Core Infrastructure</h3>
+<h2 id="aggchainecdsamultisig-v100">AggchainECDSAMultisig <code>v1.0.0</code></h2>
+<h2 id="1-initialization-and-migration-paths">1. Initialization and Migration Paths</h2>
+<h3 id="11-fresh-deployment-initialization">1.1 Fresh Deployment Initialization</h3>
+<p><strong>Purpose</strong>: Initialize new ECDSA multisig-based aggchain.<br />
+<strong>Access Control</strong>: Only callable by aggchain manager with reinitializer(2).  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">initialize</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_admin</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_trustedSequencer</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">_gasTokenAddress</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_trustedSequencerURL<span class="p">,</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>_networkName<span class="p">,</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nv">_useDefaultSigners</span><span class="p">,</span>
+<span class="w">    </span>SignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_signersToAdd<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_newThreshold</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyAggchainManager
+</code></pre></div>
+<p><strong>Process Flow</strong>:
+1. Validates <code>_initializerVersion = 0</code> (fresh deployment)
+2. Initializes both AggchainBase and PolygonConsensusBase
+3. Sets verification key flags to <code>false</code> (not used in ECDSA)
+4. Configures initial signers and threshold</p>
+<p><strong>Key Characteristics</strong>:
+- Does NOT use verification keys (<code>useDefaultVkeys = false</code>, zero vkey/selector)
+- Relies on ECDSA signatures instead of SP1 proofs
+- Signers and threshold are the primary security mechanism</p>
+<h3 id="12-migration-from-polygonpessimisticconsensus">1.2 Migration from PolygonPessimisticConsensus</h3>
+<p><strong>Purpose</strong>: Upgrade existing PessimisticConsensus chain to ECDSA multisig.<br />
+<strong>Access Control</strong>: Only callable by rollup manager with reinitializer(2).  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">migrateFromPessimisticConsensus</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyRollupManager
+</code></pre></div>
+<p><strong>Migration Process</strong>:
+1. Validates <code>_initializerVersion = 1</code> (already initialized as PessimisticConsensus)
+2. Sets <code>aggchainManager = admin</code> (preserves existing admin)
+3. Adds <code>trustedSequencer</code> as the sole initial signer
+4. Sets <code>threshold = 1</code> for backward compatibility
+5. Handles empty <code>trustedSequencerURL</code> by using "NO_URL" placeholder</p>
+<p><strong>Post-Migration State</strong>:
+- Single signer (trustedSequencer) with threshold of 1
+- Maintains operational continuity
+- Admin can later update signers and threshold via <code>updateSignersAndThreshold</code></p>
+<h2 id="2-getvkeyandaggchainparams-implementation">2. getVKeyAndAggchainParams Implementation</h2>
+<h3 id="21-function-signature">2.1 Function Signature</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getVKeyAndAggchainParams</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>aggchainData
+<span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>pure<span class="w"> </span>override<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes32</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="22-ecdsa-multisig-implementation-details">2.2 ECDSA Multisig Implementation Details</h3>
+<p><strong>Input Validation</strong>:
+- <code>aggchainData</code> MUST be empty (length = 0)
+- Non-empty data causes revert with <code>InvalidAggchainDataLength()</code></p>
+<p><strong>Returns</strong>:
+- First <code>bytes32</code>: Always <code>0x0</code> (no verification key used)
+- Second <code>bytes32</code>: Always <code>0x0</code> (no custom params)</p>
+<p><strong>Rationale</strong>:
+- ECDSA multisig doesn't use SP1 verification keys
+- Signers hash and threshold are handled directly in AggchainBase
+- The aggchain hash includes signers configuration from base contract</p>
+<h2 id="3-aggchain-hash-computation">3. Aggchain Hash Computation</h2>
+<h3 id="31-hash-structure">3.1 Hash Structure</h3>
+<p>The aggchain hash for ECDSA multisig is computed as:</p>
+<div class="highlight"><pre><span></span><code>keccak256(
+    CONSENSUS_TYPE ||       // 32 bits (value: 1)
+    bytes32(0) ||          // 256 bits (no vkey)
+    bytes32(0) ||          // 256 bits (no params)
+    aggchainSignersHash    // 256 bits (from base)
+)
+</code></pre></div>
+<p>Where:
+- <code>CONSENSUS_TYPE = 1</code> (inherited from AggchainBase)
+- <code>aggchainSignersHash = keccak256(threshold || aggchainSigners[])</code></p>
+<h3 id="32-key-differences-from-other-implementations">3.2 Key Differences from Other Implementations</h3>
+<p><strong>vs FEP</strong>:
+- FEP uses verification keys and SP1 proofs
+- FEP includes output roots and config in aggchainParams
+- ECDSA uses only signers and signatures</p>
+<p><strong>vs Standard Aggchains</strong>:
+- No verification key selector needed
+- No aggchain data parameters
+- Security comes from multisig threshold</p>
+<h2 id="4-verification-flow">4. Verification Flow</h2>
+<h3 id="41-onverifypessimistic">4.1 <code>onVerifyPessimistic</code></h3>
+<p><strong>Purpose</strong>: Handle pessimistic proof verification callback.<br />
+<strong>Access Control</strong>: Only callable by rollup manager.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">onVerifyPessimistic</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">calldata</span><span class="w"> </span>aggchainData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyRollupManager
+</code></pre></div>
+<p><strong>Behavior</strong>:
+- Validates <code>aggchainData</code> is empty
+- Emits <code>OnVerifyPessimisticECDSAMultisig</code> event
+- No actual proof verification (handled by signature validation elsewhere)</p>
+<p><strong>Event Emitted</strong>:
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">OnVerifyPessimisticECDSAMultisig</span><span class="p">();</span>
+</code></pre></div></p>
+<h2 id="5-key-design-decisions">5. Key Design Decisions</h2>
+<h3 id="51-why-reinitializer2">5.1 Why Reinitializer(2)?</h3>
 <ul>
-<li><code>PolygonRollupManager</code>: v1.0.0</li>
-<li><a href="../PolygonZkEVMBridgeV2-v1.1.0/"><code>PolygonZkEVMBridgeV2</code>: v1.0.0 → v1.1.0</a></li>
-<li><code>PolygonZkEVMGlobalExitRootV2</code>: v1.0.0</li>
-<li><a href="../AggLayerGateway-Multisig/"><code>AggLayerGateway</code>: v1.0.0 → v1.1.0</a></li>
+<li>Version 0: Fresh deployments</li>
+<li>Version 1: Reserved for PolygonPessimisticConsensus</li>
+<li>Version 2: ECDSA multisig implementation</li>
+<li>Version 3: Reserved for FEP</li>
 </ul>
-<h3 id="bridge-contracts">Bridge Contracts</h3>
+<p><strong>Upgrade Path</strong>:
+- ECDSA → FEP: Supported (via <code>initializeFromECDSAMultisig</code> in FEP)
+- FEP → ECDSA: Currently not supported</p>
+<h3 id="52-verification-key-handling">5.2 Verification Key Handling</h3>
 <ul>
-<li><a href="../BridgeL2SovereignChain-v2.0.0/"><code>BridgeL2SovereignChain</code>: v1.0.0 → v2.0.0</a></li>
-<li><code>GlobalExitRootManagerL2SovereignChain</code>: v1.0.0</li>
+<li>All vkey-related functions from AggchainBase are present but not used</li>
+<li><code>useDefaultVkeys</code> is always <code>false</code></li>
+<li><code>ownedAggchainVKeys</code> remains empty</li>
+<li>Maintains interface compatibility while using different security model</li>
 </ul>
-<h3 id="aggchain-implementations">Aggchain Implementations</h3>
+<h3 id="53-signer-management">5.3 Signer Management</h3>
 <ul>
-<li><a href="../AggchainBase/"><code>AggchainBase</code></a>: Abstract base contract for aggchain implementations</li>
-<li><a href="../AggchainFEP/"><code>AggchainFEP</code>: v3.0.0</a> - FEP (Full Exit Proof) implementation with SP1 proving</li>
-<li><a href="../AggchainECDSAMultisig/"><code>AggchainECDSAMultisig</code>: v1.0.0</a> - ECDSA multisig-based implementation</li>
-<li><code>AggOracleCommittee</code>: v1.0.0</li>
+<li>Inherits full signer management from <a href="../AggchainBase/">AggchainBase</a></li>
+<li>Can use local signers or gateway signers (<code>useDefaultSigners</code> flag)</li>
+<li>Threshold-based security instead of cryptographic proofs</li>
+<li>See AggchainBase documentation for detailed signer management functions</li>
 </ul>
-<h3 id="key-features">Key Features</h3>
+<h2 id="6-constants-and-architecture">6. Constants and Architecture</h2>
+<h3 id="61-constants">6.1 Constants</h3>
 <ul>
-<li><strong>Multisig Support</strong>: Enhanced multisig management in AggLayerGateway and aggchain contracts</li>
-<li><strong>Multiple Initialization Paths</strong>: Support for fresh deployments and migrations from existing contracts</li>
-<li><strong>Configuration Management</strong>: FEP supports multiple OP Succinct configurations</li>
-<li><strong>Flexible Verification</strong>: Choice between SP1 proofs (FEP) and ECDSA signatures (Multisig)</li>
+<li><code>AGGCHAIN_TYPE = 0x0000</code>: ECDSA multisig type identifier</li>
+<li><code>AGGCHAIN_ECDSA_MULTISIG_VERSION = "v1.0.0"</code>: Current version</li>
+<li><code>CONSENSUS_TYPE = 1</code>: Inherited from AggchainBase</li>
+</ul>
+<h3 id="62-cross-references">6.2 Cross-References</h3>
+<ul>
+<li>Inherits from <a href="../AggchainBase/">AggchainBase</a> for common functionality</li>
+<li>Can integrate with <a href="../AggLayerGateway-Multisig/">AggLayerGateway</a> for default signers</li>
+<li>Can be upgraded to <a href="../AggchainFEP/">AggchainFEP</a> but not vice versa</li>
 </ul>
 
 

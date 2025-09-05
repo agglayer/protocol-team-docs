@@ -12,7 +12,7 @@
         <link rel="prev" href="../../v11/versions-tag11/">
       
       
-        <link rel="next" href="../BridgeL2SovereignChain-v2.0.0/">
+        <link rel="next" href="../AggchainBase/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>4.1.1 Summary - SC-Protocol Documentation</title>
+        <title>AggLayerGateway Multisig - SC-Protocol Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tag-1200-rc0" class="md-skip">
+        <a href="#agglayergateway-multisig-functions-v110" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.1.1 Summary
+              AggLayerGateway Multisig
             
           </span>
         </div>
@@ -1435,30 +1435,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    4.1.1 Summary
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../versions-tag12-rc0/" class="md-nav__link">
         
   
   
@@ -1469,75 +1449,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tag-1200-rc0" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tag 12.0.0-rc0
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tag 12.0.0-rc0">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Infrastructure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bridge-contracts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bridge Contracts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aggchain-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aggchain Implementations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Features
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1708,46 +1619,253 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tag-1200-rc0" class="md-nav__link">
+  <a href="#agglayergateway-multisig-functions-v110" class="md-nav__link">
     <span class="md-ellipsis">
-      Tag 12.0.0-rc0
+      AggLayerGateway Multisig Functions v1.1.0
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tag 12.0.0-rc0">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-multisig-signer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Multisig Signer Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Multisig Signer Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#core-infrastructure" class="md-nav__link">
+  <a href="#11-updatesignersandthreshold" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Infrastructure
+      1.1 updateSignersAndThreshold
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-view-functions-for-multisig-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. View Functions for Multisig State
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. View Functions for Multisig State">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-issigner" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 isSigner
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bridge-contracts" class="md-nav__link">
+  <a href="#22-getaggchainsignerscount" class="md-nav__link">
     <span class="md-ellipsis">
-      Bridge Contracts
+      2.2 getAggchainSignersCount
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aggchain-implementations" class="md-nav__link">
+  <a href="#23-getaggchainsigners" class="md-nav__link">
     <span class="md-ellipsis">
-      Aggchain Implementations
+      2.3 getAggchainSigners
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#24-getaggchainsignershash" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Features
+      2.4 getAggchainSignersHash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-getaggchainsignerinfos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 getAggchainSignerInfos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-internal-helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Internal Helper Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Internal Helper Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-_updatesignersandthreshold-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 _updateSignersAndThreshold (Internal)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-_addsignerinternal-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 _addSignerInternal (Internal)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-_removesignerinternal-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 _removeSignerInternal (Internal)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-_updateaggchainsignershash-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 _updateAggchainSignersHash (Internal)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-multisig-related-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Multisig-Related Errors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-storage-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Storage Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Storage Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-multisig-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Multisig Storage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-integration-with-aggchains" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Integration with Aggchains
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Integration with Aggchains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-how-aggchains-use-gateway-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 How Aggchains Use Gateway Signers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-benefits-of-centralized-signer-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Benefits of Centralized Signer Management
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-adding-new-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Adding New Signers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-removing-and-adding-signers" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Removing and Adding Signers
     </span>
   </a>
   
@@ -1777,35 +1895,198 @@
   
 
 
-  <h1>4.1.1 Summary</h1>
+  <h1>AggLayerGateway Multisig</h1>
 
-<h2 id="tag-1200-rc0">Tag <code>12.0.0-rc0</code></h2>
-<h3 id="core-infrastructure">Core Infrastructure</h3>
+<h2 id="agglayergateway-multisig-functions-v110">AggLayerGateway Multisig Functions <code>v1.1.0</code></h2>
+<h2 id="1-multisig-signer-management">1. Multisig Signer Management</h2>
+<h3 id="11-updatesignersandthreshold">1.1 <code>updateSignersAndThreshold</code></h3>
+<p><strong>Purpose</strong>: Batch update signers and threshold in a single atomic transaction.<br />
+<strong>Access Control</strong>: Only callable by accounts with <code>AL_MULTISIG_ROLE</code>.<br />
+<strong>Use Cases</strong>: Manage the default signers that aggchains can use when <code>useDefaultSigners</code> flag is enabled.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">updateSignersAndThreshold</span><span class="p">(</span>
+<span class="w">    </span>RemoveSignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_signersToRemove<span class="p">,</span>
+<span class="w">    </span>SignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_signersToAdd<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_newThreshold</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyRole<span class="p">(</span>AL_MULTISIG_ROLE<span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
 <ul>
-<li><code>PolygonRollupManager</code>: v1.0.0</li>
-<li><a href="../PolygonZkEVMBridgeV2-v1.1.0/"><code>PolygonZkEVMBridgeV2</code>: v1.0.0 → v1.1.0</a></li>
-<li><code>PolygonZkEVMGlobalExitRootV2</code>: v1.0.0</li>
-<li><a href="../AggLayerGateway-Multisig/"><code>AggLayerGateway</code>: v1.0.0 → v1.1.0</a></li>
+<li><code>_signersToRemove</code>: Array of signers to remove with their indices (MUST be in descending index order)</li>
+<li><code>addr</code>: Address of the signer to remove</li>
+<li><code>index</code>: Current index of the signer in the aggchainSigners array</li>
+<li><code>_signersToAdd</code>: Array of new signers to add with their URLs</li>
+<li><code>addr</code>: Address of the new signer</li>
+<li><code>url</code>: URL associated with the signer</li>
+<li><code>_newThreshold</code>: New threshold value for multisig operations</li>
 </ul>
-<h3 id="bridge-contracts">Bridge Contracts</h3>
+<p><strong>Event Emitted</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">SignersAndThresholdUpdated</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span>aggchainSigners<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">threshold</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">aggchainSignersHash</span>
+<span class="p">);</span>
+</code></pre></div>
+<p><strong>Important Notes</strong>:
+- Removal indices MUST be provided in descending order to avoid index shifting issues
+- The function will revert if indices are not in descending order
+- Maximum of 255 signers supported
+- Threshold must not exceed the total number of signers after modifications</p>
+<h2 id="2-view-functions-for-multisig-state">2. View Functions for Multisig State</h2>
+<h3 id="21-issigner">2.1 <code>isSigner</code></h3>
+<p><strong>Purpose</strong>: Check if an address is registered as a signer in the gateway.<br />
+<strong>Access Control</strong>: Public view function.<br />
+<strong>Use Cases</strong>: Verify signer status for aggchains using default signers.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">isSigner</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">_signer</span><span class="p">)</span><span class="w"> </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
 <ul>
-<li><a href="../BridgeL2SovereignChain-v2.0.0/"><code>BridgeL2SovereignChain</code>: v1.0.0 → v2.0.0</a></li>
-<li><code>GlobalExitRootManagerL2SovereignChain</code>: v1.0.0</li>
+<li><code>_signer</code>: Address to check</li>
 </ul>
-<h3 id="aggchain-implementations">Aggchain Implementations</h3>
+<p><strong>Returns</strong>:</p>
 <ul>
-<li><a href="../AggchainBase/"><code>AggchainBase</code></a>: Abstract base contract for aggchain implementations</li>
-<li><a href="../AggchainFEP/"><code>AggchainFEP</code>: v3.0.0</a> - FEP (Full Exit Proof) implementation with SP1 proving</li>
-<li><a href="../AggchainECDSAMultisig/"><code>AggchainECDSAMultisig</code>: v1.0.0</a> - ECDSA multisig-based implementation</li>
-<li><code>AggOracleCommittee</code>: v1.0.0</li>
+<li><code>bool</code>: True if the address is a registered signer</li>
 </ul>
-<h3 id="key-features">Key Features</h3>
+<hr />
+<h3 id="22-getaggchainsignerscount">2.2 <code>getAggchainSignersCount</code></h3>
+<p><strong>Purpose</strong>: Get the total number of registered signers.<br />
+<strong>Access Control</strong>: External view function.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAggchainSignersCount</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">uint256</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns</strong>:</p>
 <ul>
-<li><strong>Multisig Support</strong>: Enhanced multisig management in AggLayerGateway and aggchain contracts</li>
-<li><strong>Multiple Initialization Paths</strong>: Support for fresh deployments and migrations from existing contracts</li>
-<li><strong>Configuration Management</strong>: FEP supports multiple OP Succinct configurations</li>
-<li><strong>Flexible Verification</strong>: Choice between SP1 proofs (FEP) and ECDSA signatures (Multisig)</li>
+<li>Number of signers in the multisig</li>
 </ul>
+<hr />
+<h3 id="23-getaggchainsigners">2.3 <code>getAggchainSigners</code></h3>
+<p><strong>Purpose</strong>: Retrieve all registered signer addresses.<br />
+<strong>Access Control</strong>: External view function.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAggchainSigners</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>Array of all signer addresses</li>
+</ul>
+<hr />
+<h3 id="24-getaggchainsignershash">2.4 <code>getAggchainSignersHash</code></h3>
+<p><strong>Purpose</strong>: Get the hash of the current signers configuration.<br />
+<strong>Access Control</strong>: External view function.<br />
+<strong>Use Cases</strong>: Used by aggchain contracts to include in their aggchain hash computation when using default signers.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAggchainSignersHash</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>Hash computed as <code>keccak256(abi.encodePacked(threshold, aggchainSigners))</code></li>
+</ul>
+<p><strong>Note</strong>: Will revert with <code>AggchainSignersHashNotInitialized()</code> if the hash has not been initialized.</p>
+<hr />
+<h3 id="25-getaggchainsignerinfos">2.5 <code>getAggchainSignerInfos</code></h3>
+<p><strong>Purpose</strong>: Get all signers with their associated URLs.<br />
+<strong>Access Control</strong>: External view function.<br />
+<strong>Use Cases</strong>: Retrieve complete signer information including contact URLs.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAggchainSignerInfos</span><span class="p">()</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span>SignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li>Array of <code>SignerInfo</code> structs, each containing:</li>
+<li><code>addr</code>: Signer address</li>
+<li><code>url</code>: Associated URL for the signer</li>
+</ul>
+<h2 id="3-internal-helper-functions">3. Internal Helper Functions</h2>
+<h3 id="31-_updatesignersandthreshold-internal">3.1 <code>_updateSignersAndThreshold</code> (Internal)</h3>
+<p><strong>Purpose</strong>: Internal function that handles the actual logic for updating signers and threshold.<br />
+<strong>Access Control</strong>: Internal function called by <code>updateSignersAndThreshold</code>.  </p>
+<p><strong>Process Flow</strong>:
+1. Validates that removal indices are in descending order
+2. Removes signers in descending index order
+3. Adds new signers with validation
+4. Updates threshold
+5. Recomputes and stores the signers hash</p>
+<hr />
+<h3 id="32-_addsignerinternal-internal">3.2 <code>_addSignerInternal</code> (Internal)</h3>
+<p><strong>Purpose</strong>: Add a signer with validation checks.<br />
+<strong>Access Control</strong>: Internal function.  </p>
+<p><strong>Validation</strong>:
+- Signer address cannot be zero
+- URL cannot be empty
+- Signer must not already exist</p>
+<hr />
+<h3 id="33-_removesignerinternal-internal">3.3 <code>_removeSignerInternal</code> (Internal)</h3>
+<p><strong>Purpose</strong>: Remove a signer with validation checks.<br />
+<strong>Access Control</strong>: Internal function.  </p>
+<p><strong>Validation</strong>:
+- Index must be within bounds
+- Address at index must match provided address</p>
+<hr />
+<h3 id="34-_updateaggchainsignershash-internal">3.4 <code>_updateAggchainSignersHash</code> (Internal)</h3>
+<p><strong>Purpose</strong>: Recompute and update the signers hash after modifications.<br />
+<strong>Access Control</strong>: Internal function.  </p>
+<p><strong>Computation</strong>:
+<div class="highlight"><pre><span></span><code>aggchainSignersHash<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">keccak256</span><span class="p">(</span>abi<span class="p">.</span>encodePacked<span class="p">(</span>threshold<span class="p">,</span><span class="w"> </span>aggchainSigners<span class="p">))</span>
+</code></pre></div></p>
+<h2 id="4-error-handling">4. Error Handling</h2>
+<h3 id="41-multisig-related-errors">4.1 Multisig-Related Errors</h3>
+<ul>
+<li><code>IndicesNotInDescendingOrder()</code>: Removal indices must be in descending order</li>
+<li><code>SignerCannotBeZero()</code>: Signer address cannot be zero address</li>
+<li><code>SignerURLCannotBeEmpty()</code>: Signer URL must be provided</li>
+<li><code>SignerAlreadyExists()</code>: Attempting to add a duplicate signer</li>
+<li><code>SignerDoesNotExist()</code>: Signer not found at specified index</li>
+<li><code>AggchainSignersTooHigh()</code>: Exceeds maximum of 255 signers</li>
+<li><code>InvalidThreshold()</code>: Threshold exceeds number of signers</li>
+<li><code>AggchainSignersHashNotInitialized()</code>: Signers hash not yet initialized</li>
+</ul>
+<h2 id="5-storage-variables">5. Storage Variables</h2>
+<h3 id="51-multisig-storage">5.1 Multisig Storage</h3>
+<ul>
+<li><code>address[] aggchainSigners</code>: Array of registered signer addresses</li>
+<li><code>mapping(address =&gt; string) signerToURLs</code>: Maps signer addresses to their URLs</li>
+<li><code>uint256 threshold</code>: Required number of signatures for multisig operations</li>
+<li><code>bytes32 aggchainSignersHash</code>: Cached hash of threshold and signers array</li>
+</ul>
+<h2 id="6-integration-with-aggchains">6. Integration with Aggchains</h2>
+<h3 id="61-how-aggchains-use-gateway-signers">6.1 How Aggchains Use Gateway Signers</h3>
+<ol>
+<li><strong>Enable Default Signers</strong>: Aggchains set <code>useDefaultSigners = true</code> to use gateway signers</li>
+<li><strong>Query Signer Data</strong>: Aggchains call gateway view functions to retrieve signer information</li>
+<li><strong>Include in Hash</strong>: The <code>aggchainSignersHash</code> is included in the aggchain hash computation</li>
+<li><strong>Verification</strong>: State transitions are verified using the gateway's signer configuration</li>
+</ol>
+<p><strong>Important</strong>: Gateway functions don't check the <code>useDefaultSigners</code> flag - that validation happens in the aggchain contracts themselves.</p>
+<h3 id="62-benefits-of-centralized-signer-management">6.2 Benefits of Centralized Signer Management</h3>
+<ul>
+<li><strong>Consistency</strong>: All aggchains using default signers share the same configuration</li>
+<li><strong>Efficiency</strong>: Single point of management for signer updates</li>
+<li><strong>Flexibility</strong>: Aggchains can opt-in or opt-out of default signers</li>
+<li><strong>Security</strong>: Role-based access control for signer management</li>
+</ul>
+<h2 id="7-usage-examples">7. Usage Examples</h2>
+<h3 id="71-adding-new-signers">7.1 Adding New Signers</h3>
+<div class="highlight"><pre><span></span><code>SignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>newSigners<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span>SignerInfo<span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+newSigners<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>SignerInfo<span class="p">({</span>
+<span class="w">    </span>addr<span class="o">:</span><span class="w"> </span><span class="mh">0x123</span><span class="p">...,</span>
+<span class="w">    </span>url<span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://signer1.example.com&quot;</span>
+<span class="p">});</span>
+newSigners<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>SignerInfo<span class="p">({</span>
+<span class="w">    </span>addr<span class="o">:</span><span class="w"> </span><span class="mh">0x456</span><span class="p">...,</span>
+<span class="w">    </span>url<span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://signer2.example.com&quot;</span>
+<span class="p">});</span>
+
+gateway<span class="p">.</span>updateSignersAndThreshold<span class="p">(</span>
+<span class="w">    </span><span class="kt">new</span><span class="w"> </span>RemoveSignerInfo<span class="p">[](</span><span class="m m-Decimal">0</span><span class="p">),</span><span class="w"> </span><span class="c1">// No removals</span>
+<span class="w">    </span>newSigners<span class="p">,</span>
+<span class="w">    </span><span class="m m-Decimal">3</span><span class="w"> </span><span class="c1">// New threshold</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="72-removing-and-adding-signers">7.2 Removing and Adding Signers</h3>
+<div class="highlight"><pre><span></span><code>RemoveSignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>toRemove<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span>RemoveSignerInfo<span class="p">[](</span><span class="m m-Decimal">2</span><span class="p">);</span>
+toRemove<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>RemoveSignerInfo<span class="p">({</span>addr<span class="o">:</span><span class="w"> </span><span class="err">0</span>xOldSigner1<span class="p">,</span><span class="w"> </span>index<span class="o">:</span><span class="w"> </span><span class="m m-Decimal">5</span><span class="p">});</span><span class="w"> </span><span class="c1">// Higher index first</span>
+toRemove<span class="p">[</span><span class="m m-Decimal">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>RemoveSignerInfo<span class="p">({</span>addr<span class="o">:</span><span class="w"> </span><span class="err">0</span>xOldSigner2<span class="p">,</span><span class="w"> </span>index<span class="o">:</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">});</span><span class="w"> </span><span class="c1">// Lower index second</span>
+
+SignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>toAdd<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span>SignerInfo<span class="p">[](</span><span class="m m-Decimal">1</span><span class="p">);</span>
+toAdd<span class="p">[</span><span class="m m-Decimal">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>SignerInfo<span class="p">({</span>addr<span class="o">:</span><span class="w"> </span><span class="err">0</span>xNewSigner<span class="p">,</span><span class="w"> </span>url<span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://newsigner.com&quot;</span><span class="p">});</span>
+
+gateway<span class="p">.</span>updateSignersAndThreshold<span class="p">(</span>toRemove<span class="p">,</span><span class="w"> </span>toAdd<span class="p">,</span><span class="w"> </span><span class="m m-Decimal">2</span><span class="p">);</span>
+</code></pre></div>
 
 
 

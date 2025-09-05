@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../v11/versions-tag11/">
+        <link rel="prev" href="../AggLayerGateway-Multisig/">
       
       
-        <link rel="next" href="../BridgeL2SovereignChain-v2.0.0/">
+        <link rel="next" href="../AggchainECDSAMultisig/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>4.1.1 Summary - SC-Protocol Documentation</title>
+        <title>AggchainBase - SC-Protocol Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tag-1200-rc0" class="md-skip">
+        <a href="#aggchainbase" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4.1.1 Summary
+              AggchainBase
             
           </span>
         </div>
@@ -1435,30 +1435,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    4.1.1 Summary
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../versions-tag12-rc0/" class="md-nav__link">
         
   
   
@@ -1469,75 +1449,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tag-1200-rc0" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tag 12.0.0-rc0
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tag 12.0.0-rc0">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Infrastructure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bridge-contracts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bridge Contracts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aggchain-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aggchain Implementations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Features
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1708,46 +1619,178 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tag-1200-rc0" class="md-nav__link">
+  <a href="#aggchainbase" class="md-nav__link">
     <span class="md-ellipsis">
-      Tag 12.0.0-rc0
+      AggchainBase
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tag 12.0.0-rc0">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Core Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Core Initialization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#core-infrastructure" class="md-nav__link">
+  <a href="#11-initaggchainmanager" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Infrastructure
+      1.1 initAggchainManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aggchain-hash-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Aggchain Hash Computation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Aggchain Hash Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-getaggchainhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 getAggchainHash
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bridge-contracts" class="md-nav__link">
+  <a href="#22-getvkeyandaggchainparams-abstract" class="md-nav__link">
     <span class="md-ellipsis">
-      Bridge Contracts
+      2.2 getVKeyAndAggchainParams (Abstract)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multisig-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Multisig Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Multisig Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-updatesignersandthreshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 updateSignersAndThreshold
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-getters-and-setters" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Getters and Setters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Getters and Setters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-verification-key-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Verification Key Functions
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#aggchain-implementations" class="md-nav__link">
+  <a href="#42-signer-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Aggchain Implementations
+      4.2 Signer Functions
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#43-aggchain-manager-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Features
+      4.3 Aggchain Manager Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-utility-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Utility Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-constants-and-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Constants and Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Constants and Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-key-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Key Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-abstract-contract-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Abstract Contract Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-gateway-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Gateway Integration
     </span>
   </a>
   
@@ -1777,34 +1820,119 @@
   
 
 
-  <h1>4.1.1 Summary</h1>
+  <h1>AggchainBase</h1>
 
-<h2 id="tag-1200-rc0">Tag <code>12.0.0-rc0</code></h2>
-<h3 id="core-infrastructure">Core Infrastructure</h3>
+<h2 id="aggchainbase">AggchainBase</h2>
+<h2 id="1-core-initialization">1. Core Initialization</h2>
+<h3 id="11-initaggchainmanager">1.1 <code>initAggchainManager</code></h3>
+<p><strong>Purpose</strong>: Sets the aggchain manager during rollup deployment.<br />
+<strong>Access Control</strong>: Only callable by the rollup manager.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">initAggchainManager</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">newAggchainManager</span><span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyRollupManager
+</code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>newAggchainManager</code>: Address of the aggchain manager (cannot be zero address)</p>
+<p><strong>Event Emitted</strong>:
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">AcceptAggchainManagerRole</span><span class="p">(</span><span class="kt">address</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>oldAggchainManager<span class="p">,</span><span class="w"> </span><span class="kt">address</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>newAggchainManager<span class="p">);</span>
+</code></pre></div></p>
+<h2 id="2-aggchain-hash-computation">2. Aggchain Hash Computation</h2>
+<h3 id="21-getaggchainhash">2.1 <code>getAggchainHash</code></h3>
+<p><strong>Purpose</strong>: Computes the aggchain hash for pessimistic proof verification.<br />
+<strong>Access Control</strong>: External view function (called by rollup manager).  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getAggchainHash</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>aggchainData<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>view<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes32</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Process</strong>:
+1. Retrieves signers hash (from gateway if <code>useDefaultSigners</code> is true, otherwise local)
+2. Calls <code>getVKeyAndAggchainParams</code> to extract vkey and params
+3. Computes hash as:
+<div class="highlight"><pre><span></span><code>keccak256(
+    CONSENSUS_TYPE ||      // 32 bits
+    aggchainVKey ||        // 256 bits  
+    aggchainParams ||      // 256 bits
+    signersHash            // 256 bits
+)
+</code></pre></div></p>
+<p><strong>Returns</strong>: 
+- Aggchain hash combining consensus type, verification key, parameters, and signers hash</p>
+<h3 id="22-getvkeyandaggchainparams-abstract">2.2 <code>getVKeyAndAggchainParams</code> (Abstract)</h3>
+<p><strong>Purpose</strong>: Extract verification key and parameters from aggchain data.<br />
+<strong>Implementation</strong>: Must be implemented by inheriting contracts.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">getVKeyAndAggchainParams</span><span class="p">(</span><span class="kt">bytes</span><span class="w"> </span><span class="nv">memory</span><span class="w"> </span>aggchainData<span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">public</span><span class="w"> </span>view<span class="w"> </span>virtual<span class="w"> </span><span class="kt">returns</span><span class="w"> </span><span class="p">(</span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">aggchainVKey</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">aggchainParams</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="3-multisig-management">3. Multisig Management</h2>
+<h3 id="31-updatesignersandthreshold">3.1 <code>updateSignersAndThreshold</code></h3>
+<p><strong>Purpose</strong>: Batch update signers and threshold in a single transaction.<br />
+<strong>Access Control</strong>: Only callable by aggchain manager.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">updateSignersAndThreshold</span><span class="p">(</span>
+<span class="w">    </span>RemoveSignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_signersToRemove<span class="p">,</span>
+<span class="w">    </span>SignerInfo<span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>_signersToAdd<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">_newThreshold</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyAggchainManager
+</code></pre></div>
+<p><strong>Parameters</strong>:
+- <code>_signersToRemove</code>: Array of signers to remove (must be in descending index order)
+- <code>_signersToAdd</code>: Array of new signers to add with URLs
+- <code>_newThreshold</code>: New threshold value</p>
+<p><strong>Event Emitted</strong>:
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">SignersAndThresholdUpdated</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span>aggchainSigners<span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">threshold</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">aggchainSignersHash</span>
+<span class="p">);</span>
+</code></pre></div></p>
+<h2 id="4-getters-and-setters">4. Getters and Setters</h2>
+<p><strong>Important Note</strong>: All getter functions below will use <strong>gateway values</strong> if the corresponding <code>useDefault*</code> flag is enabled, otherwise they use <strong>local storage values</strong>.</p>
+<h3 id="41-verification-key-functions">4.1 Verification Key Functions</h3>
+<p><strong><code>getAggchainVKey</code></strong>: Returns verification key
+- If <code>useDefaultVkeys = true</code>: Returns from <code>aggLayerGateway.getDefaultAggchainVKey()</code>
+- If <code>useDefaultVkeys = false</code>: Returns from local <code>ownedAggchainVKeys</code> mapping</p>
+<p><strong><code>addOwnedAggchainVKey</code> / <code>updateOwnedAggchainVKey</code></strong>: Manage local verification keys<br />
+<strong>Access Control</strong>: Only callable by aggchain manager</p>
+<p><strong><code>enableUseDefaultVkeysFlag</code> / <code>disableUseDefaultVkeysFlag</code></strong>: Toggle gateway vkeys usage<br />
+<strong>Access Control</strong>: Only callable by aggchain manager</p>
+<h3 id="42-signer-functions">4.2 Signer Functions</h3>
+<p><strong><code>isSigner</code></strong>: Check if address is a signer
+- If <code>useDefaultSigners = true</code>: Queries <code>aggLayerGateway.isSigner()</code>
+- If <code>useDefaultSigners = false</code>: Checks local <code>signerToURLs</code> mapping</p>
+<p><strong><code>getAggchainSigners</code></strong>: Get all signer addresses
+- If <code>useDefaultSigners = true</code>: Returns from <code>aggLayerGateway.getAggchainSigners()</code>
+- If <code>useDefaultSigners = false</code>: Returns local <code>aggchainSigners</code> array</p>
+<p><strong><code>getAggchainSignersCount</code></strong>: Get number of signers
+- If <code>useDefaultSigners = true</code>: Returns from <code>aggLayerGateway.getAggchainSignersCount()</code>
+- If <code>useDefaultSigners = false</code>: Returns <code>aggchainSigners.length</code></p>
+<p><strong><code>getAggchainSignersHash</code></strong>: Get signers configuration hash
+- If <code>useDefaultSigners = true</code>: Returns from <code>aggLayerGateway.getAggchainSignersHash()</code>
+- If <code>useDefaultSigners = false</code>: Returns local <code>aggchainSignersHash</code></p>
+<p><strong><code>getAggchainSignerInfos</code></strong>: Get signers with URLs
+- If <code>useDefaultSigners = true</code>: Returns from <code>aggLayerGateway.getAggchainSignerInfos()</code>
+- If <code>useDefaultSigners = false</code>: Builds array from local storage</p>
+<p><strong><code>enableUseDefaultSignersFlag</code> / <code>disableUseDefaultSignersFlag</code></strong>: Toggle gateway signers usage<br />
+<strong>Access Control</strong>: Only callable by aggchain manager</p>
+<h3 id="43-aggchain-manager-functions">4.3 Aggchain Manager Functions</h3>
+<p><strong><code>transferAggchainManagerRole</code></strong>: Initiate two-step role transfer<br />
+<strong><code>acceptAggchainManagerRole</code></strong>: Complete role transfer<br />
+<strong>Access Control</strong>: Transfer by current manager, accept by pending manager</p>
+<h3 id="44-utility-functions">4.4 Utility Functions</h3>
+<p><strong><code>getAggchainVKeySelector</code></strong>: Combine vkey version and type into selector<br />
+<strong><code>getAggchainTypeFromSelector</code></strong>: Extract type from selector<br />
+<strong><code>getAggchainVKeyVersionFromSelector</code></strong>: Extract version from selector</p>
+<h2 id="5-constants-and-architecture">5. Constants and Architecture</h2>
+<h3 id="51-key-constants">5.1 Key Constants</h3>
 <ul>
-<li><code>PolygonRollupManager</code>: v1.0.0</li>
-<li><a href="../PolygonZkEVMBridgeV2-v1.1.0/"><code>PolygonZkEVMBridgeV2</code>: v1.0.0 → v1.1.0</a></li>
-<li><code>PolygonZkEVMGlobalExitRootV2</code>: v1.0.0</li>
-<li><a href="../AggLayerGateway-Multisig/"><code>AggLayerGateway</code>: v1.0.0 → v1.1.0</a></li>
+<li><code>CONSENSUS_TYPE = 1</code>: Generic aggchain hash support identifier</li>
+<li>Maximum 255 signers supported</li>
 </ul>
-<h3 id="bridge-contracts">Bridge Contracts</h3>
+<h3 id="52-abstract-contract-design">5.2 Abstract Contract Design</h3>
 <ul>
-<li><a href="../BridgeL2SovereignChain-v2.0.0/"><code>BridgeL2SovereignChain</code>: v1.0.0 → v2.0.0</a></li>
-<li><code>GlobalExitRootManagerL2SovereignChain</code>: v1.0.0</li>
+<li><strong>AggchainBase</strong> is an abstract contract providing common functionality</li>
+<li>Inheriting contracts must implement <code>getVKeyAndAggchainParams</code></li>
+<li>Each implementation defines its own <code>AGGCHAIN_TYPE</code> constant</li>
 </ul>
-<h3 id="aggchain-implementations">Aggchain Implementations</h3>
+<h3 id="53-gateway-integration">5.3 Gateway Integration</h3>
 <ul>
-<li><a href="../AggchainBase/"><code>AggchainBase</code></a>: Abstract base contract for aggchain implementations</li>
-<li><a href="../AggchainFEP/"><code>AggchainFEP</code>: v3.0.0</a> - FEP (Full Exit Proof) implementation with SP1 proving</li>
-<li><a href="../AggchainECDSAMultisig/"><code>AggchainECDSAMultisig</code>: v1.0.0</a> - ECDSA multisig-based implementation</li>
-<li><code>AggOracleCommittee</code>: v1.0.0</li>
-</ul>
-<h3 id="key-features">Key Features</h3>
-<ul>
-<li><strong>Multisig Support</strong>: Enhanced multisig management in AggLayerGateway and aggchain contracts</li>
-<li><strong>Multiple Initialization Paths</strong>: Support for fresh deployments and migrations from existing contracts</li>
-<li><strong>Configuration Management</strong>: FEP supports multiple OP Succinct configurations</li>
-<li><strong>Flexible Verification</strong>: Choice between SP1 proofs (FEP) and ECDSA signatures (Multisig)</li>
+<li>Verification keys and signers can be managed locally or via gateway</li>
+<li>Gateway functions don't check flags - flag validation happens in aggchain contracts</li>
+<li>Provides flexibility for chains to use shared or custom configurations</li>
 </ul>
 
 
