@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../AggLayerGateway-Multisig/">
+        <link rel="prev" href="../AggLayerGateway/">
       
       
         <link rel="next" href="../AggchainECDSAMultisig/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>AggchainBase - SC-Protocol Documentation</title>
+        <title>4.1.5 AggchainBase - SC-Protocol Documentation</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AggchainBase
+              4.1.5 AggchainBase
             
           </span>
         </div>
@@ -1398,6 +1398,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1416,7 +1424,7 @@
   
   
   <span class="md-ellipsis">
-    4.1. Version 12-rc0
+    4.1. Version 12
     
   </span>
   
@@ -1427,7 +1435,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            4.1. Version 12-rc0
+            4.1. Version 12
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1438,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versions-tag12-rc0/" class="md-nav__link">
+      <a href="../versions-tag12/" class="md-nav__link">
         
   
   
@@ -1461,12 +1469,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../BridgeL2SovereignChain-v2.0.0/" class="md-nav__link">
+      <a href="../BridgeL2SovereignChain/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    4.1.2 BridgeL2SovereignChain-v2.0.0
+    4.1.2 BridgeL2SovereignChain
     
   </span>
   
@@ -1484,12 +1492,325 @@
   
   
     <li class="md-nav__item">
-      <a href="../PolygonZkEVMBridgeV2-v1.1.0/" class="md-nav__link">
+      <a href="../PolygonZkEVMBridgeV2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    4.1.3 PolygonZkEVMBridgeV2-v1.1.0
+    4.1.3 PolygonZkEVMBridgeV2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AggLayerGateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1.4 AggLayerGateway
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    4.1.5 AggchainBase
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1.5 AggchainBase
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aggchainbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      AggchainBase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Core Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Core Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-initaggchainmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 initAggchainManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aggchain-hash-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Aggchain Hash Computation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Aggchain Hash Computation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-getaggchainhash" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 getAggchainHash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-getvkeyandaggchainparams-abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 getVKeyAndAggchainParams (Abstract)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multisig-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Multisig Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Multisig Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-updatesignersandthreshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 updateSignersAndThreshold
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-getters-and-setters" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Getters and Setters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Getters and Setters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-verification-key-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Verification Key Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-signer-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Signer Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-aggchain-manager-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Aggchain Manager Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-utility-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Utility Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-constants-and-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Constants and Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Constants and Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-key-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Key Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-abstract-contract-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Abstract Contract Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-gateway-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Gateway Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AggchainECDSAMultisig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1.6 AggchainECDSAMultisig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AggchainFEP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1.7 AggchainFEP
     
   </span>
   
@@ -1523,6 +1844,8 @@
   
     
     
+      
+        
       
         
       
@@ -1571,12 +1894,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../outposts/OutpostL2/" class="md-nav__link">
+      <a href="../../../outposts/Intro/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5.1 Outpost L2 Contracts
+    5.1 Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../outposts/L2-Deployment-script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 L2 Deployment script
     
   </span>
   
@@ -1820,7 +2166,7 @@
   
 
 
-  <h1>AggchainBase</h1>
+  <h1>4.1.5 AggchainBase</h1>
 
 <h2 id="aggchainbase">AggchainBase</h2>
 <h2 id="1-core-initialization">1. Core Initialization</h2>

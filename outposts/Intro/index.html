@@ -5,10 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../smart-contracts/v12/PolygonZkEVMBridgeV2-v1.1.0/" rel="prev"/>
+<link href="../../smart-contracts/v12/AggchainFEP/" rel="prev"/>
+<link href="../L2-Deployment-script/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.18" name="generator"/>
-<title>5.1 Outpost L2 Contracts - SC-Protocol Documentation</title>
+<title>5.1 Intro - SC-Protocol Documentation</title>
 <link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#outpost-l2-contracts">
+<a class="md-skip" href="#intro">
           Skip to content
         </a>
 </div>
@@ -46,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              5.1 Outpost L2 Contracts
+              5.1 Intro
             
           </span>
 </div>
@@ -502,7 +503,7 @@
 <input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
 <span class="md-ellipsis">
-    4.1. Version 12-rc0
+    4.1. Version 12
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -510,11 +511,11 @@
 <nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-            4.1. Version 12-rc0
+            4.1. Version 12
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../smart-contracts/v12/versions-tag12-rc0/">
+<a class="md-nav__link" href="../../smart-contracts/v12/versions-tag12/">
 <span class="md-ellipsis">
     4.1.1 Summary
     
@@ -522,17 +523,49 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../smart-contracts/v12/BridgeL2SovereignChain-v2.0.0/">
+<a class="md-nav__link" href="../../smart-contracts/v12/BridgeL2SovereignChain/">
 <span class="md-ellipsis">
-    4.1.2 BridgeL2SovereignChain-v2.0.0
+    4.1.2 BridgeL2SovereignChain
     
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../smart-contracts/v12/PolygonZkEVMBridgeV2-v1.1.0/">
+<a class="md-nav__link" href="../../smart-contracts/v12/PolygonZkEVMBridgeV2/">
 <span class="md-ellipsis">
-    4.1.3 PolygonZkEVMBridgeV2-v1.1.0
+    4.1.3 PolygonZkEVMBridgeV2
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../smart-contracts/v12/AggLayerGateway/">
+<span class="md-ellipsis">
+    4.1.4 AggLayerGateway
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../smart-contracts/v12/AggchainBase/">
+<span class="md-ellipsis">
+    4.1.5 AggchainBase
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../smart-contracts/v12/AggchainECDSAMultisig/">
+<span class="md-ellipsis">
+    4.1.6 AggchainECDSAMultisig
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../smart-contracts/v12/AggchainFEP/">
+<span class="md-ellipsis">
+    4.1.7 AggchainFEP
     
   </span>
 </a>
@@ -562,14 +595,14 @@
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    5.1 Outpost L2 Contracts
+    5.1 Intro
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    5.1 Outpost L2 Contracts
+    5.1 Intro
     
   </span>
 </a>
@@ -632,114 +665,16 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-deploy-outpost-chain-script">
-<span class="md-ellipsis">
-      2. Deploy Outpost Chain Script
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#21-overview">
-<span class="md-ellipsis">
-      2.1 Overview
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#22-primary-objective">
-<span class="md-ellipsis">
-      2.2 Primary Objective
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#23-core-contract-deployments">
-<span class="md-ellipsis">
-      2.3 Core Contract Deployments
-    </span>
-</a>
-<nav aria-label="2.3 Core Contract Deployments" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#231-timelockcontroller">
-<span class="md-ellipsis">
-      2.3.1 TimelockController
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#232-proxyadmin">
-<span class="md-ellipsis">
-      2.3.2 ProxyAdmin
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#233-bridgel2sovereignchain">
-<span class="md-ellipsis">
-      2.3.3 BridgeL2SovereignChain
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#234-globalexitrootmanagerl2sovereignchain">
-<span class="md-ellipsis">
-      2.3.4 GlobalExitRootManagerL2SovereignChain
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#235-aggoraclecommittee-optional">
-<span class="md-ellipsis">
-      2.3.5 AggOracleCommittee (Optional)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#236-additional-infrastructure-components">
-<span class="md-ellipsis">
-      2.3.6 Additional Infrastructure Components
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#24-key-architectural-features">
+<a class="md-nav__link" href="../L2-Deployment-script/">
 <span class="md-ellipsis">
-      2.4 Key Architectural Features
-    </span>
+    5.2 L2 Deployment script
+    
+  </span>
 </a>
-<nav aria-label="2.4 Key Architectural Features" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#241-automated-configuration-management">
-<span class="md-ellipsis">
-      2.4.1 Automated Configuration Management
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#242-security-mechanisms">
-<span class="md-ellipsis">
-      2.4.2 Security Mechanisms
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#243-deployment-flexibility">
-<span class="md-ellipsis">
-      2.4.3 Deployment Flexibility
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -811,112 +746,6 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-deploy-outpost-chain-script">
-<span class="md-ellipsis">
-      2. Deploy Outpost Chain Script
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#21-overview">
-<span class="md-ellipsis">
-      2.1 Overview
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#22-primary-objective">
-<span class="md-ellipsis">
-      2.2 Primary Objective
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#23-core-contract-deployments">
-<span class="md-ellipsis">
-      2.3 Core Contract Deployments
-    </span>
-</a>
-<nav aria-label="2.3 Core Contract Deployments" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#231-timelockcontroller">
-<span class="md-ellipsis">
-      2.3.1 TimelockController
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#232-proxyadmin">
-<span class="md-ellipsis">
-      2.3.2 ProxyAdmin
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#233-bridgel2sovereignchain">
-<span class="md-ellipsis">
-      2.3.3 BridgeL2SovereignChain
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#234-globalexitrootmanagerl2sovereignchain">
-<span class="md-ellipsis">
-      2.3.4 GlobalExitRootManagerL2SovereignChain
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#235-aggoraclecommittee-optional">
-<span class="md-ellipsis">
-      2.3.5 AggOracleCommittee (Optional)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#236-additional-infrastructure-components">
-<span class="md-ellipsis">
-      2.3.6 Additional Infrastructure Components
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#24-key-architectural-features">
-<span class="md-ellipsis">
-      2.4 Key Architectural Features
-    </span>
-</a>
-<nav aria-label="2.4 Key Architectural Features" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#241-automated-configuration-management">
-<span class="md-ellipsis">
-      2.4.1 Automated Configuration Management
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#242-security-mechanisms">
-<span class="md-ellipsis">
-      2.4.2 Security Mechanisms
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#243-deployment-flexibility">
-<span class="md-ellipsis">
-      2.4.3 Deployment Flexibility
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
 </ul>
 </nav>
 </div>
@@ -924,8 +753,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="outpost-l2-contracts">Outpost L2 contracts</h1>
-<h3 id="1-what-is-an-outpost-chain">1. What is an outpost chain?</h3>
+<h1 id="intro">Intro</h1>
+<h2 id="1-what-is-an-outpost-chain">1. What is an outpost chain?</h2>
 <ul>
 <li>Chain that <strong>owns a different native bridge</strong> not controlled by the <strong>PP (Pessimistic Proof)</strong></li>
 <li>Is <strong>EVM compatible</strong> (in a first stage)</li>
@@ -942,17 +771,17 @@
 <li>BSC</li>
 </ul>
 <hr/>
-<h3 id="11-objective">1.1 Objective</h3>
+<h2 id="11-objective">1.1 Objective</h2>
 <ul>
 <li><strong>Attach an outpost chain to the aggLayer</strong></li>
 </ul>
-<h3 id="12-implications">1.2 Implications</h3>
+<h2 id="12-implications">1.2 Implications</h2>
 <ul>
 <li>Deploy SC</li>
 <li>Secure State transition</li>
 </ul>
 <hr/>
-<h3 id="13-limitations">1.3 Limitations</h3>
+<h2 id="13-limitations">1.3 Limitations</h2>
 <ul>
 <li><strong>Bridge, GER and wTokens</strong> have <strong>different addresses</strong></li>
 <li>Possible reorgs in the outpost chain,so also in the LER<ul>
@@ -961,8 +790,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="14-flow-examples">1.4 Flow examples</h3>
-<h4 id="141-outpost-with-native-eth">1.4.1 Outpost with native ETH</h4>
+<h2 id="14-flow-examples">1.4 Flow examples</h2>
+<h3 id="141-outpost-with-native-eth">1.4.1 Outpost with native ETH</h3>
 <p>Example flow of an outpost having gasTokenNetwork different than native networkID/rollupID:
 Initialize params:
 - GasTokenNetwork: 0 (ethereum)
@@ -984,7 +813,7 @@ Initialize params:
     Agglayer_Bridge_Base -&gt;&gt; Agglayer_Bridge_Base: lock baseETH
     Agglayer_Bridge_Base -&gt;&gt; L1_Agglayer_Bridge: bridge
     L1_Agglayer_Bridge -&gt;&gt; User: ❌❌ There is no ETH on bridge to send ❌❌</code></pre></p>
-<h4 id="142-outpost-with-native-token">1.4.2 Outpost with native token</h4>
+<h3 id="142-outpost-with-native-token">1.4.2 Outpost with native token</h3>
 <p>Example flow of an outpost having gasTokenNetwork same than native networkID/rollupID:
 Initialize params:
 - GasTokenNetwork: 2 (base rollupId)
@@ -1009,85 +838,12 @@ Initialize params:
     Note left of User: User has wrappedBaseETH ✅</code></pre></p>
 <p><br/>
 <br/></p>
-<h2 id="2-deploy-outpost-chain-script">2. Deploy Outpost Chain Script</h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The tooling specifications and code can be found <a href="https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md">here</a></p>
-</div>
-<h2 id="21-overview">2.1 Overview</h2>
-<p>The <strong>deployOutpostChain</strong> script is an automated deployment solution designed to facilitate the establishment of sovereign blockchain networks within the Agglayer ecosystem. This tool provides a streamlined approach to deploying all necessary smart contracts required for an outpost chain implementation.</p>
-<h2 id="22-primary-objective">2.2 Primary Objective</h2>
-<p>The script serves as a comprehensive deployment framework for creating sovereign blockchain networks with integrated cross-chain bridging capabilities. It enables the deployment of blockchain infrastructure that supports:</p>
-<ul>
-<li><strong>Cross-chain asset transfers</strong> and token bridging functionality</li>
-<li><strong>Global exit root management</strong> for secure cross-chain transaction finalization</li>
-<li><strong>Decentralized governance mechanisms</strong> through timelock controllers</li>
-<li><strong>Optional oracle committee integration</strong> for enhanced security and decentralization</li>
-</ul>
-<h2 id="23-core-contract-deployments">2.3 Core Contract Deployments</h2>
-<p>The deployment process encompasses five primary smart contracts:</p>
-<h4 id="231-timelockcontroller">2.3.1 TimelockController</h4>
-<ul>
-<li><strong>Purpose</strong>: Implements governance timelock mechanisms for secure contract upgrades</li>
-<li><strong>Function</strong>: Provides time-delayed execution of administrative operations</li>
-</ul>
-<h4 id="232-proxyadmin">2.3.2 ProxyAdmin</h4>
-<ul>
-<li><strong>Purpose</strong>: Manages proxy contract upgrade processes</li>
-<li><strong>Function</strong>: Controls the upgrade lifecycle of proxied contracts</li>
-</ul>
-<h4 id="233-bridgel2sovereignchain">2.3.3 BridgeL2SovereignChain</h4>
-<ul>
-<li><strong>Purpose</strong>: Facilitates cross-chain asset transfers</li>
-<li><strong>Function</strong>: Handles token deposits, withdrawals, and cross-chain communication</li>
-</ul>
-<h4 id="234-globalexitrootmanagerl2sovereignchain">2.3.4 GlobalExitRootManagerL2SovereignChain</h4>
-<ul>
-<li><strong>Purpose</strong>: Manages the global exit root merkle tree</li>
-<li><strong>Function</strong>: Maintains cryptographic proofs for cross-chain transaction validation</li>
-</ul>
-<h4 id="235-aggoraclecommittee-optional">2.3.5 AggOracleCommittee <em>(Optional)</em></h4>
-<ul>
-<li><strong>Purpose</strong>: Provides decentralized oracle functionality</li>
-<li><strong>Function</strong>: Enables committee-based validation of cross-chain data through consensus mechanisms</li>
-</ul>
-<h4 id="236-additional-infrastructure-components">2.3.6 Additional Infrastructure Components</h4>
-<p>The deployment includes several auxiliary contracts:</p>
-<ul>
-<li><strong>WrappedTokenBytecodeStorer</strong>: Optimizes contract size by storing token bytecode externally</li>
-<li><strong>WrappedTokenBridgeImplementation</strong>: Serves as template for wrapped token deployments</li>
-<li><strong>BridgeLib</strong>: Contains shared bridge functionality to reduce contract complexity</li>
-<li><strong>WETH Token</strong>: Chain-specific wrapped Ether implementation</li>
-</ul>
-<h2 id="24-key-architectural-features">2.4 Key Architectural Features</h2>
-<h3 id="241-automated-configuration-management">2.4.1 Automated Configuration Management</h3>
-<ul>
-<li><strong>Address Pre-calculation</strong>: Utilizes deterministic address generation for circular dependency resolution</li>
-<li><strong>Parameter Derivation</strong>: Automatically calculates gas token addresses and network identifiers</li>
-<li><strong>Governance Integration</strong>: Establishes proper ownership hierarchies and access controls</li>
-</ul>
-<h3 id="242-security-mechanisms">2.4.2 Security Mechanisms</h3>
-<ul>
-<li><strong>Proxy Pattern Implementation</strong>: Enables secure contract upgrades through established patterns</li>
-<li><strong>Timelock Governance</strong>: Enforces delayed execution for critical administrative functions</li>
-<li><strong>Multi-signature Oracle Support</strong>: Provides optional decentralized validation through committee consensus</li>
-</ul>
-<h3 id="243-deployment-flexibility">2.4.3 Deployment Flexibility</h3>
-<ul>
-<li><strong>Configurable Oracle Systems</strong>: Supports both single-oracle and committee-based configurations</li>
-<li><strong>Standardized Deployment Process</strong>: Utilizes OpenZeppelin's established upgrade patterns</li>
-<li><strong>Comprehensive Validation</strong>: Includes automated verification of deployment integrity</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The tooling specifications and code can be found <a href="https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md">here</a></p>
-</div>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2025 06:21:05 UTC">August 27, 2025</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 6, 2025 07:57:04 UTC">September 6, 2025</span>
 </span>
 </aside>
 </article>

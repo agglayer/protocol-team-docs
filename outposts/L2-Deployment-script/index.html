@@ -9,25 +9,23 @@
       
       
       
-        <link rel="prev" href="../SovereignBridge%20SC/">
+        <link rel="prev" href="../Intro/">
       
       
-        <link rel="next" href="../../Resources/">
       
-      
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
-        <title>3.1.3.3. SovereignGERManager SC - SC-Protocol Documentation</title>
+        <title>5.2 L2 Deployment script - SC-Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#globalexitrootmanagerl2sovereignchain-smart-contract-documentation" class="md-skip">
+        <a href="#l2-deployment-script" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.1.3.3. SovereignGERManager SC
+              5.2 L2 Deployment script
             
           </span>
         </div>
@@ -226,7 +224,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -256,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -329,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../zkEVM/banana-specs/" class="md-nav__link">
+      <a href="../../zkEVM/banana-specs/" class="md-nav__link">
         
   
   
@@ -352,7 +350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../zkEVM/durian-specs/" class="md-nav__link">
+      <a href="../../zkEVM/durian-specs/" class="md-nav__link">
         
   
   
@@ -433,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tooling/Resources/" class="md-nav__link">
+      <a href="../../tooling/Resources/" class="md-nav__link">
         
   
   
@@ -456,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tooling/Genesis/" class="md-nav__link">
+      <a href="../../tooling/Genesis/" class="md-nav__link">
         
   
   
@@ -483,10 +481,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -505,11 +501,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -525,7 +523,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             3. Aggregation layer
@@ -536,10 +534,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -557,11 +553,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -577,7 +575,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             3.1. Version 0.2.0
@@ -591,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ChangeLog/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
         
   
   
@@ -614,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SC-Versions/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
         
   
   
@@ -634,10 +632,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -653,11 +649,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1_3" >
         
           
           <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
@@ -673,7 +671,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1_3">
             <span class="md-nav__icon md-icon"></span>
             3.1.3. Sovereign Chains
@@ -687,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Intro/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
         
   
   
@@ -710,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SovereignBridge%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
         
   
   
@@ -730,30 +728,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    3.1.3.3. SovereignGERManager SC
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
         
   
   
@@ -764,132 +742,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#globalexitrootmanagerl2sovereignchain-smart-contract-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      GlobalExitRootManagerL2SovereignChain Smart Contract Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      State Variables
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#globalexitrootupdater" class="md-nav__link">
-    <span class="md-ellipsis">
-      globalExitRootUpdater
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#insertedgercount" class="md-nav__link">
-    <span class="md-ellipsis">
-      insertedGERCount
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
-    <span class="md-ellipsis">
-      Events
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constructor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constructor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modifiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modifiers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Functions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Errors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage Notes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -910,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Resources/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
         
   
   
@@ -1003,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/SC-specs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
         
   
   
@@ -1026,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/Diagrams/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
         
   
   
@@ -1049,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/Docker/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
         
   
   
@@ -1072,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/Tooling/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
         
   
   
@@ -1095,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/Roles/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
         
   
   
@@ -1168,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1191,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1214,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
         
   
   
@@ -1245,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/UpgradeableTokens/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
         
   
   
@@ -1268,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/FAQs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
         
   
   
@@ -1291,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.0/Changes-v0.3.1/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
         
   
   
@@ -1368,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.5/Changes/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
         
   
   
@@ -1503,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
+      <a href="../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
         
   
   
@@ -1592,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
         
   
   
@@ -1615,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/BridgeL2SovereignChain/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/BridgeL2SovereignChain/" class="md-nav__link">
         
   
   
@@ -1638,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/PolygonZkEVMBridgeV2/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/PolygonZkEVMBridgeV2/" class="md-nav__link">
         
   
   
@@ -1661,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggLayerGateway/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1684,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
         
   
   
@@ -1707,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
         
   
   
@@ -1730,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1765,8 +1617,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1783,13 +1637,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -1805,7 +1657,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             5. Outposts
@@ -1819,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outposts/Intro/" class="md-nav__link">
+      <a href="../Intro/" class="md-nav__link">
         
   
   
@@ -1839,10 +1691,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../outposts/L2-Deployment-script/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5.2 L2 Deployment script
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1853,6 +1727,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-deploy-outpost-chain-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deploy Outpost Chain Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-primary-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Primary Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-core-contract-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Core Contract Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Core Contract Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-timelockcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 TimelockController
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-proxyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2 ProxyAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-bridgel2sovereignchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.3 BridgeL2SovereignChain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-globalexitrootmanagerl2sovereignchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.4 GlobalExitRootManagerL2SovereignChain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135-aggoraclecommittee-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.5 AggOracleCommittee (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-additional-infrastructure-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.6 Additional Infrastructure Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-key-architectural-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Key Architectural Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Key Architectural Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-automated-configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 Automated Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-security-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 Security Mechanisms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-deployment-flexibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 Deployment Flexibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1882,6 +1914,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1890,110 +1924,140 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#globalexitrootmanagerl2sovereignchain-smart-contract-documentation" class="md-nav__link">
+  <a href="#1-deploy-outpost-chain-script" class="md-nav__link">
     <span class="md-ellipsis">
-      GlobalExitRootManagerL2SovereignChain Smart Contract Documentation
+      1. Deploy Outpost Chain Script
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#11-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      1.1 Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#12-primary-objective" class="md-nav__link">
     <span class="md-ellipsis">
-      Table of Contents
+      1.2 Primary Objective
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-variables" class="md-nav__link">
+  <a href="#13-core-contract-deployments" class="md-nav__link">
     <span class="md-ellipsis">
-      State Variables
+      1.3 Core Contract Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Core Contract Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-timelockcontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 TimelockController
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#globalexitrootupdater" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#132-proxyadmin" class="md-nav__link">
     <span class="md-ellipsis">
-      globalExitRootUpdater
+      1.3.2 ProxyAdmin
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#insertedgercount" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#133-bridgel2sovereignchain" class="md-nav__link">
     <span class="md-ellipsis">
-      insertedGERCount
+      1.3.3 BridgeL2SovereignChain
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#events" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#134-globalexitrootmanagerl2sovereignchain" class="md-nav__link">
     <span class="md-ellipsis">
-      Events
+      1.3.4 GlobalExitRootManagerL2SovereignChain
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#constructor" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#135-aggoraclecommittee-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      Constructor
+      1.3.5 AggOracleCommittee (Optional)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#modifiers" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#136-additional-infrastructure-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Modifiers
+      1.3.6 Additional Infrastructure Components
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Functions
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#errors" class="md-nav__link">
+  <a href="#14-key-architectural-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Errors
+      1.4 Key Architectural Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Key Architectural Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-automated-configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 Automated Configuration Management
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#usage-notes" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#142-security-mechanisms" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage Notes
+      1.4.2 Security Mechanisms
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-deployment-flexibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 Deployment Flexibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2016,161 +2080,80 @@
   
 
 
-  <h1>3.1.3.3. SovereignGERManager SC</h1>
-
-<h3 id="globalexitrootmanagerl2sovereignchain-smart-contract-documentation">GlobalExitRootManagerL2SovereignChain Smart Contract Documentation</h3>
-<p><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/audit-remediations/contracts/v2/sovereignChains/GlobalExitRootManagerL2SovereignChain.sol">Link SC</a></p>
-<blockquote>
-<p>Warning: This contract has not been audited. Use at your own risk.</p>
-</blockquote>
-<h3 id="introduction">Introduction</h3>
-<p>The GlobalExitRootManagerL2SovereignChain smart contract is designed to manage exit roots for Sovereign chains and global exit roots.
-It extends the PolygonZkEVMGlobalExitRootL2 contract and implements the Initializable interface from OpenZeppelin. The contract allows authorized parties to insert and remove global exit roots, maintaining a mapping of these roots with an insertion order.</p>
-<h3 id="table-of-contents">Table of Contents</h3>
+<h1 id="l2-deployment-script">L2 Deployment script</h1>
+<h2 id="1-deploy-outpost-chain-script">1. Deploy Outpost Chain Script</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The tooling specifications and code can be found <a href="https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md">here</a></p>
+</div>
+<h2 id="11-overview">1.1 Overview</h2>
+<p>The <strong>deployOutpostChain</strong> script is an automated deployment solution designed to facilitate the establishment of sovereign blockchain networks within the Agglayer ecosystem. This tool provides a streamlined approach to deploying all necessary smart contracts required for an outpost chain implementation.</p>
+<h2 id="12-primary-objective">1.2 Primary Objective</h2>
+<p>The script serves as a comprehensive deployment framework for creating sovereign blockchain networks with integrated cross-chain bridging capabilities. It enables the deployment of blockchain infrastructure that supports:</p>
 <ul>
-<li>Overview</li>
-<li>State Variables</li>
-<li>Events</li>
-<li>Constructor</li>
-<li>Modifiers</li>
-<li>Functions<ul>
-<li>initialize</li>
-<li>insertGlobalExitRoot</li>
-<li>removeLastGlobalExitRoots</li>
+<li><strong>Cross-chain asset transfers</strong> and token bridging functionality</li>
+<li><strong>Global exit root management</strong> for secure cross-chain transaction finalization</li>
+<li><strong>Decentralized governance mechanisms</strong> through timelock controllers</li>
+<li><strong>Optional oracle committee integration</strong> for enhanced security and decentralization</li>
 </ul>
-</li>
-<li>Errors</li>
-<li>Usage Notes</li>
-<li>Disclaimer</li>
-<li>Overview</li>
-</ul>
-<p>The GlobalExitRootManagerL2SovereignChain contract serves as a manager for global exit roots in the context of Sovereign chains. It allows a designated globalExitRootUpdater to insert new global exit roots and remove the last inserted ones. This contract ensures the integrity and order of global exit roots, which are crucial for cross-chain interactions and validations.</p>
-<h3 id="state-variables">State Variables</h3>
-<h3 id="globalexitrootupdater">globalExitRootUpdater</h3>
-<p><div class="highlight"><pre><span></span><code>address public globalExitRootUpdater;
-</code></pre></div>
-<strong>Description</strong>: The address authorized to insert and remove global exit roots. If set to the zero address, the block.coinbase address is used as the updater.
-<strong>Usage</strong>: Functions restricted to the global exit root updater use this address for access control.</p>
-<h3 id="insertedgercount">insertedGERCount</h3>
-<p><div class="highlight"><pre><span></span><code>uint256 public insertedGERCount;
-</code></pre></div>
-<strong>Description</strong>: A counter tracking the total number of inserted global exit roots.
-<strong>Usage</strong>: Helps maintain the insertion order of global exit roots and ensures correct removal of the last inserted roots.</p>
-<h3 id="events">Events</h3>
-<ol>
-<li><strong>InsertGlobalExitRoot</strong>
-<div class="highlight"><pre><span></span><code>event InsertGlobalExitRoot(bytes32 indexed newGlobalExitRoot);
-</code></pre></div>
-<strong>Description</strong>: Emitted when a new global exit root is inserted.
-<strong>Parameters</strong>:</li>
-<li>
-<p>newGlobalExitRoot: The hash of the newly inserted global exit root.</p>
-</li>
-<li>
-<p><strong>RemoveLastGlobalExitRoot</strong>
-<div class="highlight"><pre><span></span><code>event RemoveLastGlobalExitRoot(bytes32 indexed removedGlobalExitRoot);
-</code></pre></div>
-<strong>Description</strong>: Emitted when the last inserted global exit root is removed.
-<strong>Parameters</strong>:</p>
-</li>
-<li>removedGlobalExitRoot: The hash of the removed global exit root.</li>
-</ol>
-<hr />
-<h3 id="constructor">Constructor</h3>
-<p><div class="highlight"><pre><span></span><code>constructor(address _bridgeAddress) PolygonZkEVMGlobalExitRootL2(_bridgeAddress) { _disableInitializers(); }
-</code></pre></div>
-<strong>Parameters</strong>:
-* _bridgeAddress: The address of the PolygonZkEVMBridge contract.</p>
-<p><strong>Description</strong>: Initializes the contract by calling the parent constructor with the provided bridge address and disables further initializations.
-<strong>Note</strong>: Ensures that the contract cannot be improperly initialized again.</p>
-<h3 id="modifiers">Modifiers</h3>
-<ol>
-<li><strong>onlyGlobalExitRootUpdater</strong>
-<div class="highlight"><pre><span></span><code>modifier onlyGlobalExitRootUpdater() {
-    if (globalExitRootUpdater == address(0)) {
-        if (block.coinbase != msg.sender) {
-            revert OnlyGlobalExitRootUpdater();
-        }
-    } else {
-        if (globalExitRootUpdater != msg.sender) {
-            revert OnlyGlobalExitRootUpdater();
-        }
-    }
-    _;
-}
-</code></pre></div>
-<strong>Description</strong>: Restricts function access to the globalExitRootUpdater.
-<strong>Behavior</strong>:</li>
-<li>If globalExitRootUpdater is set to the zero address (address(0)), only the block.coinbase address can call the function.</li>
-<li>Otherwise, only the address stored in globalExitRootUpdater can call the function.</li>
-</ol>
-<p><strong>Usage</strong>: Applied to functions that should only be callable by the global exit root updater.</p>
-<h3 id="functions">Functions</h3>
-<ol>
-<li><strong>initialize</strong>
-<div class="highlight"><pre><span></span><code>function initialize(address _globalExitRootUpdater) external virtual initializer
-</code></pre></div>
-<strong>Parameters</strong>:</li>
-<li>_globalExitRootUpdater: The address to be set as the global exit root updater.
-<strong>Description</strong>: Initializes the contract by setting the globalExitRootUpdater address.
-<strong>Behavior</strong>:</li>
-<li>Sets the globalExitRootUpdater state variable.</li>
-<li>Marks the contract as initialized to prevent re-initialization.</li>
-</ol>
-<p><strong>Notes</strong>:
-This function is marked with the initializer modifier to ensure it can only be called once.</p>
-<ol>
-<li><strong>insertGlobalExitRoot</strong>
-<div class="highlight"><pre><span></span><code>function insertGlobalExitRoot(bytes32 _newRoot) external onlyGlobalExitRootUpdater
-</code></pre></div>
-<strong>Parameters</strong>:</li>
-<li>_newRoot: The new global exit root to insert.
-<strong>Description</strong>: Inserts a new global exit root into the mapping and increments the insertion count.
-<strong>Behavior</strong>:</li>
-<li>Checks if the _newRoot has already been inserted by verifying globalExitRootMap[_newRoot].</li>
-<li>If not inserted, increments insertedGERCount and updates the mapping.</li>
-<li>Emits the InsertGlobalExitRoot event.</li>
-<li>If already inserted, reverts with GlobalExitRootAlreadySet().</li>
-<li>
-<p>Access Control: Restricted to the globalExitRootUpdater via the onlyGlobalExitRootUpdater modifier.</p>
-</li>
-<li>
-<p><strong>removeLastGlobalExitRoots</strong>
-```
-function removeLastGlobalExitRoots(bytes32[] calldata gersToRemove) external onlyGlobalExitRootUpdater
-````</p>
-</li>
-</ol>
-<p><strong>Parameters</strong>:
-* gersToRemove: An array of global exit roots to remove. The array should be in the order of insertion, with the first element being the last inserted root.</p>
-<p><strong>Description</strong>: Removes the last inserted global exit roots specified in the array.
-<strong>Behavior</strong>:
-* Checks if there are enough inserted roots to remove the requested number by comparing gersToRemove.length with insertedGERCount.
-* Iterates over gersToRemove:
-    * Verifies that each root to remove is indeed the last inserted by checking globalExitRootMap[rootToRemove] == insertedGERCountCache.
-    * If verification passes, deletes the root from the mapping and decrements insertedGERCount.
-    * Emits the RemoveLastGlobalExitRoot event for each removed root.
-* If any root is not the last inserted, reverts with NotLastInsertedGlobalExitRoot().
-* If there are not enough roots to remove, reverts with NotEnoughGlobalExitRootsInserted().
-* Access Control: Restricted to the globalExitRootUpdater via the onlyGlobalExitRootUpdater modifier.</p>
-<hr />
-<h3 id="errors">Errors</h3>
+<h2 id="13-core-contract-deployments">1.3 Core Contract Deployments</h2>
+<p>The deployment process encompasses five primary smart contracts:</p>
+<h3 id="131-timelockcontroller">1.3.1 TimelockController</h3>
 <ul>
-<li><strong>OnlyGlobalExitRootUpdater</strong>(): Thrown when a function is called by an address that is not authorized as the global exit root updater.</li>
-<li><strong>GlobalExitRootAlreadySet</strong>(): Thrown when attempting to insert a global exit root that has already been inserted.</li>
-<li><strong>NotEnoughGlobalExitRootsInserted</strong>(): Thrown when attempting to remove more global exit roots than have been inserted.</li>
-<li><strong>NotLastInsertedGlobalExitRoot</strong>(): Thrown when attempting to remove a global exit root that is not the last inserted one.</li>
+<li><strong>Purpose</strong>: Implements governance timelock mechanisms for secure contract upgrades</li>
+<li><strong>Function</strong>: Provides time-delayed execution of administrative operations</li>
 </ul>
-<hr />
-<h3 id="usage-notes">Usage Notes</h3>
+<h3 id="132-proxyadmin">1.3.2 ProxyAdmin</h3>
 <ul>
-<li><strong>Global Exit Root Updater</strong>: The globalExitRootUpdater plays a crucial role in managing global exit roots. It can be set to a specific address or left as the zero address. When set to zero, the block.coinbase (the miner or validator who mined the block) becomes the authorized updater.</li>
-<li><strong>Insertion Order</strong>: The contract maintains an insertion order for global exit roots using the insertedGERCount. This ensures that only the last inserted roots can be removed, preserving the integrity of the exit root sequence.</li>
-<li><strong>Access Control</strong>: Functions that modify the state of global exit roots are protected by the onlyGlobalExitRootUpdater modifier to prevent unauthorized access.</li>
-<li><strong>Initialization</strong>: The initialize function must be called after deployment to set the globalExitRootUpdater. This function can only be called once due to the initializer modifier.</li>
-<li><strong>Error Handling</strong>: The contract uses custom errors to provide more efficient and informative error handling. These errors should be handled appropriately when interacting with the contract.</li>
+<li><strong>Purpose</strong>: Manages proxy contract upgrade processes</li>
+<li><strong>Function</strong>: Controls the upgrade lifecycle of proxied contracts</li>
 </ul>
-<p><strong>Disclaimer</strong>: This documentation is provided for informational purposes only and may not cover all aspects of the contract. Always review the contract code thoroughly before interacting with it.</p>
+<h3 id="133-bridgel2sovereignchain">1.3.3 BridgeL2SovereignChain</h3>
+<ul>
+<li><strong>Purpose</strong>: Facilitates cross-chain asset transfers</li>
+<li><strong>Function</strong>: Handles token deposits, withdrawals, and cross-chain communication</li>
+</ul>
+<h3 id="134-globalexitrootmanagerl2sovereignchain">1.3.4 GlobalExitRootManagerL2SovereignChain</h3>
+<ul>
+<li><strong>Purpose</strong>: Manages the global exit root merkle tree</li>
+<li><strong>Function</strong>: Maintains cryptographic proofs for cross-chain transaction validation</li>
+</ul>
+<h3 id="135-aggoraclecommittee-optional">1.3.5 AggOracleCommittee <em>(Optional)</em></h3>
+<ul>
+<li><strong>Purpose</strong>: Provides decentralized oracle functionality</li>
+<li><strong>Function</strong>: Enables committee-based validation of cross-chain data through consensus mechanisms</li>
+</ul>
+<h3 id="136-additional-infrastructure-components">1.3.6 Additional Infrastructure Components</h3>
+<p>The deployment includes several auxiliary contracts:</p>
+<ul>
+<li><strong>WrappedTokenBytecodeStorer</strong>: Optimizes contract size by storing token bytecode externally</li>
+<li><strong>WrappedTokenBridgeImplementation</strong>: Serves as template for wrapped token deployments</li>
+<li><strong>BridgeLib</strong>: Contains shared bridge functionality to reduce contract complexity</li>
+<li><strong>WETH Token</strong>: Chain-specific wrapped Ether implementation</li>
+</ul>
+<h2 id="14-key-architectural-features">1.4 Key Architectural Features</h2>
+<h3 id="141-automated-configuration-management">1.4.1 Automated Configuration Management</h3>
+<ul>
+<li><strong>Address Pre-calculation</strong>: Utilizes deterministic address generation for circular dependency resolution</li>
+<li><strong>Parameter Derivation</strong>: Automatically calculates gas token addresses and network identifiers</li>
+<li><strong>Governance Integration</strong>: Establishes proper ownership hierarchies and access controls</li>
+</ul>
+<h3 id="142-security-mechanisms">1.4.2 Security Mechanisms</h3>
+<ul>
+<li><strong>Proxy Pattern Implementation</strong>: Enables secure contract upgrades through established patterns</li>
+<li><strong>Timelock Governance</strong>: Enforces delayed execution for critical administrative functions</li>
+<li><strong>Multi-signature Oracle Support</strong>: Provides optional decentralized validation through committee consensus</li>
+</ul>
+<h3 id="143-deployment-flexibility">1.4.3 Deployment Flexibility</h3>
+<ul>
+<li><strong>Configurable Oracle Systems</strong>: Supports both single-oracle and committee-based configurations</li>
+<li><strong>Standardized Deployment Process</strong>: Utilizes OpenZeppelin's established upgrade patterns</li>
+<li><strong>Comprehensive Validation</strong>: Includes automated verification of deployment integrity</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The tooling specifications and code can be found <a href="https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md">here</a></p>
+</div>
 
 
 
@@ -2191,7 +2174,7 @@ function removeLastGlobalExitRoots(bytes32[] calldata gersToRemove) external onl
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 6, 2025 07:57:04 UTC">September 6, 2025</span>
   </span>
 
     
@@ -2246,10 +2229,10 @@ function removeLastGlobalExitRoots(bytes32[] calldata gersToRemove) external onl
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
