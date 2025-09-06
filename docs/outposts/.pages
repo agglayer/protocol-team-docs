@@ -1,2 +1,3 @@
 nav:
-  - 5.1 Outpost L2 Contracts: OutpostL2.md
+  - 5.1 Intro: Intro.md
+  - 5.2 L2 Deployment script: L2-Deployment-script.md
