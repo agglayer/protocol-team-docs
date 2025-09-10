@@ -1,4 +1,6 @@
+title: "3.2. Version 0.3.0"
 nav:
+  - Overview: index.md
   - 3.2.1. SC Specifications: SC-specs.md
   - 3.2.2. Diagrams: Diagrams.md
   - 3.2.3. Docker: Docker.md
