@@ -5,7 +5,7 @@
 - [3.2.3. Docker](Docker.md)
 - [3.2.4. Tooling](Tooling.md)
 - [3.2.5. Roles](Roles.md)
-- [3.2.6. SC Interactions](SC-interactions/)
+- [3.2.6. SC Interactions](SC-interactions/index.md)
 - [3.2.7. Upgradeable Tokens](UpgradeableTokens.md)
 - [3.2.8. FAQs](FAQs.md)
 - [3.2.9. Changes v0.3.1](Changes-v0.3.1.md)

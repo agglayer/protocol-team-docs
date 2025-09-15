@@ -31,7 +31,7 @@ Table with all roles that are new to this release and should be properly assigne
 - `aggchainManager`: new internal multisig
 - `optimisticModeManager`: new security council multisig
 
-## [Katana - L2](SC-specs.md#7-roles-sovereignchains-contracts)
+## [Katana - L2](SC-specs.md#8-roles-sovereignchains-contracts)
 |               Contract                |         Role          |
 |:-------------------------------------:|:---------------------:|
 |        BridgeL2SovereignChain         |     bridgeManager     |
