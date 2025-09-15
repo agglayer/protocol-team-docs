@@ -25,3 +25,6 @@ This approach is also relevant for outpost chains, as discussed [here](https://g
 ## 3. Specification
 Specification can be found in the [agglayer specification repository](https://github.com/agglayer/specs/tree/main/specs).
 Concretelly, new consensus type specification is [here](https://github.com/agglayer/specs/blob/main/specs/agglayer_consensus_types.md).
+
+## 4. Slides
+[Slides link](https://docs.google.com/presentation/d/1j9_MuNlNI12qhM605jLue3Av3tD0KTEkmOqZfI6aRCY/edit?usp=sharing)
