@@ -165,5 +165,5 @@ event OnVerifyPessimisticECDSAMultisig();
 
 ### 6.2 Cross-References
 - Inherits from [AggchainBase](./AggchainBase.md) for common functionality
-- Can integrate with [AggLayerGateway](./AggLayerGateway-Multisig.md) for default signers
+- Can integrate with [AggLayerGateway](./AggLayerGateway.md) for default signers
 - Can be upgraded to [AggchainFEP](./AggchainFEP.md) but not vice versa
