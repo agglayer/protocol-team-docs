@@ -1,4 +1,5 @@
-title: "2.Tooling"
+title: "2. Tooling"
 nav:
+    - Overview: index.md
     - 2.1. Resources: Resources.md
     - 2.2. Genesis creation: Genesis.md

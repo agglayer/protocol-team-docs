@@ -1,0 +1,5 @@
+# 3.1.3. Sovereign Chains
+
+- [3.1.3.1. Introduction](Intro.md)
+- [3.1.3.2. SovereignBridge SC](SovereignBridge SC.md)
+- [3.1.3.3. SovereignGERManager SC](SovereignGERManager SC.md)
