@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../AggLayerGateway/">
+        <link rel="prev" href="../AgglayerManager/">
       
       
-        <link rel="next" href="../PolygonRollupManager/">
+        <link rel="next" href="../AgglayerBridge/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>3.2.6.2. AggchainFEP - SC-Protocol Documentation</title>
+        <title>4.1.4 AgglayerBridgeL2 - SC-Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/custom.css">
+      <link rel="stylesheet" href="../../../css/custom.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aggchain-fep" class="md-skip">
+        <a href="#agglayerbridgel2-v100-v110" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2.6.2. AggchainFEP
+              4.1.4 AgglayerBridgeL2
             
           </span>
         </div>
@@ -226,7 +226,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -256,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -307,7 +307,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../zkEVM/" class="md-nav__link ">
+            <a href="../../../zkEVM/" class="md-nav__link ">
               
   
   
@@ -342,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../zkEVM/banana-specs/" class="md-nav__link">
+      <a href="../../../zkEVM/banana-specs/" class="md-nav__link">
         
   
   
@@ -365,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../zkEVM/durian-specs/" class="md-nav__link">
+      <a href="../../../zkEVM/durian-specs/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../tooling/" class="md-nav__link ">
+            <a href="../../../tooling/" class="md-nav__link ">
               
   
   
@@ -459,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tooling/Resources/" class="md-nav__link">
+      <a href="../../../tooling/Resources/" class="md-nav__link">
         
   
   
@@ -482,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tooling/Genesis/" class="md-nav__link">
+      <a href="../../../tooling/Genesis/" class="md-nav__link">
         
   
   
@@ -509,8 +509,6 @@
       
   
   
-    
-  
   
   
     
@@ -535,15 +533,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../../aggregation-layer/" class="md-nav__link ">
               
   
   
@@ -562,7 +562,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             3. Aggregation Layer
@@ -608,7 +608,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../v0.2.0/" class="md-nav__link ">
+            <a href="../../../aggregation-layer/v0.2.0/" class="md-nav__link ">
               
   
   
@@ -643,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/ChangeLog/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
         
   
   
@@ -666,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SC-Versions/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
         
   
   
@@ -717,7 +717,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../v0.2.0/SovereignChains/" class="md-nav__link ">
+            <a href="../../../aggregation-layer/v0.2.0/SovereignChains/" class="md-nav__link ">
               
   
   
@@ -752,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
         
   
   
@@ -775,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
         
   
   
@@ -798,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
         
   
   
@@ -829,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/Resources/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
         
   
   
@@ -857,8 +857,6 @@
                 
   
   
-    
-  
   
   
     
@@ -892,15 +890,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../aggregation-layer/v0.3.0/" class="md-nav__link ">
               
   
   
@@ -919,7 +919,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             3.2. Version 0.3.0
@@ -935,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SC-specs/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
         
   
   
@@ -958,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Diagrams/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
         
   
   
@@ -981,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
         
   
   
@@ -1004,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tooling/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
         
   
   
@@ -1027,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Roles/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
         
   
   
@@ -1047,8 +1047,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1070,15 +1068,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_7" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../aggregation-layer/v0.3.0/SC-interactions/" class="md-nav__link ">
               
   
   
@@ -1097,7 +1097,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3_7">
             <span class="md-nav__icon md-icon"></span>
             3.2.6. SC Interactions
@@ -1113,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AggLayerGateway/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1133,32 +1133,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    3.2.6.2. AggchainFEP
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1169,287 +1147,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-interactions-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Interactions &amp; Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-initialize-aggchainfep" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1. Initialize AggchainFEP
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-view-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2. View functions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.2. View functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-getaggchainhash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.1. getAggchainHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#122-submission_interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.2. SUBMISSION_INTERVAL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#123-l2_block_time" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.3. L2_BLOCK_TIME
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#124-getl2output" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.4. getL2Output
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#125-latestoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.5. latestOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#126-nextoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.6. nextOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#127-latestblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.7. latestBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#128-nextblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.8. nextBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#129-computel2timestamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.9. computeL2Timestamp
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-onverifypessimistic" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3. onVerifyPessimistic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-updatesubmissioninterval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4. updateSubmissionInterval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15-updateaggregationvkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.5. updateAggregationVkey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16-updaterangevkeycommitment" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.6. updateRangeVkeyCommitment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17-updaterollupconfighash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.7. updateRollupConfigHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18-enableoptimisticmodedisableoptimisticmode" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.8. enableOptimisticMode/disableOptimisticMode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.9. transferAggchainManagerRole/acceptAggchainManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-tooling-available" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Tooling available
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Tooling available">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-change-optimistic-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1. Change optimistic mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-transfer-aggchain-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2. Transfer aggchain manager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-transfer-optimistic-mode-manager-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. Transfer optimistic mode manager role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-update-rollup-config-hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4. Update rollup config hash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-update-submission-interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5. Update submission interval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-tools-to-get-aggchain-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6. Tools to get aggchain data
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1462,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PolygonRollupManager/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
         
   
   
@@ -1493,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../UpgradeableTokens/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
         
   
   
@@ -1516,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FAQs/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
         
   
   
@@ -1539,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Changes-v0.3.1/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
         
   
   
@@ -1594,7 +1291,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../v0.3.5/" class="md-nav__link ">
+            <a href="../../../aggregation-layer/v0.3.5/" class="md-nav__link ">
               
   
   
@@ -1629,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.5/Changes/" class="md-nav__link">
+      <a href="../../../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
         
   
   
@@ -1664,6 +1361,8 @@
       
   
   
+    
+  
   
   
     
@@ -1686,17 +1385,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -1715,7 +1412,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             4. Smart Contracts
@@ -1755,7 +1452,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/v11/" class="md-nav__link ">
+            <a href="../../v11/" class="md-nav__link ">
               
   
   
@@ -1790,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
+      <a href="../../v11/versions-tag11/" class="md-nav__link">
         
   
   
@@ -1818,6 +1515,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1853,17 +1552,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/v12/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1882,7 +1579,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             4.1. Version 12
@@ -1898,7 +1595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
+      <a href="../versions-tag12/" class="md-nav__link">
         
   
   
@@ -1947,7 +1644,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
+            <a href="../Rename%20%26%20reorg/" class="md-nav__link ">
               
   
   
@@ -1982,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
+      <a href="../Rename%20%26%20reorg/renaming/" class="md-nav__link">
         
   
   
@@ -2005,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
+      <a href="../Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
         
   
   
@@ -2036,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
+      <a href="../AgglayerManager/" class="md-nav__link">
         
   
   
@@ -2056,10 +1753,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    4.1.4 AgglayerBridgeL2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2070,6 +1787,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agglayerbridgel2-v100-v110" class="md-nav__link">
+    <span class="md-ellipsis">
+      AgglayerBridgeL2 v1.0.0 → v1.1.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-new-administrative-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. New Administrative Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. New Administrative Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-setmultipleclaims" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 setMultipleClaims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-backwardlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 backwardLET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-forwardlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 forwardLET
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-setlocalbalancetree" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 setLocalBalanceTree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-new-error-types-to-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 New Error Types to Monitor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2082,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
+      <a href="../AgglayerBridge/" class="md-nav__link">
         
   
   
@@ -2105,7 +1924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../AgglayerGateway.md" class="md-nav__link">
+      <a href="../../../AgglayerGateway.md" class="md-nav__link">
         
   
   
@@ -2128,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
+      <a href="../AggchainBase/" class="md-nav__link">
         
   
   
@@ -2151,7 +1970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
+      <a href="../AggchainECDSAMultisig/" class="md-nav__link">
         
   
   
@@ -2174,7 +1993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
+      <a href="../AggchainFEP/" class="md-nav__link">
         
   
   
@@ -2197,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/migration-paths/" class="md-nav__link">
+      <a href="../migration-paths/" class="md-nav__link">
         
   
   
@@ -2264,7 +2083,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../outposts/" class="md-nav__link ">
+            <a href="../../../outposts/" class="md-nav__link ">
               
   
   
@@ -2299,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outposts/Intro/" class="md-nav__link">
+      <a href="../../../outposts/Intro/" class="md-nav__link">
         
   
   
@@ -2322,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outposts/L2-Deployment-script/" class="md-nav__link">
+      <a href="../../../outposts/L2-Deployment-script/" class="md-nav__link">
         
   
   
@@ -2362,8 +2181,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2372,187 +2189,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-interactions-usage" class="md-nav__link">
+  <a href="#agglayerbridgel2-v100-v110" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Interactions &amp; Usage
+      AgglayerBridgeL2 v1.0.0 → v1.1.0
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-new-administrative-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. New Administrative Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. New Administrative Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-initialize-aggchainfep" class="md-nav__link">
+  <a href="#11-setmultipleclaims" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1. Initialize AggchainFEP
+      1.1 setMultipleClaims
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-view-functions" class="md-nav__link">
+  <a href="#12-backwardlet" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2. View functions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.2. View functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-getaggchainhash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.1. getAggchainHash
+      1.2 backwardLET
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#122-submission_interval" class="md-nav__link">
+  <a href="#13-forwardlet" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2.2. SUBMISSION_INTERVAL
+      1.3 forwardLET
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#123-l2_block_time" class="md-nav__link">
+  <a href="#14-setlocalbalancetree" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2.3. L2_BLOCK_TIME
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#124-getl2output" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.4. getL2Output
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#125-latestoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.5. latestOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#126-nextoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.6. nextOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#127-latestblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.7. latestBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#128-nextblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.8. nextBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#129-computel2timestamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.9. computeL2Timestamp
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-onverifypessimistic" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3. onVerifyPessimistic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-updatesubmissioninterval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4. updateSubmissionInterval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15-updateaggregationvkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.5. updateAggregationVkey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16-updaterangevkeycommitment" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.6. updateRangeVkeyCommitment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17-updaterollupconfighash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.7. updateRollupConfigHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18-enableoptimisticmodedisableoptimisticmode" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.8. enableOptimisticMode/disableOptimisticMode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.9. transferAggchainManagerRole/acceptAggchainManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole
+      1.4 setLocalBalanceTree
     </span>
   </a>
   
@@ -2564,64 +2249,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-tooling-available" class="md-nav__link">
+  <a href="#2-error-handling" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Tooling available
+      2. Error Handling
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Tooling available">
+    <nav class="md-nav" aria-label="2. Error Handling">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-change-optimistic-mode" class="md-nav__link">
+  <a href="#21-new-error-types-to-monitor" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1. Change optimistic mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-transfer-aggchain-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2. Transfer aggchain manager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-transfer-optimistic-mode-manager-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. Transfer optimistic mode manager role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-update-rollup-config-hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4. Update rollup config hash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-update-submission-interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5. Update submission interval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-tools-to-get-aggchain-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6. Tools to get aggchain data
+      2.1 New Error Types to Monitor
     </span>
   </a>
   
@@ -2651,310 +2291,136 @@
   
 
 
-<h1 id="aggchain-fep">Aggchain FEP</h1>
-<h2 id="1-interactions-usage">1. Interactions &amp; Usage</h2>
-<p>The definition can be found <a href="../../SC-specs/#52-fep">here</a>.</p>
-<h3 id="11-initialize-aggchainfep">1.1. Initialize AggchainFEP</h3>
-<p>To initialize the aggchain, it is necessary to differentiate according to the <code>initializerVersion</code>:</p>
-<ul>
-<li>
-<p><code>initializeBytesAggchain</code> if <code>_initializerVersion == 0</code>:
-<div class="highlight"><pre><span></span><code> // chain custom params
-InitParams memory _initParams
-// aggchainBase params
-bool _useDefaultGateway
-bytes32 _initOwnedAggchainVKey
-bytes2 _initAggchainVKeyVersion
-address _vKeyManager
-// PolygonConsensusBase params
-address _admin
-address _trustedSequencer
-address _gasTokenAddress
-string memory _trustedSequencerURL
-string memory _networkName
-</code></pre></div></p>
-</li>
-<li>
-<p><code>initializeBytesAggchain</code> if <code>_initializerVersion == 1</code>:
-<div class="highlight"><pre><span></span><code>// chain custom params
-InitParams memory _initParams,
-// aggchainBase params
-bool _useDefaultGateway,
-bytes32 _initOwnedAggchainVKey,
-bytes2 _initAggchainVKeyVersion,
-address _vKeyManager
-</code></pre></div></p>
-</li>
-</ul>
-<h3 id="12-view-functions">1.2. View functions</h3>
-<h4 id="121-getaggchainhash">1.2.1. getAggchainHash</h4>
-<p>Function to get resulting aggchain hash.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param aggchainData custom bytes provided by the chain
+  <h1>4.1.4 AgglayerBridgeL2</h1>
 
-    aggchainData:
-        Field:           | _aggchainVKeyVersion | _outputRoot  | _l2BlockNumber |
-        length (bits):   | 16                   | 256          | 256            |
+<h2 id="agglayerbridgel2-v100-v110">AgglayerBridgeL2 <code>v1.0.0</code> → <code>v1.1.0</code></h2>
+<h2 id="1-new-administrative-functions">1. New Administrative Functions</h2>
+<h3 id="11-setmultipleclaims">1.1 <code>setMultipleClaims</code></h3>
+<p><strong>Purpose</strong>: Administrative function to batch set multiple claims as processed in the claimedBitmap.<br />
+<strong>Access Control</strong>: Only callable by accounts with <code>GlobalExitRootRemover</code> role.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">setMultipleClaims</span><span class="p">(</span><span class="kt">uint256</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>globalIndexes<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyGlobalExitRootRemover
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>globalIndexes</code>: Array of global indexes to mark as claimed<ul>
+<li><strong>Format</strong>: <code>| 191 bits (0) | 1 bit (mainnetFlag) | 32 bits (rollupIndex) | 32 bits (leafIndex) |</code></li>
+<li><strong>Mainnet</strong>: <code>mainnetFlag = 1</code>, <code>rollupIndex</code> ignored</li>
+<li><strong>Rollup</strong>: <code>mainnetFlag = 0</code>, <code>rollupIndex = networkID - 1</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Event Emitted</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">SetClaim</span><span class="p">(</span><span class="kt">uint32</span><span class="w"> </span><span class="nv">leafIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">sourceNetwork</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>leafIndex: Index of the unclaimed leaf that is set to be claimed</li>
+<li>sourceNetwork: Rollup id of the claimed index</li>
+</ul>
+<hr />
+<h3 id="12-backwardlet">1.2 <code>backwardLET</code></h3>
+<p><strong>Purpose</strong>: Administrative function to move the Local Exit Tree backward to a previous state with fewer deposits.<br />
+<strong>Access Control</strong>: Only callable by accounts with <code>GlobalExitRootRemover</code> role.<br />
+<strong>Use Cases</strong>: Rollback LET due to reorgs, invalid states, or administrative corrections.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">backwardLET</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">newDepositCount</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="p">[</span><span class="m m-Decimal">32</span><span class="p">]</span><span class="w"> </span>calldata<span class="w"> </span>newFrontier<span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">nextLeaf</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="p">[</span><span class="m m-Decimal">32</span><span class="p">]</span><span class="w"> </span>calldata<span class="w"> </span>proof
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyGlobalExitRootRemover
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>newDepositCount</code>: Target deposit count (must be &lt; current depositCount)</li>
+<li><code>newFrontier</code>: Merkle tree frontier array for the target state (32 elements)</li>
+<li><code>nextLeaf</code>: The leaf at position <code>newDepositCount</code> in current tree</li>
+<li><code>proof</code>: Merkle proof showing <code>nextLeaf</code> exists at <code>newDepositCount</code> position</li>
+</ul>
+<p><strong>Event Emitted</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">BackwardLET</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">newDepositCount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">newRoot</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>newDepositCount: new last leaf index of the tree after backward LET</li>
+<li>newRoot: new root of the tree after backward LET</li>
+</ul>
+<hr />
+<h3 id="13-forwardlet">1.3 <code>forwardLET</code></h3>
+<p><strong>Purpose</strong>: Administrative function to add multiple leaves to the Local Exit Tree in a single transaction.<br />
+<strong>Access Control</strong>: Only callable by accounts with <code>GlobalExitRootRemover</code> role.<br />
+<strong>Use Cases</strong>: Batch processing of deposits, state recovery, or administrative corrections.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">struct</span><span class="w"> </span><span class="nv">LeafData</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint8</span><span class="w"> </span><span class="nv">leafType</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">originNetwork</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">originAddress</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">destinationNetwork</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">destinationAddress</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">metadataHash</span><span class="p">;</span>
+<span class="p">}</span>
 
-    aggchainData._aggchainVKeyVersion First 2 bytes of the aggchain vkey selector
-    aggchainData._outputRoot Proposed new output root
-    aggchainData._l2BlockNumber Proposed new l2 bock number
-</code></pre></div></p>
-<h4 id="122-submission_interval">1.2.2. SUBMISSION_INTERVAL</h4>
-<p>Getter for the submissionInterval.</p>
-<h4 id="123-l2_block_time">1.2.3. L2_BLOCK_TIME</h4>
-<p>Getter for the l2BlockTime.</p>
-<h4 id="124-getl2output">1.2.4. getL2Output</h4>
-<p>Returns an output by index. Needed to return a struct instead of a tuple.</p>
-<h4 id="125-latestoutputindex">1.2.5. latestOutputIndex</h4>
-<p>Returns the number of outputs that have been proposed.
-Will revert if no outputs have been proposed yet.</p>
-<h4 id="126-nextoutputindex">1.2.6. nextOutputIndex</h4>
-<p>Returns the index of the next output to be proposed.</p>
-<h4 id="127-latestblocknumber">1.2.7. latestBlockNumber</h4>
-<p>Returns the block number of the latest submitted L2 output proposal.
-If no proposals been submitted yet then this function will return the starting block number.</p>
-<h4 id="128-nextblocknumber">1.2.8. nextBlockNumber</h4>
-<p>Computes the block number of the next L2 block that needs to be checkpointed.</p>
-<h4 id="129-computel2timestamp">1.2.9. computeL2Timestamp</h4>
-<p>Returns the L2 timestamp corresponding to a given L2 block number.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _l2BlockNumber The L2 block number of the target block.
-</code></pre></div></p>
-<h3 id="13-onverifypessimistic">1.3. onVerifyPessimistic</h3>
-<p>Callback when pessimistic proof is verified, can only be called by the rollup manager stores the necessary chain data when the pessimistic proof is verified.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param aggchainData Custom data provided by the chain
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>emit OutputProposed(outputRoot, l2OutputIndex, l2BlockNumber, l1Timestamp);
-</code></pre></div></p>
-<h3 id="14-updatesubmissioninterval">1.4. updateSubmissionInterval</h3>
-<p>Function to update the submission interval.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _submissionInterval The new submission interval
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldSubmissionInterval The old submission interval.
-@param newSubmissionInterval The new submission interval.
-
-event SubmissionIntervalUpdated(uint256 oldSubmissionInterval, uint256 newSubmissionInterval)
-</code></pre></div></p>
-<p>Errors:</p>
+<span class="kt">function</span><span class="w"> </span><span class="nv">forwardLET</span><span class="p">(</span>
+<span class="w">    </span>LeafData<span class="p">[]</span><span class="w"> </span>calldata<span class="w"> </span>newLeaves<span class="p">,</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">expectedStateRoot</span>
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyGlobalExitRootRemover
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
 <ul>
-<li>Thrown when new submission interval is 0:
-<div class="highlight"><pre><span></span><code>error SubmissionIntervalMustBeGreaterThanZero()
-</code></pre></div></li>
-</ul>
-<h3 id="15-updateaggregationvkey">1.5. updateAggregationVkey</h3>
-<p>Function to update the aggregation verification key.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _aggregationVkey The new aggregation verification key.
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldAggregationVkey The old aggregation verification key.
-@param newAggregationVkey The new aggregation verification key.
-
-event AggregationVkeyUpdated(
-    bytes32 indexed oldAggregationVkey,
-    bytes32 indexed newAggregationVkey
-);
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when new aggregationVKey is 0:
-<div class="highlight"><pre><span></span><code>error AggregationVkeyMustBeDifferentThanZero();
-</code></pre></div></li>
-</ul>
-<h3 id="16-updaterangevkeycommitment">1.6. updateRangeVkeyCommitment</h3>
-<p>Function to update the range verification key commitment.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _rangeVkeyCommitment The new range verification key commitment
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldRangeVkeyCommitment The old range verification key commitment.
-@param newRangeVkeyCommitment The new range verification key commitment.
-event RangeVkeyCommitmentUpdated(
-    bytes32 indexed oldRangeVkeyCommitment,
-    bytes32 indexed newRangeVkeyCommitment
-);
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when new rangeVkey commitment is 0:
-<div class="highlight"><pre><span></span><code>error RangeVkeyCommitmentMustBeDifferentThanZero();
-</code></pre></div></li>
-</ul>
-<h3 id="17-updaterollupconfighash">1.7. updateRollupConfigHash</h3>
-<p>Function to update the rollup config hash.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _rollupConfigHash The new rollup config hash
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldRollupConfigHash The old rollup config hash.
-@param newRollupConfigHash The new rollup config hash.
-
-event RollupConfigHashUpdated(
-    bytes32 indexed oldRollupConfigHash,
-    bytes32 indexed newRollupConfigHash
-) 
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when rollup config hash is 0
-<div class="highlight"><pre><span></span><code>error RollupConfigHashMustBeDifferentThanZero();
-</code></pre></div></li>
-</ul>
-<h3 id="18-enableoptimisticmodedisableoptimisticmode">1.8. enableOptimisticMode/disableOptimisticMode</h3>
-<p>Functions to enable or disable optimistic mode.</p>
-<ul>
-<li>
-<p><code>enableOptimisticMode</code>:</p>
-<ul>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>event EnableOptimisticMode(); 
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>If optimistic mode is enabled
-<div class="highlight"><pre><span></span><code>error OptimisticModeEnabled();
-</code></pre></div></p>
-</li>
+<li><code>newLeaves</code>: Array of leaf data added to the tree<ul>
+<li><code>leafType</code>: Type of bridge operation (0 = transfer, 1 = message)</li>
+<li><code>originNetwork</code>: Source network ID</li>
+<li><code>originAddress</code>: Source token/contract address</li>
+<li><code>destinationNetwork</code>: Target network ID</li>
+<li><code>destinationAddress</code>: Target token/contract address</li>
+<li><code>amount</code>: Amount being bridged</li>
+<li><code>metadataHash</code>: Hash of additional metadata</li>
 </ul>
 </li>
-<li>
-<p><code>disableOptimisticMode</code>:</p>
-<ul>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>event DisableOptimisticMode();
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>If optimistic mode is not enabled
-<div class="highlight"><pre><span></span><code>error OptimisticModeNotEnabled();
-</code></pre></div></p>
-</li>
+<li><code>expectedStateRoot</code>: Expected tree root after adding all leaves</li>
 </ul>
-</li>
-</ul>
-<h3 id="19-transferaggchainmanagerroleacceptaggchainmanagerrole">1.9. transferAggchainManagerRole/acceptAggchainManagerRole</h3>
-<p>Functions to transfer and accept aggchain manager role. </p>
+<p><strong>Event Emitted</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">ForwardLET</span><span class="p">(</span><span class="kt">uint256</span><span class="w"> </span><span class="nv">newDepositCount</span><span class="p">,</span><span class="w"> </span><span class="kt">bytes32</span><span class="w"> </span><span class="nv">newRoot</span><span class="p">);</span>
+</code></pre></div>
 <ul>
-<li>
-<p><code>transferAggchainManagerRole</code>:</p>
-<p>Starts the aggchainManager role transfer. This is a two step process, the pending aggchainManager must accept to finalize the process.</p>
-<ul>
-<li>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param newAggchainManager Address of the new aggchainManager
-</code></pre></div></p>
-</li>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param currentAggchainManager The current pending aggchainManager
-@param newPendingAggchainManager The new pending aggchainManager
-
-event TransferAggchainManagerRole(
-    address currentAggchainManager,
-    address newPendingAggchainManager
-)
-</code></pre></div></p>
-</li>
+<li>newDepositCount: new last leaf index of the tree after forward LET</li>
+<li>newRoot: new root of the tree after forward LET</li>
+<li>To synch, data of all the inserted leafs must be extracted from the calldata of calling <code>forwardLET</code> function</li>
 </ul>
-</li>
-<li>
-<p><code>acceptAggchainManagerRole</code>:</p>
-<p>Allow the current pending aggchainManager to accept the aggchainManager role.</p>
+<hr />
+<h3 id="14-setlocalbalancetree">1.4 <code>setLocalBalanceTree</code></h3>
+<p><strong>Purpose</strong>: Administrative function to set local balance tree leaves to specific amounts for cross-network token tracking.<br />
+<strong>Access Control</strong>: Only callable by accounts with <code>GlobalExitRootRemover</code> role.<br />
+<strong>Use Cases</strong>: Update cross-network token balances, balance corrections, or state recovery.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">function</span><span class="w"> </span><span class="nv">setLocalBalanceTree</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>originNetwork<span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>originTokenAddress<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="p">[]</span><span class="w"> </span><span class="kt">memory</span><span class="w"> </span>amount
+<span class="p">)</span><span class="w"> </span><span class="kt">external</span><span class="w"> </span>onlyGlobalExitRootRemover
+</code></pre></div>
+<p><strong>Parameters</strong>:</p>
 <ul>
-<li>
-<p>Event:
-<div class="highlight"><pre><span></span><code>@param oldAggchainManager The old aggchainManager
-@param newAggchainManager The new aggchainManager
-event AcceptAggchainManagerRole(
-    address oldAggchainManager,
-    address newAggchainManager
-)
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>Thrown when the caller is not the pending aggchain manager
-<div class="highlight"><pre><span></span><code>error OnlyPendingAggchainManager();
-</code></pre></div></p>
-</li>
+<li><code>originNetwork</code>: Array of origin network IDs</li>
+<li><code>originTokenAddress</code>: Array of origin token addresses</li>
+<li><code>amount</code>: Array of amounts to set for each token</li>
 </ul>
-</li>
-</ul>
-<h3 id="110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole">1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole</h3>
-<p>Functions to transfer and accept optimistic mode manager role. </p>
+<p><strong>Event Emitted</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">event</span><span class="w"> </span><span class="nv">SetLocalBalanceTree</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">uint32</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>originNetwork<span class="p">,</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>originTokenAddress<span class="p">,</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w"> </span><span class="nv">newAmount</span>
+<span class="p">);</span>
+</code></pre></div>
 <ul>
-<li>
-<p><code>transferOptimisticModeManagerRole</code>:</p>
-<p>Starts the optimisticModeManager role transfer. This is a two step process, the pending optimisticModeManager must accepted to finalize the process.</p>
-<ul>
-<li>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param newOptimisticModeManager Address of the new optimisticModeManager
-</code></pre></div></p>
-</li>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param currentAggchainManager The current pending aggchainManager
-@param newPendingAggchainManager The new pending aggchainManager
-
-event TransferAggchainManagerRole(
-    address currentAggchainManager,
-    address newPendingAggchainManager
-)
-</code></pre></div></p>
-</li>
+<li>Event to update all the new values for the local Balance Tree, the entries not included will remain the same</li>
 </ul>
-</li>
-<li>
-<p><code>acceptOptimisticModeManagerRole</code>:</p>
-<p>Allow the current pending optimisticModeManager to accept the optimisticModeManager role.</p>
+<h2 id="2-error-handling">2. Error Handling</h2>
+<h3 id="21-new-error-types-to-monitor">2.1 New Error Types to Monitor</h3>
 <ul>
-<li>
-<p>Event:
-<div class="highlight"><pre><span></span><code>@param oldOptimisticModeManager The old optimisticModeManager
-@param newOptimisticModeManager The new optimisticModeManager
-
-event AcceptOptimisticModeManagerRole(
-    address oldOptimisticModeManager,
-    address newOptimisticModeManager
-)
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>Thrown when the caller is not the pending optimistic mode manager.
-<div class="highlight"><pre><span></span><code>error OnlyPendingOptimisticModeManager();
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-tooling-available">2. Tooling available</h2>
-<h3 id="21-change-optimistic-mode">2.1. Change optimistic mode</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/changeOptimisticMode">Tool</a> to change optimistic mode (<code>true/false</code>).</p>
-<h3 id="22-transfer-aggchain-manager">2.2. Transfer aggchain manager</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferAggchainManager">Tool</a> to transfer and accept aggchain manager role.</p>
-<h3 id="23-transfer-optimistic-mode-manager-role">2.3. Transfer optimistic mode manager role</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferOptimisticManager">Tool</a> to transfer and accept optimistic mode manager role.</p>
-<h3 id="24-update-rollup-config-hash">2.4. Update rollup config hash</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateRollupConfigHash">Tool</a> to update rollup config hash.</p>
-<h3 id="25-update-submission-interval">2.5. Update submission interval</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateSubmissionInterval">Tool</a> to update submission interval.</p>
-<h3 id="26-tools-to-get-aggchain-data">2.6. Tools to get aggchain data</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/toolsData">Tools</a> to:</p>
-<ul>
-<li>Get aggchainData</li>
-<li>Get initiliaze bytes aggchain v0</li>
-<li>Get initiliaze bytes aggchain v1</li>
+<li><code>InvalidDepositCount()</code>: Invalid deposit count for LET operations</li>
+<li><code>InvalidLeavesLength()</code>: Empty leaves array in forwardLET</li>
+<li><code>InvalidExpectedRoot()</code>: Computed root doesn't match expected</li>
+<li><code>InvalidSubtreeFrontier()</code>: Invalid subtree frontier in backwardLET</li>
+<li><code>InvalidLBTLeaf()</code>: Trying to set LBT leaf for same network</li>
+<li><code>InputArraysLengthMismatch()</code>: Array parameters have different lengths</li>
+<li><code>OnlyDeployer()</code>: Function restricted to contract deployer</li>
 </ul>
 
 
@@ -2976,7 +2442,7 @@ event AcceptOptimisticModeManagerRole(
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2025 06:21:05 UTC">August 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 24, 2025 09:02:53 UTC">September 24, 2025</span>
   </span>
 
     
@@ -3031,10 +2497,10 @@ event AcceptOptimisticModeManagerRole(
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
