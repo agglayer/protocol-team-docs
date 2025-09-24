@@ -27,6 +27,7 @@ function initialize(
 4. Configures initial signers and threshold
 
 **Key Characteristics**:
+
 - Does NOT use verification keys (`useDefaultVkeys = false`, zero vkey/selector)
 - Relies on ECDSA signatures instead of SP1 proofs
 - Signers and threshold are the primary security mechanism
@@ -48,6 +49,7 @@ function migrateFromPessimisticConsensus() external onlyRollupManager
 5. Handles empty `trustedSequencerURL` by using "NO_URL" placeholder
 
 **Post-Migration State**:
+
 - Single signer (trustedSequencer) with threshold of 1
 - Maintains operational continuity
 - Admin can later update signers and threshold via `updateSignersAndThreshold`
@@ -65,14 +67,17 @@ function getVKeyAndAggchainParams(
 ### 2.2 ECDSA Multisig Implementation Details
 
 **Input Validation**:
+
 - `aggchainData` MUST be empty (length = 0)
 - Non-empty data causes revert with `InvalidAggchainDataLength()`
 
 **Returns**:
+
 - First `bytes32`: Always `0x0` (no verification key used)
 - Second `bytes32`: Always `0x0` (no custom params)
 
 **Rationale**:
+
 - ECDSA multisig doesn't use SP1 verification keys
 - Signers hash and threshold are handled directly in AggchainBase
 - The aggchain hash includes signers configuration from base contract
@@ -99,11 +104,13 @@ Where:
 ### 3.2 Key Differences from Other Implementations
 
 **vs FEP**:
+
 - FEP uses verification keys and SP1 proofs
 - FEP includes output roots and config in aggchainParams
 - ECDSA uses only signers and signatures
 
 **vs Standard Aggchains**:
+
 - No verification key selector needed
 - No aggchain data parameters
 - Security comes from multisig threshold
@@ -120,6 +127,7 @@ function onVerifyPessimistic(bytes calldata aggchainData) external onlyRollupMan
 ```
 
 **Behavior**:
+
 - Validates `aggchainData` is empty
 - Emits `OnVerifyPessimisticECDSAMultisig` event
 - No actual proof verification (handled by signature validation elsewhere)
@@ -139,6 +147,7 @@ event OnVerifyPessimisticECDSAMultisig();
 - Version 3: Reserved for FEP
 
 **Upgrade Path**:
+
 - ECDSA → FEP: Supported (via `initializeFromECDSAMultisig` in FEP)
 - FEP → ECDSA: Currently not supported
 
@@ -165,5 +174,5 @@ event OnVerifyPessimisticECDSAMultisig();
 
 ### 6.2 Cross-References
 - Inherits from [AggchainBase](./AggchainBase.md) for common functionality
-- Can integrate with [AggLayerGateway](./AggLayerGateway.md) for default signers
+- Can integrate with [AgglayerGateway](./AgglayerGateway.md) for default signers
 - Can be upgraded to [AggchainFEP](./AggchainFEP.md) but not vice versa

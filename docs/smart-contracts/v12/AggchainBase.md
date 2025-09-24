@@ -12,6 +12,7 @@ function initAggchainManager(address newAggchainManager) external onlyRollupMana
 ```
 
 **Parameters**:
+
 - `newAggchainManager`: Address of the aggchain manager (cannot be zero address)
 
 **Event Emitted**:
@@ -72,6 +73,7 @@ function updateSignersAndThreshold(
 ```
 
 **Parameters**:
+
 - `_signersToRemove`: Array of signers to remove (must be in descending index order)
 - `_signersToAdd`: Array of new signers to add with URLs
 - `_newThreshold`: New threshold value

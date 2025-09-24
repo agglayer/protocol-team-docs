@@ -1,4 +1,4 @@
-## PolygonZkEVMBridgeV2 `v1.0.0` → `v1.1.0`
+## AgglayerBridge `v1.0.0` → `v1.1.0`
 
 ## 1. BridgeLib Contract - Bytecode Optimization
 
@@ -20,7 +20,7 @@ The following functions were extracted from the main bridge contract to reduce b
 #### Token Metadata Functions
 
 ```solidity
-// Previously inline in PolygonZkEVMBridgeV2, now in BridgeLib
+// Previously inline in AgglayerBridge, now in BridgeLib
 function safeName(address token) public view returns (string memory)
 function safeSymbol(address token) public view returns (string memory)
 function safeDecimals(address token) public view returns (uint8)
@@ -31,7 +31,7 @@ function returnDataToString(bytes memory data) internal pure returns (string mem
 #### Permit Validation Functions
 
 ```solidity
-// Previously inline in PolygonZkEVMBridgeV2, now in BridgeLib
+// Previously inline in AgglayerBridge, now in BridgeLib
 function validateAndProcessPermit(
     address token,
     bytes calldata permitData,
@@ -102,7 +102,7 @@ function _permit(address token, bytes calldata permitData) internal {
 
 The bytecode abstraction is reflected in the version updates:
 
-- **PolygonZkEVMBridgeV2**: `v1.0.0` → `v1.1.0`
+- **AgglayerBridge**: `v1.0.0` → `v1.1.0`
     - Indicates the integration of BridgeLib for bytecode optimization
     - Maintains backward compatibility in the public interface
     - Internal implementation changes for permit and metadata handling
