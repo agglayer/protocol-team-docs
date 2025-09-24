@@ -2,7 +2,7 @@
 * `PolygonRollupManager`: al-v0.3.1
 * `PolygonZkEVMBridgeV2`: al-v0.3.1
 * `PolygonZkEVMGlobalExitRootV2`: al-v0.3.0
-* `AggLayerGateway`: ---
+* `AgglayerGateway`: ---
 * `BridgeL2SovereignChain`: v10.1.2
 * `GlobalExitRootManagerL2SovereignChain`: al-v0.3.0
 * `AggchainFEP`: ---

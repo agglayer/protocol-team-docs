@@ -27,6 +27,7 @@ function initialize(
 ```
 
 **Requirements**:
+
 - `_initializerVersion = 0` (fresh deployment)
 - If `_useDefaultVkeys = true`: vkey selector and owned vkey must be zero
 - If `_useDefaultVkeys = false`: must provide valid vkey and selector
@@ -52,6 +53,7 @@ function initializeFromPessimisticConsensus(
 ```
 
 **Requirements**:
+
 - `_initializerVersion = 1` (initialized as PessimisticConsensus)
 - Does NOT call `_initializePolygonConsensusBase` (already initialized)
 - Initializes FEP params and AggchainBase components
@@ -70,6 +72,7 @@ function initializeFromECDSAMultisig(
 ```
 
 **Requirements**:
+
 - `_initializerVersion = 2` (initialized as ECDSA multisig)
 - `l2Outputs.length = 0` (no existing outputs)
 - Only initializes FEP-specific parameters
@@ -89,6 +92,7 @@ function upgradeFromPreviousFEP() external onlyRollupManager
 ```
 
 **Requirements**:
+
 - `_initializerVersion = 2` (previous FEP version)
 - `aggchainSignersHash = bytes32(0)` (no signers hash set)
 
@@ -117,6 +121,7 @@ function getVKeyAndAggchainParams(
 ### 2.2 FEP Implementation Details
 
 **Input Format**:
+
 - `aggchainData`: 32 bytes containing the vkey selector (4 bytes selector ABI-encoded as 32 bytes)
 
 **Process**:
@@ -126,15 +131,16 @@ function getVKeyAndAggchainParams(
 4. Computes aggchainParams including output roots, config values, and mode settings
 
 **Returns**:
+
 - `aggchainVKey`: The verification key for the specified selector
 - `aggchainParams`: Hash of FEP-specific parameters including:
-  - Previous and current output roots
-  - L2 block number
-  - Rollup config hash
-  - Optimistic mode flag
-  - Trusted sequencer
-  - Range vkey commitment
-  - Aggregation vkey
+    - Previous and current output roots
+    - L2 block number
+    - Rollup config hash
+    - Optimistic mode flag
+    - Trusted sequencer
+    - Range vkey commitment
+    - Aggregation vkey
 
 **Hash Structure**:
 ```
@@ -169,6 +175,7 @@ function addOpSuccinctConfig(
 ```
 
 **Parameters**:
+
 - `_configName`: Unique identifier for the configuration (cannot be empty)
 - `_rollupConfigHash`: Chain configuration hash
 - `_aggregationVkey`: SP1 aggregation program verification key
@@ -194,6 +201,7 @@ function selectOpSuccinctConfig(bytes32 configName) external onlyAggchainManager
 ```
 
 **Behavior**:
+
 - Configuration must exist (validated via `isValidOpSuccinctConfig`)
 - Sets `selectedOpSuccinctConfigName` to the specified config
 - All subsequent L2 output proposals will use this configuration
@@ -226,6 +234,7 @@ The system **always** uses `selectedOpSuccinctConfigName` to determine which con
 3. A valid config must be selected before any L2 output can be proposed
 
 **Key Points**:
+
 - No fallback to "default" values - a config must be explicitly selected
 - Genesis config is automatically created and selected during upgrades
 - Allows for multiple proving configurations for different scenarios
@@ -251,4 +260,4 @@ The system **always** uses `selectedOpSuccinctConfigName` to determine which con
 ### 4.3 Cross-References
 - Inherits from [AggchainBase](./AggchainBase.md) for common aggchain functionality
 - Uses multisig management from base contract
-- Integrates with AggLayerGateway for optional default keys/signers
+- Integrates with AgglayerGateway for optional default keys/signers

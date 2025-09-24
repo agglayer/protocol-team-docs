@@ -10,9 +10,9 @@
 - All outposts will have a **customGasToken** that will be the native token of the chain
     - Outpost chains can not have native ether token
 - **Examples**:
-  - Base
-  - Optimism
-  - BSC
+    - Base
+    - Optimism
+    - BSC
 
 ---
 
@@ -37,9 +37,11 @@
 ## 1.4 Flow examples
 ### 1.4.1 Outpost with native ETH
 Example flow of an outpost having gasTokenNetwork different than native networkID/rollupID:
-Initialize params:
-- GasTokenNetwork: 0 (ethereum)
-- GasTokenAddress: 0x000....000 (ethereum)
+
+- Initialize params:
+    - GasTokenNetwork: 0 (ethereum)
+    - GasTokenAddress: 0x000....000 (ethereum)
+
 ```mermaid
 sequenceDiagram
     participant User

@@ -1,4 +1,4 @@
-## AggLayerGateway Multisig Functions `v1.1.0`
+## AgglayerGateway Multisig Functions `v1.1.0`
 
 ## 1. Multisig Signer Management
 
@@ -19,11 +19,11 @@ function updateSignersAndThreshold(
 **Parameters**:
 
 - `_signersToRemove`: Array of signers to remove with their indices (MUST be in descending index order)
-  - `addr`: Address of the signer to remove
-  - `index`: Current index of the signer in the aggchainSigners array
+    - `addr`: Address of the signer to remove
+    - `index`: Current index of the signer in the aggchainSigners array
 - `_signersToAdd`: Array of new signers to add with their URLs
-  - `addr`: Address of the new signer
-  - `url`: URL associated with the signer
+    - `addr`: Address of the new signer
+    - `url`: URL associated with the signer
 - `_newThreshold`: New threshold value for multisig operations
 
 **Event Emitted**:
@@ -37,6 +37,7 @@ event SignersAndThresholdUpdated(
 ```
 
 **Important Notes**:
+
 - Removal indices MUST be provided in descending order to avoid index shifting issues
 - The function will revert if indices are not in descending order
 - Maximum of 255 signers supported
@@ -125,8 +126,8 @@ function getAggchainSignerInfos() external view returns (SignerInfo[] memory)
 **Returns**:
 
 - Array of `SignerInfo` structs, each containing:
-  - `addr`: Signer address
-  - `url`: Associated URL for the signer
+    - `addr`: Signer address
+    - `url`: Associated URL for the signer
 
 ## 3. Internal Helper Functions
 
@@ -150,6 +151,7 @@ function getAggchainSignerInfos() external view returns (SignerInfo[] memory)
 **Access Control**: Internal function.  
 
 **Validation**:
+
 - Signer address cannot be zero
 - URL cannot be empty
 - Signer must not already exist
@@ -162,6 +164,7 @@ function getAggchainSignerInfos() external view returns (SignerInfo[] memory)
 **Access Control**: Internal function.  
 
 **Validation**:
+
 - Index must be within bounds
 - Address at index must match provided address
 
