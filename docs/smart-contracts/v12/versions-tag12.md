@@ -4,7 +4,7 @@
 !!! info
     Ongoing audit. Final tag WIP
 
-## Ongoingn development
+## Ongoing development
 https://github.com/agglayer/agglayer-contracts/tree/feature/v12
 
 ## Key Features

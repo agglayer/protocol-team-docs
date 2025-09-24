@@ -135,7 +135,7 @@ This path creates a new deployment path for chains that exclusively use PP (Pess
 
 **Summary:**
 
-This path creates a new deployment path for chains that use aggchain-proof (OP-FEP + brudge-constraints) + PP hybrid consensus.
+This path creates a new deployment path for chains that use aggchain-proof (OP-FEP + bridge-constraints) + PP hybrid consensus.
 
 **Key Points:**
 
