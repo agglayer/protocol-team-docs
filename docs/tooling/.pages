@@ -3,3 +3,4 @@ nav:
     - Overview: index.md
     - 2.1. Resources: Resources.md
     - 2.2. Genesis creation: Genesis.md
+    - 2.3. Verify genesis implementations: Verify-genesis.md
