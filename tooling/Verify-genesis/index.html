@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../AggLayerGateway/">
+        <link rel="prev" href="../Genesis/">
       
       
-        <link rel="next" href="../PolygonRollupManager/">
+        <link rel="next" href="../../aggregation-layer/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>3.2.6.2. AggchainFEP - SC-Protocol Documentation</title>
+        <title>2.3. Verify genesis implementations - SC-Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aggchain-fep" class="md-skip">
+        <a href="#verify-genesis-implementations" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.2.6.2. AggchainFEP
+              2.3. Verify genesis implementations
             
           </span>
         </div>
@@ -226,7 +226,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -256,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -307,7 +307,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../zkEVM/" class="md-nav__link ">
+            <a href="../../zkEVM/" class="md-nav__link ">
               
   
   
@@ -342,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../zkEVM/banana-specs/" class="md-nav__link">
+      <a href="../../zkEVM/banana-specs/" class="md-nav__link">
         
   
   
@@ -365,154 +365,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../zkEVM/durian-specs/" class="md-nav__link">
+      <a href="../../zkEVM/durian-specs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     1.2. Durian (fork.13)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../../tooling/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    2. Tooling
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            2. Tooling
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../tooling/Resources/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2.1. Resources
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../tooling/Genesis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2.2. Genesis creation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../tooling/Verify-genesis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2.3. Verify genesis implementations
     
   </span>
   
@@ -564,11 +422,240 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    2. Tooling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Tooling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1. Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Genesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2. Genesis creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2.3. Verify genesis implementations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3. Verify genesis implementations
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      General script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-script-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the script does
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../aggregation-layer/" class="md-nav__link ">
               
   
   
@@ -587,7 +674,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             3. Aggregation Layer
@@ -633,7 +720,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../v0.2.0/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.2.0/" class="md-nav__link ">
               
   
   
@@ -668,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/ChangeLog/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
         
   
   
@@ -691,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SC-Versions/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
         
   
   
@@ -742,7 +829,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../v0.2.0/SovereignChains/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.2.0/SovereignChains/" class="md-nav__link ">
               
   
   
@@ -777,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
         
   
   
@@ -800,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
         
   
   
@@ -823,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
         
   
   
@@ -854,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.2.0/Resources/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
         
   
   
@@ -882,8 +969,6 @@
                 
   
   
-    
-  
   
   
     
@@ -917,15 +1002,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.0/" class="md-nav__link ">
               
   
   
@@ -944,7 +1031,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             3.2. Version 0.3.0
@@ -960,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SC-specs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
         
   
   
@@ -983,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Diagrams/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
         
   
   
@@ -1006,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
         
   
   
@@ -1029,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tooling/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
         
   
   
@@ -1052,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Roles/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
         
   
   
@@ -1072,8 +1159,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1095,15 +1180,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_7" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.0/SC-interactions/" class="md-nav__link ">
               
   
   
@@ -1122,7 +1209,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3_7">
             <span class="md-nav__icon md-icon"></span>
             3.2.6. SC Interactions
@@ -1138,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AggLayerGateway/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1158,32 +1245,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    3.2.6.2. AggchainFEP
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1194,287 +1259,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-interactions-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Interactions &amp; Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-initialize-aggchainfep" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1. Initialize AggchainFEP
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-view-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2. View functions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.2. View functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-getaggchainhash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.1. getAggchainHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#122-submission_interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.2. SUBMISSION_INTERVAL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#123-l2_block_time" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.3. L2_BLOCK_TIME
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#124-getl2output" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.4. getL2Output
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#125-latestoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.5. latestOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#126-nextoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.6. nextOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#127-latestblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.7. latestBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#128-nextblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.8. nextBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#129-computel2timestamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.9. computeL2Timestamp
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-onverifypessimistic" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3. onVerifyPessimistic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-updatesubmissioninterval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4. updateSubmissionInterval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15-updateaggregationvkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.5. updateAggregationVkey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16-updaterangevkeycommitment" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.6. updateRangeVkeyCommitment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17-updaterollupconfighash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.7. updateRollupConfigHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18-enableoptimisticmodedisableoptimisticmode" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.8. enableOptimisticMode/disableOptimisticMode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.9. transferAggchainManagerRole/acceptAggchainManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-tooling-available" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Tooling available
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Tooling available">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-change-optimistic-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1. Change optimistic mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-transfer-aggchain-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2. Transfer aggchain manager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-transfer-optimistic-mode-manager-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3. Transfer optimistic mode manager role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-update-rollup-config-hash" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4. Update rollup config hash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-update-submission-interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5. Update submission interval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-tools-to-get-aggchain-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6. Tools to get aggchain data
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1487,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PolygonRollupManager/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
         
   
   
@@ -1518,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../UpgradeableTokens/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
         
   
   
@@ -1541,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FAQs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
         
   
   
@@ -1564,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Changes-v0.3.1/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
         
   
   
@@ -1619,7 +1403,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../v0.3.5/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.5/" class="md-nav__link ">
               
   
   
@@ -1654,7 +1438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../v0.3.5/Changes/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
         
   
   
@@ -1721,7 +1505,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/" class="md-nav__link ">
+            <a href="../../smart-contracts/" class="md-nav__link ">
               
   
   
@@ -1780,7 +1564,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/v11/" class="md-nav__link ">
+            <a href="../../smart-contracts/v11/" class="md-nav__link ">
               
   
   
@@ -1815,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
+      <a href="../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
         
   
   
@@ -1888,7 +1672,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/v12/" class="md-nav__link ">
+            <a href="../../smart-contracts/v12/" class="md-nav__link ">
               
   
   
@@ -1923,7 +1707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
         
   
   
@@ -1972,7 +1756,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
+            <a href="../../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
               
   
   
@@ -2007,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
         
   
   
@@ -2030,7 +1814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
         
   
   
@@ -2061,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
         
   
   
@@ -2084,7 +1868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
         
   
   
@@ -2107,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
         
   
   
@@ -2130,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../AgglayerGateway.md" class="md-nav__link">
+      <a href="../../AgglayerGateway.md" class="md-nav__link">
         
   
   
@@ -2153,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
         
   
   
@@ -2176,7 +1960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
         
   
   
@@ -2199,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -2222,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../smart-contracts/v12/migration-paths/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/migration-paths/" class="md-nav__link">
         
   
   
@@ -2289,7 +2073,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../outposts/" class="md-nav__link ">
+            <a href="../../outposts/" class="md-nav__link ">
               
   
   
@@ -2324,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outposts/Intro/" class="md-nav__link">
+      <a href="../../outposts/Intro/" class="md-nav__link">
         
   
   
@@ -2347,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../outposts/L2-Deployment-script/" class="md-nav__link">
+      <a href="../../outposts/L2-Deployment-script/" class="md-nav__link">
         
   
   
@@ -2397,263 +2181,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-interactions-usage" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Interactions &amp; Usage
+      Requirements
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. Interactions &amp; Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-initialize-aggchainfep" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1. Initialize AggchainFEP
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-view-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2. View functions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.2. View functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-getaggchainhash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.1. getAggchainHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#122-submission_interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.2. SUBMISSION_INTERVAL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#123-l2_block_time" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.3. L2_BLOCK_TIME
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#124-getl2output" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.4. getL2Output
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#125-latestoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.5. latestOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#126-nextoutputindex" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.6. nextOutputIndex
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#127-latestblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.7. latestBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#128-nextblocknumber" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.8. nextBlockNumber
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#129-computel2timestamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.9. computeL2Timestamp
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-onverifypessimistic" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3. onVerifyPessimistic
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-updatesubmissioninterval" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.4. updateSubmissionInterval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15-updateaggregationvkey" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.5. updateAggregationVkey
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16-updaterangevkeycommitment" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.6. updateRangeVkeyCommitment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17-updaterollupconfighash" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.7. updateRollupConfigHash
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18-enableoptimisticmodedisableoptimisticmode" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.8. enableOptimisticMode/disableOptimisticMode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#19-transferaggchainmanagerroleacceptaggchainmanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.9. transferAggchainManagerRole/acceptAggchainManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-tooling-available" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Tooling available
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Tooling available">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-change-optimistic-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1. Change optimistic mode
+      Parameters
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#22-transfer-aggchain-manager" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2. Transfer aggchain manager
+      Usage
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#23-transfer-optimistic-mode-manager-role" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#general-script" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3. Transfer optimistic mode manager role
+      General script
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#24-update-rollup-config-hash" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#what-the-script-does" class="md-nav__link">
     <span class="md-ellipsis">
-      2.4. Update rollup config hash
+      What the script does
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-update-submission-interval" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5. Update submission interval
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-tools-to-get-aggchain-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6. Tools to get aggchain data
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2676,310 +2244,262 @@
   
 
 
-<h1 id="aggchain-fep">Aggchain FEP</h1>
-<h2 id="1-interactions-usage">1. Interactions &amp; Usage</h2>
-<p>The definition can be found <a href="../../SC-specs/#52-fep">here</a>.</p>
-<h3 id="11-initialize-aggchainfep">1.1. Initialize AggchainFEP</h3>
-<p>To initialize the aggchain, it is necessary to differentiate according to the <code>initializerVersion</code>:</p>
+<h1 id="verify-genesis-implementations">Verify genesis implementations</h1>
+<p>A lightweight script that verifies the genesis contract implementations starting from a given <code>bridge proxy address</code>.</p>
+<p>Given a Bridge Proxy address, the script retrieves and verifies:</p>
+<ul>
+<li><strong>Bridge Implementation</strong>: obtained from the proxy’s EIP-1967 implementation storage slot.</li>
+<li><strong>Global Exit Root Implementation</strong>: resolved by calling <code>globalExitRootManager()</code> on the bridge to find the GER proxy, then reading its EIP-1967 implementation slot.</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>You need the following installed and available in your environment:</p>
 <ul>
 <li>
-<p><code>initializeBytesAggchain</code> if <code>_initializerVersion == 0</code>:
-<div class="highlight"><pre><span></span><code> // chain custom params
-InitParams memory _initParams
-// aggchainBase params
-bool _useDefaultGateway
-bytes32 _initOwnedAggchainVKey
-bytes2 _initAggchainVKeyVersion
-address _vKeyManager
-// PolygonConsensusBase params
-address _admin
-address _trustedSequencer
-address _gasTokenAddress
-string memory _trustedSequencerURL
-string memory _networkName
-</code></pre></div></p>
+<p>git: for cloning the repository.</p>
 </li>
 <li>
-<p><code>initializeBytesAggchain</code> if <code>_initializerVersion == 1</code>:
-<div class="highlight"><pre><span></span><code>// chain custom params
-InitParams memory _initParams,
-// aggchainBase params
-bool _useDefaultGateway,
-bytes32 _initOwnedAggchainVKey,
-bytes2 _initAggchainVKeyVersion,
-address _vKeyManager
-</code></pre></div></p>
+<p>Node.js (and npm): to install dependencies and compile with Hardhat.</p>
+</li>
+<li>
+<p>Foundry’s <code>cast</code>: used to read storage and call contract methods (cast storage, cast call).</p>
 </li>
 </ul>
-<h3 id="12-view-functions">1.2. View functions</h3>
-<h4 id="121-getaggchainhash">1.2.1. getAggchainHash</h4>
-<p>Function to get resulting aggchain hash.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param aggchainData custom bytes provided by the chain
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--bridge-proxy</code></td>
+<td>✅</td>
+<td>Bridge <strong>proxy</strong> address (checksummed).</td>
+</tr>
+<tr>
+<td><code>--tag</code></td>
+<td>✅</td>
+<td>Git tag to check out in <code>agglayer-contracts</code> (e.g. <code>v12.1.1</code>).</td>
+</tr>
+<tr>
+<td><code>--rpc-url</code></td>
+<td>✅</td>
+<td>RPC endpoint for the target chain.</td>
+</tr>
+<tr>
+<td><code>--chainid</code></td>
+<td>✅</td>
+<td>Chain ID for the network entry.</td>
+</tr>
+<tr>
+<td><code>--api-url</code></td>
+<td>✅</td>
+<td>Explorer API base URL (Etherscan-compatible).</td>
+</tr>
+<tr>
+<td><code>--browser-url</code></td>
+<td>✅</td>
+<td>Explorer browser URL (used by Hardhat for links).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre><span></span><code>  verify-genesis.sh \
+    --bridge-proxy &lt;bridge-proxy-address&gt; \
+    --tag &lt;git-tag&gt; \
+    --rpc-url &lt;url&gt; \
+    --chainid &lt;id&gt; \
+    --api-url &lt;url&gt; \
+    --browser-url &lt;url&gt;
+</code></pre></div>
+<h2 id="general-script">General script</h2>
+<p>verify-genesis.sh:</p>
+<div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
+set -euo pipefail
 
-    aggchainData:
-        Field:           | _aggchainVKeyVersion | _outputRoot  | _l2BlockNumber |
-        length (bits):   | 16                   | 256          | 256            |
+usage() {
+  cat &lt;&lt;&#39;EOF&#39;
+Usage:
+  verify-agglayer.sh \
+    --bridge-proxy &lt;bridge-proxy-address&gt; \
+    --tag &lt;git-tag&gt; \
+    --rpc-url &lt;url&gt; \
+    --chainid &lt;id&gt; \
+    --api-url &lt;url&gt; \
+    --browser-url &lt;url&gt;
+EOF
+}
 
-    aggchainData._aggchainVKeyVersion First 2 bytes of the aggchain vkey selector
-    aggchainData._outputRoot Proposed new output root
-    aggchainData._l2BlockNumber Proposed new l2 bock number
-</code></pre></div></p>
-<h4 id="122-submission_interval">1.2.2. SUBMISSION_INTERVAL</h4>
-<p>Getter for the submissionInterval.</p>
-<h4 id="123-l2_block_time">1.2.3. L2_BLOCK_TIME</h4>
-<p>Getter for the l2BlockTime.</p>
-<h4 id="124-getl2output">1.2.4. getL2Output</h4>
-<p>Returns an output by index. Needed to return a struct instead of a tuple.</p>
-<h4 id="125-latestoutputindex">1.2.5. latestOutputIndex</h4>
-<p>Returns the number of outputs that have been proposed.
-Will revert if no outputs have been proposed yet.</p>
-<h4 id="126-nextoutputindex">1.2.6. nextOutputIndex</h4>
-<p>Returns the index of the next output to be proposed.</p>
-<h4 id="127-latestblocknumber">1.2.7. latestBlockNumber</h4>
-<p>Returns the block number of the latest submitted L2 output proposal.
-If no proposals been submitted yet then this function will return the starting block number.</p>
-<h4 id="128-nextblocknumber">1.2.8. nextBlockNumber</h4>
-<p>Computes the block number of the next L2 block that needs to be checkpointed.</p>
-<h4 id="129-computel2timestamp">1.2.9. computeL2Timestamp</h4>
-<p>Returns the L2 timestamp corresponding to a given L2 block number.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _l2BlockNumber The L2 block number of the target block.
-</code></pre></div></p>
-<h3 id="13-onverifypessimistic">1.3. onVerifyPessimistic</h3>
-<p>Callback when pessimistic proof is verified, can only be called by the rollup manager stores the necessary chain data when the pessimistic proof is verified.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param aggchainData Custom data provided by the chain
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>emit OutputProposed(outputRoot, l2OutputIndex, l2BlockNumber, l1Timestamp);
-</code></pre></div></p>
-<h3 id="14-updatesubmissioninterval">1.4. updateSubmissionInterval</h3>
-<p>Function to update the submission interval.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _submissionInterval The new submission interval
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldSubmissionInterval The old submission interval.
-@param newSubmissionInterval The new submission interval.
+# --- Long flag parsing ---
+BRIDGE_PROXY=&quot;&quot;
+TAG=&quot;&quot;
+CUSTOM_PROVIDER=&quot;&quot;
+CUSTOM_CHAIN_ID=&quot;&quot;
+CUSTOM_API_URL=&quot;&quot;
+CUSTOM_BROWSER_URL=&quot;&quot;
 
-event SubmissionIntervalUpdated(uint256 oldSubmissionInterval, uint256 newSubmissionInterval)
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when new submission interval is 0:
-<div class="highlight"><pre><span></span><code>error SubmissionIntervalMustBeGreaterThanZero()
-</code></pre></div></li>
-</ul>
-<h3 id="15-updateaggregationvkey">1.5. updateAggregationVkey</h3>
-<p>Function to update the aggregation verification key.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _aggregationVkey The new aggregation verification key.
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldAggregationVkey The old aggregation verification key.
-@param newAggregationVkey The new aggregation verification key.
+while [[ $# -gt 0 ]]; do
+  case &quot;$1&quot; in
+    --bridge-proxy)  BRIDGE_PROXY=&quot;${2:-}&quot;; shift 2 ;;
+    --tag)           TAG=&quot;${2:-}&quot;; shift 2 ;;
+    --rpc-url)       CUSTOM_PROVIDER=&quot;${2:-}&quot;; shift 2 ;;
+    --chainid)       CUSTOM_CHAIN_ID=&quot;${2:-}&quot;; shift 2 ;;
+    --api-url)       CUSTOM_API_URL=&quot;${2:-}&quot;; shift 2 ;;
+    --browser-url)   CUSTOM_BROWSER_URL=&quot;${2:-}&quot;; shift 2 ;;
+    -h|--help)       usage; exit 0 ;;
+    *) echo &quot;Unknown flag: $1&quot;; usage; exit 1 ;;
+  esac
+done
 
-event AggregationVkeyUpdated(
-    bytes32 indexed oldAggregationVkey,
-    bytes32 indexed newAggregationVkey
-);
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when new aggregationVKey is 0:
-<div class="highlight"><pre><span></span><code>error AggregationVkeyMustBeDifferentThanZero();
-</code></pre></div></li>
-</ul>
-<h3 id="16-updaterangevkeycommitment">1.6. updateRangeVkeyCommitment</h3>
-<p>Function to update the range verification key commitment.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _rangeVkeyCommitment The new range verification key commitment
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldRangeVkeyCommitment The old range verification key commitment.
-@param newRangeVkeyCommitment The new range verification key commitment.
-event RangeVkeyCommitmentUpdated(
-    bytes32 indexed oldRangeVkeyCommitment,
-    bytes32 indexed newRangeVkeyCommitment
-);
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when new rangeVkey commitment is 0:
-<div class="highlight"><pre><span></span><code>error RangeVkeyCommitmentMustBeDifferentThanZero();
-</code></pre></div></li>
-</ul>
-<h3 id="17-updaterollupconfighash">1.7. updateRollupConfigHash</h3>
-<p>Function to update the rollup config hash.</p>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param _rollupConfigHash The new rollup config hash
-</code></pre></div></p>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param oldRollupConfigHash The old rollup config hash.
-@param newRollupConfigHash The new rollup config hash.
+# --- Validation ---
+[[ -n &quot;$BRIDGE_PROXY&quot; ]] || { echo &quot;Missing --bridge-proxy&quot;; usage; exit 1; }
+[[ -n &quot;$TAG&quot; ]] || { echo &quot;Missing --tag&quot;; usage; exit 1; }
+[[ -n &quot;$CUSTOM_PROVIDER&quot; ]] || { echo &quot;Missing --rpc-url&quot;; usage; exit 1; }
+[[ -n &quot;$CUSTOM_CHAIN_ID&quot; ]] || { echo &quot;Missing --chainid&quot;; usage; exit 1; }
+[[ -n &quot;$CUSTOM_API_URL&quot; ]] || { echo &quot;Missing --api-url&quot;; usage; exit 1; }
+[[ -n &quot;$CUSTOM_BROWSER_URL&quot; ]] || { echo &quot;Missing --browser-url&quot;; usage; exit 1; }
 
-event RollupConfigHashUpdated(
-    bytes32 indexed oldRollupConfigHash,
-    bytes32 indexed newRollupConfigHash
-) 
-</code></pre></div></p>
-<p>Errors:</p>
-<ul>
-<li>Thrown when rollup config hash is 0
-<div class="highlight"><pre><span></span><code>error RollupConfigHashMustBeDifferentThanZero();
-</code></pre></div></li>
-</ul>
-<h3 id="18-enableoptimisticmodedisableoptimisticmode">1.8. enableOptimisticMode/disableOptimisticMode</h3>
-<p>Functions to enable or disable optimistic mode.</p>
-<ul>
-<li>
-<p><code>enableOptimisticMode</code>:</p>
-<ul>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>event EnableOptimisticMode(); 
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>If optimistic mode is enabled
-<div class="highlight"><pre><span></span><code>error OptimisticModeEnabled();
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>disableOptimisticMode</code>:</p>
-<ul>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>event DisableOptimisticMode();
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>If optimistic mode is not enabled
-<div class="highlight"><pre><span></span><code>error OptimisticModeNotEnabled();
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="19-transferaggchainmanagerroleacceptaggchainmanagerrole">1.9. transferAggchainManagerRole/acceptAggchainManagerRole</h3>
-<p>Functions to transfer and accept aggchain manager role. </p>
-<ul>
-<li>
-<p><code>transferAggchainManagerRole</code>:</p>
-<p>Starts the aggchainManager role transfer. This is a two step process, the pending aggchainManager must accept to finalize the process.</p>
-<ul>
-<li>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param newAggchainManager Address of the new aggchainManager
-</code></pre></div></p>
-</li>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param currentAggchainManager The current pending aggchainManager
-@param newPendingAggchainManager The new pending aggchainManager
+# --- Helpers ---
+SLOT_IMPL=&quot;0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc&quot;
 
-event TransferAggchainManagerRole(
-    address currentAggchainManager,
-    address newPendingAggchainManager
-)
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>acceptAggchainManagerRole</code>:</p>
-<p>Allow the current pending aggchainManager to accept the aggchainManager role.</p>
-<ul>
-<li>
-<p>Event:
-<div class="highlight"><pre><span></span><code>@param oldAggchainManager The old aggchainManager
-@param newAggchainManager The new aggchainManager
-event AcceptAggchainManagerRole(
-    address oldAggchainManager,
-    address newAggchainManager
-)
-</code></pre></div></p>
-</li>
-<li>
-<p>Error:</p>
-<p>Thrown when the caller is not the pending aggchain manager
-<div class="highlight"><pre><span></span><code>error OnlyPendingAggchainManager();
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="110-transferoptimisticmodemanagerroleacceptoptimisticmodemanagerrole">1.10. transferOptimisticModeManagerRole/acceptOptimisticModeManagerRole</h3>
-<p>Functions to transfer and accept optimistic mode manager role. </p>
-<ul>
-<li>
-<p><code>transferOptimisticModeManagerRole</code>:</p>
-<p>Starts the optimisticModeManager role transfer. This is a two step process, the pending optimisticModeManager must accepted to finalize the process.</p>
-<ul>
-<li>
-<p>Parameters:
-<div class="highlight"><pre><span></span><code>@param newOptimisticModeManager Address of the new optimisticModeManager
-</code></pre></div></p>
-</li>
-<li>
-<p>Events:
-<div class="highlight"><pre><span></span><code>@param currentAggchainManager The current pending aggchainManager
-@param newPendingAggchainManager The new pending aggchainManager
+hex_to_addr () {
+  # Recibe 0x&lt;64-hex&gt; y devuelve 0x&lt;40-hex&gt; (últimos 20 bytes)
+  local v=&quot;${1#0x}&quot;
+  printf &quot;0x%s\n&quot; &quot;${v: -40}&quot;
+}
 
-event TransferAggchainManagerRole(
-    address currentAggchainManager,
-    address newPendingAggchainManager
-)
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>acceptOptimisticModeManagerRole</code>:</p>
-<p>Allow the current pending optimisticModeManager to accept the optimisticModeManager role.</p>
-<ul>
-<li>
-<p>Event:
-<div class="highlight"><pre><span></span><code>@param oldOptimisticModeManager The old optimisticModeManager
-@param newOptimisticModeManager The new optimisticModeManager
+# --- Compute values from the provided proxy ---
+# Get bridge implementation address
+RAW_IMPL=$(cast storage &quot;$BRIDGE_PROXY&quot; &quot;$SLOT_IMPL&quot; --rpc-url &quot;$CUSTOM_PROVIDER&quot;)
+BRIDGE_IMPL=$(hex_to_addr &quot;$RAW_IMPL&quot;)
 
-event AcceptOptimisticModeManagerRole(
-    address oldOptimisticModeManager,
-    address newOptimisticModeManager
-)
-</code></pre></div></p>
+# Get globalExitRootManager proxy address
+GER_PROXY=$(cast call &quot;$BRIDGE_PROXY&quot; &quot;globalExitRootManager()(address)&quot; --rpc-url &quot;$CUSTOM_PROVIDER&quot;)
+RAW_GER_IMPL=$(cast storage &quot;$GER_PROXY&quot; &quot;$SLOT_IMPL&quot; --rpc-url &quot;$CUSTOM_PROVIDER&quot;)
+GER_IMPL=$(hex_to_addr &quot;$RAW_GER_IMPL&quot;)
+
+echo &quot;Using:&quot;
+echo &quot;  Bridge Proxy:      $BRIDGE_PROXY&quot;
+echo &quot;  Bridge Implementation: $BRIDGE_IMPL&quot;
+echo &quot;  GER Implementation:    $GER_IMPL&quot;
+
+# --- Temporary workspace + cleanup ---
+WORKDIR=&quot;$(mktemp -d -t agglayer-contracts-XXXXXX)&quot;
+cleanup() { rm -rf &quot;$WORKDIR&quot;; }
+trap cleanup EXIT
+
+# --- Clone, install, and compile ---
+git clone git@github.com:agglayer/agglayer-contracts.git &quot;$WORKDIR/agglayer-contracts&quot;
+cd &quot;$WORKDIR/agglayer-contracts&quot;
+git checkout &quot;$TAG&quot;
+npm i
+npx hardhat compile
+
+FILE=&quot;hardhat.config.ts&quot;
+# --- Update hardhat config with custom chain (if it doesn&#39;t exist) ---
+if ! grep -Eq &#39;^[[:space:]]*custom[[:space:]]*:[[:space:]]*{&#39; &quot;$FILE&quot;; then
+    awk &#39;
+      /sepolia:/ &amp;&amp; !done {
+        print &quot;        custom: {&quot;;
+        print &quot;            url: process.env.CUSTOM_PROVIDER ? process.env.CUSTOM_PROVIDER : &#39;\&#39;&#39;http://127.0.0.1:8545&#39;\&#39;&#39;,&quot;;
+        print &quot;            accounts: {&quot;;
+        print &quot;                mnemonic: process.env.MNEMONIC || DEFAULT_MNEMONIC,&quot;;
+        print &quot;                path: \&quot;m/44&#39;\&#39;&#39;/60&#39;\&#39;&#39;/0&#39;\&#39;&#39;/0\&quot;,&quot;;
+        print &quot;                initialIndex: 0,&quot;;
+        print &quot;                count: 20,&quot;;
+        print &quot;            },&quot;;
+        print &quot;        },&quot;;
+        print $0;
+        done=1;
+        next
+      }
+      { print $0 }
+    &#39; &quot;$FILE&quot; &gt; tmp &amp;&amp; mv tmp &quot;$FILE&quot;
+
+    awk &#39;
+      /customChains[[:space:]]*:[[:space:]]*\[/ &amp;&amp; !done {
+        print $0;
+        print &quot;            {&quot;;
+        print &quot;                network: &#39;\&#39;&#39;custom&#39;\&#39;&#39;,&quot;;
+        print &quot;                chainId: Number(process.env.CUSTOM_CHAIN_ID),&quot;;
+        print &quot;                urls: {&quot;;
+        print &quot;                    apiURL: `${process.env.CUSTOM_API_URL}`,&quot;;
+        print &quot;                    browserURL: `${process.env.CUSTOM_BROWSER_URL}`,&quot;;
+        print &quot;                },&quot;;
+        print &quot;            },&quot;;
+        done=1; next
+      }
+      { print }
+    &#39; &quot;$FILE&quot; &gt; &quot;tmp.$$&quot; &amp;&amp; mv &quot;tmp.$$&quot; &quot;$FILE&quot;
+
+    awk &#39;
+      /apiKey:/ &amp;&amp; !done {
+        print $0;
+        print &quot;            custom: `${process.env.CUSTOM_ETHERSCAN_API_KEY}`,&quot;;
+        done=1; next
+      }
+      { print }
+    &#39; &quot;$FILE&quot; &gt; &quot;tmp.$$&quot; &amp;&amp; mv &quot;tmp.$$&quot; &quot;$FILE&quot;
+
+    echo &quot;Added custom network configuration to $FILE&quot;
+else
+    echo &quot;Custom network configuration already exists in $FILE, skipping modification.&quot;
+fi
+
+# --- Create .env for custom network ---
+cat &gt; .env &lt;&lt;EOF
+CUSTOM_PROVIDER=$CUSTOM_PROVIDER
+CUSTOM_CHAIN_ID=$CUSTOM_CHAIN_ID
+CUSTOM_API_URL=$CUSTOM_API_URL
+CUSTOM_BROWSER_URL=$CUSTOM_BROWSER_URL
+EOF
+
+# --- Verification ---
+# PolygonZkEVMBridge implementation
+npx hardhat verify --network custom &quot;$BRIDGE_IMPL&quot;
+# PolygonZkEVMGlobalExitRootL2 implementation - constructor args: bridge address
+npx hardhat verify --network custom &quot;$GER_IMPL&quot; &quot;$BRIDGE_PROXY&quot;
+
+echo &quot;✔ Verification completed using tag $TAG&quot;
+</code></pre></div>
+<h2 id="what-the-script-does">What the script does</h2>
+<ul>
+<li>
+<p>Validates flags and exits with a helpful message if anything is missing.</p>
 </li>
 <li>
-<p>Error:</p>
-<p>Thrown when the caller is not the pending optimistic mode manager.
-<div class="highlight"><pre><span></span><code>error OnlyPendingOptimisticModeManager();
-</code></pre></div></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-tooling-available">2. Tooling available</h2>
-<h3 id="21-change-optimistic-mode">2.1. Change optimistic mode</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/changeOptimisticMode">Tool</a> to change optimistic mode (<code>true/false</code>).</p>
-<h3 id="22-transfer-aggchain-manager">2.2. Transfer aggchain manager</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferAggchainManager">Tool</a> to transfer and accept aggchain manager role.</p>
-<h3 id="23-transfer-optimistic-mode-manager-role">2.3. Transfer optimistic mode manager role</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferOptimisticManager">Tool</a> to transfer and accept optimistic mode manager role.</p>
-<h3 id="24-update-rollup-config-hash">2.4. Update rollup config hash</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateRollupConfigHash">Tool</a> to update rollup config hash.</p>
-<h3 id="25-update-submission-interval">2.5. Update submission interval</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateSubmissionInterval">Tool</a> to update submission interval.</p>
-<h3 id="26-tools-to-get-aggchain-data">2.6. Tools to get aggchain data</h3>
-<p><a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/toolsData">Tools</a> to:</p>
+<p>Derives implementations:</p>
 <ul>
-<li>Get aggchainData</li>
-<li>Get initiliaze bytes aggchain v0</li>
-<li>Get initiliaze bytes aggchain v1</li>
+<li>Reads the EIP-1967 implementation slot 0x3608…bbcc from the bridge proxy to get Bridge Implementation.</li>
+<li>Calls globalExitRootManager() on the bridge to obtain the GER proxy, then reads its EIP-1967 slot for GER Implementation.</li>
+</ul>
+</li>
+<li>
+<p>Creates a temporary workspace (mktemp) and ensures it’s deleted on exit (trap).</p>
+</li>
+<li>
+<p>Clones <code>agglayer-contracts</code>, checks out the provided tag, installs dependencies, and compiles.</p>
+</li>
+<li>
+<p>Injects a custom network into hardhat.config.ts if it isn’t already present:
+Adds a networks.custom entry and a customChains entry with your apiURL and browserURL.</p>
+</li>
+<li>
+<p>Writes a <code>.env</code> with your explorer/RPC details to feed Hardhat.</p>
+</li>
+<li>
+<p>Runs npx hardhat verify for:</p>
+<ul>
+<li>Bridge Implementation (no constructor params)</li>
+<li>GER Implementation (constructor: bridge proxy address)</li>
+</ul>
+</li>
+<li>
+<p>Prints a success line with the tag used.</p>
+</li>
 </ul>
 
 
@@ -3001,7 +2521,7 @@ event AcceptOptimisticModeManagerRole(
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2025 06:21:05 UTC">August 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2025 14:14:36 UTC">October 14, 2025</span>
   </span>
 
     
@@ -3056,10 +2576,10 @@ event AcceptOptimisticModeManagerRole(
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
