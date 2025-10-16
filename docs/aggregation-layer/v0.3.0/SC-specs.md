@@ -715,7 +715,7 @@ Contracts used in sovereign chains: `BridgeL2SovereignChain` & `GlobalExitRootMa
 - **Security Assumptions**: Low security risk. All GERS are validated via the FEP program.
 - **Recommended Account Type**: EOA (hot wallet in aggOracle)
 
-#### globalExitRootUpdater
+#### globalExitRootRemover
 - **Functionality**: Remove GER to the bridge SC
 - **Security Assumptions**: High security risk. Controller could steal funds if collide with the `globalExitRootUpdater`
 - **Recommended Account Type**: Multisg (act fast to unblock the chain)
