@@ -32,6 +32,7 @@ function getAggchainHash(bytes memory aggchainData) external view returns (bytes
 ```
 
 **Process**:
+
 1. Retrieves signers hash (from gateway if `useDefaultSigners` is true, otherwise local)
 2. Calls `getVKeyAndAggchainParams` to extract vkey and params
 3. Computes hash as:
@@ -44,7 +45,8 @@ keccak256(
 )
 ```
 
-**Returns**: 
+**Returns**:
+
 - Aggchain hash combining consensus type, verification key, parameters, and signers hash
 
 ### 2.2 `getVKeyAndAggchainParams` (Abstract)
@@ -94,6 +96,7 @@ event SignersAndThresholdUpdated(
 ### 4.1 Verification Key Functions
 
 **`getAggchainVKey`**: Returns verification key
+
 - If `useDefaultVkeys = true`: Returns from `aggLayerGateway.getDefaultAggchainVKey()`
 - If `useDefaultVkeys = false`: Returns from local `ownedAggchainVKeys` mapping
 
@@ -106,22 +109,27 @@ event SignersAndThresholdUpdated(
 ### 4.2 Signer Functions
 
 **`isSigner`**: Check if address is a signer
+
 - If `useDefaultSigners = true`: Queries `aggLayerGateway.isSigner()`
 - If `useDefaultSigners = false`: Checks local `signerToURLs` mapping
 
 **`getAggchainSigners`**: Get all signer addresses
+
 - If `useDefaultSigners = true`: Returns from `aggLayerGateway.getAggchainSigners()`
 - If `useDefaultSigners = false`: Returns local `aggchainSigners` array
 
 **`getAggchainSignersCount`**: Get number of signers
+
 - If `useDefaultSigners = true`: Returns from `aggLayerGateway.getAggchainSignersCount()`
 - If `useDefaultSigners = false`: Returns `aggchainSigners.length`
 
 **`getAggchainSignersHash`**: Get signers configuration hash
+
 - If `useDefaultSigners = true`: Returns from `aggLayerGateway.getAggchainSignersHash()`
 - If `useDefaultSigners = false`: Returns local `aggchainSignersHash`
 
 **`getAggchainSignerInfos`**: Get signers with URLs
+
 - If `useDefaultSigners = true`: Returns from `aggLayerGateway.getAggchainSignerInfos()`
 - If `useDefaultSigners = false`: Builds array from local storage
 

@@ -109,5 +109,6 @@ function updateRollup(
 ### 2.5. New Error Types
 
 **Added Error:**
+
 - `OnlyAggchainManager()` - Thrown when a non-aggchain-manager tries to update an ALGateway rollup
 - `UpdateNotCompatible()` - Thrown when trying to update to an incompatible AGGCHAIN_TYPE
