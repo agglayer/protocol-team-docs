@@ -14,10 +14,14 @@ The contract now implements `IVersion` interface, adding:
 
 ```solidity
 contract AgglayerManager is
-    // ... existing inheritance
+    PolygonAccessControlUpgradeable,
+    EmergencyManager,
+    LegacyZKEVMStateVariables,
+    PolygonConstantsBase,
+    IAgglayerManager,
+    ReentrancyGuardTransient,
     IVersion  // New interface
 {
-    // New version function
     function version() external pure returns (string memory) {
         return ROLLUP_MANAGER_VERSION;
     }
@@ -32,71 +36,47 @@ contract AgglayerManager is
 
 ### 2.3 New Aggchain-Specific Update Logic
 
-**Major Enhancement:** The `updateRollup` function now includes specialized logic for ALGateway rollup types:
+**Major Enhancement:** The contract now has TWO separate update functions:
 
-**Previous Logic:**
+#### `updateRollupByRollupAdmin` - Admin/Aggchain Manager Updates
+
 ```solidity
-function updateRollup(
+function updateRollupByRollupAdmin(
     ITransparentUpgradeableProxy rollupContract,
     uint32 newRollupTypeID
-) external {
-    // Check admin of the network is msg.sender
-    if (IPolygonRollupBase(address(rollupContract)).admin() != msg.sender) {
-        revert OnlyRollupAdmin();
-    }
+) external
+```
 
-    // Check all sequenced batches are verified
-    if (rollup.lastBatchSequenced != rollup.lastVerifiedBatch) {
-        revert AllSequencedMustBeVerified();
+For ALGateway rollups, validates aggchain manager and `AGGCHAIN_TYPE` compatibility:
+
+```solidity
+if (rollup.rollupVerifierType == VerifierType.ALGateway) {
+    // Check aggchain manager is msg.sender
+    if (IAggchainBase(address(rollupContract)).aggchainManager() != msg.sender) {
+        revert OnlyAggchainManager();
+    }
+    
+    // Check AGGCHAIN_TYPE compatibility
+    if (IAggchainBase(address(rollupContract)).AGGCHAIN_TYPE() !=
+        IAggchainBase(rollupTypeMap[newRollupTypeID].consensusImplementation).AGGCHAIN_TYPE()) {
+        revert UpdateNotCompatible();
     }
 }
 ```
 
-**New Enhanced Logic:**
+For other rollups, uses original admin checks.
+
+#### `updateRollup` - Role-Based Updates
+
 ```solidity
 function updateRollup(
     ITransparentUpgradeableProxy rollupContract,
-    uint32 newRollupTypeID
-) external {
-    RollupData storage rollup = _rollupIDToRollupData[
-        rollupAddressToID[address(rollupContract)]
-    ];
-
-    if (rollup.rollupVerifierType == VerifierType.ALGateway) {
-        // NEW: Aggchain-specific validation
-        
-        // Check aggchain manager is msg.sender
-        if (
-            IAggchainBase(address(rollupContract)).aggchainManager() !=
-            msg.sender
-        ) {
-            revert OnlyAggchainManager();
-        }
-
-        // Check AGGCHAIN_TYPE compatibility
-        if (
-            IAggchainBase(address(rollupContract)).AGGCHAIN_TYPE() !=
-            IAggchainBase(
-                rollupTypeMap[newRollupTypeID].consensusImplementation
-            ).AGGCHAIN_TYPE()
-        ) {
-            revert UpdateNotCompatible();
-        }
-    } else {
-        // Original logic for non-ALGateway rollups
-        if (
-            IPolygonRollupBase(address(rollupContract)).admin() !=
-            msg.sender
-        ) {
-            revert OnlyRollupAdmin();
-        }
-
-        if (rollup.lastBatchSequenced != rollup.lastVerifiedBatch) {
-            revert AllSequencedMustBeVerified();
-        }
-    }
-}
+    uint32 newRollupTypeID,
+    bytes memory upgradeData
+) external onlyRole(_UPDATE_ROLLUP_ROLE)
 ```
+
+Allows changing `rollupVerifierType` only when upgrading to ALGateway.
 
 ### 2.4 New Access Control Logic
 
@@ -105,10 +85,13 @@ function updateRollup(
 1. **Aggchain Manager Check:** For ALGateway rollups, validates that `msg.sender` is the aggchain manager instead of the admin
 2. **AGGCHAIN_TYPE Compatibility:** Ensures that rollup types are compatible by checking their `AGGCHAIN_TYPE`
 3. **Conditional Logic:** Maintains backward compatibility for non-ALGateway rollups
+4. **Verifier Type Enum:** Uses `VerifierType` enum (StateTransition, Pessimistic, ALGateway) instead of compatibility ID
 
-### 2.5. New Error Types
+### 2.5 New Error Types
 
-**Added Error:**
+**Added Errors:**
 
 - `OnlyAggchainManager()` - Thrown when a non-aggchain-manager tries to update an ALGateway rollup
 - `UpdateNotCompatible()` - Thrown when trying to update to an incompatible AGGCHAIN_TYPE
+- `OnlyStateTransitionChains()` - Thrown when operation only allowed for State Transition chains
+- `StateTransitionChainsNotAllowed()` - Thrown when operation not allowed for State Transition chains

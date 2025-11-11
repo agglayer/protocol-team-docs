@@ -32,7 +32,7 @@ function updateSignersAndThreshold(
 event SignersAndThresholdUpdated(
     address[] aggchainSigners,
     uint256 threshold,
-    bytes32 aggchainSignersHash
+    bytes32 aggchainMultisigHash
 );
 ```
 
@@ -95,14 +95,29 @@ function getAggchainSigners() external view returns (address[] memory)
 
 ---
 
-### 2.4 `getAggchainSignersHash`
+### 2.4 `getThreshold`
+
+**Purpose**: Get the threshold required for multisig operations.  
+**Access Control**: External view function.  
+
+```solidity
+function getThreshold() external view returns (uint256)
+```
+
+**Returns**:
+
+- The current threshold value for the multisig
+
+---
+
+### 2.5 `getAggchainMultisigHash`
 
 **Purpose**: Get the hash of the current signers configuration.  
 **Access Control**: External view function.  
 **Use Cases**: Used by aggchain contracts to include in their aggchain hash computation when using default signers.
 
 ```solidity
-function getAggchainSignersHash() external view returns (bytes32)
+function getAggchainMultisigHash() external view returns (bytes32)
 ```
 
 **Returns**:
@@ -113,7 +128,7 @@ function getAggchainSignersHash() external view returns (bytes32)
 
 ---
 
-### 2.5 `getAggchainSignerInfos`
+### 2.6 `getAggchainSignerInfos`
 
 **Purpose**: Get all signers with their associated URLs.  
 **Access Control**: External view function.  
@@ -137,6 +152,7 @@ function getAggchainSignerInfos() external view returns (SignerInfo[] memory)
 **Access Control**: Internal function called by `updateSignersAndThreshold`.  
 
 **Process Flow**:
+
 1. Validates that removal indices are in descending order
 2. Removes signers in descending index order
 3. Adds new signers with validation
@@ -170,14 +186,15 @@ function getAggchainSignerInfos() external view returns (SignerInfo[] memory)
 
 ---
 
-### 3.4 `_updateAggchainSignersHash` (Internal)
+### 3.4 `_updateAggchainMultisigHash` (Internal)
 
 **Purpose**: Recompute and update the signers hash after modifications.  
 **Access Control**: Internal function.  
 
 **Computation**:
+
 ```solidity
-aggchainSignersHash = keccak256(abi.encodePacked(threshold, aggchainSigners))
+aggchainMultisigHash = keccak256(abi.encodePacked(threshold, aggchainSigners))
 ```
 
 ## 4. Error Handling
@@ -200,7 +217,7 @@ aggchainSignersHash = keccak256(abi.encodePacked(threshold, aggchainSigners))
 - `address[] aggchainSigners`: Array of registered signer addresses
 - `mapping(address => string) signerToURLs`: Maps signer addresses to their URLs
 - `uint256 threshold`: Required number of signatures for multisig operations
-- `bytes32 aggchainSignersHash`: Cached hash of threshold and signers array
+- `bytes32 aggchainMultisigHash`: Cached hash of threshold and signers array
 
 ## 6. Integration with Aggchains
 
@@ -208,7 +225,7 @@ aggchainSignersHash = keccak256(abi.encodePacked(threshold, aggchainSigners))
 
 1. **Enable Default Signers**: Aggchains set `useDefaultSigners = true` to use gateway signers
 2. **Query Signer Data**: Aggchains call gateway view functions to retrieve signer information
-3. **Include in Hash**: The `aggchainSignersHash` is included in the aggchain hash computation
+3. **Include in Hash**: The `aggchainMultisigHash` is included in the aggchain hash computation
 4. **Verification**: State transitions are verified using the gateway's signer configuration
 
 **Important**: Gateway functions don't check the `useDefaultSigners` flag - that validation happens in the aggchain contracts themselves.
