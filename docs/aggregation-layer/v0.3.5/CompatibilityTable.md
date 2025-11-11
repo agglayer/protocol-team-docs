@@ -2,10 +2,6 @@
 
 The following compatibility table shows which components should be used depending on the chain you are working with. This table helps ensure that the correct configurations and contracts are selected for each setup:
 
-## Legend
-### Clients
-
-
 ## Table
 
 |    Chain     |  verifierType   |        SC consensus         |  Proofs/Prover   |       Client       |                      |        SC         |                         |           | Components |         |
