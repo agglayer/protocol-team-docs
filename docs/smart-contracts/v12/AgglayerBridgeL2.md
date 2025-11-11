@@ -60,7 +60,7 @@ event UpdatedUnsetGlobalIndexHashChain(
 ```
 
 - `unsetGlobalIndex`: Global index that was unset
-- `newUnsetGlobalIndexHashHashChain`: New value of the unset global index hash chain after this operation
+- `newUnsetGlobalIndexHashChain`: New value of the unset global index hash chain after this operation
 
 **State Updates**:
 
