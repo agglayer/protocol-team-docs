@@ -1,11 +1,22 @@
 # 4.1.1 Summary
 
 ## Disclosure
-!!! info
-    Ongoing audit. Final tag WIP
+Final tag: [v12.2.1](https://github.com/agglayer/agglayer-contracts/releases/tag/v12.2.1)
 
 ## Ongoing development
 https://github.com/agglayer/agglayer-contracts/tree/feature/v12
+
+## Version Updates Summary
+
+This release includes significant updates to bridge contracts, introducing emergency management capabilities and token remapping features:
+
+- **AgglayerBridge**: `v1.0.0` → `v1.1.0` (Bytecode optimization)
+- **AgglayerBridgeL2**: `v1.1.0` → `v1.2.0` (Token remapping + Detailed claim events)
+- **AgglayerManager**: `al-v0.3.1` → `v1.0.0` (Renamed from PolygonRollupManager)
+- **AgglayerGateway**: `v1.1.0` (Multisig support)
+- **AggchainBase**: `v1.0.0` (New aggchain implementations)
+- **AggchainECDSAMultisig**: `v1.0.0` (New - ECDSA multisig support)
+- **AggchainFEP**: `v3.0.0` (New - OP Succinct verification)
 
 ## Key Features
 * **Multisig Support**: Enhanced multisig management in AgglayerGateway and aggchain contracts
