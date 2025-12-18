@@ -1,5 +1,9 @@
 ## AgglayerBridge `v1.0.0` → `v1.1.0`
 
+### Version History
+- **v1.0.0**: Initial AgglayerBridge (renamed from PolygonZkEVMBridgeV2)
+- **v1.1.0**: Bytecode optimization
+
 ## 1. BridgeLib Contract - Bytecode Optimization
 
 ### 1.1 Rationale for Bytecode Abstraction

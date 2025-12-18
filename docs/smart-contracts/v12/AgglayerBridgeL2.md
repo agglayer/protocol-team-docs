@@ -1,5 +1,9 @@
 
-## AgglayerBridgeL2 `v1.0.0` → `v1.1.0`
+## AgglayerBridgeL2 `v1.0.0` → `v1.2.0`
+
+### Version History
+- **v1.0.0** - **v1.1.0**: Initial versions with core L2 bridge functionality
+- **v1.2.0**: Bytecode optimization updates, visibility changes, and refined function signatures
 
 ## 1. New Administrative Functions
 
@@ -23,7 +27,11 @@ function setMultipleClaims(uint256[] memory globalIndexes) external onlyGlobalEx
 **Event Emitted**:
 
 ```solidity
-event SetClaim(uint32 leafIndex, uint32 sourceNetwork);
+/**
+ * @dev Emitted when a claim is set
+ * @param globalIndex Global index set
+ */
+event SetClaim(bytes32 globalIndex);
 ```
 
 - `leafIndex`: Index of the unclaimed leaf that is set to be claimed
@@ -189,17 +197,17 @@ event ForwardLET(
 
 ```solidity
 function setLocalBalanceTree(
-    uint32[] memory originNetwork,
-    address[] memory originTokenAddress,
-    uint256[] memory amount
-) external onlyGlobalExitRootRemover ifEmergencyState
+    uint32[] memory originNetworkArray,
+    address[] memory originTokenAddressArray,
+    uint256[] memory amountArray
+) external virtual onlyGlobalExitRootRemover ifEmergencyState
 ```
 
 **Parameters**:
 
-- `originNetwork`: Array of origin network IDs
-- `originTokenAddress`: Array of origin token addresses
-- `amount`: Array of amounts to set for each token
+- `originNetworkArray`: Array of origin network IDs
+- `originTokenAddressArray`: Array of origin token addresses
+- `amountArray`: Array of amounts to set for each token
 
 **Key Generation**: The local balance tree key is generated as `keccak256(abi.encodePacked(originNetwork, originTokenAddress))`
 
@@ -220,5 +228,77 @@ event SetLocalBalanceTree(
 - `newAmount`: The new amount set for this token
 
 **Note**: Event emitted to update all the new values for the local Balance Tree. Entries not included will remain the same.
+
+---
+
+### 1.6 `forceEmitDetailedClaimEvent`
+
+**Purpose**: Force emit detailed claim events for already processed claims  
+
+**Access Control**: Only callable by accounts with `GlobalExitRootRemover` role.  
+
+**Use Cases**: This function is useful for replaying historical claims to emit DetailedClaimEvent.
+
+```solidity
+/**
+ * @notice Struct to represent claim data for forceEmitDetailedClaimEvent function
+ * @dev Contains all parameters needed to verify and emit a DetailedClaimEvent
+ */
+struct ClaimData {
+    bytes32[_DEPOSIT_CONTRACT_TREE_DEPTH] smtProofLocalExitRoot;
+    bytes32[_DEPOSIT_CONTRACT_TREE_DEPTH] smtProofRollupExitRoot;
+    uint256 globalIndex;
+    bytes32 mainnetExitRoot;
+    bytes32 rollupExitRoot;
+    uint8 leafType;
+    uint32 originNetwork;
+    address originAddress;
+    uint32 destinationNetwork;
+    address destinationAddress;
+    uint256 amount;
+    bytes metadata;
+}
+
+function forceEmitDetailedClaimEvent(
+    ClaimData[] calldata claims
+) external virtual onlyGlobalExitRootRemover
+```
+
+**Parameters**:
+
+- `claims`:  Array of claim data to emit events for
+
+**Event Emitted**:
+
+```solidity
+event DetailedClaimEvent(
+    bytes32[_DEPOSIT_CONTRACT_TREE_DEPTH] smtProofLocalExitRoot,
+    bytes32[_DEPOSIT_CONTRACT_TREE_DEPTH] smtProofRollupExitRoot,
+    uint256 indexed globalIndex,
+    bytes32 mainnetExitRoot,
+    bytes32 rollupExitRoot,
+    uint8 leafType,
+    uint32 originNetwork,
+    address originTokenAddress,
+    uint32 destinationNetwork,
+    address indexed destinationAddress,
+    uint256 amount,
+    bytes metadata
+);
+```
+
+- `smtProofLocalExitRoot`: Smt proof to proof the leaf against the network exit root
+- `smtProofRollupExitRoot`: Smt proof to proof the rollupLocalExitRoot against the rollups exit root
+- `globalIndex`: Global index of the claim
+- `mainnetExitRoot`: Mainnet exit root
+- `rollupExitRoot`: Rollup exit root
+- `originNetwork`: Origin network
+- `originTokenAddress`: Origin token address
+- `destinationNetwork`: Network destination
+- `destinationAddress`: Address destination
+- `amount`: Amount of tokens
+- `metadata`: Abi encoded metadata if any, empty otherwise
+
+> When `claimAsset` or `claimMessage` is called, the `DetailedClaimEvent` event will also be emitted.
 
 ---
