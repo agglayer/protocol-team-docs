@@ -31,6 +31,7 @@ contract AgglayerManager is
 ### 2.2 Version String Update
 
 **Version Constant:**
+
 - **Before:** `"al-v0.3.1"`
 - **After:** `"v1.0.0"`
 
