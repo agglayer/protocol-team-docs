@@ -1,6 +1,6 @@
 # 4.1.1 Summary
 
-## Disclosure
+## Tag v12.2.1
 Final tag: [v12.2.1](https://github.com/agglayer/agglayer-contracts/releases/tag/v12.2.1)
 
 ## Ongoing development
