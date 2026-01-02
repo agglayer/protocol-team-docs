@@ -221,24 +221,24 @@ error RouteIsFrozen(ppSelector)
 
 ### 2.1. deployment AggLayerGateway
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/deployAggLayerGateway) to deploy `AggLayerGateway` contract.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/deployAggLayerGateway) to deploy `AggLayerGateway` contract.
 
 ### 2.2. Add default aggchain vkey
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey) to add default aggchain vkey.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey) to add default aggchain vkey.
 
 ### 2.3. Update default aggchain vkey
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/updateDefaultAggchainVKey) to update default aggchain vkey.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/updateDefaultAggchainVKey) to update default aggchain vkey.
 
 ### 2.4. Unset default aggchain vkey
 
-[Tool](https://github.com/agglayer/agglayer-contracts/tree/feature/separate-functionalities-defaultVKey/tools/aggLayerGatewayTools/unsetDefaultAggchainVKey) to unset default aggchain vkey.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/unsetDefaultAggchainVKey) to unset default aggchain vkey.
 
 ### 2.5. Add pessimistic vkey route
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) to add pessimitic vkey route.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) to add pessimitic vkey route.
 
 ### 2.6. Freeze pessimistic vkey route
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/freezePessimisticVKeyRoute) to freeze pessimistic vkey route.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/freezePessimisticVKeyRoute) to freeze pessimistic vkey route.
