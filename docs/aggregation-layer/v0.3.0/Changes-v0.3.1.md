@@ -27,9 +27,9 @@ The migration flow can be found explained in this section: [flow migration](./Di
 
 #### New Mapping and Events:
 
-- `isRollupMigrating`: A new [mapping](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L322) has been added to keep track of rollups that are in the process of migrating.
+- `isRollupMigrating`: A new [mapping](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L322) has been added to keep track of rollups that are in the process of migrating.
 
-- `InitMigration` and `CompletedMigration`: Two events are emitted to signal the [start](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L454) and [completion](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L460) of the migration flow, respectively.
+- `InitMigration` and `CompletedMigration`: Two events are emitted to signal the [start](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L454) and [completion](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L460) of the migration flow, respectively.
 
 ```
     /**
@@ -48,8 +48,8 @@ The migration flow can be found explained in this section: [flow migration](./Di
 
 #### New Error Conditions
 
-- `NewRollupTypeMustBePessimisticOrALGateway`: [Thrown](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L974) when trying to migrate a rollup to a non pessimistic or ALGateway rollup type with `initMigration` function.
-- `InvalidNewLocalExitRoot`: [Thrown](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L1324) when trying to finish a migration of a rollup to a pessimistic rollup type with `verifyPessimisticTrustedAggregator` function and the proposed new local exit root does not match the expected new local exit root.
+- `NewRollupTypeMustBePessimisticOrALGateway`: [Thrown](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L974) when trying to migrate a rollup to a non pessimistic or ALGateway rollup type with `initMigration` function.
+- `InvalidNewLocalExitRoot`: [Thrown](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L1324) when trying to finish a migration of a rollup to a pessimistic rollup type with `verifyPessimisticTrustedAggregator` function and the proposed new local exit root does not match the expected new local exit root.
 
 #### Remedations audit
 - [Comment localExitRoot](https://github.com/agglayer/agglayer-contracts/commit/b0e950539c14d565868d9de2c3f40df0b65a443a): add new comment
@@ -108,5 +108,5 @@ Now, the event will occur before the call. This way, there won’t be an orderin
 
 ### Tools
 - e2e [instructions](https://github.com/0xPolygonHermez/protocol-team-kanban/issues/604)
-- [upgrade script](https://github.com/agglayer/agglayer-contracts/tree/feature/zkEVMToPP/upgrade/upgrade-rollupManager-v0.3.1)
-- [migate SC call ](https://github.com/agglayer/agglayer-contracts/tree/feature/zkEVMToPP/tools/initMigration)
+- [upgrade script](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/upgrade/upgrade-rollupManager-v0.3.1)
+- [migate SC call ](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/initMigration)

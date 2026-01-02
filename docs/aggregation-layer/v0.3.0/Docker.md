@@ -14,7 +14,7 @@ You can change the deployment `mnemonic` creating a `.env` file in the project r
 - docker-compose
 
 ## 2. Config files
-In the case of the Docker deployment, we are going to take the default configuration files that we have in this [folder](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/docker/scripts/v2).
+In the case of the Docker deployment, we are going to take the default configuration files that we have in this [folder](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/docker/scripts/v2).
 
 ### 2.1. deploy_parameters.json
 
