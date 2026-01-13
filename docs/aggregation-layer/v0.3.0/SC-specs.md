@@ -46,7 +46,7 @@ https://github.com/agglayer/agglayer-contracts/compare/v9.0.0...v10.0.0-rc.8
 |    Chain     |  verifierType   |        SC consensus         |  Proofs/Prover   |              Client              |
 |:------------:|:---------------:|:---------------------------:|:----------------:|:--------------------------------:|
 |    zkEVM     | StateTransition |      PolygonZkEVMEtrog      |   FEP # Hermez   |            cdk-erigon            |
-|  Valididum   | StateTransition |    PolygonValidiumEtrog     |   FEP # Hermez   |            cdk-erigon            |
+|  Validium    | StateTransition |    PolygonValidiumEtrog     |   FEP # Hermez   |            cdk-erigon            |
 | v0.2.0-ECDSA |   Pessimistic   | PolygonPessimisticConsensus |     PP # SP1     |      cdk-erigon OR op-stack      |
 | v0.3.0-ECDSA |    ALGateway    |        AggchainECDSA        |     PP # SP1     | not supported (aggkit not built) |
 |  v0.3.0-FEP  |    ALGateway    |         AggchainFEP         | (PP + FEP) # SP1 |             op-stack             |
