@@ -316,27 +316,27 @@ error OnlyPendingOptimisticModeManager();
 
 ### 2.1. Change optimistic mode
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/changeOptimisticMode) to change optimistic mode (`true/false`).
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggchainFEPTools/changeOptimisticMode) to change optimistic mode (`true/false`).
 
 ### 2.2. Transfer aggchain manager
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferAggchainManager) to transfer and accept aggchain manager role.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggchainFEPTools/transferAggchainManager) to transfer and accept aggchain manager role.
 
 ### 2.3. Transfer optimistic mode manager role
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/transferOptimisticManager) to transfer and accept optimistic mode manager role.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggchainFEPTools/transferOptimisticManager) to transfer and accept optimistic mode manager role.
 
 ### 2.4. Update rollup config hash
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateRollupConfigHash) to update rollup config hash.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggchainFEPTools/updateRollupConfigHash) to update rollup config hash.
 
 ### 2.5. Update submission interval
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/updateSubmissionInterval) to update submission interval.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggchainFEPTools/updateSubmissionInterval) to update submission interval.
 
 ### 2.6. Tools to get aggchain data
 
-[Tools](https://github.com/agglayer/agg-contracts-internal/tree/feature/aFEP-tools/tools/aggchainFEPTools/toolsData) to:
+[Tools](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggchainFEPTools/toolsData) to:
 
 - Get aggchainData
 - Get initiliaze bytes aggchain v0

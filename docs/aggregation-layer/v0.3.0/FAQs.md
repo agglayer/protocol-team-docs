@@ -16,21 +16,21 @@ To better understand compatibility, you can refer to this [table](https://didact
 ## 2. Smart Contracts
 ### Contracts errors, events and functions selectors
 
-This [link](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/docs/selectors.txt) contains the full list of contract errors (and their signatures), as well as the functions and events.
+This [link](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/docs/selectors.txt) contains the full list of contract errors (and their signatures), as well as the functions and events.
 
 ### Reverted with data '0x'
 Potential cases:
 
-- [function selector (first 4 bytes on the calldata)](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/PolygonRollupManager.sol#L1210-L1217)
+- [function selector (first 4 bytes on the calldata)](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L1210-L1217)
 
 - calldata parameters defined as `bytes` incorrectly parsed inside the SC:
-    - [bytes proof](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/PolygonRollupManager.sol#L1215)
-        - [must follow this enconding](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L120-L122)
-        - [sanity check on the length here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L129)
-        - parsed in [here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L133) and [here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L145)
-        - note that if the verifier is mock...everything will be fine. If the verififer is real, SP1 also does some parsing [here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/verifiers/v4.0.0-rc.3/SP1VerifierPlonk.sol#L47) and [here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/verifiers/v4.0.0-rc.3/SP1VerifierPlonk.sol#L57)
-    - [aggchainData](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/PolygonRollupManager.sol#L1216)
-        - parsed [here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/aggchains/AggchainFEP.sol#L434-L443) and [here](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/aggchains/AggchainFEP.sol#L560-L568)
+    - [bytes proof](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L1215)
+        - [must follow this enconding](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L120-L122)
+        - [sanity check on the length here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L129)
+        - parsed in [here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L133) and [here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L145)
+        - note that if the verifier is mock...everything will be fine. If the verififer is real, SP1 also does some parsing [here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/verifiers/v4.0.0-rc.3/SP1VerifierPlonk.sol#L47) and [here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/verifiers/v4.0.0-rc.3/SP1VerifierPlonk.sol#L57)
+    - [aggchainData](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L1216)
+        - parsed [here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/aggchains/AggchainFEP.sol#L434-L443) and [here](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/aggchains/AggchainFEP.sol#L560-L568)
 - calldata `cast` parsing:
 ```
 cast decode-calldata "verifyPessimisticTrustedAggregator(uint32,uint32,bytes32,bytes32,bytes,bytes)" 0x6c76687700000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000059824c4849da053ff471f1ce2bc4f8fc2d257aa61fc7bee86c1f5ce0463f7d4a68756fe264848d34dd69293eac0fc7ad0c7d0eaf9398231b17b381b13b8af7035400000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000004000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000420000c52de932284856798760c67a6c602cdd0f47ae4af86321e44ed28637f634dbef0000000000000000000000000000000000000000000000000000000000000169000000000000000000000000000000000000000000000000000000000000 | \
@@ -48,27 +48,27 @@ awk '
 
 | VKey                         | Alternative Names | Prover               | Primary Use                 | Used When...                                                                                         | Change with                                                                                                      |
 | ---------------------------- | ----------------- | -------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `programVkey`                | `agglayerVkey`    | agglayer             | Only used for *pessimistic* | `addNewRollupType` -> [PolygonRollupManager](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/PolygonRollupManager.sol#L497)                                                                                   | create new rollup type                                                                                           |
-| `pessimisticVkey` / `ppVkey` | `agglayerVkey`    | agglayer             | Only used for *FEP, v0.3.0* | Whenever configuring the `aggLayerGateway` ([deploy_parameters.json](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/deployment/v2/deploy_parameters.json.example#L14))                                | `addPessimisticVKeyRoute` -> [AgglayerGateway](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L189)                                                                      |
-| `aggchainVkey`               | `aggkitVkey`      | aggkit-prover        | Only used for *FEP, v0.3.0* | During FEP setup: [aggchainParams](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/tools/initializeRollup/initialize_rollup.json.example#L32) `initOwnedAggchainVKey` &  `addDefaultAggchainVKey` --> [AgglayerGateway](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L236) | `addDefaultAggchainVKey/updateDefaultAggchainVKey` -> [AgglayerGateway](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L261),  `addOwnedAggchainVKey` -> [rollupContract](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/lib/AggchainBase.sol#L316) |
-| `aggregationVkey`            | —                 | op-succinct-proposer | Only used for *FEP, v0.3.0* | [initParams](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/tools/initializeRollup/initialize_rollup.json.example#L28):   aggregationVkey                                                                        | —                                                                                                                |
+| `programVkey`                | `agglayerVkey`    | agglayer             | Only used for *pessimistic* | `addNewRollupType` -> [PolygonRollupManager](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L497)                                                                                   | create new rollup type                                                                                           |
+| `pessimisticVkey` / `ppVkey` | `agglayerVkey`    | agglayer             | Only used for *FEP, v0.3.0* | Whenever configuring the `aggLayerGateway` ([deploy_parameters.json](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/deployment/v2/deploy_parameters.json.example#L14))                                | `addPessimisticVKeyRoute` -> [AgglayerGateway](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L189)                                                                      |
+| `aggchainVkey`               | `aggkitVkey`      | aggkit-prover        | Only used for *FEP, v0.3.0* | During FEP setup: [aggchainParams](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/initializeRollup/initialize_rollup.json.example#L32) `initOwnedAggchainVKey` &  `addDefaultAggchainVKey` --> [AgglayerGateway](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L236) | `addDefaultAggchainVKey/updateDefaultAggchainVKey` -> [AgglayerGateway](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L261),  `addOwnedAggchainVKey` -> [rollupContract](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/lib/AggchainBase.sol#L316) |
+| `aggregationVkey`            | —                 | op-succinct-proposer | Only used for *FEP, v0.3.0* | [initParams](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/initializeRollup/initialize_rollup.json.example#L28):   aggregationVkey                                                                        | —                                                                                                                |
 
 During environment setup, four distinct verification keys (vkeys) are defined, each serving a specific purpose in the proof verification and deployment workflows. Below is a detailed description of each key and its corresponding usage:
 
 ### programVkey
 
-  This [key](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/tools/addRollupType/add_rollup_type.json.example#L16) is used to verify proofs (`agglayer-prover`) when operating under pessimistic consensus.
+  This [key](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/add_rollup_type.json.example#L16) is used to verify proofs (`agglayer-prover`) when operating under pessimistic consensus.
   In any scenario outside of pessimistic consensus, the value of programVkey must be set to zero (0).
 
 ### pessimisticVkey (`agglayerVkey` or `ppvkey`)
 
   Similar to programVkey, this key is used to verify proofs (`agglayer-prover`).
 
-  This is the vkey to be specified in the [deploy_parameters.json](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/deployment/v2/deploy_parameters.json.example#L14) file when launching a new environment.
+  This is the vkey to be specified in the [deploy_parameters.json](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/deployment/v2/deploy_parameters.json.example#L14) file when launching a new environment.
 
-  To add a new ppvkey after deployment, it must be registered in the AgglayerGateway contract using the addPessimisticVKeyRoute [function](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/AggLayerGateway.sol#L189).
+  To add a new ppvkey after deployment, it must be registered in the AgglayerGateway contract using the addPessimisticVKeyRoute [function](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/AggLayerGateway.sol#L189).
 
-  A dedicated [tool](https://github.com/agglayer/agglayer-contracts/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) is available to facilitate this operation.
+  A dedicated [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) is available to facilitate this operation.
 
   Cast commands:
   
@@ -94,13 +94,13 @@ During environment setup, four distinct verification keys (vkeys) are defined, e
 
   This key is used by the `aggkit-prover`.
 
-  During the initialize step of the FEP, it must be included in [aggchainParams](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/tools/initializeRollup/initialize_rollup.json.example#L32) under the `initOwnedAggchainVKey` field.
+  During the initialize step of the FEP, it must be included in [aggchainParams](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/initializeRollup/initialize_rollup.json.example#L32) under the `initOwnedAggchainVKey` field.
 
-  It must be added to the AgglayerGateway using the a `addDefaultAggchainVKey` [tool](https://github.com/agglayer/agglayer-contracts/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey).
+  It must be added to the AgglayerGateway using the a `addDefaultAggchainVKey` [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey).
 
-  To update this vkey after deployment, use either `addDefaultAggchainVKey` ([tool](https://github.com/agglayer/agglayer-contracts/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey)) or `updateDefaultAggchainVKey` ([tool](https://github.com/agglayer/agglayer-contracts/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/updateDefaultAggchainVKey)).
+  To update this vkey after deployment, use either `addDefaultAggchainVKey` ([tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey)) or `updateDefaultAggchainVKey` ([tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/updateDefaultAggchainVKey)).
 
-  Additionally, the `ownedAggchainVkey` field must be updated on the `rollupContract` with this `addOwnedAggchainVKey` [function](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/lib/AggchainBase.sol#L316) or `updateOwnedAggchainVKey` [function](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/contracts/v2/lib/AggchainBase.sol#L338C14-L338C37).
+  Additionally, the `ownedAggchainVkey` field must be updated on the `rollupContract` with this `addOwnedAggchainVKey` [function](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/lib/AggchainBase.sol#L316) or `updateOwnedAggchainVKey` [function](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/lib/AggchainBase.sol#L338C14-L338C37).
 
   Cast commands:
 
@@ -159,7 +159,7 @@ During environment setup, four distinct verification keys (vkeys) are defined, e
 
 ### aggregationVkey
 
-  This [vkey](https://github.com/agglayer/agglayer-contracts/blob/feature/ongoing-v0.3.0/tools/initializeRollup/initialize_rollup.json.example#L28) is provided by the `op-succinct-proposer` component.
+  This [vkey](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/initializeRollup/initialize_rollup.json.example#L28) is provided by the `op-succinct-proposer` component.
 
 ## 4. Debug Invalid Proof
 

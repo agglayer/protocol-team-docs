@@ -19,8 +19,8 @@ Long term goal is to fully open chain registration as lomng as the chain fulfill
 - [Specification aggchain ECDSA](https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#ecdsa)
 - [Specification aggchain FEP](https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#fep)
 - [Implementation decisions and iterations on the SC specifications](https://hackmd.io/L7iY0M5bR_C4YWRqlCjsVg)
-- [SC implementations](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/ongoing-v0.3.0)
-- [Test-vectors](https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/ongoing-v0.3.0/test/test-vectors)
+- [SC implementations](https://github.com/0xPolygonHermez/zkevm-contracts/tree/v11.0.0)
+- [Test-vectors](https://github.com/0xPolygonHermez/zkevm-contracts/tree/v11.0.0/test/test-vectors)
 
 ### 1.3. Requirements
 - [PolygonRollupManager](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v9.0.0-rc.5-pp/contracts/v2/PolygonRollupManager.sol) to support generic chains
@@ -37,8 +37,8 @@ https://github.com/agglayer/agglayer-contracts/compare/v9.0.0...v10.0.0-rc.8
 
 ### 1.5. Breaking changes
 - Function to create new rollups has been renamed to [attachChainToAL](#64-create-new-chain)
-    - old chains (zkEVM/Validiums/pp-v0.2.0) will need to [encode its initialize data](https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L577-L578). Util function available [here](https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/src/utils-common-aggchain.js#L80)
-- Event [addExistingRollup](https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L350) signature has been changed since a new parameter `initPessimisticRoot` ha sbeen added
+    - old chains (zkEVM/Validiums/pp-v0.2.0) will need to [encode its initialize data](https://github.com/agglayer/agglayer-contracts/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L577-L578). Util function available [here](https://github.com/agglayer/agglayer-contracts/blob/v10.0.0-rc.3/src/utils-common-aggchain.js#L80)
+- Event [addExistingRollup](https://github.com/agglayer/agglayer-contracts/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L350) signature has been changed since a new parameter `initPessimisticRoot` ha sbeen added
 - [New functions](#66-pretty-rollupdata) to properly see therscan rollup data has been added
 - Function [verifyPessimisticProof](#65-verify-pessimitic-proof) signature has been changed. Added `customChainData` for aggchains v0.3.0
 
@@ -339,10 +339,10 @@ This has been done to enforce chains to not being able to select which type of a
 - **Recommended Account Type**: EOA or internal multisig
 
 #### 5.1.2 Test-vectors
-- [aggchain-data](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-data.json)
-- [aggchain-init-bytes-v0](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv0.json)
-- [aggchain-init-bytes-v1](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv1.json)
-- [hash-aggchain-params](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/hash-aggchain-params.json)
+- [aggchain-data](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/aggchain-data.json)
+- [aggchain-init-bytes-v0](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv0.json)
+- [aggchain-init-bytes-v1](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv1.json)
+- [hash-aggchain-params](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/hash-aggchain-params.json)
 
 ### 5.2. FEP
 There are two scenarios to be considered in the `FEP`: new one and one that comes from `v0.2.0`.
@@ -479,10 +479,10 @@ _initializeAggchainBaseAndConsensusBase(
 - **Recommended Account Type**: Multisig security council. Act fast while and not fully controlled by internal people
 
 #### 5.2.2 Test-vectors
-- [aggchain-data](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-data.json)
-- [aggchain-init-bytes-v0](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-initBytesv0.json)
-- [aggchain-init-bytes-v1](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-initBytesv1.json)
-- [hash-aggchain-params](https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/hash-aggchain-params.json)
+- [aggchain-data](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/aggchain-data.json)
+- [aggchain-init-bytes-v0](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/aggchain-initBytesv0.json)
+- [aggchain-init-bytes-v1](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/aggchain-initBytesv1.json)
+- [hash-aggchain-params](https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/hash-aggchain-params.json)
 
 ## 6. Rollup Manager Specification
 ### 6.1. Versioning

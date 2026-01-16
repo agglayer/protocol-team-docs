@@ -621,16 +621,16 @@ error BatchFeeOutOfRange();
 
 ### 2.1. addRollupType
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType) to add new rollup type.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType) to add new rollup type.
 
 ### 2.2. createNewRollup
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/createNewRollup) to create new rollup.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/createNewRollup) to create new rollup.
 
 ### 2.3. getRollupData
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/getRollupData) to get rollup data.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/getRollupData) to get rollup data.
 
 ### 2.4. updateRollup
 
-[Tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/updateRollup) to update rollup.
+[Tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/updateRollup) to update rollup.

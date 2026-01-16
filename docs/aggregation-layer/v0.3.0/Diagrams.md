@@ -7,42 +7,42 @@ Here's the flow that needs to be followed to add a new aggchain (in this case, a
 ![Flow add new AggchainFEP](/aggregation-layer/v0.3.0/img/flow_FEP.png)
 
 ### addNewRollupType
-First step a new rollup type is added. This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType) will be used to do it.
+First step a new rollup type is added. This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType) will be used to do it.
 
-Following the next [README](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/addRollupType/README.md), a new rollup type is added by calling the `addNewRollupType` function of `PolygonRollupManager` contract. Once called, the `rollupTypeID` parameter will be obtained and should be used in the following tool.
+Following the next [README](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/README.md), a new rollup type is added by calling the `addNewRollupType` function of `PolygonRollupManager` contract. Once called, the `rollupTypeID` parameter will be obtained and should be used in the following tool.
 
 ### attachAggchainToAL
-The second step is to create a new chain with the rollup type we created earlier. This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/createNewRollup) will be used to do it.
+The second step is to create a new chain with the rollup type we created earlier. This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/createNewRollup) will be used to do it.
 
-The following [README](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/createNewRollup/README.md) can be followed to create the new `AggchainFEP` by calling the `attachAggchainToAL` function, using the `rollupTypeID` created with the previous tool.
+The following [README](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/createNewRollup/README.md) can be followed to create the new `AggchainFEP` by calling the `attachAggchainToAL` function, using the `rollupTypeID` created with the previous tool.
 
 ### add vkeys to AggLayerGateway
 
 The third step is to initialize the vkeys in `AggLayerGateway` contract:
 
-- This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) is used to add the pessimistic vkey route (`addPessimisticVKeyRoute`).
-- This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey) is used to add the aggchain vkey (`addDefaultAggchainVKey`).
+- This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) is used to add the pessimistic vkey route (`addPessimisticVKeyRoute`).
+- This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey) is used to add the aggchain vkey (`addDefaultAggchainVKey`).
 
 ## Update v0.2.0-ECDSA to v0.3.0-FEP
 
 ![Flow update to AggchainFEP](/aggregation-layer/v0.3.0/img/update_FEP.png)
 
 ### addNewRollupType
-First step a new rollup type is added. This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType) will be used to do it.
+First step a new rollup type is added. This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType) will be used to do it.
 
-Following the next [README](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/addRollupType/README.md), a new rollup type is added by calling the `addNewRollupType` function of `PolygonRollupManager` contract. Once called, the `rollupTypeID` parameter will be obtained and should be used in the following tool.
+Following the next [README](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/README.md), a new rollup type is added by calling the `addNewRollupType` function of `PolygonRollupManager` contract. Once called, the `rollupTypeID` parameter will be obtained and should be used in the following tool.
 
 ### updateRollup
-The second step is to update the old rollup to the new rollup type that was created with the previous tool. This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/updateRollup) will be used to do it.
+The second step is to update the old rollup to the new rollup type that was created with the previous tool. This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/updateRollup) will be used to do it.
 
-The following [README](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/updateRollup/README.md) can be followed to update the old rollup to the new rollup type created with the previous tool by calling the `updateRollup` function, using the `rollupTypeID` created with the previous tool.
+The following [README](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/updateRollup/README.md) can be followed to update the old rollup to the new rollup type created with the previous tool by calling the `updateRollup` function, using the `rollupTypeID` created with the previous tool.
 
 ### add vkeys to AggLayerGateway
 
 The third step is to initialize the vkeys in `AggLayerGateway` contract:
 
-- This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) is used to add the pessimistic vkey route (`addPessimisticVKeyRoute`).
-- This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey) is used to add the aggchain vkey (`addDefaultAggchainVKey`).
+- This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute) is used to add the pessimistic vkey route (`addPessimisticVKeyRoute`).
+- This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey) is used to add the aggchain vkey (`addDefaultAggchainVKey`).
 
 ## Verify FEP
 
@@ -99,7 +99,7 @@ If the verification succeeds:
 
 ### Migration Initialization
 
-A new [function](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L954), `initMigration`, enables the explicit start of a migration process.
+A new [function](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L954), `initMigration`, enables the explicit start of a migration process.
 
 This function performs checks to ensure:
 
@@ -110,7 +110,7 @@ This function performs checks to ensure:
 
 ### Proof Verification During Migration
 
-The `verifyPessimisticTrustedAggregator` [function](https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L1313) was adjusted to support special cases that occur during the migration process.
+The `verifyPessimisticTrustedAggregator` [function](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L1313) was adjusted to support special cases that occur during the migration process.
 
 - It now allows the verification of bootstrap certificates, which are required to validate the first proof after switching to the new system.
 - It's a hard requirement that the `newLocalExitRoot` matches the current `lastLocalExitRoot` meaning that the certificates covers all the bridges
@@ -121,11 +121,11 @@ The `verifyPessimisticTrustedAggregator` [function](https://github.com/agglayer/
 ![Flow migration](/aggregation-layer/v0.3.0/img/migration_flow.png)
 
 #### addNewRollupType
-First step a new rollup type is added. This [tool](https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType) will be used to do it.
+First step a new rollup type is added. This [tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType) will be used to do it.
 
-Following the next [README](https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/addRollupType/README.md), a new rollup type is added by calling the `addNewRollupType` function of `PolygonRollupManager` contract. Once called, the `rollupTypeID` parameter will be obtained and should be used in the following tool.
+Following the next [README](https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/README.md), a new rollup type is added by calling the `addNewRollupType` function of `PolygonRollupManager` contract. Once called, the `rollupTypeID` parameter will be obtained and should be used in the following tool.
 
 #### initMigration
-To initiate the migration, this tool can be used: [initMigration tool](https://github.com/agglayer/agglayer-contracts/tree/feature/zkEVMToPP/tools/initMigration)
+To initiate the migration, this tool can be used: [initMigration tool](https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/initMigration)
 We will see that an event indicating the migration has been initialized is emitted (`InitMigration`).
 Finally, when the verification is done with `verifyPessimisticTrustedAggregator`, an event indicating that the migration has been completed will be emitted (`CompletedMigration`).
