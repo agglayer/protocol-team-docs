@@ -3064,16 +3064,16 @@
 </figure>
 
 <h3 id="addnewrolluptype">addNewRollupType</h3>
-<p>First step a new rollup type is added. This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType">tool</a> will be used to do it.</p>
-<p>Following the next <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/addRollupType/README.md">README</a>, a new rollup type is added by calling the <code>addNewRollupType</code> function of <code>PolygonRollupManager</code> contract. Once called, the <code>rollupTypeID</code> parameter will be obtained and should be used in the following tool.</p>
+<p>First step a new rollup type is added. This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType">tool</a> will be used to do it.</p>
+<p>Following the next <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/README.md">README</a>, a new rollup type is added by calling the <code>addNewRollupType</code> function of <code>PolygonRollupManager</code> contract. Once called, the <code>rollupTypeID</code> parameter will be obtained and should be used in the following tool.</p>
 <h3 id="attachaggchaintoal">attachAggchainToAL</h3>
-<p>The second step is to create a new chain with the rollup type we created earlier. This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/createNewRollup">tool</a> will be used to do it.</p>
-<p>The following <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/createNewRollup/README.md">README</a> can be followed to create the new <code>AggchainFEP</code> by calling the <code>attachAggchainToAL</code> function, using the <code>rollupTypeID</code> created with the previous tool.</p>
+<p>The second step is to create a new chain with the rollup type we created earlier. This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/createNewRollup">tool</a> will be used to do it.</p>
+<p>The following <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/createNewRollup/README.md">README</a> can be followed to create the new <code>AggchainFEP</code> by calling the <code>attachAggchainToAL</code> function, using the <code>rollupTypeID</code> created with the previous tool.</p>
 <h3 id="add-vkeys-to-agglayergateway">add vkeys to AggLayerGateway</h3>
 <p>The third step is to initialize the vkeys in <code>AggLayerGateway</code> contract:</p>
 <ul>
-<li>This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute">tool</a> is used to add the pessimistic vkey route (<code>addPessimisticVKeyRoute</code>).</li>
-<li>This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey">tool</a> is used to add the aggchain vkey (<code>addDefaultAggchainVKey</code>).</li>
+<li>This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute">tool</a> is used to add the pessimistic vkey route (<code>addPessimisticVKeyRoute</code>).</li>
+<li>This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey">tool</a> is used to add the aggchain vkey (<code>addDefaultAggchainVKey</code>).</li>
 </ul>
 <h2 id="update-v020-ecdsa-to-v030-fep">Update v0.2.0-ECDSA to v0.3.0-FEP</h2>
 <figure class="figure-image">
@@ -3082,16 +3082,16 @@
 </figure>
 
 <h3 id="addnewrolluptype_1">addNewRollupType</h3>
-<p>First step a new rollup type is added. This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType">tool</a> will be used to do it.</p>
-<p>Following the next <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/addRollupType/README.md">README</a>, a new rollup type is added by calling the <code>addNewRollupType</code> function of <code>PolygonRollupManager</code> contract. Once called, the <code>rollupTypeID</code> parameter will be obtained and should be used in the following tool.</p>
+<p>First step a new rollup type is added. This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType">tool</a> will be used to do it.</p>
+<p>Following the next <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/README.md">README</a>, a new rollup type is added by calling the <code>addNewRollupType</code> function of <code>PolygonRollupManager</code> contract. Once called, the <code>rollupTypeID</code> parameter will be obtained and should be used in the following tool.</p>
 <h3 id="updaterollup">updateRollup</h3>
-<p>The second step is to update the old rollup to the new rollup type that was created with the previous tool. This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/updateRollup">tool</a> will be used to do it.</p>
-<p>The following <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/updateRollup/README.md">README</a> can be followed to update the old rollup to the new rollup type created with the previous tool by calling the <code>updateRollup</code> function, using the <code>rollupTypeID</code> created with the previous tool.</p>
+<p>The second step is to update the old rollup to the new rollup type that was created with the previous tool. This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/updateRollup">tool</a> will be used to do it.</p>
+<p>The following <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/updateRollup/README.md">README</a> can be followed to update the old rollup to the new rollup type created with the previous tool by calling the <code>updateRollup</code> function, using the <code>rollupTypeID</code> created with the previous tool.</p>
 <h3 id="add-vkeys-to-agglayergateway_1">add vkeys to AggLayerGateway</h3>
 <p>The third step is to initialize the vkeys in <code>AggLayerGateway</code> contract:</p>
 <ul>
-<li>This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute">tool</a> is used to add the pessimistic vkey route (<code>addPessimisticVKeyRoute</code>).</li>
-<li>This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey">tool</a> is used to add the aggchain vkey (<code>addDefaultAggchainVKey</code>).</li>
+<li>This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addPessimisticVKeyRoute">tool</a> is used to add the pessimistic vkey route (<code>addPessimisticVKeyRoute</code>).</li>
+<li>This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/aggLayerGatewayTools/addDefaultAggchainVKey">tool</a> is used to add the aggchain vkey (<code>addDefaultAggchainVKey</code>).</li>
 </ul>
 <h2 id="verify-fep">Verify FEP</h2>
 <h3 id="data-schemas">Data Schemas</h3>
@@ -3146,7 +3146,7 @@ The following diagram shows how this selector is built:</p>
 </ul>
 <h2 id="migration-to-pp-or-algateway">Migration to PP or ALGateway</h2>
 <h3 id="migration-initialization">Migration Initialization</h3>
-<p>A new <a href="https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L954">function</a>, <code>initMigration</code>, enables the explicit start of a migration process.</p>
+<p>A new <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L954">function</a>, <code>initMigration</code>, enables the explicit start of a migration process.</p>
 <p>This function performs checks to ensure:</p>
 <ul>
 <li>It checks that the current <code>rollupVerifierType</code> is <code>StateTransition</code>, confirming the rollup originates from the legacy system.</li>
@@ -3155,7 +3155,7 @@ The following diagram shows how this selector is built:</p>
 <li>Finally, it calls the internal <code>_updateRollup</code> function to execute the migration. To support this, the internal check in <code>updateRollup</code> that restricted updates to only the same verifier type or ALGateway was removed. This restriction has been relocated to the public functions, allowing internal reuse of <code>updateRollup</code> for all update flows—including migrations—while preserving proper guard conditions.</li>
 </ul>
 <h3 id="proof-verification-during-migration">Proof Verification During Migration</h3>
-<p>The <code>verifyPessimisticTrustedAggregator</code> <a href="https://github.com/agglayer/agglayer-contracts/blob/feature/zkEVMToPP/contracts/v2/PolygonRollupManager.sol#L1313">function</a> was adjusted to support special cases that occur during the migration process.</p>
+<p>The <code>verifyPessimisticTrustedAggregator</code> <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/PolygonRollupManager.sol#L1313">function</a> was adjusted to support special cases that occur during the migration process.</p>
 <ul>
 <li>It now allows the verification of bootstrap certificates, which are required to validate the first proof after switching to the new system.</li>
 <li>It's a hard requirement that the <code>newLocalExitRoot</code> matches the current <code>lastLocalExitRoot</code> meaning that the certificates covers all the bridges<blockquote>
@@ -3171,10 +3171,10 @@ The following diagram shows how this selector is built:</p>
 </figure>
 
 <h4 id="addnewrolluptype_2">addNewRollupType</h4>
-<p>First step a new rollup type is added. This <a href="https://github.com/agglayer/agg-contracts-internal/tree/feature/ongoing-v0.3.0/tools/addRollupType">tool</a> will be used to do it.</p>
-<p>Following the next <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/tools/addRollupType/README.md">README</a>, a new rollup type is added by calling the <code>addNewRollupType</code> function of <code>PolygonRollupManager</code> contract. Once called, the <code>rollupTypeID</code> parameter will be obtained and should be used in the following tool.</p>
+<p>First step a new rollup type is added. This <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/addRollupType">tool</a> will be used to do it.</p>
+<p>Following the next <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/tools/addRollupType/README.md">README</a>, a new rollup type is added by calling the <code>addNewRollupType</code> function of <code>PolygonRollupManager</code> contract. Once called, the <code>rollupTypeID</code> parameter will be obtained and should be used in the following tool.</p>
 <h4 id="initmigration">initMigration</h4>
-<p>To initiate the migration, this tool can be used: <a href="https://github.com/agglayer/agglayer-contracts/tree/feature/zkEVMToPP/tools/initMigration">initMigration tool</a>
+<p>To initiate the migration, this tool can be used: <a href="https://github.com/agglayer/agglayer-contracts/tree/v11.0.0/tools/initMigration">initMigration tool</a>
 We will see that an event indicating the migration has been initialized is emitted (<code>InitMigration</code>).
 Finally, when the verification is done with <code>verifyPessimisticTrustedAggregator</code>, an event indicating that the migration has been completed will be emitted (<code>CompletedMigration</code>).</p>
 
@@ -3197,7 +3197,7 @@ Finally, when the verification is done with <code>verifyPessimisticTrustedAggreg
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2025 13:48:40 UTC">July 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 2, 2026 09:57:54 UTC">January 2, 2026</span>
   </span>
 
     

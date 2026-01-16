@@ -2999,8 +2999,8 @@
 Note that current deployed chains use this approach to create wrappedTokens and wrapped tokens have the same addresses in all chains deployed.<br />
 This approach does not imply any security assumption beyond the address that is able to upgrade the bridge (normally a timelock).  </p>
 <h3 id="22-current-issue">2.2 Current issue</h3>
-<p>On SovereignChains, a new approach to allow more features on the wrapped Tokens has been implemented: <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol#L330">custom mappings</a>. This feature currently works given the featured wanted: extend the wrappedToken features.</p>
-<p>This feature is purely <a href="https://github.com/agglayer/agg-contracts-internal/blob/feature/ongoing-v0.3.0/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol#L335">managed by the <code>bridgeManager</code></a> meaning that this feature is chain-centric (instead of asset-centric). Asset-centric means that the owner of the asset could deploy its own wrappedToken (or similarly, deploy an upgradeable wrappedToken and give the ownership to an address controlled by the asset).
+<p>On SovereignChains, a new approach to allow more features on the wrapped Tokens has been implemented: <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol#L330">custom mappings</a>. This feature currently works given the featured wanted: extend the wrappedToken features.</p>
+<p>This feature is purely <a href="https://github.com/agglayer/agglayer-contracts/blob/v11.0.0/contracts/v2/sovereignChains/BridgeL2SovereignChain.sol#L335">managed by the <code>bridgeManager</code></a> meaning that this feature is chain-centric (instead of asset-centric). Asset-centric means that the owner of the asset could deploy its own wrappedToken (or similarly, deploy an upgradeable wrappedToken and give the ownership to an address controlled by the asset).
 An asset-centric feature could not be applied on top of the <code>custom mappings</code> implementation. Therefore a new approach needs to be specified in order to allow future version to be asset-centric.</p>
 <p>Besides, this approach implies another risky concern about users being able to stop the PP of the chain if LBT reaches a negative balance (this assumption purely depends on the approach on how to use the customMappings. Example: Katana). The implementation of the LBT at SC level provides guarantees that the PP will not be blocked, but just the user claim. NOTE that this affects <code>customMappings</code> and <code>upgradeableWrappedTokens</code>.</p>
 <h3 id="23-solving-the-issue">2.3 Solving the issue</h3>
@@ -3166,7 +3166,7 @@ assembly {
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2025 06:21:05 UTC">August 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 2, 2026 09:57:54 UTC">January 2, 2026</span>
   </span>
 
     

@@ -4157,8 +4157,8 @@ Long term goal is to fully open chain registration as lomng as the chain fulfill
 <li><a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#ecdsa">Specification aggchain ECDSA</a></li>
 <li><a href="https://github.com/agglayer/protocol-research/blob/main/docs/ADRs/v0.3.0.md#fep">Specification aggchain FEP</a></li>
 <li><a href="https://hackmd.io/L7iY0M5bR_C4YWRqlCjsVg">Implementation decisions and iterations on the SC specifications</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/ongoing-v0.3.0">SC implementations</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/feature/ongoing-v0.3.0/test/test-vectors">Test-vectors</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/v11.0.0">SC implementations</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/tree/v11.0.0/test/test-vectors">Test-vectors</a></li>
 </ul>
 <h3 id="13-requirements">1.3. Requirements</h3>
 <ul>
@@ -4178,10 +4178,10 @@ Long term goal is to fully open chain registration as lomng as the chain fulfill
 <h3 id="15-breaking-changes">1.5. Breaking changes</h3>
 <ul>
 <li>Function to create new rollups has been renamed to <a href="#64-create-new-chain">attachChainToAL</a><ul>
-<li>old chains (zkEVM/Validiums/pp-v0.2.0) will need to <a href="https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L577-L578">encode its initialize data</a>. Util function available <a href="https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/src/utils-common-aggchain.js#L80">here</a></li>
+<li>old chains (zkEVM/Validiums/pp-v0.2.0) will need to <a href="https://github.com/agglayer/agglayer-contracts/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L577-L578">encode its initialize data</a>. Util function available <a href="https://github.com/agglayer/agglayer-contracts/blob/v10.0.0-rc.3/src/utils-common-aggchain.js#L80">here</a></li>
 </ul>
 </li>
-<li>Event <a href="https://github.com/agglayer/agg-contracts-internal/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L350">addExistingRollup</a> signature has been changed since a new parameter <code>initPessimisticRoot</code> ha sbeen added</li>
+<li>Event <a href="https://github.com/agglayer/agglayer-contracts/blob/v10.0.0-rc.3/contracts/v2/PolygonRollupManager.sol#L350">addExistingRollup</a> signature has been changed since a new parameter <code>initPessimisticRoot</code> ha sbeen added</li>
 <li><a href="#66-pretty-rollupdata">New functions</a> to properly see therscan rollup data has been added</li>
 <li>Function <a href="#65-verify-pessimitic-proof">verifyPessimisticProof</a> signature has been changed. Added <code>customChainData</code> for aggchains v0.3.0</li>
 </ul>
@@ -4553,10 +4553,10 @@ This has been done to enforce chains to not being able to select which type of a
 </ul>
 <h4 id="512-test-vectors">5.1.2 Test-vectors</h4>
 <ul>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-data.json">aggchain-data</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv0.json">aggchain-init-bytes-v0</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv1.json">aggchain-init-bytes-v1</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/ongoing-v0.3.0/test/test-vectors/aggchainECDSA/hash-aggchain-params.json">hash-aggchain-params</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/aggchain-data.json">aggchain-data</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv0.json">aggchain-init-bytes-v0</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/aggchain-initBytesv1.json">aggchain-init-bytes-v1</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainECDSA/hash-aggchain-params.json">hash-aggchain-params</a></li>
 </ul>
 <h3 id="52-fep">5.2. FEP</h3>
 <p>There are two scenarios to be considered in the <code>FEP</code>: new one and one that comes from <code>v0.2.0</code>.
@@ -4725,10 +4725,10 @@ _initializeAggchainBaseAndConsensusBase<span class="p">(</span>
 </ul>
 <h4 id="522-test-vectors">5.2.2 Test-vectors</h4>
 <ul>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-data.json">aggchain-data</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-initBytesv0.json">aggchain-init-bytes-v0</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/aggchain-initBytesv1.json">aggchain-init-bytes-v1</a></li>
-<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/feature/fix-small-inconsistencies/test/test-vectors/aggchainFEP/hash-aggchain-params.json">hash-aggchain-params</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/aggchain-data.json">aggchain-data</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/aggchain-initBytesv0.json">aggchain-init-bytes-v0</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/aggchain-initBytesv1.json">aggchain-init-bytes-v1</a></li>
+<li><a href="https://github.com/0xPolygonHermez/zkevm-contracts/blob/v11.0.0/test/test-vectors/aggchainFEP/hash-aggchain-params.json">hash-aggchain-params</a></li>
 </ul>
 <h2 id="6-rollup-manager-specification">6. Rollup Manager Specification</h2>
 <h3 id="61-versioning">6.1. Versioning</h3>
