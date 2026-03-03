@@ -1,6 +1,6 @@
 # Sovereign Contracts Roles
 
-Contracts used in sovereign chains: **AgglayerBridgeL2** & **AgglayerGERL2**
+Contracts used in sovereign chains: [**AgglayerBridgeL2**](https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/sovereignChains/AgglayerBridgeL2.sol) & [**AgglayerGERL2**](https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/sovereignChains/AgglayerGERL2.sol)
 
 ---
 
@@ -15,37 +15,37 @@ Contracts used in sovereign chains: **AgglayerBridgeL2** & **AgglayerGERL2**
 
 ### bridgeManager
 
-- **Functionality**: 
-  - Set custom sovereign token addresses (`setMultipleSovereignTokenAddress`, `setSovereignWETHAddress`)
-  - Remove legacy sovereign token addresses (`removeLegacySovereignTokenAddress`)
-  - Deploy wrapped tokens and remap them (`deployWrappedTokenAndRemap`)
-  - Transfer the bridgeManager role (`setBridgeManager`)
+- **Functionality**:
+    - Set custom sovereign token addresses (`setMultipleSovereignTokenAddress`, `setSovereignWETHAddress`)
+    - Remove legacy sovereign token addresses (`removeLegacySovereignTokenAddress`)
+    - Deploy wrapped tokens and remap them (`deployWrappedTokenAndRemap`)
+    - Transfer the bridgeManager role (`setBridgeManager`)
 - **Security Assumptions**: Very high. Setting custom tokens mapping could redirect funds if misconfigured --> worst case scenario, steal all users funds of that network. Should be carefully managed.
 - **Recommended Account Type**: Timelock (specified by the chain itself after bootstrapping phase)
 
 ### emergencyBridgePauser
 
-- **Functionality**: 
-  - Activate emergency state on the bridge (`activateEmergencyState`)
-  - Transfer the emergencyBridgePauser role (`transferEmergencyBridgePauserRole`)
+- **Functionality**:
+    - Activate emergency state on the bridge (`activateEmergencyState`)
+    - Transfer the emergencyBridgePauser role (`transferEmergencyBridgePauserRole`)
 - **Security Assumptions**: Medium-High. Can halt all bridge operations but cannot steal funds directly.
 - **Recommended Account Type**: Multisig (needs to act fast in emergencies)
 
 ### emergencyBridgeUnpauser
 
-- **Functionality**: 
-  - Deactivate emergency state on the bridge (`deactivateEmergencyState`)
-  - Transfer the emergencyBridgeUnpauser role (`transferEmergencyBridgeUnpauserRole`)
+- **Functionality**:
+    - Deactivate emergency state on the bridge (`deactivateEmergencyState`)
+    - Transfer the emergencyBridgeUnpauser role (`transferEmergencyBridgeUnpauserRole`)
 - **Security Assumptions**: Medium. Can resume bridge operations after emergency.
 - **Recommended Account Type**: Multisig or Timelock (depending on security requirements)
 
 ### proxiedTokensManager
 
-- **Functionality**: 
-  - Admin of all `TokenWrappedTransparentProxy` contracts deployed by the bridge
-  - Can upgrade wrapped token implementations (`upgradeTo`, `upgradeToAndCall`)
-  - Can change admin of wrapped token proxies (`changeAdmin`)
-  - Transfer the proxiedTokensManager role (`transferProxiedTokensManagerRole`)
+- **Functionality**:
+    - Admin of all `TokenWrappedTransparentProxy` contracts deployed by the bridge
+    - Can upgrade wrapped token implementations (`upgradeTo`, `upgradeToAndCall`)
+    - Can change admin of wrapped token proxies (`changeAdmin`)
+    - Transfer the proxiedTokensManager role (`transferProxiedTokensManagerRole`)
 - **Security Assumptions**: Very high. Can upgrade token logic which could affect user funds --> worst case scenario, steal all users funds of that network. Should be carefully managed.
 - **Recommended Account Type**: Timelock (same as bridge proxy admin, typically PolygonTimelock)
 
@@ -60,23 +60,23 @@ Contracts used in sovereign chains: **AgglayerBridgeL2** & **AgglayerGERL2**
 
 ### globalExitRootUpdater
 
-- **Functionality**: 
-  - Insert new global exit roots (`insertGlobalExitRoot`)
-  - Transfer the globalExitRootUpdater role (`transferGlobalExitRootUpdater`)
-  - If set to zero address, `block.coinbase` (sequencer) can insert GERs
+- **Functionality**:
+    - Insert new global exit roots (`insertGlobalExitRoot`)
+    - Transfer the globalExitRootUpdater role (`transferGlobalExitRootUpdater`)
+    - If set to zero address, `block.coinbase` (sequencer) can insert GERs
 - **Security Assumptions**: Medium-High. This address has the ability to insert invalid GERs, unable to steal funds of the agglayer and halting the network but might be able to steal third-party bridges.
 - **Recommended Account Type**: EOA carefully managed, since must send lots of transactions
 
 ### globalExitRootRemover
 
-- **Functionality**: 
-  - Remove global exit roots (`removeGlobalExitRoots`)
-  - Transfer the globalExitRootRemover role (`transferGlobalExitRootRemover`)
-  - **On AgglayerBridgeL2**: 
-    - Unset/set multiple claims (`unsetMultipleClaims`, `setMultipleClaims`)
-    - Move LET backward/forward (`backwardLET`, `forwardLET`) - only during emergency state
-    - Set local balance tree (`setLocalBalanceTree`) - only during emergency state
-    - Force emit detailed claim events (`forceEmitDetailedClaimEvent`)
+- **Functionality**:
+    - Remove global exit roots (`removeGlobalExitRoots`)
+    - Transfer the globalExitRootRemover role (`transferGlobalExitRootRemover`)
+    - **On AgglayerBridgeL2**:
+        - Unset/set multiple claims (`unsetMultipleClaims`, `setMultipleClaims`)
+        - Move LET backward/forward (`backwardLET`, `forwardLET`) - only during emergency state
+        - Set local balance tree (`setLocalBalanceTree`) - only during emergency state
+        - Force emit detailed claim events (`forceEmitDetailedClaimEvent`)
 - **Security Assumptions**: Very high security risk. Controller could steal funds --> worst case scenario, steal all users funds of that network. Should be carefully managed. Has powerful emergency recovery capabilities.
 - **Recommended Account Type**: Multisig (needs to act fast to unblock the chain in emergencies)
 
