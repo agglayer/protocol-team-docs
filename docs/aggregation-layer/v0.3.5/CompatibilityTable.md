@@ -16,14 +16,18 @@ The following compatibility table shows which components should be used dependin
 
 
 ## Clients
-### Client legacy-cdk-erigon
-To give some context compared to the previous version, we wanted to make a clear distinction between `vanilla-cdk-erigon` and `legacy-cdk-erigon`.
-The latter is the client responsible for injecting batches and GERs, while the former will handle this through `AgglayerGERL2` and `AggOracle`.
 
-### Client - Sovereign contracts compatibility
-When considering compatibility, it’s important to understand that sovereign contracts (`AgglayerBridgeL2` + `AgglayerGERL2`) can only be used if you are not using a `hermez-prover` prover.
-The reason for this is that in the case of the `hermez-prover`, GERs are injected directly by the client. If sovereign contracts were used in this configuration, the GERs would instead be injected by the `aggOracle`.
-This would pose a critical security risk, as it would allow someone to easily steal all the bridge funds (the validation would not be enforced properly).
+### legacy-cdk-erigon
+
+The original CDK Erigon client. It handles batch injection and GER injection **directly at the client level** (no sovereign contracts). Used by existing zkEVM and Validium chains, and also supported for ECDSA chains that haven't migrated to sovereign contracts yet.
+
+### vanilla-cdk-erigon
+
+A CDK Erigon client where GER injection is handled through `AgglayerGERL2` and `AggOracle` instead of being hardcoded in the client. This decouples the client from GER management and enables the use of sovereign contracts.
+
+### op-stack
+
+An OP Stack-based client (e.g. OP-Succinct). GER injection goes through `AgglayerGERL2` and `AggOracle`. It can be used for PP and FEP chains.
 
 ## L2 SC
 ### AgglayerBridgeL2

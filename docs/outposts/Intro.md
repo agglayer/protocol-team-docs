@@ -1,6 +1,6 @@
 # Intro
 
-## 1. What is an outpost chain?
+## 1. What is an outpost chain
 
 - Chain that **owns a different native bridge** not controlled by the **PP (Pessimistic Proof)**
 - Is **EVM compatible** (in a first stage)
@@ -16,26 +16,27 @@
 
 ---
 
-## 1.1 Objective
+## 2. Architecture
 
-- **Attach an outpost chain to the aggLayer**
+![Outpost Architecture](/outposts/img/outpost-architecture.png)
 
+**Key points:**
 
-## 1.2 Implications
-- Deploy SC
-- Secure State transition
+- The outpost chain has its **own native bridge** and **sequencer** — neither is controlled by the Agglayer
+- Agglayer L2 contracts (`AgglayerBridgeL2`, `AgglayerGERL2`) are deployed **on the outpost chain**
+- The **Pessimistic Proof** verifies the bridge activity on the outpost
+- The outpost needs the **Agglayer Core SC** to be deployed on the L1 chain
 
 ---
 
-## 1.3 Limitations
+## 3. Particularities
 
 - **Bridge, GER and wTokens** have **different addresses**
-- Possible reorgs in the outpost chain,so also in the LER
-    - A new functions in the bridge to rollback the LER
-    - It can create double spending, will be paid by Polygon.
+- Reorgs can happen not controlled by the agglayer
+    - New functions in the bridge to manage Local Exit Tree possible mismatches
 
-## 1.4 Flow examples
-### 1.4.1 Outpost with native ETH
+## 4. Flow examples
+### 4.1 Outpost with native ETH
 Example flow of an outpost having gasTokenNetwork different than native networkID/rollupID:
 
 - Initialize params:
@@ -62,7 +63,7 @@ sequenceDiagram
     L1_Agglayer_Bridge ->> User: ❌❌ There is no ETH on bridge to send ❌❌
 ```
 
-### 1.4.2 Outpost with native token
+### 4.2 Outpost with native token
 Example flow of an outpost having gasTokenNetwork same than native networkID/rollupID:
 Initialize params:
 - GasTokenNetwork: 2 (base rollupId)
