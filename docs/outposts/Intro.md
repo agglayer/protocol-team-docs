@@ -18,7 +18,7 @@
 
 ## 2. Architecture
 
-![Outpost Architecture](/outposts/img/outpost-architecture.png)
+![Outpost Architecture](../img/outpost-architecture.png)
 
 **Key points:**
 
