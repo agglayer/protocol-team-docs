@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1641,10 +1641,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#client-legacy-cdk-erigon" class="md-nav__link">
+  <a href="#legacy-cdk-erigon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Client legacy-cdk-erigon
+        legacy-cdk-erigon
       
     </span>
   </a>
@@ -1652,10 +1652,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#client-sovereign-contracts-compatibility" class="md-nav__link">
+  <a href="#vanilla-cdk-erigon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Client - Sovereign contracts compatibility
+        vanilla-cdk-erigon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#op-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        op-stack
       
     </span>
   </a>
@@ -2548,6 +2559,170 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sovereign-contracts-roles/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. SC Roles
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. SC Roles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sovereign-contracts-roles/l1-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 L1 Core Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sovereign-contracts-roles/aggchain-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 Aggchain Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sovereign-contracts-roles/sovereign-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3 Sovereign Chain Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2598,10 +2773,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#client-legacy-cdk-erigon" class="md-nav__link">
+  <a href="#legacy-cdk-erigon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Client legacy-cdk-erigon
+        legacy-cdk-erigon
       
     </span>
   </a>
@@ -2609,10 +2784,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#client-sovereign-contracts-compatibility" class="md-nav__link">
+  <a href="#vanilla-cdk-erigon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Client - Sovereign contracts compatibility
+        vanilla-cdk-erigon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#op-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        op-stack
       
     </span>
   </a>
@@ -2891,13 +3077,12 @@
 </tbody>
 </table>
 <h2 id="clients">Clients</h2>
-<h3 id="client-legacy-cdk-erigon">Client legacy-cdk-erigon</h3>
-<p>To give some context compared to the previous version, we wanted to make a clear distinction between <code>vanilla-cdk-erigon</code> and <code>legacy-cdk-erigon</code>.
-The latter is the client responsible for injecting batches and GERs, while the former will handle this through <code>AgglayerGERL2</code> and <code>AggOracle</code>.</p>
-<h3 id="client-sovereign-contracts-compatibility">Client - Sovereign contracts compatibility</h3>
-<p>When considering compatibility, it’s important to understand that sovereign contracts (<code>AgglayerBridgeL2</code> + <code>AgglayerGERL2</code>) can only be used if you are not using a <code>hermez-prover</code> prover.
-The reason for this is that in the case of the <code>hermez-prover</code>, GERs are injected directly by the client. If sovereign contracts were used in this configuration, the GERs would instead be injected by the <code>aggOracle</code>.
-This would pose a critical security risk, as it would allow someone to easily steal all the bridge funds (the validation would not be enforced properly).</p>
+<h3 id="legacy-cdk-erigon">legacy-cdk-erigon</h3>
+<p>The original CDK Erigon client. It handles batch injection and GER injection <strong>directly at the client level</strong> (no sovereign contracts). Used by existing zkEVM and Validium chains, and also supported for ECDSA chains that haven't migrated to sovereign contracts yet.</p>
+<h3 id="vanilla-cdk-erigon">vanilla-cdk-erigon</h3>
+<p>A CDK Erigon client where GER injection is handled through <code>AgglayerGERL2</code> and <code>AggOracle</code> instead of being hardcoded in the client. This decouples the client from GER management and enables the use of sovereign contracts.</p>
+<h3 id="op-stack">op-stack</h3>
+<p>An OP Stack-based client (e.g. OP-Succinct). GER injection goes through <code>AgglayerGERL2</code> and <code>AggOracle</code>. It can be used for PP and FEP chains.</p>
 <h2 id="l2-sc">L2 SC</h2>
 <h3 id="agglayerbridgel2">AgglayerBridgeL2</h3>
 <p>The <code>AgglayerBridgeL2</code> smart contract is designed to be deployed on L2.
@@ -2933,7 +3118,7 @@ Update v0.3.0 <a href="https://agglayer.github.io/protocol-team-docs/aggregation
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 13, 2026 14:32:31 UTC">January 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2026 14:42:56 UTC">March 4, 2026</span>
   </span>
 
     

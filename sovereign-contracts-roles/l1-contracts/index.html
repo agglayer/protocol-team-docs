@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../zkEVM/durian-specs/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="Resources/">
+        <link rel="next" href="../aggchain-contracts/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Overview - SC-Protocol Documentation</title>
+        <title>6.1 L1 Core Contracts - SC-Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-tooling" class="md-skip">
+        <a href="#l1-core-contract-roles" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              6.1 L1 Core Contracts
             
           </span>
         </div>
@@ -228,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -258,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../zkEVM/" class="md-nav__link ">
+            <a href="../../zkEVM/" class="md-nav__link ">
               
   
   
@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zkEVM/banana-specs/" class="md-nav__link">
+      <a href="../../zkEVM/banana-specs/" class="md-nav__link">
         
   
   
@@ -384,7 +384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zkEVM/durian-specs/" class="md-nav__link">
+      <a href="../../zkEVM/durian-specs/" class="md-nav__link">
         
   
   
@@ -416,8 +416,6 @@
       
   
   
-    
-  
   
   
     
@@ -442,15 +440,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../tooling/" class="md-nav__link ">
               
   
   
@@ -468,13 +466,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -494,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Resources/" class="md-nav__link">
+      <a href="../../tooling/Resources/" class="md-nav__link">
         
   
   
@@ -522,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Genesis/" class="md-nav__link">
+      <a href="../../tooling/Genesis/" class="md-nav__link">
         
   
   
@@ -550,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Verify-genesis/" class="md-nav__link">
+      <a href="../../tooling/Verify-genesis/" class="md-nav__link">
         
   
   
@@ -614,7 +612,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/" class="md-nav__link ">
+            <a href="../../aggregation-layer/" class="md-nav__link ">
               
   
   
@@ -686,7 +684,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.2.0/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.2.0/" class="md-nav__link ">
               
   
   
@@ -730,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
         
   
   
@@ -758,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
         
   
   
@@ -812,7 +810,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.2.0/SovereignChains/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.2.0/SovereignChains/" class="md-nav__link ">
               
   
   
@@ -856,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
         
   
   
@@ -884,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
         
   
   
@@ -912,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
         
   
   
@@ -948,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
         
   
   
@@ -1022,7 +1020,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.3.0/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.0/" class="md-nav__link ">
               
   
   
@@ -1066,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
         
   
   
@@ -1094,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
         
   
   
@@ -1122,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
         
   
   
@@ -1150,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
         
   
   
@@ -1178,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
         
   
   
@@ -1232,7 +1230,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.3.0/SC-interactions/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.0/SC-interactions/" class="md-nav__link ">
               
   
   
@@ -1276,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1304,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1332,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
         
   
   
@@ -1368,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
         
   
   
@@ -1396,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
         
   
   
@@ -1424,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
         
   
   
@@ -1484,7 +1482,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.3.5/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.5/" class="md-nav__link ">
               
   
   
@@ -1528,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
         
   
   
@@ -1556,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.5/CompatibilityTable/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.5/CompatibilityTable/" class="md-nav__link">
         
   
   
@@ -1626,7 +1624,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/" class="md-nav__link ">
+            <a href="../../smart-contracts/" class="md-nav__link ">
               
   
   
@@ -1692,7 +1690,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/v11/" class="md-nav__link ">
+            <a href="../../smart-contracts/v11/" class="md-nav__link ">
               
   
   
@@ -1736,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v11/versions-tag11/" class="md-nav__link">
+      <a href="../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
         
   
   
@@ -1812,7 +1810,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/v12/" class="md-nav__link ">
+            <a href="../../smart-contracts/v12/" class="md-nav__link ">
               
   
   
@@ -1856,7 +1854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/versions-tag12/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
         
   
   
@@ -1908,7 +1906,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
+            <a href="../../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
               
   
   
@@ -1952,7 +1950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
         
   
   
@@ -1980,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
         
   
   
@@ -2016,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
         
   
   
@@ -2044,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
         
   
   
@@ -2072,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
         
   
   
@@ -2100,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerGateway/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerGateway/" class="md-nav__link">
         
   
   
@@ -2128,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AggchainBase/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
         
   
   
@@ -2156,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
         
   
   
@@ -2184,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -2212,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/migration-paths/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/migration-paths/" class="md-nav__link">
         
   
   
@@ -2282,7 +2280,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../outposts/" class="md-nav__link ">
+            <a href="../../outposts/" class="md-nav__link ">
               
   
   
@@ -2326,7 +2324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../outposts/Intro/" class="md-nav__link">
+      <a href="../../outposts/Intro/" class="md-nav__link">
         
   
   
@@ -2354,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../outposts/L2-Deployment-script/" class="md-nav__link">
+      <a href="../../outposts/L2-Deployment-script/" class="md-nav__link">
         
   
   
@@ -2386,6 +2384,8 @@
       
   
   
+    
+  
   
   
     
@@ -2410,15 +2410,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../sovereign-contracts-roles/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -2442,7 +2442,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2459,10 +2459,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sovereign-contracts-roles/l1-contracts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 L1 Core Contracts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2478,6 +2505,281 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-agglayermanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AgglayerManager
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. AgglayerManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_admin_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DEFAULT_ADMIN_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_add_rollup_type_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ADD_ROLLUP_TYPE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_obsolete_rollup_type_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _OBSOLETE_ROLLUP_TYPE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_create_rollup_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _CREATE_ROLLUP_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_add_existing_rollup_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ADD_EXISTING_ROLLUP_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_update_rollup_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _UPDATE_ROLLUP_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_trusted_aggregator_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _TRUSTED_AGGREGATOR_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_set_fee_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _SET_FEE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_stop_emergency_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _STOP_EMERGENCY_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_emergency_council_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _EMERGENCY_COUNCIL_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agglayergateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AgglayerGateway
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AgglayerGateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-details_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggchain_default_vkey_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGGCHAIN_DEFAULT_VKEY_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_add_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AL_ADD_PP_ROUTE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_freeze_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AL_FREEZE_PP_ROUTE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_multisig_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AL_MULTISIG_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agglayertimelock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AgglayerTimelock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-agglayerbridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AgglayerBridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-agglayerger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. AgglayerGER
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2490,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sovereign-contracts-roles/aggchain-contracts/" class="md-nav__link">
+      <a href="../aggchain-contracts/" class="md-nav__link">
         
   
   
@@ -2518,7 +2820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sovereign-contracts-roles/sovereign-contracts/" class="md-nav__link">
+      <a href="../sovereign-contracts/" class="md-nav__link">
         
   
   
@@ -2566,6 +2868,269 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-agglayermanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AgglayerManager
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. AgglayerManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default_admin_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DEFAULT_ADMIN_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_add_rollup_type_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ADD_ROLLUP_TYPE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_obsolete_rollup_type_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _OBSOLETE_ROLLUP_TYPE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_create_rollup_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _CREATE_ROLLUP_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_add_existing_rollup_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _ADD_EXISTING_ROLLUP_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_update_rollup_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _UPDATE_ROLLUP_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_trusted_aggregator_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _TRUSTED_AGGREGATOR_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_set_fee_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _SET_FEE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_stop_emergency_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _STOP_EMERGENCY_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_emergency_council_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _EMERGENCY_COUNCIL_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agglayergateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AgglayerGateway
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AgglayerGateway">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-details_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggchain_default_vkey_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGGCHAIN_DEFAULT_VKEY_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_add_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AL_ADD_PP_ROUTE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_freeze_pp_route_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AL_FREEZE_PP_ROUTE_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al_multisig_role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AL_MULTISIG_ROLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agglayertimelock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AgglayerTimelock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-agglayerbridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AgglayerBridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-agglayerger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. AgglayerGER
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2589,7 +3154,7 @@
   
   
     <li class="md-path__item">
-      <a href=".." class="md-path__link">
+      <a href="../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -2607,10 +3172,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    2. Tooling
+    6. SC Roles
   </span>
 
         </a>
@@ -2632,12 +3197,308 @@
   
 
 
-<h1 id="2-tooling">2. Tooling</h1>
+<h1 id="l1-core-contract-roles">L1 Core Contract Roles</h1>
+<p>Roles in the core L1 Agglayer contracts deployed on Ethereum mainnet.</p>
+<p>Source: <a href="https://github.com/agglayer/agglayer-contracts/releases/tag/v12.2.2">agglayer-contracts v12.2.2</a></p>
+<hr />
+<h2 id="1-agglayermanager">1. AgglayerManager</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/AgglayerManager.sol">Source</a> · Mainnet: <code>0x5132A183E9F3CB7C848b0AAC5Ae0c4f0491B7aB2</code></p>
+<p>Uses <code>PolygonAccessControlUpgradeable</code> (OZ-style role-based access control with <code>onlyRole</code> modifier).</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Keccak of</th>
+<th>Functions Gated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_ADMIN_ROLE</code></td>
+<td><code>0x00</code></td>
+<td><code>grantRole()</code>, <code>revokeRole()</code> for all roles without explicit admin</td>
+</tr>
+<tr>
+<td><code>_ADD_ROLLUP_TYPE_ROLE</code></td>
+<td><code>"ADD_ROLLUP_TYPE_ROLE"</code></td>
+<td><code>addNewRollupType()</code></td>
+</tr>
+<tr>
+<td><code>_OBSOLETE_ROLLUP_TYPE_ROLE</code></td>
+<td><code>"OBSOLETE_ROLLUP_TYPE_ROLE"</code></td>
+<td><code>obsoleteRollupType()</code></td>
+</tr>
+<tr>
+<td><code>_CREATE_ROLLUP_ROLE</code></td>
+<td><code>"CREATE_ROLLUP_ROLE"</code></td>
+<td><code>attachAggchainToAL()</code></td>
+</tr>
+<tr>
+<td><code>_ADD_EXISTING_ROLLUP_ROLE</code></td>
+<td><code>"ADD_EXISTING_ROLLUP_ROLE"</code></td>
+<td><code>addExistingRollup()</code></td>
+</tr>
+<tr>
+<td><code>_UPDATE_ROLLUP_ROLE</code></td>
+<td><code>"UPDATE_ROLLUP_ROLE"</code></td>
+<td><code>updateRollup()</code>, <code>initMigration()</code>, <code>rollbackBatches()</code></td>
+</tr>
+<tr>
+<td><code>_TRUSTED_AGGREGATOR_ROLE</code></td>
+<td><code>"TRUSTED_AGGREGATOR_ROLE"</code></td>
+<td><code>verifyBatchesTrustedAggregator()</code>, <code>verifyPessimisticTrustedAggregator()</code></td>
+</tr>
+<tr>
+<td><code>_TRUSTED_AGGREGATOR_ROLE_ADMIN</code></td>
+<td><code>"TRUSTED_AGGREGATOR_ROLE_ADMIN"</code></td>
+<td>Admin role for <code>_TRUSTED_AGGREGATOR_ROLE</code></td>
+</tr>
+<tr>
+<td><code>_TWEAK_PARAMETERS_ROLE</code></td>
+<td><code>"TWEAK_PARAMETERS_ROLE"</code></td>
+<td>Reserved (legacy, kept for storage compatibility)</td>
+</tr>
+<tr>
+<td><code>_SET_FEE_ROLE</code></td>
+<td><code>"SET_FEE_ROLE"</code></td>
+<td><code>setBatchFee()</code></td>
+</tr>
+<tr>
+<td><code>_STOP_EMERGENCY_ROLE</code></td>
+<td><code>"STOP_EMERGENCY_ROLE"</code></td>
+<td><code>deactivateEmergencyState()</code></td>
+</tr>
+<tr>
+<td><code>_EMERGENCY_COUNCIL_ROLE</code></td>
+<td><code>"EMERGENCY_COUNCIL_ROLE"</code></td>
+<td><code>activateEmergencyState()</code> (bypasses halt timeout)</td>
+</tr>
+<tr>
+<td><code>_EMERGENCY_COUNCIL_ADMIN</code></td>
+<td><code>"EMERGENCY_COUNCIL_ADMIN"</code></td>
+<td>Admin role for <code>_EMERGENCY_COUNCIL_ROLE</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="role-details">Role Details</h3>
+<h4 id="default_admin_role">DEFAULT_ADMIN_ROLE</h4>
 <ul>
-<li><a href="Resources/">2.1. Resources</a></li>
-<li><a href="Genesis/">2.2. Genesis Creation</a></li>
-<li><a href="Verify-genesis/">2.3. Verify genesis implementations</a></li>
+<li><strong>Security</strong>: Critical. Super-admin that can grant/revoke any role whose admin is <code>DEFAULT_ADMIN_ROLE</code>.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
 </ul>
+<h4 id="_add_rollup_type_role">_ADD_ROLLUP_TYPE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Register new rollup types (consensus implementations). Controls what chain types can be deployed.</li>
+<li><strong>Security</strong>: High. Registering malicious rollup types could compromise new chains.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_obsolete_rollup_type_role">_OBSOLETE_ROLLUP_TYPE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Mark rollup types as obsolete, preventing new chains from using them.</li>
+<li><strong>Security</strong>: Medium. Cannot affect existing chains, only prevents new ones.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_create_rollup_role">_CREATE_ROLLUP_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Deploy and register new chains/rollups. Creates proxy contracts and assigns chain IDs.</li>
+<li><strong>Security</strong>: High. Controls chain onboarding.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_add_existing_rollup_role">_ADD_EXISTING_ROLLUP_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Add already-deployed rollup contracts without requiring a rollup type. Sets genesis/init state directly.</li>
+<li><strong>Security</strong>: High. Can introduce arbitrary state for a chain.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_update_rollup_role">_UPDATE_ROLLUP_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Upgrade any rollup to a new type (<code>updateRollup()</code>)</li>
+<li>Initiate ST→PP/ALGateway migrations (<code>initMigration()</code>)</li>
+<li>Rollback batches (<code>rollbackBatches()</code> — also callable by chain admin)</li>
+</ul>
+</li>
+<li><strong>Security</strong>: Very High. Most powerful chain management role. Can change consensus logic for any chain.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_trusted_aggregator_role">_TRUSTED_AGGREGATOR_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Submit and verify batch proofs / pessimistic proofs. Controls state transitions for all chains.</li>
+<li><strong>Security</strong>: Very High. Can finalize state for any chain.</li>
+<li><strong>Recommended Account</strong>: Aggregator service (automated).</li>
+</ul>
+<h4 id="_set_fee_role">_SET_FEE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Set the batch fee (POL cost per batch).</li>
+<li><strong>Security</strong>: Medium. Financial parameter only.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_stop_emergency_role">_STOP_EMERGENCY_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Deactivate emergency state on both AgglayerManager and the bridge.</li>
+<li><strong>Security</strong>: High. Resumes normal operations after emergency.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="_emergency_council_role">_EMERGENCY_COUNCIL_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Activate emergency state immediately, bypassing the halt aggregation timeout. Note: <em>anyone</em> can activate emergency state once the timeout expires — this role only bypasses the timeout.</li>
+<li><strong>Security</strong>: High. Can halt all operations.</li>
+<li><strong>Recommended Account</strong>: Emergency Council Multisig (fast response).</li>
+</ul>
+<hr />
+<h2 id="2-agglayergateway">2. AgglayerGateway</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/AggLayerGateway.sol">Source</a> · Mainnet: <code>0x046Bb8bb98Db4ceCbB2929542686B74b516274b3</code></p>
+<p>Uses OZ <code>AccessControlUpgradeable</code> (standard v5 role-based access control).</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Keccak of</th>
+<th>Functions Gated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_ADMIN_ROLE</code></td>
+<td><code>0x00</code></td>
+<td><code>grantRole()</code>, <code>revokeRole()</code> for all roles</td>
+</tr>
+<tr>
+<td><code>AGGCHAIN_DEFAULT_VKEY_ROLE</code></td>
+<td><code>"AGGCHAIN_DEFAULT_VKEY_ROLE"</code></td>
+<td><code>addDefaultAggchainVKey()</code>, <code>updateDefaultAggchainVKey()</code>, <code>unsetDefaultAggchainVKey()</code></td>
+</tr>
+<tr>
+<td><code>AL_ADD_PP_ROUTE_ROLE</code></td>
+<td><code>"AL_ADD_PP_ROUTE_ROLE"</code></td>
+<td><code>addPessimisticVKeyRoute()</code></td>
+</tr>
+<tr>
+<td><code>AL_FREEZE_PP_ROUTE_ROLE</code></td>
+<td><code>"AL_FREEZE_PP_ROUTE_ROLE"</code></td>
+<td><code>freezePessimisticVKeyRoute()</code></td>
+</tr>
+<tr>
+<td><code>AL_MULTISIG_ROLE</code></td>
+<td><code>"AL_MULTISIG_ROLE"</code></td>
+<td><code>updateSignersAndThreshold()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="role-details_1">Role Details</h3>
+<h4 id="aggchain_default_vkey_role">AGGCHAIN_DEFAULT_VKEY_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Manage default aggchain verification keys used by chains with <code>useDefaultVkeys=true</code>.</li>
+<li><strong>Security</strong>: High. Affects proof verification for chains using defaults.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="al_add_pp_route_role">AL_ADD_PP_ROUTE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Add new pessimistic proof verification key routes (verifier + vkey combos). One-way: routes can be added but never removed, only frozen.</li>
+<li><strong>Security</strong>: High. Routes cannot be reverted once added.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="al_freeze_pp_route_role">AL_FREEZE_PP_ROUTE_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Freeze PP verification key routes, permanently disabling a proof path. <strong>Irreversible</strong>.</li>
+<li><strong>Security</strong>: Very High. Could DoS chains relying on a specific route.</li>
+<li><strong>Recommended Account</strong>: Timelock.</li>
+</ul>
+<h4 id="al_multisig_role">AL_MULTISIG_ROLE</h4>
+<ul>
+<li><strong>Functionality</strong>: Manage the default multisig signers and threshold used by chains with <code>useDefaultSigners=true</code>.</li>
+<li><strong>Security</strong>: High. Controls shared signer configuration.</li>
+<li><strong>Recommended Account</strong>: Multisig.</li>
+</ul>
+<hr />
+<h2 id="3-agglayertimelock">3. AgglayerTimelock</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/AgglayerTimelock.sol">Source</a> · Mainnet: <code>0xEf1462451C30Ea7aD8555386226059Fe837CA4EF</code></p>
+<p>Uses OZ v4 <code>TimelockController</code>. <strong>Not upgradeable</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Functions Gated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TIMELOCK_ADMIN_ROLE</code></td>
+<td>Manage timelock configuration (<code>updateDelay</code>)</td>
+</tr>
+<tr>
+<td><code>PROPOSER_ROLE</code></td>
+<td>Schedule (propose) operations</td>
+</tr>
+<tr>
+<td><code>CANCELLER_ROLE</code></td>
+<td>Cancel pending operations (auto-granted to proposers)</td>
+</tr>
+<tr>
+<td><code>EXECUTOR_ROLE</code></td>
+<td>Execute ready operations</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When <code>AgglayerManager.isEmergencyState()</code> is true, <code>getMinDelay()</code> returns <strong>0</strong>, allowing immediate execution of all pending proposals. Mainnet <code>minDelay</code> is 3 days under normal conditions.</p>
+</div>
+<hr />
+<h2 id="4-agglayerbridge">4. AgglayerBridge</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/AgglayerBridge.sol">Source</a> · Mainnet: <code>0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe</code></p>
+<p>No OZ AccessControl. Uses a custom single-address role pattern.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Type</th>
+<th>Functions Gated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>polygonRollupManager</code></td>
+<td><code>address</code> (set at init, immutable after)</td>
+<td><code>activateEmergencyState()</code>, <code>deactivateEmergencyState()</code></td>
+</tr>
+<tr>
+<td><code>proxiedTokensManager</code></td>
+<td><code>address</code> (two-step transfer)</td>
+<td>Admin of all <code>TokenWrappedTransparentProxy</code>, can upgrade wrapped token implementations</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Emergency state</strong> (from <code>EmergencyManager</code>): pauses <code>bridgeAsset()</code>, <code>bridgeMessage()</code>, <code>bridgeMessageWETH()</code>, <code>claimAsset()</code>, <code>claimMessage()</code>.</li>
+<li><code>proxiedTokensManager</code> is auto-set from the proxy's admin owner at initialization (typically the Timelock).</li>
+</ul>
+<hr />
+<h2 id="5-agglayerger">5. AgglayerGER</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/AgglayerGER.sol">Source</a> · Mainnet: <code>0x580bda1e7A0CFAe92Fa7F6c20A3794F169CE3CFb</code></p>
+<p>No roles. Uses <strong>immutable</strong> address checks set at construction.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Type</th>
+<th>Functions Gated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bridgeAddress</code></td>
+<td><code>address immutable</code></td>
+<td><code>updateExitRoot()</code> (mainnet exit root)</td>
+</tr>
+<tr>
+<td><code>rollupManager</code></td>
+<td><code>address immutable</code></td>
+<td><code>updateExitRoot()</code> (rollup exit root)</td>
+</tr>
+</tbody>
+</table>
+<p>Only these two addresses can call <code>updateExitRoot()</code>. All others revert with <code>OnlyAllowedContracts()</code>.</p>
 
 
 
@@ -2658,7 +3519,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2025 14:14:36 UTC">October 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2026 14:42:56 UTC">March 4, 2026</span>
   </span>
 
     
@@ -2714,10 +3575,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -9,28 +9,26 @@
       
       
       
-        <link rel="prev" href="../zkEVM/durian-specs/">
+        <link rel="prev" href="../aggchain-contracts/">
       
-      
-        <link rel="next" href="Resources/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Overview - SC-Protocol Documentation</title>
+        <title>6.3 Sovereign Chain Contracts - SC-Protocol Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,9 +47,9 @@
       
     
     
-      <link rel="stylesheet" href="../css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-tooling" class="md-skip">
+        <a href="#sovereign-chain-contract-roles" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-header__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              6.3 Sovereign Chain Contracts
             
           </span>
         </div>
@@ -228,7 +226,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
+    <a href="../.." title="SC-Protocol Documentation" class="md-nav__button md-logo" aria-label="SC-Protocol Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -258,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -312,7 +310,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../zkEVM/" class="md-nav__link ">
+            <a href="../../zkEVM/" class="md-nav__link ">
               
   
   
@@ -356,7 +354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zkEVM/banana-specs/" class="md-nav__link">
+      <a href="../../zkEVM/banana-specs/" class="md-nav__link">
         
   
   
@@ -384,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zkEVM/durian-specs/" class="md-nav__link">
+      <a href="../../zkEVM/durian-specs/" class="md-nav__link">
         
   
   
@@ -416,8 +414,6 @@
       
   
   
-    
-  
   
   
     
@@ -442,15 +438,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../tooling/" class="md-nav__link ">
               
   
   
@@ -468,13 +464,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -494,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Resources/" class="md-nav__link">
+      <a href="../../tooling/Resources/" class="md-nav__link">
         
   
   
@@ -522,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Genesis/" class="md-nav__link">
+      <a href="../../tooling/Genesis/" class="md-nav__link">
         
   
   
@@ -550,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Verify-genesis/" class="md-nav__link">
+      <a href="../../tooling/Verify-genesis/" class="md-nav__link">
         
   
   
@@ -614,7 +610,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/" class="md-nav__link ">
+            <a href="../../aggregation-layer/" class="md-nav__link ">
               
   
   
@@ -686,7 +682,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.2.0/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.2.0/" class="md-nav__link ">
               
   
   
@@ -730,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/ChangeLog/" class="md-nav__link">
         
   
   
@@ -758,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SC-Versions/" class="md-nav__link">
         
   
   
@@ -812,7 +808,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.2.0/SovereignChains/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.2.0/SovereignChains/" class="md-nav__link ">
               
   
   
@@ -856,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/Intro/" class="md-nav__link">
         
   
   
@@ -884,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignBridge%20SC/" class="md-nav__link">
         
   
   
@@ -912,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/SovereignChains/SovereignGERManager%20SC/" class="md-nav__link">
         
   
   
@@ -948,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.2.0/Resources/" class="md-nav__link">
         
   
   
@@ -1022,7 +1018,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.3.0/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.0/" class="md-nav__link ">
               
   
   
@@ -1066,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-specs/" class="md-nav__link">
         
   
   
@@ -1094,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Diagrams/" class="md-nav__link">
         
   
   
@@ -1122,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Docker/" class="md-nav__link">
         
   
   
@@ -1150,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Tooling/" class="md-nav__link">
         
   
   
@@ -1178,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Roles/" class="md-nav__link">
         
   
   
@@ -1232,7 +1228,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.3.0/SC-interactions/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.0/SC-interactions/" class="md-nav__link ">
               
   
   
@@ -1276,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggLayerGateway/" class="md-nav__link">
         
   
   
@@ -1304,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -1332,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/SC-interactions/PolygonRollupManager/" class="md-nav__link">
         
   
   
@@ -1368,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/UpgradeableTokens/" class="md-nav__link">
         
   
   
@@ -1396,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/FAQs/" class="md-nav__link">
         
   
   
@@ -1424,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.0/Changes-v0.3.1/" class="md-nav__link">
         
   
   
@@ -1484,7 +1480,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../aggregation-layer/v0.3.5/" class="md-nav__link ">
+            <a href="../../aggregation-layer/v0.3.5/" class="md-nav__link ">
               
   
   
@@ -1528,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.5/Changes/" class="md-nav__link">
         
   
   
@@ -1556,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aggregation-layer/v0.3.5/CompatibilityTable/" class="md-nav__link">
+      <a href="../../aggregation-layer/v0.3.5/CompatibilityTable/" class="md-nav__link">
         
   
   
@@ -1626,7 +1622,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/" class="md-nav__link ">
+            <a href="../../smart-contracts/" class="md-nav__link ">
               
   
   
@@ -1692,7 +1688,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/v11/" class="md-nav__link ">
+            <a href="../../smart-contracts/v11/" class="md-nav__link ">
               
   
   
@@ -1736,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v11/versions-tag11/" class="md-nav__link">
+      <a href="../../smart-contracts/v11/versions-tag11/" class="md-nav__link">
         
   
   
@@ -1812,7 +1808,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/v12/" class="md-nav__link ">
+            <a href="../../smart-contracts/v12/" class="md-nav__link ">
               
   
   
@@ -1856,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/versions-tag12/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/versions-tag12/" class="md-nav__link">
         
   
   
@@ -1908,7 +1904,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
+            <a href="../../smart-contracts/v12/Rename%20%26%20reorg/" class="md-nav__link ">
               
   
   
@@ -1952,7 +1948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/Rename%20%26%20reorg/renaming/" class="md-nav__link">
         
   
   
@@ -1980,7 +1976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/Rename%20%26%20reorg/sc-reorg/" class="md-nav__link">
         
   
   
@@ -2016,7 +2012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerManager/" class="md-nav__link">
         
   
   
@@ -2044,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerBridgeL2/" class="md-nav__link">
         
   
   
@@ -2072,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerBridge/" class="md-nav__link">
         
   
   
@@ -2100,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AgglayerGateway/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AgglayerGateway/" class="md-nav__link">
         
   
   
@@ -2128,7 +2124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AggchainBase/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainBase/" class="md-nav__link">
         
   
   
@@ -2156,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainECDSAMultisig/" class="md-nav__link">
         
   
   
@@ -2184,7 +2180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/AggchainFEP/" class="md-nav__link">
         
   
   
@@ -2212,7 +2208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../smart-contracts/v12/migration-paths/" class="md-nav__link">
+      <a href="../../smart-contracts/v12/migration-paths/" class="md-nav__link">
         
   
   
@@ -2282,7 +2278,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../outposts/" class="md-nav__link ">
+            <a href="../../outposts/" class="md-nav__link ">
               
   
   
@@ -2326,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../outposts/Intro/" class="md-nav__link">
+      <a href="../../outposts/Intro/" class="md-nav__link">
         
   
   
@@ -2354,7 +2350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../outposts/L2-Deployment-script/" class="md-nav__link">
+      <a href="../../outposts/L2-Deployment-script/" class="md-nav__link">
         
   
   
@@ -2386,6 +2382,8 @@
       
   
   
+    
+  
   
   
     
@@ -2410,15 +2408,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../sovereign-contracts-roles/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -2442,7 +2440,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2462,7 +2460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sovereign-contracts-roles/l1-contracts/" class="md-nav__link">
+      <a href="../l1-contracts/" class="md-nav__link">
         
   
   
@@ -2490,7 +2488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sovereign-contracts-roles/aggchain-contracts/" class="md-nav__link">
+      <a href="../aggchain-contracts/" class="md-nav__link">
         
   
   
@@ -2515,10 +2513,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sovereign-contracts-roles/sovereign-contracts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3 Sovereign Chain Contracts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2534,6 +2559,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-agglayerbridgel2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AgglayerBridgeL2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. AgglayerBridgeL2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridgemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bridgeManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emergencybridgepauser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emergencyBridgePauser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emergencybridgeunpauser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emergencyBridgeUnpauser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxiedtokensmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        proxiedTokensManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootremover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExitRootRemover
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agglayergerl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AgglayerGERL2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AgglayerGERL2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootupdater" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExitRootUpdater
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootremover_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExitRootRemover
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2566,6 +2733,136 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-agglayerbridgel2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AgglayerBridgeL2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. AgglayerBridgeL2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridgemanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bridgeManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emergencybridgepauser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emergencyBridgePauser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emergencybridgeunpauser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emergencyBridgeUnpauser
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxiedtokensmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        proxiedTokensManager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootremover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExitRootRemover
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-agglayergerl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AgglayerGERL2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AgglayerGERL2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootupdater" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExitRootUpdater
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalexitrootremover_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globalExitRootRemover
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2589,7 +2886,7 @@
   
   
     <li class="md-path__item">
-      <a href=".." class="md-path__link">
+      <a href="../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -2607,10 +2904,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    2. Tooling
+    6. SC Roles
   </span>
 
         </a>
@@ -2632,12 +2929,196 @@
   
 
 
-<h1 id="2-tooling">2. Tooling</h1>
+<h1 id="sovereign-chain-contract-roles">Sovereign Chain Contract Roles</h1>
+<p>Roles in the L2 contracts deployed on sovereign chains.</p>
+<p>Source: <a href="https://github.com/agglayer/agglayer-contracts/releases/tag/v12.2.2">agglayer-contracts v12.2.2</a></p>
+<hr />
+<h2 id="1-agglayerbridgel2">1. AgglayerBridgeL2</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/sovereignChains/AgglayerBridgeL2.sol">Source</a></p>
+<p>Inherits from <code>AgglayerBridge</code>. Defines custom address-based roles with two-step transfer.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bridgeManager</code></td>
+<td>Manages custom token remapping and has the ability to clear/set claims</td>
+</tr>
+<tr>
+<td><code>emergencyBridgePauser</code></td>
+<td>Can pause the bridge in case of emergency</td>
+</tr>
+<tr>
+<td><code>emergencyBridgeUnpauser</code></td>
+<td>Can unpause the bridge</td>
+</tr>
+<tr>
+<td><code>proxiedTokensManager</code></td>
+<td>Admin of wrapped token proxies, can upgrade wrapped token implementations</td>
+</tr>
+<tr>
+<td><code>globalExitRootRemover</code></td>
+<td>(from AgglayerGERL2) Emergency operations on the bridge</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bridgemanager">bridgeManager</h3>
 <ul>
-<li><a href="Resources/">2.1. Resources</a></li>
-<li><a href="Genesis/">2.2. Genesis Creation</a></li>
-<li><a href="Verify-genesis/">2.3. Verify genesis implementations</a></li>
+<li><strong>Functionality</strong>:<ul>
+<li>Set custom sovereign token addresses (<code>setMultipleSovereignTokenAddress</code>, <code>setSovereignWETHAddress</code>)</li>
+<li>Remove legacy sovereign token addresses (<code>removeLegacySovereignTokenAddress</code>)</li>
+<li>Deploy wrapped tokens and remap them (<code>deployWrappedTokenAndRemap</code>)</li>
+<li>Transfer the bridgeManager role (<code>setBridgeManager</code>)</li>
 </ul>
+</li>
+<li><strong>Security Assumptions</strong>: Very high. Setting custom token mappings could redirect funds if misconfigured — worst case scenario, steal all users funds of that network. Should be carefully managed.</li>
+<li><strong>Recommended Account Type</strong>: Timelock (specified by the chain itself after bootstrapping phase)</li>
+</ul>
+<h3 id="emergencybridgepauser">emergencyBridgePauser</h3>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Activate emergency state on the bridge (<code>activateEmergencyState</code>)</li>
+<li>Transfer the emergencyBridgePauser role (<code>transferEmergencyBridgePauserRole</code>)</li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: Medium-High. Can halt all bridge operations but cannot steal funds directly.</li>
+<li><strong>Recommended Account Type</strong>: Multisig (needs to act fast in emergencies)</li>
+</ul>
+<h3 id="emergencybridgeunpauser">emergencyBridgeUnpauser</h3>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Deactivate emergency state on the bridge (<code>deactivateEmergencyState</code>)</li>
+<li>Transfer the emergencyBridgeUnpauser role (<code>transferEmergencyBridgeUnpauserRole</code>)</li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: Medium. Can resume bridge operations after emergency.</li>
+<li><strong>Recommended Account Type</strong>: Multisig or Timelock (depending on security requirements)</li>
+</ul>
+<h3 id="proxiedtokensmanager">proxiedTokensManager</h3>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Admin of all <code>TokenWrappedTransparentProxy</code> contracts deployed by the bridge</li>
+<li>Can upgrade wrapped token implementations (<code>upgradeTo</code>, <code>upgradeToAndCall</code>)</li>
+<li>Can change admin of wrapped token proxies (<code>changeAdmin</code>)</li>
+<li>Transfer the proxiedTokensManager role (<code>transferProxiedTokensManagerRole</code>)</li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: Very high. Can upgrade token logic which could affect user funds — worst case scenario, steal all users funds of that network. Should be carefully managed.</li>
+<li><strong>Recommended Account Type</strong>: Timelock (same as bridge proxy admin, typically PolygonTimelock)</li>
+</ul>
+<h3 id="globalexitrootremover">globalExitRootRemover</h3>
+<p>Read from <code>AgglayerGERL2.globalExitRootRemover()</code>. On <code>AgglayerBridgeL2</code>:</p>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Unset/set multiple claims (<code>unsetMultipleClaims</code>, <code>setMultipleClaims</code>)</li>
+<li>Move LET backward/forward (<code>backwardLET</code>, <code>forwardLET</code>) — only during emergency state</li>
+<li>Set local balance tree (<code>setLocalBalanceTree</code>) — only during emergency state</li>
+<li>Force emit detailed claim events (<code>forceEmitDetailedClaimEvent</code>)</li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: Very high security risk. Controller could steal funds — worst case scenario, steal all users funds of that network. Should be carefully managed. Has powerful emergency recovery capabilities.</li>
+<li><strong>Recommended Account Type</strong>: Multisig (needs to act fast to unblock the chain in emergencies)</li>
+</ul>
+<hr />
+<h2 id="2-agglayergerl2">2. AgglayerGERL2</h2>
+<p><a href="https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/sovereignChains/AgglayerGERL2.sol">Source</a></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>globalExitRootUpdater</code></td>
+<td>Injects GER into the bridge SC</td>
+</tr>
+<tr>
+<td><code>globalExitRootRemover</code></td>
+<td>Removes GER from the Bridge SC and manages emergency operations on the bridge</td>
+</tr>
+<tr>
+<td><code>bridgeAddress</code></td>
+<td>(immutable) Can update exit root from bridge deposits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalexitrootupdater">globalExitRootUpdater</h3>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Insert new global exit roots (<code>insertGlobalExitRoot</code>)</li>
+<li>Transfer the globalExitRootUpdater role (<code>transferGlobalExitRootUpdater</code>)</li>
+<li>If set to zero address, <code>block.coinbase</code> (sequencer) can insert GERs</li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: Medium-High. This address has the ability to insert invalid GERs, unable to steal funds of the agglayer and halting the network but might be able to steal third-party bridges.</li>
+<li><strong>Recommended Account Type</strong>: EOA carefully managed, since must send lots of transactions</li>
+</ul>
+<h3 id="globalexitrootremover_1">globalExitRootRemover</h3>
+<ul>
+<li><strong>Functionality</strong>:<ul>
+<li>Remove global exit roots (<code>removeGlobalExitRoots</code>)</li>
+<li>Transfer the globalExitRootRemover role (<code>transferGlobalExitRootRemover</code>)</li>
+</ul>
+</li>
+<li><strong>Security Assumptions</strong>: Very high security risk. Also gates many emergency functions on <code>AgglayerBridgeL2</code> (see above). Setting to <code>address(0)</code> disables all emergency exit root removal and bridge manipulation — recommended for FEP chains.</li>
+<li><strong>Recommended Account Type</strong>: Multisig (needs to act fast to unblock the chain in emergencies)</li>
+</ul>
+<hr />
+<h2 id="summary-table">Summary Table</h2>
+<table>
+<thead>
+<tr>
+<th>Contract</th>
+<th>Role</th>
+<th>Security Risk</th>
+<th>Recommended Account Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AgglayerBridgeL2</td>
+<td><code>bridgeManager</code></td>
+<td>Very High</td>
+<td>Timelock</td>
+</tr>
+<tr>
+<td>AgglayerBridgeL2</td>
+<td><code>emergencyBridgePauser</code></td>
+<td>Medium</td>
+<td>Multisig</td>
+</tr>
+<tr>
+<td>AgglayerBridgeL2</td>
+<td><code>emergencyBridgeUnpauser</code></td>
+<td>Medium</td>
+<td>Multisig/Timelock</td>
+</tr>
+<tr>
+<td>AgglayerBridgeL2</td>
+<td><code>proxiedTokensManager</code></td>
+<td>Very High</td>
+<td>Timelock</td>
+</tr>
+<tr>
+<td>AgglayerGERL2</td>
+<td><code>globalExitRootUpdater</code></td>
+<td>Medium-High</td>
+<td>EOA (carefully managed)</td>
+</tr>
+<tr>
+<td>AgglayerGERL2</td>
+<td><code>globalExitRootRemover</code></td>
+<td>Very High</td>
+<td>Multisig</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2658,7 +3139,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2025 14:14:36 UTC">October 14, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 4, 2026 14:42:56 UTC">March 4, 2026</span>
   </span>
 
     
@@ -2714,10 +3195,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
