@@ -99,6 +99,40 @@ Read from `AgglayerGERL2.globalExitRootRemover()`. On `AgglayerBridgeL2`:
 
 ---
 
+## 3. AggOracleCommittee
+
+[Source](https://github.com/agglayer/agglayer-contracts/blob/v12.2.2/contracts/sovereignChains/AggOracleCommittee.sol)
+
+Oracle committee contract that manages the insertion of GERs into `AgglayerGERL2` via quorum-based voting. Inherits from `OwnableUpgradeable`.
+
+| Role | Description |
+|------|-------------|
+| `owner` | Manages oracle membership, quorum configuration, and GER updater role transfer |
+| Oracle Member | Can propose global exit roots; quorum of proposals triggers consolidation into `AgglayerGERL2` |
+
+### owner
+
+- **Functionality**:
+    - Add oracle members (`addOracleMember`)
+    - Remove oracle members (`removeOracleMember`)
+    - Update the quorum required for GER consolidation (`updateQuorum`)
+    - Transfer the `globalExitRootUpdater` role on `AgglayerGERL2` (`transferGlobalExitRootUpdater`)
+    - Accept the `globalExitRootUpdater` role on `AgglayerGERL2` (`acceptGlobalExitRootUpdater`)
+    - Transfer ownership (`transferOwnership`, inherited from `OwnableUpgradeable`)
+- **Security Assumptions**: Very high. Controls who can propose GERs and the threshold needed for consolidation. A compromised owner could add malicious oracle members or lower the quorum to 1, enabling insertion of invalid GERs — which could lead to theft of third-party bridge funds.
+- **Recommended Account Type**: Timelock (specified by the chain itself after bootstrapping phase)
+
+### Oracle Member
+
+Membership-based role. Members are tracked via the `addressToLastProposedGER` mapping (non-zero value indicates active membership). Not a named Solidity role — managed by the `owner` through `addOracleMember` / `removeOracleMember`. Note: once quorum is reached, `consolidateGlobalExitRoot` is a public function callable by any address to finalize consolidation.
+
+- **Functionality**:
+    - Propose a global exit root (`proposeGlobalExitRoot`); if quorum is reached, the GER is automatically consolidated into `AgglayerGERL2`
+- **Security Assumptions**: Medium-High. A quorum of compromised oracle members could insert invalid GERs, unable to steal agglayer funds directly but might be able to steal third-party bridge funds. Individual members cannot consolidate alone (quorum required).
+- **Recommended Account Type**: EOA carefully managed, since must send frequent transactions to propose GERs
+
+---
+
 ## Summary Table
 
 | Contract | Role | Security Risk | Recommended Account Type |
@@ -109,3 +143,5 @@ Read from `AgglayerGERL2.globalExitRootRemover()`. On `AgglayerBridgeL2`:
 | AgglayerBridgeL2 | `proxiedTokensManager` | Very High | Timelock |
 | AgglayerGERL2 | `globalExitRootUpdater` | Medium-High | EOA (carefully managed) |
 | AgglayerGERL2 | `globalExitRootRemover` | Very High | Multisig |
+| AggOracleCommittee | `owner` | Very High | Timelock |
+| AggOracleCommittee | Oracle Member | Medium-High | EOA (carefully managed) |
