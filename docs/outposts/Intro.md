@@ -9,6 +9,16 @@
 - Has **its own finality**
 - All outposts will have a **customGasToken** that will be the native token of the chain
     - Outpost chains can not have native ether token
+    - Three key parameters configure the gas token: `gasTokenAddress`, `gasTokenNetwork`, and `gasTokenMetadata` (`abi.encode("Name", "Symbol", decimals)`)
+    - **External token** (e.g. the outpost's native ETH representation):
+        - `gasTokenAddress`: address on origin chain
+        - `gasTokenNetwork`: origin chain ID
+        - `gasTokenMetadata`: encoded metadata
+        - If an outpost has `L2_ETH` as a native token, it is not `L1_ETH` but its representation on the chain. If `L1_ETH` is set as the native token, the bridge must be funded with `L2_ETH` and effectively acts as a liquidity pool.
+    - **Native L2 token** (token originating on the outpost itself):
+        - `gasTokenAddress`: derived from rollupID — repeat rollupID (32 bits) 5x to form a 160-bit address, i.e. `0x{rollupID}{rollupID}{rollupID}{rollupID}{rollupID}`
+        - `gasTokenNetwork`: chain rollupID
+        - `gasTokenMetadata`: metadata shown when bridged to other chains
 - **Examples**:
     - Base
     - Optimism
@@ -88,6 +98,3 @@ sequenceDiagram
     L1_Agglayer_Bridge ->> User: mint wrappedBaseETH
     Note left of User: User has wrappedBaseETH ✅
 ```
-
-<br>
-<br>
