@@ -20,6 +20,7 @@ Types below are language agnostic: `address` = 20 bytes, `bytes32` = 32 bytes, `
 - **Signatures are checked at injection time**: against the validator set and threshold current when `injectGER` runs, not when the validators signed.
 - **Threshold rules**: `1 ≤ threshold ≤ number of validators ≤ 255`. A committee with no validators cannot exist.
 - **Ownership cannot be lost**: ownership is transferred in two steps and `renounceOwnership` is disabled, so validators and proposer can always be updated.
+- **Validator URL (optional)**: each validator is registered with an optional `url` in `ValidatorInfo = (addr, url)` (e.g. the endpoint where it serves signature requests). It is stored on-chain in `validatorInfo` and returned by `getValidatorsInfo()`, so the proposer can discover where to request signatures. The contract never reads it. It is set when the validator is added; to change it, remove and re-add the validator in one `updateValidatorsAndThreshold` call.
 
 ---
 
@@ -88,7 +89,7 @@ Single address set by the `owner`. Cannot insert a GER without `threshold` valid
 
 ### 4.3 Validator
 
-Membership-based role, tracked in `validators` and `validatorInfo`. Not a named Solidity role — managed by the `owner` through `updateValidatorsAndThreshold`. Validators never send transactions; each validator may publish an optional URL.
+Membership-based role, tracked in `validators` and `validatorInfo`. Not a named Solidity role — managed by the `owner` through `updateValidatorsAndThreshold`. Validators never send transactions; each validator may publish an optional URL (see Design Choices).
 
 - **Functionality**:
     - Sign `keccak256(ger)` for valid GERs off-chain
