@@ -1,10 +1,10 @@
-# AggOracleCommitteeV2
+# AggOracleCommittee
 
 !!! warning "Work in progress"
 
-    `AggOracleCommitteeV2` is under active development and not released yet. This specification may change before the contract ships.
+    `AggOracleCommittee` is under active development and not released yet. This specification may change before the contract ships.
 
-Source: `contracts/sovereignChains/AggOracleCommitteeV2.sol` in [agglayer-contracts](https://github.com/agglayer/agglayer-contracts) (branch `feature/agg-oracle-comittee-v2`, version `v1.0.0`).
+Source: `contracts/sovereignChains/AggOracleCommittee.sol` in [agglayer-contracts](https://github.com/agglayer/agglayer-contracts) (branch `feature/agg-oracle-comittee-v2`, version `v2.0.0`).
 
 Signature-based committee contract that manages the insertion of GERs into `AgglayerGERL2`. A single proposer submits each GER together with the signatures of a threshold of validators; the contract verifies them and inserts the GER. Inherits from `Ownable2StepUpgradeable`.
 
@@ -49,13 +49,13 @@ Types below are language agnostic: `address` = 20 bytes, `bytes32` = 32 bytes, `
 ```mermaid
 flowchart LR
     V["Validators<br/>sign keccak256(GER) off-chain"] -->|signatures| P["Proposer<br/>gathers signatures"]
-    P -->|injectGER| C["AggOracleCommitteeV2<br/>checks threshold signatures<br/>marks injectedGERs"]
+    P -->|injectGER| C["AggOracleCommittee<br/>checks threshold signatures<br/>marks injectedGERs"]
     C -->|insertGlobalExitRoot| G["AgglayerGERL2"]
     O["owner"] -->|manages validators, threshold,<br/>proposer, updater role| C
     R["globalExitRootRemover"] -->|removeGlobalExitRoots| G
 ```
 
-`AggOracleCommitteeV2` must hold the `globalExitRootUpdater` role of `AgglayerGERL2` to insert GERs. The `globalExitRootRemover` is a role of `AgglayerGERL2`, outside this contract.
+`AggOracleCommittee` must hold the `globalExitRootUpdater` role of `AgglayerGERL2` to insert GERs. The `globalExitRootRemover` is a role of `AgglayerGERL2`, outside this contract.
 
 ---
 
@@ -102,7 +102,7 @@ Membership-based role, tracked in `validators` and `validatorInfo`. Not a named 
 
 | Name | Type | Set by | Meaning |
 |------|------|--------|---------|
-| `VERSION` | string | constant | `"v1.0.0"` |
+| `VERSION` | string | constant | `"v2.0.0"` |
 | `MAX_VALIDATORS` | uint | constant | 255 |
 | `agglayerGERL2` | address | constructor (immutable) | The GER manager this committee inserts into. Never zero |
 | `owner` / `pendingOwner` | address | ownership functions | Current owner; owner proposed but not yet accepted (zero when none) |
@@ -201,7 +201,7 @@ Notation: `name(param: type, …) → result`. `ValidatorInfo = (addr: address, 
     | `validatorInfo(addr: address) → (exists: bool, url: string)` | Membership and URL |
     | `isValidator(addr: address) → bool` | Membership |
     | `threshold()`, `proposer()`, `owner()`, `pendingOwner()`, `agglayerGERL2()` | The stored value |
-    | `version() → string`, `MAX_VALIDATORS() → uint` | `"v1.0.0"`, 255 |
+    | `version() → string`, `MAX_VALIDATORS() → uint` | `"v2.0.0"`, 255 |
 
 ---
 
