@@ -43,7 +43,7 @@ The contract enforces the following ([`AgglayerBridgeL2.sol#L348-L388`](https://
     - `gasTokenAddress`, `gasTokenNetwork` and `gasTokenMetadata` are stored
     - a **WETH token** is needed to represent L1 ETH on the chain. If `sovereignWETHAddress = 0x0`, the bridge deploys a wrapped token with metadata `("Wrapped Ether", "WETH", 18)`; otherwise the given address is used
     - the WETH token can later be remapped by the bridge manager with `setSovereignWETHAddress`, which is only allowed when `gasTokenAddress != 0x0`
-- **The gas token is fixed after initialization**: `initialize` is a `reinitializer(3)` that can only be called once by the deployer, and there is no setter for `gasTokenAddress`, `gasTokenNetwork` or `gasTokenMetadata`. Choose the configuration before deploying.
+- **The gas token cannot be changed after initialization without a contract upgrade (the bridge is an upgradeable proxy)**: `initialize` is a `reinitializer(3)` that can only be called once by the deployer, and there is no setter for `gasTokenAddress`, `gasTokenNetwork` or `gasTokenMetadata`. Choose the configuration before deploying.
 
 !!! warning
     On chains with a gas token (`gasTokenAddress != 0x0`), `bridgeMessage` must be called with `msg.value = 0` (`NoValueInMessagesOnGasTokenNetworks`). ETH value in messages is sent with `bridgeMessageWETH`, which burns WETH ([`AgglayerBridge.sol#L424-L466`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/contracts/AgglayerBridge.sol#L424-L466)).
@@ -104,7 +104,7 @@ On the outpost, `bridgeAsset(token = 0x0)` always moves the **native coin**; WET
 - **L1 ETH arrives as WETH, not as gas**: ETH bridged from L1 is claimed as the WETH ERC20 on the outpost. It cannot be used to pay gas, and bridging WETH back returns real ETH on L1.
 - **Users get native coin for gas through the chain's own canonical bridge** (e.g. the Base bridge), not through the Agglayer bridge, unless they bring back native coin that was previously bridged out.
 - **The metadata is public-facing**: `gasTokenMetadata` is what wrapped copies on every other network show as name, symbol and decimals.
-- **Fixed at initialization**: see [1.3](#13-initialization-rules).
+- **Not changeable after initialization without a contract upgrade**: see [1.3](#13-initialization-rules).
 
 ---
 
@@ -138,18 +138,18 @@ An outpost is an existing chain whose native coin is minted by its own canonical
 ## 4. Common pitfalls
 
 - **The OP stack custom gas token config is not the Agglayer bridge config**: settings of the OP stack native bridge (e.g. `SystemConfig` / `L1Block` `isCustomGasToken`) do not configure the Agglayer bridge. The `AgglayerBridgeL2` gas token is configured only through its own `initialize` parameters.
-- **`gasTokenAddress = 0x0` with `gasTokenNetwork = 0` means ETH**, not "no gas token" or "custom token". For example, Kinexys devnet/testnet (bali 79/81) run an OP stack chain with a custom gas token, but their Agglayer bridge was initialized with `0x0` / `0` / `0x`, so the Agglayer bridge treats their native coin as L1 ETH.
+- **`gasTokenAddress = 0x0` with `gasTokenNetwork = 0` means ETH**, not "no gas token" or "custom token". For example, an OP stack chain configured with a custom gas token at the OP level, but whose Agglayer bridge was initialized with `0x0` / `0` / `0x`, has its native coin treated by the Agglayer as L1 ETH.
 - **`gasTokenNetwork` must be the `rollupID` for a native L2 token**: if it differs, the native coin is treated as a foreign token and the local balance tree blocks bridging it out until equivalent amounts are claimed in.
 - **`gasTokenNetwork` is an Agglayer network ID**, not an EVM chain ID.
 - **Do not confuse the gas token with WETH**: `gasTokenMetadata` describes the outpost's native coin (e.g. `baseETH`), while WETH is the separate ERC20 that represents L1 ETH on the outpost and is created by the bridge.
 - **Tested scope**: the native L2 token convention has been tested on outposts on Bali. It has not yet been tested on a chain created with the Agglayer from genesis, where the gas token and native supply are set in the genesis.
-- **No changes after initialization**: the gas token parameters cannot be changed once the bridge is initialized (see [1.3](#13-initialization-rules)).
+- **No changes after initialization**: the gas token parameters cannot be changed once the bridge is initialized without a contract upgrade (the bridge is an upgradeable proxy; see [1.3](#13-initialization-rules)).
 
 ---
 
 ## 5. How to configure
 
-The [`deployOutpostChain`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/README.md) tool always configures the **native L2 token** option ([`deployOutpostChain.ts#L235-L244`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L235-L244), [`#L325-L336`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L325-L336), [`#L421-L434`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L421-L434)):
+The [`deployOutpostChain`](https://github.com/agglayer/agglayer-contracts/blob/main/tools/deployOutpostChain/README.md) tool always configures the **native L2 token** option ([`deployOutpostChain.ts#L235-L244`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L235-L244), [`#L325-L336`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L325-L336), [`#L421-L434`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L421-L434)):
 
 - `gasTokenAddress` is derived from `network.rollupID` as described in [2.1](#21-convention)
 - `gasTokenNetwork` is `network.rollupID`
