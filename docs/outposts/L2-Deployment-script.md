@@ -3,7 +3,7 @@
 ## 1. Deploy Outpost Chain Script
 
 !!! info
-    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md)
+    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/README.md)
 
 ## 1.1 Overview
 
@@ -49,13 +49,13 @@ The deployment includes several auxiliary contracts:
 - **WrappedTokenBytecodeStorer**: Optimizes contract size by storing token bytecode externally
 - **WrappedTokenBridgeImplementation**: Serves as template for wrapped token deployments
 - **BridgeLib**: Contains shared bridge functionality to reduce contract complexity
-- **WETH Token**: Chain-specific wrapped Ether implementation
+- **WETH Token**: Chain-specific wrapped Ether, deployed by the bridge during `initialize` to represent L1 ETH on the outpost (separate from the native gas token)
 
 ## 1.4 Key Architectural Features
 
 ### 1.4.1 Automated Configuration Management
 - **Address Pre-calculation**: Utilizes deterministic address generation for circular dependency resolution
-- **Parameter Derivation**: Automatically calculates gas token addresses and network identifiers
+- **Parameter Derivation**: Automatically calculates the gas token parameters from the `rollupID`. The gas token is **always configured as a native L2 token**: `gasTokenAddress` is the `rollupID` (32-bit hex) repeated 5 times, `gasTokenNetwork` is the `rollupID` (not the chain ID), and `gasTokenMetadata` is `abi.encode(tokenName, tokenSymbol, tokenDecimals)` of the outpost native coin. Configuring an external token is not supported by the script. See [5.3 Gas token configuration](Gas-token.md)
 - **Governance Integration**: Establishes proper ownership hierarchies and access controls
 
 ### 1.4.2 Security Mechanisms
@@ -69,4 +69,4 @@ The deployment includes several auxiliary contracts:
 - **Comprehensive Validation**: Includes automated verification of deployment integrity
 
 !!! info
-    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.1.0-rc.2/tools/deployOutpostChain/README.md)
+    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/README.md)
