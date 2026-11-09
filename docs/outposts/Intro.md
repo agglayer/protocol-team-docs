@@ -70,11 +70,11 @@ The ETH behind `baseETH` is locked in Base's own L1 bridge, not in the Agglayer 
 
 ### 4.2 Outpost with native L2 token
 
-Example flow of an outpost whose `gasTokenNetwork` is its own networkID/rollupID. For the Base outpost on Bali (`rollupID = 63`):
+Example flow of an outpost whose `gasTokenNetwork` is its own networkID/rollupID. For example, an outpost with `rollupID = 1001`:
 
 - Initialize params:
-    - `gasTokenNetwork`: `63` (the outpost rollupID)
-    - `gasTokenAddress`: `0x0000003f0000003f0000003f0000003f0000003f` (rollupID as 32-bit hex repeated 5 times, see [5.3 Gas token configuration](Gas-token.md#21-convention))
+    - `gasTokenNetwork`: `1001` (the outpost rollupID)
+    - `gasTokenAddress`: `0x000003e9000003e9000003e9000003e9000003e9` (rollupID as 32-bit hex repeated 5 times, see [5.3 Gas token configuration](Gas-token.md#21-convention))
     - `gasTokenMetadata`: `abi.encode(name, symbol, decimals)` of the native coin
 
 ```mermaid

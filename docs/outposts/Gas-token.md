@@ -77,30 +77,30 @@ The native coin is declared as a token that **originates on the outpost itself**
 
 The address is a convention: there is no contract at that address. It only has to be unique and stable, so that `(rollupID, derivedAddress)` identifies the native coin across the Agglayer.
 
-**Worked example**: an outpost with `rollupID = 63` (`0x3f`), such as the Base outpost on Bali:
+**Worked example**: an outpost with `rollupID = 1001` (`0x3e9`):
 
-- `gasTokenNetwork = 63`
-- `gasTokenAddress = 0x0000003f0000003f0000003f0000003f0000003f`
-- `gasTokenMetadata = abi.encode(name, symbol, decimals)` of the native coin, e.g. `abi.encode("baseETH", "BETH", 18)` as in the tool's example parameters
+- `gasTokenNetwork = 1001`
+- `gasTokenAddress = 0x000003e9000003e9000003e9000003e9000003e9`
+- `gasTokenMetadata = abi.encode(name, symbol, decimals)` of the native coin, e.g. `abi.encode("outpostETH", "OETH", 18)` as in the tool's example parameters
 
 Set `decimals` to the decimals the native coin really has (18 for ETH-like native coins): bridge amounts are passed unchanged, so the decimals only affect how wrapped copies display them.
 
 ### 2.2 Bridging flows
 
-Example for an outpost with `rollupID = 63` and Ethereum L1 (network `0`):
+Example for an outpost with `rollupID = 1001` and Ethereum L1 (network `0`):
 
-|                Flow               |                     What the user sends                     | Leaf token identity `(originNetwork, originTokenAddress)` |                                   What the user receives                                  |
-| :-------------------------------: | :---------------------------------------------------------: | :-------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
-|         L1 ETH -> outpost         |            ETH on L1 (`bridgeAsset`, token `0x0`)           |                         `(0, 0x0)`                        |                    **WETH** ERC20 on the outpost (minted by the bridge)                   |
-|     Outpost native coin -> L1     |    native coin (`bridgeAsset`, token `0x0`, `msg.value`)    |               `(63, 0x0000003f...0000003f)`               | wrapped native coin ERC20 on L1 (e.g. `wrappedBaseETH`), deployed with `gasTokenMetadata` |
-|         Outpost WETH -> L1        |       WETH ERC20 (`bridgeAsset`, token = WETH address)      |                         `(0, 0x0)`                        |                                     **real ETH** on L1                                    |
-| L1 wrapped native coin -> outpost | `wrappedBaseETH` ERC20 on L1 (`bridgeAsset`, token address) |               `(63, 0x0000003f...0000003f)`               |              **native coin** on the outpost, released from the bridge balance             |
+|                Flow               |                       What the user sends                       | Leaf token identity `(originNetwork, originTokenAddress)` |                                     What the user receives                                    |
+| :-------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
+|         L1 ETH -> outpost         |              ETH on L1 (`bridgeAsset`, token `0x0`)             |                         `(0, 0x0)`                        |                      **WETH** ERC20 on the outpost (minted by the bridge)                     |
+|     Outpost native coin -> L1     |      native coin (`bridgeAsset`, token `0x0`, `msg.value`)      |              `(1001, 0x000003e9...000003e9)`              | wrapped native coin ERC20 on L1 (e.g. `wrapped outpostETH`), deployed with `gasTokenMetadata` |
+|         Outpost WETH -> L1        |         WETH ERC20 (`bridgeAsset`, token = WETH address)        |                         `(0, 0x0)`                        |                                       **real ETH** on L1                                      |
+| L1 wrapped native coin -> outpost | `wrapped outpostETH` ERC20 on L1 (`bridgeAsset`, token address) |              `(1001, 0x000003e9...000003e9)`              |                **native coin** on the outpost, released from the bridge balance               |
 
 On the outpost, `bridgeAsset(token = 0x0)` always moves the **native coin**; WETH is a separate ERC20 and is moved by passing its address. UIs must therefore let users choose between the native coin and WETH on the outpost, and between ETH and the wrapped native coin on L1.
 
 ### 2.3 Implications
 
-- **Bridging the native coin out produces a wrapped representation**: on L1 (or any other network) the user receives a wrapped ERC20 of the native coin, e.g. `wrappedBaseETH`, not ETH. This holds even if the native coin is economically "ETH" (Base): for the Agglayer it is a different token.
+- **Bridging the native coin out produces a wrapped representation**: on L1 (or any other network) the user receives a wrapped ERC20 of the native coin, e.g. `wrapped outpostETH`, not ETH. This holds even if the native coin is economically "ETH" (Base): for the Agglayer it is a different token.
 - **No liquidity pre-funding**: the bridge only pays out native coin that was previously locked in it by `bridgeAsset`. Wrapped copies on other networks can only be minted from exits of the outpost, so the bridge always holds enough native coin to honour them.
 - **Not constrained by the local balance tree**: `originNetwork = rollupID` is the outpost itself, so the native coin is never limited by the outpost's local balance tree, neither in the contract nor in the pessimistic proof.
 - **L1 ETH arrives as WETH, not as gas**: ETH bridged from L1 is claimed as the WETH ERC20 on the outpost. It cannot be used to pay gas, and bridging WETH back returns real ETH on L1.
@@ -109,7 +109,7 @@ On the outpost, `bridgeAsset(token = 0x0)` always moves the **native coin**; WET
 - **Fixed at initialization**: see [1.3](#13-initialization-rules).
 
 !!! note
-    **Tested scope**: the native L2 token convention has been tested on outposts on Bali. It has not yet been tested on a chain created with the Agglayer from genesis, where the gas token and native supply are set in the genesis.
+    **Tested scope**: the native L2 token convention has been tested on outpost deployments. It has not yet been tested on a chain created with the Agglayer from genesis, where the gas token and native supply are set in the genesis.
 
 ---
 
@@ -146,7 +146,7 @@ An outpost is an existing chain whose native coin is minted by its own canonical
 - **`gasTokenAddress = 0x0` with `gasTokenNetwork = 0` means ETH**, not "no gas token" or "custom token". For example, an OP stack chain configured with a custom gas token at the OP level, but whose Agglayer bridge was initialized with `0x0` / `0` / `0x`, has its native coin treated by the Agglayer as L1 ETH.
 - **`gasTokenNetwork` must be the `rollupID` for a native L2 token**: if it differs, the native coin is treated as a foreign token and the local balance tree blocks bridging it out until equivalent amounts are claimed in.
 - **`gasTokenNetwork` is an Agglayer network ID**, not an EVM chain ID.
-- **Do not confuse the gas token with WETH**: `gasTokenMetadata` describes the outpost's native coin (e.g. `baseETH`), while WETH is the separate ERC20 that represents L1 ETH on the outpost and is created by the bridge.
+- **Do not confuse the gas token with WETH**: `gasTokenMetadata` describes the outpost's native coin (e.g. `outpostETH`), while WETH is the separate ERC20 that represents L1 ETH on the outpost and is created by the bridge.
 - **No changes after initialization**: see [1.3](#13-initialization-rules).
 
 ---
@@ -167,8 +167,8 @@ The relevant part of `deploy_parameters.json`:
     "chainID": 1001,
     "rollupID": 1001,
     "networkName": "OutpostChain",
-    "tokenName": "baseETH",
-    "tokenSymbol": "BETH",
+    "tokenName": "outpostETH",
+    "tokenSymbol": "OETH",
     "tokenDecimals": 18
 }
 ```
@@ -181,13 +181,13 @@ For the operational procedure, see the runbook [Deploy outpost: Setup GasToken](
 
 ## 6. Decision summary
 
-|               Aspect              |            Native L2 token            |                                External token                                |
-| :-------------------------------: | :-----------------------------------: | :--------------------------------------------------------------------------: |
-|         `gasTokenAddress`         |      derived from `rollupID` (5x)     |              `0x0` (ETH) or token address on its origin network              |
-|         `gasTokenNetwork`         |               `rollupID`              |                 origin network ID (`0` for ETH / L1 tokens)                  |
-|   Native coin on other networks   | wrapped ERC20 (e.g. `wrappedBaseETH`) |                      the origin token itself (e.g. ETH)                      |
-|       L1 ETH on the outpost       |               WETH ERC20              |         native coin (if ETH is the gas token), otherwise WETH ERC20          |
-|    Bridge liquidity pre-funding   |               not needed              |                     required to pay claims of the token                      |
-|      Local balance tree limit     |                  none                 |                bridging out limited by the amount claimed in                 |
-|            Suitable for           |                outposts               | chains whose native coin is created only by Agglayer claims (genesis chains) |
-| Supported by `deployOutpostChain` |                  yes                  |                                      no                                      |
+|               Aspect              |              Native L2 token              |                                External token                                |
+| :-------------------------------: | :---------------------------------------: | :--------------------------------------------------------------------------: |
+|         `gasTokenAddress`         |        derived from `rollupID` (5x)       |              `0x0` (ETH) or token address on its origin network              |
+|         `gasTokenNetwork`         |                 `rollupID`                |                 origin network ID (`0` for ETH / L1 tokens)                  |
+|   Native coin on other networks   | wrapped ERC20 (e.g. `wrapped outpostETH`) |                      the origin token itself (e.g. ETH)                      |
+|       L1 ETH on the outpost       |                 WETH ERC20                |         native coin (if ETH is the gas token), otherwise WETH ERC20          |
+|    Bridge liquidity pre-funding   |                 not needed                |                     required to pay claims of the token                      |
+|      Local balance tree limit     |                    none                   |                bridging out limited by the amount claimed in                 |
+|            Suitable for           |                  outposts                 | chains whose native coin is created only by Agglayer claims (genesis chains) |
+| Supported by `deployOutpostChain` |                    yes                    |                                      no                                      |
