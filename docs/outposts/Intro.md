@@ -61,6 +61,7 @@ sequenceDiagram
     Note left of User: User has baseETH
     User ->> Agglayer_Bridge_Base: bridge to L1 (from aggLayer)
     Agglayer_Bridge_Base ->> Agglayer_Bridge_Base: lock baseETH
+    Note over Agglayer_Bridge_Base: In practice the local balance tree rejects this bridge<br/>(LocalBalanceTreeUnderflow) until enough L1 ETH has been claimed in.<br/>The steps below show the backing problem if that check did not exist.
     Agglayer_Bridge_Base ->> L1_Agglayer_Bridge: bridge
     L1_Agglayer_Bridge ->> User: ❌❌ There is no ETH on bridge to send ❌❌
 ```

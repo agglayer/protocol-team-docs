@@ -50,7 +50,9 @@ The contract enforces the following ([`AgglayerBridgeL2.sol#L348-L388`](https://
 
 ### 1.4 Local balance tree
 
-The local balance tree tracks, per token, how much of a **foreign** token a network holds: claims increase the balance and bridge exits decrease it. A network cannot bridge out more of a foreign token than it has received. Tokens whose `originNetwork` is the network itself are **not tracked**, so they are never limited.
+The local balance tree tracks, per token, how much of a **foreign** token a network holds: claims increase the balance and bridge exits decrease it. A network cannot bridge out more of a foreign token than it has received. Tokens whose `originNetwork` is the network itself are **not tracked**, so they are never limited. Message leaves (`bridgeMessage` value) also count against the balance of L1 ETH `(0, 0x0)`, so on a chain whose gas token is declared as ETH, `bridgeMessage` with value is limited too.
+
+The GlobalExitRootRemover can overwrite the on-contract balances with `setLocalBalanceTree`, only in emergency state; the pessimistic proof keeps enforcing its own tree.
 
 This rule is enforced twice:
 
@@ -104,7 +106,10 @@ On the outpost, `bridgeAsset(token = 0x0)` always moves the **native coin**; WET
 - **L1 ETH arrives as WETH, not as gas**: ETH bridged from L1 is claimed as the WETH ERC20 on the outpost. It cannot be used to pay gas, and bridging WETH back returns real ETH on L1.
 - **Users get native coin for gas through the chain's own canonical bridge** (e.g. the Base bridge), not through the Agglayer bridge, unless they bring back native coin that was previously bridged out.
 - **The metadata is public-facing**: `gasTokenMetadata` is what wrapped copies on every other network show as name, symbol and decimals.
-- **Not changeable after initialization without a contract upgrade**: see [1.3](#13-initialization-rules).
+- **Fixed at initialization**: see [1.3](#13-initialization-rules).
+
+!!! note
+    **Tested scope**: the native L2 token convention has been tested on outposts on Bali. It has not yet been tested on a chain created with the Agglayer from genesis, where the gas token and native supply are set in the genesis.
 
 ---
 
@@ -142,8 +147,7 @@ An outpost is an existing chain whose native coin is minted by its own canonical
 - **`gasTokenNetwork` must be the `rollupID` for a native L2 token**: if it differs, the native coin is treated as a foreign token and the local balance tree blocks bridging it out until equivalent amounts are claimed in.
 - **`gasTokenNetwork` is an Agglayer network ID**, not an EVM chain ID.
 - **Do not confuse the gas token with WETH**: `gasTokenMetadata` describes the outpost's native coin (e.g. `baseETH`), while WETH is the separate ERC20 that represents L1 ETH on the outpost and is created by the bridge.
-- **Tested scope**: the native L2 token convention has been tested on outposts on Bali. It has not yet been tested on a chain created with the Agglayer from genesis, where the gas token and native supply are set in the genesis.
-- **No changes after initialization**: the gas token parameters cannot be changed once the bridge is initialized without a contract upgrade (the bridge is an upgradeable proxy; see [1.3](#13-initialization-rules)).
+- **No changes after initialization**: see [1.3](#13-initialization-rules).
 
 ---
 
