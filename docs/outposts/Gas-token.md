@@ -83,7 +83,7 @@ The address is a convention: there is no contract at that address. It only has t
 - `gasTokenAddress = 0x0000003f0000003f0000003f0000003f0000003f`
 - `gasTokenMetadata = abi.encode(name, symbol, decimals)` of the native coin, e.g. `abi.encode("baseETH", "BETH", 18)` as in the tool's example parameters
 
-Set `decimals` to the decimals the native coin really has (18 on EVM chains): bridge amounts are passed unchanged, so the decimals only affect how wrapped copies display them.
+Set `decimals` to the decimals the native coin really has (18 for ETH-like native coins): bridge amounts are passed unchanged, so the decimals only affect how wrapped copies display them.
 
 ### 2.2 Bridging flows
 
@@ -153,7 +153,7 @@ An outpost is an existing chain whose native coin is minted by its own canonical
 
 ## 5. How to configure
 
-The [`deployOutpostChain`](https://github.com/agglayer/agglayer-contracts/blob/main/tools/deployOutpostChain/README.md) tool always configures the **native L2 token** option ([`deployOutpostChain.ts#L235-L244`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L235-L244), [`#L325-L336`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L325-L336), [`#L421-L434`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L421-L434)):
+The [`deployOutpostChain`](https://github.com/agglayer/agglayer-contracts/blob/develop/tools/deployOutpostChain/README.md) tool always configures the **native L2 token** option ([`deployOutpostChain.ts#L235-L244`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L235-L244), [`#L325-L336`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L325-L336), [`#L421-L434`](https://github.com/agglayer/agglayer-contracts/blob/v12.2.3/tools/deployOutpostChain/deployOutpostChain.ts#L421-L434)):
 
 - `gasTokenAddress` is derived from `network.rollupID` as described in [2.1](#21-convention)
 - `gasTokenNetwork` is `network.rollupID`

@@ -3,7 +3,7 @@
 ## 1. Deploy Outpost Chain Script
 
 !!! info
-    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/main/tools/deployOutpostChain/README.md)
+    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/develop/tools/deployOutpostChain/README.md)
 
 ## 1.1 Overview
 
@@ -69,4 +69,4 @@ The deployment includes several auxiliary contracts:
 - **Comprehensive Validation**: Includes automated verification of deployment integrity
 
 !!! info
-    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/main/tools/deployOutpostChain/README.md)
+    The tooling specifications and code can be found [here](https://github.com/agglayer/agglayer-contracts/blob/develop/tools/deployOutpostChain/README.md)

@@ -66,7 +66,7 @@ sequenceDiagram
     L1_Agglayer_Bridge ->> User: ❌❌ There is no ETH on bridge to send ❌❌
 ```
 
-The ETH behind `baseETH` is locked in Base's own L1 bridge, not in the Agglayer L1 bridge, so the Agglayer L1 bridge has nothing to release. In practice the flow is stopped earlier, by the **local balance tree**: bridging out `(0, 0x0)` is only possible up to the amount of L1 ETH previously claimed into the outpost. With the current `AgglayerBridgeL2`, `bridgeAsset` on the outpost reverts with `LocalBalanceTreeUnderflow`, and the pessimistic proof would reject the exit as well. In the other direction, L1 ETH claimed on the outpost is paid in native coin from the outpost bridge balance, so the bridge would have to be pre-funded. See [5.3 Gas token configuration](Gas-token.md#3-option-b-external-token).
+The ETH behind `baseETH` is locked in Base's own L1 bridge, not in the Agglayer L1 bridge, so the Agglayer L1 bridge has nothing to release. In the other direction, L1 ETH claimed on the outpost is paid in native coin from the outpost bridge balance, so the bridge would have to be pre-funded. For the local balance tree details, see [5.3 Gas token configuration, 3.1](Gas-token.md#31-implications).
 
 ### 4.2 Outpost with native L2 token
 
