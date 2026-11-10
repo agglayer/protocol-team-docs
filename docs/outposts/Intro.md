@@ -7,8 +7,9 @@
 - The chain **already exists**, we are not involved on the genesis
 - The **state transition is not controlled** by us (**not controlled sequencer**)
 - Has **its own finality**
-- All outposts will have a **customGasToken** that will be the native token of the chain
-    - Outpost chains can not have native ether token
+- The chain **already has its own native coin** (gas token), which must be declared on the Agglayer bridge at initialization (`gasTokenAddress`, `gasTokenNetwork`, `gasTokenMetadata`). See [5.3 Gas token configuration](Gas-token.md)
+    - **Native L2 token** (recommended, used by the deployment tool): the native coin is declared as a token originating on the outpost (`gasTokenNetwork = rollupID`, `gasTokenAddress` derived from the `rollupID`). Bridging it out produces a wrapped token on the destination, and L1 ETH arrives on the outpost as a WETH ERC20
+    - **External token** (e.g. declaring the native coin as L1 ETH with `gasTokenAddress = 0x0`, `gasTokenNetwork = 0`): accepted by the contract, but the outpost bridge must be pre-funded with native coin and the native coin cannot be bridged out until an equivalent amount has been claimed in. Not suitable for outposts (see [4.1](#41-outpost-declaring-its-native-coin-as-l1-eth-external-token))
 - **Examples**:
     - Base
     - Optimism
@@ -36,12 +37,13 @@
     - New functions in the bridge to manage Local Exit Tree possible mismatches
 
 ## 4. Flow examples
-### 4.1 Outpost with native ETH
-Example flow of an outpost having gasTokenNetwork different than native networkID/rollupID:
+### 4.1 Outpost declaring its native coin as L1 ETH (external token)
+
+Example flow of an outpost whose `gasTokenNetwork` is different from its own networkID/rollupID. Here the native coin (`baseETH`) is declared as L1 ETH:
 
 - Initialize params:
-    - GasTokenNetwork: 0 (ethereum)
-    - GasTokenAddress: 0x000....000 (ethereum)
+    - `gasTokenNetwork`: `0` (Ethereum L1)
+    - `gasTokenAddress`: `0x0000000000000000000000000000000000000000` (ETH)
 
 ```mermaid
 sequenceDiagram
@@ -59,15 +61,22 @@ sequenceDiagram
     Note left of User: User has baseETH
     User ->> Agglayer_Bridge_Base: bridge to L1 (from aggLayer)
     Agglayer_Bridge_Base ->> Agglayer_Bridge_Base: lock baseETH
+    Note over Agglayer_Bridge_Base: In practice the local balance tree rejects this bridge<br/>(LocalBalanceTreeUnderflow) until enough L1 ETH has been claimed in.<br/>The steps below show the backing problem if that check did not exist.
     Agglayer_Bridge_Base ->> L1_Agglayer_Bridge: bridge
     L1_Agglayer_Bridge ->> User: ❌❌ There is no ETH on bridge to send ❌❌
 ```
 
-### 4.2 Outpost with native token
-Example flow of an outpost having gasTokenNetwork same than native networkID/rollupID:
-Initialize params:
-- GasTokenNetwork: 2 (base rollupId)
-- GasTokenAddress: 0x002....002 (custom address)
+The ETH behind `baseETH` is locked in Base's own L1 bridge, not in the Agglayer L1 bridge, so the Agglayer L1 bridge has nothing to release. In the other direction, L1 ETH claimed on the outpost is paid in native coin from the outpost bridge balance, so the bridge would have to be pre-funded. For the local balance tree details, see [5.3 Gas token configuration, 3.1](Gas-token.md#31-implications).
+
+### 4.2 Outpost with native L2 token
+
+Example flow of an outpost whose `gasTokenNetwork` is its own networkID/rollupID. For example, a Base-like outpost with a hypothetical `rollupID = 1001`:
+
+- Initialize params:
+    - `gasTokenNetwork`: `1001` (the outpost rollupID)
+    - `gasTokenAddress`: `0x000003e9000003e9000003e9000003e9000003e9` (rollupID as 32-bit hex repeated 5 times, see [5.3 Gas token configuration](Gas-token.md#21-convention))
+    - `gasTokenMetadata`: `abi.encode(name, symbol, decimals)` of the native coin
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -89,5 +98,4 @@ sequenceDiagram
     Note left of User: User has wrappedBaseETH ✅
 ```
 
-<br>
-<br>
+The user receives `wrappedBaseETH` on L1, a wrapped ERC20 deployed with `gasTokenMetadata`, not ETH. Bridging `wrappedBaseETH` back releases native `baseETH` on the outpost from the bridge balance. L1 ETH bridged to the outpost through the Agglayer arrives as the WETH ERC20, not as gas; to get native `baseETH` for gas, users use Base's canonical bridge. See the [full flow table](Gas-token.md#22-bridging-flows).

@@ -12,7 +12,7 @@ docs/                          All documentation content (Markdown)
   tooling/                     2. Tooling (genesis, verification, resources)
   aggregation-layer/           3. Aggregation layer (v0.2.0, v0.3.0, v0.3.5)
   smart-contracts/             4. Smart Contracts (v11, v12, migration paths)
-  outposts/                    5. Outposts (intro, L2 deployment)
+  outposts/                    5. Outposts (intro, L2 deployment, gas token)
   sovereign-contracts-roles/   6. SC Roles (L1, aggchain, sovereign chain roles)
   css/                         Custom CSS
   index.md                     Home page

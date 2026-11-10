@@ -2,3 +2,4 @@
 
 - [5.1. Intro](Intro.md)
 - [5.2. L2 Deployment Script](L2-Deployment-script.md)
+- [5.3. Gas token configuration](Gas-token.md)
