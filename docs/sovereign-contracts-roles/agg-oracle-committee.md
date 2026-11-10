@@ -4,7 +4,7 @@
 
     `AggOracleCommittee` is under active development and not released yet. This specification may change before the contract ships.
 
-Source: `contracts/sovereignChains/AggOracleCommittee.sol` in [agglayer-contracts](https://github.com/agglayer/agglayer-contracts) (branch `feature/agg-oracle-comittee-v2`, version `v2.0.0`).
+Source: `contracts/sovereignChains/AggOracleCommittee.sol` in [agglayer-contracts](https://github.com/agglayer/agglayer-contracts) (branch `feature/agg-oracle-committee`, version `v2.0.0`).
 
 Signature-based committee contract that manages the insertion of GERs into `AgglayerGERL2`. A single proposer submits each GER together with the signatures of a threshold of validators; the contract verifies them and inserts the GER. Inherits from `Ownable2StepUpgradeable`.
 
