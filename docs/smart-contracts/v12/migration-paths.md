@@ -75,7 +75,7 @@ This migration path upgrades existing AggchainFEP deployments to the new consens
 
 2. **Execute Migration:**
    - Uses `AgglayerManager.updateRollup.upgradeFromPreviousFEP` function
-   - Must be executed by governance (`_UPDATE_ROLLUP_ROLE`) with `updateRollup`. `updateRollupByRollupAdmin` upgrades without any initialization call, so it must not be used for this path: the chain would end up without the `GENESIS` op-succinct config nor the signers, and stop settling until the aggchain manager sets them
+   - Must be executed by governance (`_UPDATE_ROLLUP_ROLE`) with `updateRollup`. `updateRollupByRollupAdmin` upgrades without any initialization call by design, so the rollup admin cannot trigger initializers reserved to the rollup manager (`onlyRollupManager`, e.g. `upgradeFromPreviousFEP`). Using it here would leave the chain without the `GENESIS` op-succinct config nor the signers, and stop settling until the aggchain manager sets them. Initializers gated by `onlyAggchainManager` can still be called by the aggchain manager after such an upgrade
    - Upgrades existing AggchainFEP to new consensus type
    - Maintains existing proving configuration while adding signature capabilities
 
