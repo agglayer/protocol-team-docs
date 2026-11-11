@@ -75,6 +75,7 @@ This migration path upgrades existing AggchainFEP deployments to the new consens
 
 2. **Execute Migration:**
    - Uses `AgglayerManager.updateRollup.upgradeFromPreviousFEP` function
+   - Must be executed by governance (`_UPDATE_ROLLUP_ROLE`) with `updateRollup`. `updateRollupByRollupAdmin` upgrades without any initialization call, so it must not be used for this path: the chain would end up without the `GENESIS` op-succinct config nor the signers, and stop settling until the aggchain manager sets them
    - Upgrades existing AggchainFEP to new consensus type
    - Maintains existing proving configuration while adding signature capabilities
 
@@ -157,3 +158,29 @@ This path creates a new deployment path for chains that use aggchain-proof (OP-F
 3. **Initialize Chain:**
    - Uses `AggchainFEP.initialize` function
    - Sets up OP-V3 configuration and ECDSA parameters
+
+### 2.5 zkEVM/Validium → AggchainECDSAMultisig / AggchainFEP
+
+**Summary:**
+
+This migration path moves a legacy StateTransition chain (`PolygonZkEVMEtrog` / `PolygonValidiumEtrog`) to an `ALGateway` aggchain. It must be done with `AgglayerManager.initMigration`, never with `updateRollup`: the first pessimistic proof needs the migration bootstrap that only `initMigration` enables.
+
+**Migration Process:**
+
+1. **Create New Rollup Type:**
+    - Creates new rollupTypeID with `VerifierType: ALGateway` + `AggchainECDSAMultisig` or `AggchainFEP`
+
+2. **Execute Migration:**
+    - Uses `AgglayerManager.initMigration` (`_UPDATE_ROLLUP_ROLE`)
+    - All sequenced batches must be verified (`AllSequencedMustBeVerified`)
+    - `AggchainECDSAMultisig`: `upgradeData` is `migrateFromLegacyConsensus()`
+    - `AggchainFEP`: `upgradeData` is `initAggchainManager(aggchainManager)`, then the aggchain manager calls `initializeFromLegacyConsensus`
+
+3. **Complete Migration:**
+    - The first `verifyPessimisticTrustedAggregator` completes the migration (`CompletedMigration`)
+    - Its `newLocalExitRoot` must be equal to the chain's last local exit root, so the first certificate covers all the bridges of the chain
+
+**Technical Requirements:**
+
+- Do not use `updateRollup` for this path. Without the `initMigration` bootstrap the chain keeps its legacy local exit root with an empty pessimistic root, no pessimistic proof can ever match it, and only an `AgglayerManager` upgrade can recover the chain. In v12 `updateRollup` allows it; from [agglayer-contracts#623](https://github.com/agglayer/agglayer-contracts/pull/623) it reverts with `UpdateNotCompatible`
+
