@@ -24,6 +24,7 @@ Deploy transparent proxy which has a ERC20 upgradeable implementation
 - `proxiedTokensManager` is the owner of the proxy admin of the proxy
 - `proxiedTokensManager` can delegate ownership to any address later on
 - `proxiedTokensManager` is set at initialization of sovereign bridge from initialization inputs. In case of L1, bridgeV2, `proxiedTokensManager` is set from the proxy owner of the proxy admin of the bridge itself. The role can be transferred with a two steps procedure.
+- Transferring the `proxiedTokensManager` role only affects wrapped tokens deployed afterwards: each proxy copies the role holder into its own admin slot at deployment. Already deployed wrapped tokens keep the previous holder as admin until it calls `changeAdmin` on each of them.
 
 Security assumptions:
 

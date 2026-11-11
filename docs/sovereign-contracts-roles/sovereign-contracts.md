@@ -53,6 +53,7 @@ Inherits from `AgglayerBridge`. Defines custom address-based roles with two-step
     - Can upgrade wrapped token implementations (`upgradeTo`, `upgradeToAndCall`)
     - Can change admin of wrapped token proxies (`changeAdmin`)
     - Transfer the proxiedTokensManager role (`transferProxiedTokensManagerRole`)
+- **Role transfer**: each wrapped token proxy copies the bridge's `proxiedTokensManager` into its own admin slot when it is deployed. Transferring the role only affects wrapped tokens deployed afterwards. Already deployed wrapped tokens keep the previous holder as admin until it calls `changeAdmin` on each of them.
 - **Security Assumptions**: Very high. Can upgrade token logic which could affect user funds — worst case scenario, steal all users funds of that network. Should be carefully managed.
 - **Recommended Account Type**: Timelock (same as bridge proxy admin, typically PolygonTimelock)
 
