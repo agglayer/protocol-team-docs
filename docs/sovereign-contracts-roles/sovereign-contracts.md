@@ -29,6 +29,8 @@ Inherits from `AgglayerBridge`. Defines custom address-based roles with two-step
     - Transfer the bridgeManager role (`setBridgeManager`)
 - **Security Assumptions**: Very high. Setting custom token mappings could redirect funds if misconfigured — worst case scenario, steal all users funds of that network. Should be carefully managed.
 - **Recommended Account Type**: Timelock (specified by the chain itself after bootstrapping phase)
+- **Note**: `setSovereignWETHAddress` accepts `address(0)`. On a gas token chain that disables WETH: L1 ETH claims are then paid in the chain's native gas token 1:1 from the bridge balance, and `bridgeMessage` accepts `msg.value`. Never use it to "reset" WETH.
+- **Note**: `setBridgeManager` is a one-step transfer (unlike the other bridge roles): double-check the new address. A zero `bridgeManager` at initialization disables the role for good.
 - **Note**: Users can still call `migrateLegacyToken` during the emergency state. If a wrong or compromised legacy mapping is the reason for a pause, remove it with `removeLegacySovereignTokenAddress`: the pause does not stop migrations.
 
 ### emergencyBridgePauser
