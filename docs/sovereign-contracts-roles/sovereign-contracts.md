@@ -29,6 +29,9 @@ Inherits from `AgglayerBridge`. Defines custom address-based roles with two-step
     - Transfer the bridgeManager role (`setBridgeManager`)
 - **Security Assumptions**: Very high. Setting custom token mappings could redirect funds if misconfigured — worst case scenario, steal all users funds of that network. Should be carefully managed.
 - **Recommended Account Type**: Timelock (specified by the chain itself after bootstrapping phase)
+- **Note**: `setSovereignWETHAddress` accepts `address(0)`. On a gas token chain that disables WETH: L1 ETH claims are then paid in the chain's native gas token 1:1 from the bridge balance, and `bridgeMessage` accepts `msg.value`. Never use it to "reset" WETH.
+- **Note**: `setBridgeManager` is a one-step transfer (unlike the other bridge roles): double-check the new address. A zero `bridgeManager` at initialization disables the role for good.
+- **Note**: Users can still call `migrateLegacyToken` during the emergency state. If a wrong or compromised legacy mapping is the reason for a pause, remove it with `removeLegacySovereignTokenAddress`: the pause does not stop migrations.
 
 ### emergencyBridgePauser
 
@@ -37,6 +40,7 @@ Inherits from `AgglayerBridge`. Defines custom address-based roles with two-step
     - Transfer the emergencyBridgePauser role (`transferEmergencyBridgePauserRole`)
 - **Security Assumptions**: Medium-High. Can halt all bridge operations but cannot steal funds directly.
 - **Recommended Account Type**: Multisig (needs to act fast in emergencies)
+- **Note**: Initializing it to `address(0)` disables the emergency state for good: the role can only be transferred by its current holder, so it can not be set later. The LET/LBT recovery functions (`backwardLET`, `forwardLET`, `setLocalBalanceTree`) require the emergency state, so on such a chain a LET divergence can only be fixed with a contract upgrade. Set it whenever a `globalExitRootRemover` is set.
 
 ### emergencyBridgeUnpauser
 
@@ -45,6 +49,7 @@ Inherits from `AgglayerBridge`. Defines custom address-based roles with two-step
     - Transfer the emergencyBridgeUnpauser role (`transferEmergencyBridgeUnpauserRole`)
 - **Security Assumptions**: Medium. Can resume bridge operations after emergency.
 - **Recommended Account Type**: Multisig or Timelock (depending on security requirements)
+- **Note**: Set it whenever `emergencyBridgePauser` is set. With a zero unpauser, a pause (including the one used for a LET recovery) can never be lifted without a contract upgrade.
 
 ### proxiedTokensManager
 
@@ -67,6 +72,7 @@ Read from `AgglayerGERL2.globalExitRootRemover()`. On `AgglayerBridgeL2`:
     - Force emit detailed claim events (`forceEmitDetailedClaimEvent`)
 - **Security Assumptions**: Very high security risk. Controller could steal funds — worst case scenario, steal all users funds of that network. Should be carefully managed. Has powerful emergency recovery capabilities.
 - **Recommended Account Type**: Multisig (needs to act fast to unblock the chain in emergencies)
+- **Note**: `unsetMultipleClaims` / `setMultipleClaims` are **not** gated by the emergency state. An unset claim can be claimed again right away while the bridge is open (a local double mint on L2, which the pessimistic proof still counts once).
 
 ---
 
