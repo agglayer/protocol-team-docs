@@ -93,8 +93,8 @@ Read from `AgglayerGERL2.globalExitRootRemover()`. On `AgglayerBridgeL2`:
     - Insert new global exit roots (`insertGlobalExitRoot`)
     - Transfer the globalExitRootUpdater role (`transferGlobalExitRootUpdater`)
     - If set to zero address, `block.coinbase` (sequencer) can insert GERs
-- **Security Assumptions**: Medium-High. This address has the ability to insert invalid GERs, unable to steal funds of the agglayer and halting the network but might be able to steal third-party bridges.
-- **Recommended Account Type**: EOA carefully managed, since must send lots of transactions
+- **Security Assumptions**: Very High. This address can insert invalid GERs. Claims against an invalid GER mint unbacked wrapped assets on L2 and release tokens native to this chain (including the gas token) held in the bridge escrow. These can be swapped for other users' assets on the chain. For foreign-origin tokens the pessimistic proof caps the loss at the chain's own balance, so it cannot steal agglayer funds of other chains. It does not track tokens native to this chain, so holders of their wrapped versions on other chains can also be affected. If a certificate includes the invalid import, settlement stalls; the L2 keeps producing blocks. On FEP chains the aggchain proof rejects settlement of these claims only while `globalExitRootRemover` is `address(0)`, and L2-local losses happen either way. With a zero remover the invalid GER cannot be removed, so settlement stays stuck until a contract upgrade.
+- **Recommended Account Type**: EOA with a KMS/HSM-backed key (must send lots of transactions), with GER insertions monitored against L1
 
 ### globalExitRootRemover
 
@@ -126,7 +126,7 @@ Oracle committee contract that manages the insertion of GERs into `AgglayerGERL2
     - Transfer the `globalExitRootUpdater` role on `AgglayerGERL2` (`transferGlobalExitRootUpdater`)
     - Accept the `globalExitRootUpdater` role on `AgglayerGERL2` (`acceptGlobalExitRootUpdater`)
     - Transfer ownership (`transferOwnership`, inherited from `OwnableUpgradeable`)
-- **Security Assumptions**: Very high. Controls who can propose GERs and the threshold needed for consolidation. A compromised owner could add malicious oracle members or lower the quorum to 1, enabling insertion of invalid GERs — which could lead to theft of third-party bridge funds.
+- **Security Assumptions**: Very high. Controls who can propose GERs and the threshold needed for consolidation. A compromised owner could add malicious oracle members or lower the quorum to 1, enabling insertion of invalid GERs — which could mint unbacked wrapped assets on L2 (see `globalExitRootUpdater`).
 - **Recommended Account Type**: Timelock (specified by the chain itself after bootstrapping phase)
 
 ### Oracle Member
@@ -135,8 +135,8 @@ Membership-based role. Members are tracked via the `addressToLastProposedGER` ma
 
 - **Functionality**:
     - Propose a global exit root (`proposeGlobalExitRoot`); if quorum is reached, the GER is automatically consolidated into `AgglayerGERL2`
-- **Security Assumptions**: Medium-High. A quorum of compromised oracle members could insert invalid GERs, unable to steal agglayer funds directly but might be able to steal third-party bridge funds. Individual members cannot consolidate alone (quorum required).
-- **Recommended Account Type**: EOA carefully managed, since must send frequent transactions to propose GERs
+- **Security Assumptions**: Very High. A quorum of compromised oracle members can insert invalid GERs, with the same impact as the `globalExitRootUpdater` (unbacked wrapped assets minted on L2). Individual members cannot consolidate alone (quorum required).
+- **Recommended Account Type**: EOA with a KMS/HSM-backed key (must send frequent transactions to propose GERs), each member held by an independent operator
 
 ---
 
@@ -148,7 +148,7 @@ Membership-based role. Members are tracked via the `addressToLastProposedGER` ma
 | AgglayerBridgeL2 | `emergencyBridgePauser` | Medium | Multisig |
 | AgglayerBridgeL2 | `emergencyBridgeUnpauser` | Medium | Multisig/Timelock |
 | AgglayerBridgeL2 | `proxiedTokensManager` | Very High | Timelock |
-| AgglayerGERL2 | `globalExitRootUpdater` | Medium-High | EOA (carefully managed) |
+| AgglayerGERL2 | `globalExitRootUpdater` | Very High | EOA (KMS/HSM-backed, monitored) |
 | AgglayerGERL2 | `globalExitRootRemover` | Very High | Multisig |
 | AggOracleCommittee | `owner` | Very High | Timelock |
-| AggOracleCommittee | Oracle Member | Medium-High | EOA (carefully managed) |
+| AggOracleCommittee | Oracle Member | Very High | EOA (KMS/HSM-backed, independent operators) |
